@@ -464,12 +464,17 @@
       }
 
       /* show reorder arrows on mobile chips, with thumb-friendly tap targets */
-      .chip { padding: 0 4px 0 12px; min-height: 36px; font-size: 12px; }
+      .chip { padding: 0; gap: 0; min-height: 36px; font-size: 12px; }
+      .chip span { padding: 0 6px; }
       .chip .chip-arrow {
         display: flex; align-items: center; justify-content: center;
-        min-width: 32px; min-height: 36px;
-        font-size: 16px; color: var(--muted); padding: 0;
+        width: 32px; min-height: 36px;
+        font-size: 16px; color: var(--muted);
       }
+      /* placeholder (disabled) arrows take up space but are invisible */
+      .chip .chip-arrow[disabled] { visibility: hidden; pointer-events: none; }
+      /* × always gets consistent padding on both sides */
+      .chip .chip-remove { padding: 0 10px; }
 
       /* ── Cards area: horizontal swipe carousel ──
          Horizontal scroll lives on .cards-scroll.
@@ -809,18 +814,17 @@
       const c = document.createElement('div');
       c.className = 'chip';
       c.innerHTML = `
-        <button class="chip-arrow" title="Move left" style="visibility:${isFirst ? 'hidden' : 'visible'}">←</button>
+        <button class="chip-arrow chip-arrow-left" title="Move left" ${isFirst ? 'disabled aria-hidden="true"' : ''}>←</button>
         <span>${m.name}</span>
-        <button class="chip-arrow" title="Move right" style="visibility:${isLast ? 'hidden' : 'visible'}">→</button>
+        <button class="chip-arrow chip-arrow-right" title="Move right" ${isLast ? 'disabled aria-hidden="true"' : ''}>→</button>
         <button class="chip-remove" title="Remove">×</button>
       `;
       c.querySelector('.chip-remove').addEventListener('click', () => removeModel(id));
-      const [btnLeft, btnRight] = c.querySelectorAll('.chip-arrow');
-      btnLeft.addEventListener('click', () => {
+      c.querySelector('.chip-arrow-left')?.addEventListener('click', () => {
         const i = selected.indexOf(id);
         if (i > 0) reorderTo(id, selected[i - 1]);
       });
-      btnRight.addEventListener('click', () => {
+      c.querySelector('.chip-arrow-right')?.addEventListener('click', () => {
         const i = selected.indexOf(id);
         if (i < selected.length - 1) reorderTo(id, selected[i + 1]);
       });
