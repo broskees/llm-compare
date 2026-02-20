@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LLM Compare</title>
+  <link rel="manifest" href="/llm-compare/manifest.json">
+  <meta name="theme-color" content="#0f0f11">
+  <link rel="icon" href="/llm-compare/icon.svg" type="image/svg+xml">
   <link rel="alternate" type="text/plain" href="/llm-compare/llms.txt" title="LLM-friendly data access instructions">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1377,6 +1380,10 @@
   });
 
 })();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/llm-compare/sw.js');
+}
 </script>
 </body>
 </html>
