@@ -599,6 +599,7 @@
   <div class="header-title">
     <h1>LLM Compare</h1>
     <div class="sub">api.zeroeval.com</div>
+    <div class="sub" id="dataFreshness"></div>
   </div>
   <div class="header-sep"></div>
   <div class="search-row">
@@ -679,6 +680,50 @@
     return m ? m.split(',').filter(Boolean) : [];
   }
 
+  // ── data freshness ─────────────────────────────────────────────────────────
+  function nextMondayUtc(from) {
+    // Returns the next Monday 06:00 UTC on or after `from`
+    const d = new Date(from);
+    const day = d.getUTCDay(); // 0=Sun, 1=Mon...
+    const daysUntilMonday = day === 1 && d.getUTCHours() < 6
+      ? 0  // it's Monday but before 6am — next run is today
+      : (8 - day) % 7 || 7; // days until next Monday
+    d.setUTCDate(d.getUTCDate() + daysUntilMonday);
+    d.setUTCHours(6, 0, 0, 0);
+    return d;
+  }
+
+  function humanDuration(ms) {
+    const s = Math.round(ms / 1000);
+    if (s < 60)  return `${s}s`;
+    const m = Math.round(s / 60);
+    if (m < 60)  return `${m}m`;
+    const h = Math.round(m / 60);
+    if (h < 24)  return `${h}h`;
+    const d = Math.round(h / 24);
+    return `${d}d`;
+  }
+
+  async function loadFreshness() {
+    try {
+      const res = await fetch('./data/meta.json');
+      if (!res.ok) return;
+      const { lastUpdated } = await res.json();
+      const last = new Date(lastUpdated);
+      const now = new Date();
+      const next = nextMondayUtc(last);
+      const agoMs  = now - last;
+      const untilMs = next - now;
+      const el = document.getElementById('dataFreshness');
+      if (!el) return;
+      const untilStr = untilMs > 0
+        ? `next update in ${humanDuration(untilMs)}`
+        : 'update imminent';
+      el.textContent = `updated ${humanDuration(agoMs)} ago · ${untilStr}`;
+      el.title = `Last updated: ${last.toUTCString()}\nNext update: ${next.toUTCString()}`;
+    } catch { /* non-fatal */ }
+  }
+
   // ── init ───────────────────────────────────────────────────────────────────
   async function init() {
     const res = await fetch('./data/models.json');
@@ -688,6 +733,7 @@
     document.getElementById('initMsg')?.remove();
     document.getElementById('cards').innerHTML =
       `<div class="state">Search above to add models.</div>`;
+    loadFreshness(); // fire-and-forget
   }
 
   init().then(async () => {

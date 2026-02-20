@@ -80,6 +80,11 @@ async function main() {
     await sleep(DELAY_MS);
   }
 
+  // Write metadata (timestamp for UI display)
+  const meta = { lastUpdated: new Date().toISOString() };
+  fs.writeFileSync(path.join(DATA_DIR, 'meta.json'), JSON.stringify(meta, null, 2));
+  console.log('  Wrote data/meta.json');
+
   console.log('\nDone!');
   console.log(`Details: ${detailOk} ok, ${detailFail} failed`);
   console.log(`Arena:   ${arenaOk} ok, ${arenaFail} failed`);
