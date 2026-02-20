@@ -137,6 +137,14 @@
       cursor: pointer; font-size: 13px; line-height: 1; padding: 0;
     }
     .chip button:hover { color: var(--red); }
+    .chip[draggable] { cursor: grab; }
+    .chip[draggable]:active { cursor: grabbing; }
+    .chip.dragging { opacity: 0.4; }
+    .chip.drag-over { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .card-head[draggable] { cursor: grab; }
+    .card-head[draggable]:active { cursor: grabbing; }
+    .card.dragging { opacity: 0.4; }
+    .card.drag-over > .card-head { outline: 2px solid var(--accent); outline-offset: -2px; }
 
     /* ── State messages ── */
     .state { text-align: center; color: var(--muted); padding: 60px 0; }
@@ -588,6 +596,7 @@
   let arenaDetail = {};         // arena_name -> leaderboard entry for each model_id
   let loading    = new Set();   // model_ids currently being fetched
   const MAX      = 10;
+  let dragState  = null;        // { id } while a drag is in progress
 
   // Converts a model_id to a safe filename (matches scripts/fetch-data.js)
   function sanitizeId(modelId) {
@@ -760,6 +769,18 @@
     renderCards();
   }
 
+  function reorderTo(fromId, toId) {
+    if (fromId === toId) return;
+    const from = selected.indexOf(fromId);
+    const to   = selected.indexOf(toId);
+    if (from === -1 || to === -1) return;
+    selected.splice(from, 1);
+    selected.splice(to, 0, fromId);
+    pushUrlState();
+    renderChips();
+    renderCards();
+  }
+
   function updateHint() {
     document.getElementById('countHint').textContent =
       selected.length ? `${selected.length} / ${MAX}` : '';
@@ -776,6 +797,33 @@
       c.className = 'chip';
       c.innerHTML = `<span>${m.name}</span><button title="Remove">×</button>`;
       c.querySelector('button').addEventListener('click', () => removeModel(id));
+
+      // drag-and-drop reordering
+      c.draggable = true;
+      c.addEventListener('dragstart', e => {
+        dragState = { id };
+        c.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      c.addEventListener('dragend', () => {
+        dragState = null;
+        c.classList.remove('dragging');
+        area.querySelectorAll('.chip').forEach(el => el.classList.remove('drag-over'));
+      });
+      c.addEventListener('dragover', e => {
+        if (!dragState || dragState.id === id) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        area.querySelectorAll('.chip').forEach(el => el.classList.remove('drag-over'));
+        c.classList.add('drag-over');
+      });
+      c.addEventListener('dragleave', () => c.classList.remove('drag-over'));
+      c.addEventListener('drop', e => {
+        e.preventDefault();
+        c.classList.remove('drag-over');
+        if (dragState) reorderTo(dragState.id, id);
+      });
+
       area.appendChild(c);
     });
   }
@@ -944,6 +992,38 @@
       <button class="card-remove" title="Remove">×</button>
     `;
     head.querySelector('.card-remove').addEventListener('click', () => removeModel(id));
+
+    // drag-and-drop reordering (desktop only — skip on touch devices)
+    if (window.matchMedia('(hover: hover)').matches) {
+      head.draggable = true;
+      head.addEventListener('dragstart', e => {
+        dragState = { id };
+        card.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      head.addEventListener('dragend', () => {
+        dragState = null;
+        card.classList.remove('dragging');
+        document.querySelectorAll('.card').forEach(el => el.classList.remove('drag-over'));
+      });
+      card.addEventListener('dragover', e => {
+        if (!dragState || dragState.id === id) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        document.querySelectorAll('.card').forEach(el => el.classList.remove('drag-over'));
+        card.classList.add('drag-over');
+      });
+      card.addEventListener('dragleave', e => {
+        // only clear if leaving the card entirely (not entering a child)
+        if (!card.contains(e.relatedTarget)) card.classList.remove('drag-over');
+      });
+      card.addEventListener('drop', e => {
+        e.preventDefault();
+        card.classList.remove('drag-over');
+        if (dragState) reorderTo(dragState.id, id);
+      });
+    }
+
     card.appendChild(head);
 
     // ── body wrapper (scrolls on mobile; invisible wrapper on desktop/tablet) ──
