@@ -463,8 +463,13 @@
         overflow: visible;
       }
 
-      /* show reorder arrows on mobile chips */
-      .chip .chip-arrow { display: inline; }
+      /* show reorder arrows on mobile chips, with thumb-friendly tap targets */
+      .chip { padding: 0 4px 0 12px; min-height: 36px; font-size: 12px; }
+      .chip .chip-arrow {
+        display: flex; align-items: center; justify-content: center;
+        min-width: 32px; min-height: 36px;
+        font-size: 16px; color: var(--muted); padding: 0;
+      }
 
       /* ── Cards area: horizontal swipe carousel ──
          Horizontal scroll lives on .cards-scroll.
