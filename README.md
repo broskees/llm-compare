@@ -28,6 +28,25 @@ Model IDs with `/` are stored with `--` (e.g. `meta-llama/Llama-3` → `meta-lla
 
 For machine-readable access see [`llms.txt`](./llms.txt).
 
+## For Agents
+
+All data is accessible as static JSON — no browser or JS execution needed.
+
+```
+# Full model list
+GET https://broskees.github.io/llm-compare/data/models.json
+
+# Benchmarks + metadata for a specific model
+GET https://broskees.github.io/llm-compare/data/details/{model-id}.json
+
+# Arena scores for a specific model
+GET https://broskees.github.io/llm-compare/data/arena/{model-id}.json
+```
+
+To compare specific models, parse the `?m=` query parameter from a comparison URL (comma-separated model IDs) and fetch each model's `details/` and `arena/` files directly.
+
+See [`llms.txt`](https://broskees.github.io/llm-compare/llms.txt) for full documentation.
+
 ## Development
 
 No build step. Just serve the directory:
