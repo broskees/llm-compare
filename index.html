@@ -141,6 +141,9 @@
     .chip[draggable]:active { cursor: grabbing; }
     .chip.dragging { opacity: 0.4; }
     .chip.drag-over { outline: 2px solid var(--accent); outline-offset: 2px; }
+    /* mobile-only reorder arrows — hidden on desktop */
+    .chip .chip-arrow { display: none; font-size: 11px; color: var(--muted); padding: 0 1px; }
+    .chip .chip-arrow:hover { color: var(--accent); }
     .card-head[draggable] { cursor: grab; }
     .card-head[draggable]:active { cursor: grabbing; }
     .card.dragging { opacity: 0.4; }
@@ -459,6 +462,9 @@
         flex-wrap: wrap;
         overflow: visible;
       }
+
+      /* show reorder arrows on mobile chips */
+      .chip .chip-arrow { display: inline; }
 
       /* ── Cards area: horizontal swipe carousel ──
          Horizontal scroll lives on .cards-scroll.
@@ -790,13 +796,29 @@
   function renderChips() {
     const area = document.getElementById('chips');
     area.innerHTML = '';
-    selected.forEach(id => {
+    selected.forEach((id, idx) => {
       const m = modelList.find(x => x.model_id === id);
       if (!m) return;
+      const isFirst = idx === 0;
+      const isLast  = idx === selected.length - 1;
       const c = document.createElement('div');
       c.className = 'chip';
-      c.innerHTML = `<span>${m.name}</span><button title="Remove">×</button>`;
-      c.querySelector('button').addEventListener('click', () => removeModel(id));
+      c.innerHTML = `
+        <button class="chip-arrow" title="Move left" style="visibility:${isFirst ? 'hidden' : 'visible'}">←</button>
+        <span>${m.name}</span>
+        <button class="chip-arrow" title="Move right" style="visibility:${isLast ? 'hidden' : 'visible'}">→</button>
+        <button class="chip-remove" title="Remove">×</button>
+      `;
+      c.querySelector('.chip-remove').addEventListener('click', () => removeModel(id));
+      const [btnLeft, btnRight] = c.querySelectorAll('.chip-arrow');
+      btnLeft.addEventListener('click', () => {
+        const i = selected.indexOf(id);
+        if (i > 0) reorderTo(id, selected[i - 1]);
+      });
+      btnRight.addEventListener('click', () => {
+        const i = selected.indexOf(id);
+        if (i < selected.length - 1) reorderTo(id, selected[i + 1]);
+      });
 
       // drag-and-drop reordering
       c.draggable = true;
