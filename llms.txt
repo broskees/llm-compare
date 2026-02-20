@@ -1,0 +1,57 @@
+# LLM Compare — Machine-Readable Data
+
+> A comparison tool for LLM benchmark scores. All data is static JSON served from GitHub Pages.
+
+## How to Use This Site's Data
+
+This site displays benchmark data from [ZeroEval](https://api.zeroeval.com) and arena scores from [Magia](https://magia.land). All data is pre-fetched and committed as static JSON files, so you can access it directly without executing JavaScript.
+
+## Data Endpoints
+
+### Model List
+```
+GET https://broskees.github.io/llm-compare/data/models.json
+```
+Returns a JSON array of all tracked models. Each entry includes `model_id`, summary benchmark scores, and metadata.
+
+### Model Details (Benchmarks)
+```
+GET https://broskees.github.io/llm-compare/data/details/{model-id}.json
+```
+Returns full benchmark breakdown for a specific model, including individual task scores.
+
+### Arena Scores
+```
+GET https://broskees.github.io/llm-compare/data/arena/{model-id}.json
+```
+Returns Magia arena scores for categories: chat-arena, text-to-text, text-to-website, text-to-game, p5-animation, threejs, dataviz, tonejs. Returns `{}` if no arena data exists.
+
+## URL Patterns
+
+### Comparison URLs
+The site uses `?m=` with comma-separated model IDs:
+```
+https://broskees.github.io/llm-compare/?m=claude-opus-4-6,gpt-5.3-codex,kimi-k2.5
+```
+
+### Resolving a Comparison URL to Data
+1. Parse the `m` query parameter (comma-separated model IDs)
+2. For each model ID, fetch:
+   - `data/details/{model-id}.json` for benchmarks
+   - `data/arena/{model-id}.json` for arena scores
+3. Use `data/models.json` to get the full model list and metadata
+
+### Model ID Format
+Model IDs use lowercase with hyphens. Slashes in original IDs are replaced with `--`. Examples:
+- `claude-opus-4-6`
+- `gpt-5.3-codex`
+- `kimi-k2.5`
+- `deepseek-r1-0528`
+
+## Data Sources
+- Benchmarks: [ZeroEval API](https://api.zeroeval.com)
+- Arena Scores: [Magia API](https://api.zeroeval.com/magia/models/scores)
+- Data is refreshed periodically via GitHub Actions
+
+## Repository
+https://github.com/broskees/llm-compare
