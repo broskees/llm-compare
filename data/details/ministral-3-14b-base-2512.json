@@ -1,0 +1,403 @@
+{
+  "model_id": "ministral-3-14b-base-2512",
+  "name": "Ministral 3 (14B Base 2512)",
+  "organization": {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai"
+  },
+  "description": "A balanced model in the Ministral 3 family, Ministral 3 14B is a powerful, efficient tiny language model with vision capabilities.\n\nThis model is the base pre-trained version, not fine-tuned for instruction or reasoning tasks, making it ideal for custom post-training processes.\n\nThe Ministral 3 family is designed for edge deployment, capable of running on a wide range of hardware. Ministral 3 14B can even be deployed locally, capable of fitting in 24GB of VRAM in BF16, and less than 12GB of RAM/VRAM when quantized.",
+  "release_date": "2025-12-04",
+  "announcement_date": "2025-12-04",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 14000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Apache 2.0",
+    "allow_commercial": true
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://docs.mistral.ai/",
+    "playground": "https://chat.mistral.ai/",
+    "paper": null,
+    "scorecard_blog": "https://mistral.ai/news/mistral-3",
+    "repo": null,
+    "weights": "https://huggingface.co/mistralai/Ministral-3-14B-Base-2512"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agieval",
+      "name": "AGIEval",
+      "description": "A human-centric benchmark for evaluating foundation models on standardized exams including college entrance exams (Gaokao, SAT), law school admission tests (LSAT), math competitions, lawyer qualification tests, and civil service exams. Contains 20 tasks (18 multiple-choice, 2 cloze) designed to assess understanding, knowledge, reasoning, and calculation abilities in real-world academic and professional contexts.",
+      "categories": [
+        "general",
+        "legal",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.648,
+      "normalized_score": 0.648,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-3",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": "5-shot"
+    },
+    {
+      "benchmark_id": "math-(cot)",
+      "name": "MATH (CoT)",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects. This variant uses Chain-of-Thought prompting to encourage step-by-step reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.676,
+      "normalized_score": 0.676,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-3",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": "2-shot"
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.794,
+      "normalized_score": 0.794,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-3",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": "5-shot"
+    },
+    {
+      "benchmark_id": "mmlu-redux",
+      "name": "MMLU-Redux",
+      "description": "An improved version of the MMLU benchmark featuring manually re-annotated questions to identify and correct errors in the original dataset. Provides more reliable evaluation metrics for language models by addressing dataset quality issues found in the original MMLU.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.82,
+      "normalized_score": 0.82,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-3",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": "5-shot"
+    },
+    {
+      "benchmark_id": "multilingual-mmlu",
+      "name": "Multilingual MMLU",
+      "description": "MMLU-ProX is a comprehensive multilingual benchmark covering 29 typologically diverse languages, building upon MMLU-Pro. Each language version consists of 11,829 identical questions enabling direct cross-linguistic comparisons. The benchmark evaluates large language models' reasoning capabilities across linguistic and cultural boundaries through challenging, reasoning-focused questions with 10 answer choices.",
+      "categories": [
+        "general",
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.742,
+      "normalized_score": 0.742,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-3",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "triviaqa",
+      "name": "TriviaQA",
+      "description": "A large-scale reading comprehension dataset containing over 650K question-answer-evidence triples. TriviaQA includes 95K question-answer pairs authored by trivia enthusiasts and independently gathered evidence documents (six per question on average) that provide high quality distant supervision for answering the questions. The dataset features relatively complex, compositional questions with considerable syntactic and lexical variability, requiring cross-sentence reasoning to find answers.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.749,
+      "normalized_score": 0.749,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-3",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": "5-shot"
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-base-2512",
+          "model_name": "Ministral 3 (14B Base 2512)",
+          "score": 0.794,
+          "rank": 62,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-redux",
+      "benchmark_name": "MMLU-Redux",
+      "models": [
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.949,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.944,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.938,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.937,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.934,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.931,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.927,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.927,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.925,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.922,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-base-2512",
+          "model_name": "Ministral 3 (14B Base 2512)",
+          "score": 0.82,
+          "rank": 25,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "triviaqa",
+      "benchmark_name": "TriviaQA",
+      "models": [
+        {
+          "model_id": "kimi-k2-base",
+          "model_name": "Kimi K2 Base",
+          "score": 0.851,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.837,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-3.1-24b-base-2503",
+          "model_name": "Mistral Small 3.1 24B Base",
+          "score": 0.805,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-3.1-24b-instruct-2503",
+          "model_name": "Mistral Small 3.1 24B Instruct",
+          "score": 0.805,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-base-2501",
+          "model_name": "Mistral Small 3 24B Base",
+          "score": 0.8032,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "granite-3.3-8b-base",
+          "model_name": "Granite 3.3 8B Base",
+          "score": 0.7818,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-9b-it",
+          "model_name": "Gemma 2 9B",
+          "score": 0.766,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-base-2512",
+          "model_name": "Ministral 3 (14B Base 2512)",
+          "score": 0.749,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.749,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-nemo-instruct-2407",
+          "model_name": "Mistral NeMo Instruct",
+          "score": 0.738,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

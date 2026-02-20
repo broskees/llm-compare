@@ -1,0 +1,1050 @@
+{
+  "model_id": "qwen2-vl-72b",
+  "name": "Qwen2-VL-72B-Instruct",
+  "organization": {
+    "id": "qwen",
+    "name": "Alibaba Cloud / Qwen Team",
+    "website": "https://qwenlm.github.io"
+  },
+  "description": "An instruction-tuned, large multimodal model that excels at visual understanding and step-by-step reasoning. It supports image and video input, with dynamic resolution handling and improved positional embeddings (M-ROPE), enabling advanced capabilities such as complex problem solving, multilingual text recognition in images, and agent-like interactions in video contexts.",
+  "release_date": "2024-08-29",
+  "announcement_date": "2024-08-29",
+  "multimodal": true,
+  "knowledge_cutoff": "2023-06-30",
+  "param_count": 73400000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "tongyi-qianwen",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "instruct"
+  },
+  "sources": {
+    "api_ref": "https://huggingface.co/Qwen/Qwen2-VL-72B-Instruct",
+    "playground": null,
+    "paper": "https://arxiv.org/abs/2409.12191",
+    "scorecard_blog": "https://qwenlm.github.io/blog/qwen2-vl/",
+    "repo": "https://github.com/QwenLM/Qwen2-VL",
+    "weights": "https://huggingface.co/Qwen/Qwen2-VL-72B-Instruct"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "chartqa",
+      "name": "ChartQA",
+      "description": "ChartQA is a large-scale benchmark comprising 9.6K human-written questions and 23.1K questions generated from human-written chart summaries, designed to evaluate models' abilities in visual and logical reasoning over charts.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.883,
+      "normalized_score": 0.883,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "docvqatest",
+      "name": "DocVQAtest",
+      "description": "DocVQA is a Visual Question Answering benchmark on document images containing 50,000 questions defined on 12,000+ document images. The benchmark focuses on understanding document structure and content to answer questions about various document types including letters, memos, notes, and reports from the UCSF Industry Documents Library.",
+      "categories": [
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.965,
+      "normalized_score": 0.965,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "egoschema",
+      "name": "EgoSchema",
+      "description": "A diagnostic benchmark for very long-form video language understanding consisting of over 5000 human curated multiple choice questions based on 3-minute video clips from Ego4D, covering a broad range of natural human activities and behaviors",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "video",
+      "max_score": 1,
+      "score": 0.779,
+      "normalized_score": 0.779,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "infovqatest",
+      "name": "InfoVQAtest",
+      "description": "InfoVQA test set with infographic images requiring joint reasoning over document layout, textual content, graphical elements, and data visualizations with elementary reasoning and arithmetic skills",
+      "categories": [
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.845,
+      "normalized_score": 0.845,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mathvista-mini",
+      "name": "MathVista-Mini",
+      "description": "MathVista-Mini is a smaller version of the MathVista benchmark that evaluates mathematical reasoning in visual contexts. It consists of examples derived from multimodal datasets involving mathematics, combining challenges from diverse mathematical and visual tasks to assess foundation models' ability to solve problems requiring both visual understanding and mathematical reasoning.",
+      "categories": [
+        "math",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.705,
+      "normalized_score": 0.705,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmbench-test",
+      "name": "MMBench_test",
+      "description": "Test set of MMBench, a bilingual benchmark for assessing multi-modal capabilities of vision-language models through multiple-choice questions in both English and Chinese, providing systematic evaluation across diverse vision-language tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.865,
+      "normalized_score": 0.865,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "name": "MMMU-Pro",
+      "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
+      "categories": [
+        "general",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.462,
+      "normalized_score": 0.462,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmuval",
+      "name": "MMMUval",
+      "description": "Validation set for MMMU (Massive Multi-discipline Multimodal Understanding and Reasoning) benchmark, designed to evaluate multimodal models on massive multi-discipline tasks demanding college-level subject knowledge and deliberate reasoning across Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering.",
+      "categories": [
+        "general",
+        "healthcare",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.645,
+      "normalized_score": 0.645,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmvetgpt4turbo",
+      "name": "MMVetGPT4Turbo",
+      "description": "MM-Vet evaluation using GPT-4 Turbo for scoring. This variant of MM-Vet examines large multimodal models on complicated multimodal tasks requiring integrated capabilities across six core vision-language abilities: recognition, knowledge, spatial awareness, language generation, OCR, and math.",
+      "categories": [
+        "general",
+        "math",
+        "multimodal",
+        "reasoning",
+        "spatial_reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.74,
+      "normalized_score": 0.74,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mtvqa",
+      "name": "MTVQA",
+      "description": "MTVQA (Multilingual Text-Centric Visual Question Answering) is the first benchmark featuring high-quality human expert annotations across 9 diverse languages, consisting of 6,778 question-answer pairs across 2,116 images. It addresses visual-textual misalignment problems in multilingual text-centric VQA.",
+      "categories": [
+        "multimodal",
+        "text-to-image",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.309,
+      "normalized_score": 0.309,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mvbench",
+      "name": "MVBench",
+      "description": "A comprehensive multi-modal video understanding benchmark covering 20 challenging video tasks that require temporal understanding beyond single-frame analysis. Tasks span from perception to cognition, including action recognition, temporal reasoning, spatial reasoning, object interaction, scene transition, and counterfactual inference. Uses a novel static-to-dynamic method to systematically generate video tasks from existing annotations.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "spatial_reasoning",
+        "video",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.736,
+      "normalized_score": 0.736,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ocrbench",
+      "name": "OCRBench",
+      "description": "OCRBench: Comprehensive evaluation benchmark for assessing Optical Character Recognition (OCR) capabilities in Large Multimodal Models across text recognition, scene text VQA, and document understanding tasks",
+      "categories": [
+        "image_to_text",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.877,
+      "normalized_score": 0.877,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "realworldqa",
+      "name": "RealWorldQA",
+      "description": "RealWorldQA is a benchmark designed to evaluate basic real-world spatial understanding capabilities of multimodal models. The initial release consists of over 700 anonymized images taken from vehicles and other real-world scenarios, each accompanied by a question and easily verifiable answer. Released by xAI as part of their Grok-1.5 Vision preview to test models' ability to understand natural scenes and spatial relationships in everyday visual contexts.",
+      "categories": [
+        "spatial_reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.778,
+      "normalized_score": 0.778,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "textvqa",
+      "name": "TextVQA",
+      "description": "TextVQA contains 45,336 questions on 28,408 images that require reasoning about text to answer. Introduced to benchmark VQA models' ability to read and reason about text within images, particularly for assistive technologies for visually impaired users. The dataset addresses the gap where existing VQA datasets had few text-based questions or were too small.",
+      "categories": [
+        "image_to_text",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.855,
+      "normalized_score": 0.855,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vcr-en-easy",
+      "name": "VCR_en_easy",
+      "description": "Visual Commonsense Reasoning (VCR) benchmark that tests higher-order cognition and commonsense reasoning beyond simple object recognition. Models must answer challenging questions about images and provide rationales justifying their answers. The benchmark measures the ability to infer people's actions, goals, and mental states from visual context.",
+      "categories": [
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.9193,
+      "normalized_score": 0.9193,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/QwenLM/Qwen2",
+      "analysis_method": "score",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "chartqa",
+      "benchmark_name": "ChartQA",
+      "models": [
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.908,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.9,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-72b",
+          "model_name": "Qwen2.5 VL 72B Instruct",
+          "score": 0.895,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.892,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.888,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.883,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "pixtral-large",
+          "model_name": "Pixtral Large",
+          "score": 0.881,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-3.2-24b-instruct-2506",
+          "model_name": "Mistral Small 3.2 24B Instruct",
+          "score": 0.874,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.873,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.868,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "docvqatest",
+      "benchmark_name": "DocVQAtest",
+      "models": [
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.971,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.969,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.965,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.965,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.961,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 0.961,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-instruct",
+          "model_name": "Qwen3 VL 4B Instruct",
+          "score": 0.953,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.953,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.95,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.95,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "infovqatest",
+      "benchmark_name": "InfoVQAtest",
+      "models": [
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.926,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.895,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.892,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.892,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.87,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.86,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.86,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.845,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 0.831,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 0.83,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mathvista-mini",
+      "benchmark_name": "MathVista-Mini",
+      "models": [
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.901,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.859,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.858,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.849,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.838,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.819,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.814,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.801,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 0.795,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 0.772,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.705,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "benchmark_name": "MMMU-Pro",
+      "models": [
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.812,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.81,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.805,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.795,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.785,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.784,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.773,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.764,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.756,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.693,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.462,
+          "rank": 24,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mvbench",
+      "benchmark_name": "MVBench",
+      "models": [
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.736,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.732,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.728,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.723,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.72,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-72b",
+          "model_name": "Qwen2.5 VL 72B Instruct",
+          "score": 0.704,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-omni-7b",
+          "model_name": "Qwen2.5-Omni-7B",
+          "score": 0.703,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.696,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 0.693,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.69,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ocrbench",
+      "benchmark_name": "OCRBench",
+      "models": [
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 920,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 903,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 896,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 895,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-instruct",
+          "model_name": "Qwen3 VL 4B Instruct",
+          "score": 881,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 875,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 855,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 839,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 819,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 808,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.877,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "realworldqa",
+      "benchmark_name": "RealWorldQA",
+      "models": [
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.813,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.793,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.79,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.784,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.778,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.774,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.737,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.735,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 0.732,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 0.715,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "textvqa",
+      "benchmark_name": "TextVQA",
+      "models": [
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.855,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.849,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-omni-7b",
+          "model_name": "Qwen2.5-Omni-7B",
+          "score": 0.844,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-vl2",
+          "model_name": "DeepSeek VL2",
+          "score": 0.842,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-vl2-small",
+          "model_name": "DeepSeek VL2 Small",
+          "score": 0.834,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.815,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-vl2-tiny",
+          "model_name": "DeepSeek VL2 Tiny",
+          "score": 0.807,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.802,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-1.5v",
+          "model_name": "Grok-1.5V",
+          "score": 0.781,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-multimodal-instruct",
+          "model_name": "Phi-4-multimodal-instruct",
+          "score": 0.756,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

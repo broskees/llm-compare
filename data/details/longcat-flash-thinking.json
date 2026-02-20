@@ -1,0 +1,1407 @@
+{
+  "model_id": "longcat-flash-thinking",
+  "name": "LongCat-Flash-Thinking",
+  "organization": {
+    "id": "meituan",
+    "name": "Meituan",
+    "website": "https://www.longcatai.org"
+  },
+  "description": "LongCat-Flash-Thinking is Meituan's reasoning model built on the LongCat-Flash foundation with 560B total parameters (MoE, ~27B activated). It introduces a training pipeline specifically tuned for advanced reasoning, featuring Re-thinking Mode that delivers parallel reasoning paths for sophisticated decision-making. Achieves strong performance on mathematical reasoning, agentic tool use, and formal theorem proving benchmarks.",
+  "release_date": "2025-09-22",
+  "announcement_date": "2025-09-22",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 560000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "MIT",
+    "allow_commercial": true
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://longcat.chat/platform/docs/APIDocs.html",
+    "playground": "https://longcat.chat",
+    "paper": "https://arxiv.org/abs/2509.18883",
+    "scorecard_blog": null,
+    "repo": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+    "weights": "https://huggingface.co/meituan-longcat/LongCat-Flash-Thinking"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aime-2024",
+      "name": "AIME 2024",
+      "description": "American Invitational Mathematics Examination 2024, consisting of 30 challenging mathematical reasoning problems from AIME I and AIME II competitions. Each problem requires an integer answer between 0-999 and tests advanced mathematical reasoning across algebra, geometry, combinatorics, and number theory. Used as a benchmark for evaluating mathematical reasoning capabilities in large language models at Olympiad-level difficulty.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.933,
+      "normalized_score": 0.933,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@32",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "name": "AIME 2025",
+      "description": "All 30 problems from the 2025 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.906,
+      "normalized_score": 0.906,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@32",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arc-agi",
+      "name": "ARC-AGI",
+      "description": "The Abstraction and Reasoning Corpus for Artificial General Intelligence (ARC-AGI) is a benchmark designed to test general intelligence and abstract reasoning capabilities through visual grid-based transformation tasks. Each task consists of 2-5 demonstration pairs showing input grids transformed into output grids according to underlying rules, with test-takers required to infer these rules and apply them to novel test inputs. The benchmark uses colored grids (up to 30x30) with 10 discrete colors/symbols, designed to measure human-like general fluid intelligence and skill-acquisition efficiency with minimal prior knowledge.",
+      "categories": [
+        "reasoning",
+        "spatial_reasoning",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 1,
+      "score": 0.503,
+      "normalized_score": 0.503,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bfcl-v3",
+      "name": "BFCL-v3",
+      "description": "Berkeley Function Calling Leaderboard v3 (BFCL-v3) is an advanced benchmark that evaluates large language models' function calling capabilities through multi-turn and multi-step interactions. It introduces extended conversational exchanges where models must retain contextual information across turns and execute multiple internal function calls for complex user requests. The benchmark includes 1000 test cases across domains like vehicle control, trading bots, travel booking, and file system management, using state-based evaluation to verify both system state changes and execution path correctness.",
+      "categories": [
+        "agents",
+        "finance",
+        "general",
+        "reasoning",
+        "structured_output",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.744,
+      "normalized_score": 0.744,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.815,
+      "normalized_score": 0.815,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Diamond, Mean@16",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "name": "LiveCodeBench",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "code",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.794,
+      "normalized_score": 0.794,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@4",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math-500",
+      "name": "MATH-500",
+      "description": "MATH-500 is a subset of the MATH dataset containing 500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.992,
+      "normalized_score": 0.992,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.826,
+      "normalized_score": 0.826,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-redux",
+      "name": "MMLU-Redux",
+      "description": "An improved version of the MMLU benchmark featuring manually re-annotated questions to identify and correct errors in the original dataset. Provides more reliable evaluation metrics for language models by addressing dataset quality issues found in the original MMLU.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.893,
+      "normalized_score": 0.893,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "name": "SWE-Bench Verified",
+      "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
+      "categories": [
+        "code",
+        "frontend_development",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.594,
+      "normalized_score": 0.594,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tau2-airline",
+      "name": "Tau2 Airline",
+      "description": "TAU2 airline domain benchmark for evaluating conversational agents in dual-control environments where both AI agents and users interact with tools in airline customer service scenarios. Tests agent coordination, communication, and ability to guide user actions in tasks like flight booking, modifications, cancellations, and refunds.",
+      "categories": [
+        "communication",
+        "reasoning",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.675,
+      "normalized_score": 0.675,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@4",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tau2-retail",
+      "name": "Tau2 Retail",
+      "description": "τ²-bench retail domain evaluates conversational AI agents in customer service scenarios within a dual-control environment where both agent and user can interact with tools. Tests tool-agent-user interaction, rule adherence, and task consistency in retail customer support contexts.",
+      "categories": [
+        "communication",
+        "reasoning",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.715,
+      "normalized_score": 0.715,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@4",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tau2-telecom",
+      "name": "Tau2 Telecom",
+      "description": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
+      "categories": [
+        "communication",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.831,
+      "normalized_score": 0.831,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@4",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "zebralogic",
+      "name": "ZebraLogic",
+      "description": "ZebraLogic is an evaluation framework for assessing large language models' logical reasoning capabilities through logic grid puzzles derived from constraint satisfaction problems (CSPs). The benchmark consists of 1,000 programmatically generated puzzles with controllable and quantifiable complexity, revealing a 'curse of complexity' where model accuracy declines significantly as problem complexity grows.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.955,
+      "normalized_score": 0.955,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://github.com/meituan-longcat/LongCat-Flash-Thinking",
+      "analysis_method": "Mean@1",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "meituan",
+      "name": "Meituan",
+      "website": "https://longcat.chat",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.3,
+        "output_per_million": 1.2
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": "100.0",
+        "latency": "3.0"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2024",
+      "benchmark_name": "AIME 2024",
+      "models": [
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.958,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.934,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.92,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.916,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.914,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.91,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-14b-latest",
+          "model_name": "Ministral 3 (14B Reasoning 2512)",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.894,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "benchmark_name": "AIME 2025",
+      "models": [
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.9979,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.997,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-nano-30b-a3b",
+          "model_name": "Nemotron 3 Nano (30B A3B)",
+          "score": 0.992,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.906,
+          "rank": 38,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "bfcl-v3",
+      "benchmark_name": "BFCL-v3",
+      "models": [
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.778,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.764,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.744,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.72,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.719,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.719,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.717,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.709,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.703,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.702,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.815,
+          "rank": 38,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "benchmark_name": "LiveCodeBench",
+      "models": [
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2",
+          "model_name": "MiniMax M2",
+          "score": 0.83,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.828,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.804,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-fast",
+          "model_name": "Grok 4 Fast",
+          "score": 0.8,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "grok-4",
+          "model_name": "Grok-4",
+          "score": 0.79,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.78,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math-500",
+      "benchmark_name": "MATH-500",
+      "models": [
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.992,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.982,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.981,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nvidia-nemotron-nano-9b-v2",
+          "model_name": "Nemotron Nano 9B v2",
+          "score": 0.978,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.974,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.974,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-ultra-253b-v1",
+          "model_name": "Llama 3.1 Nemotron Ultra 253B v1",
+          "score": 0.97,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-lite",
+          "model_name": "LongCat-Flash-Lite",
+          "score": 0.968,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m1-80k",
+          "model_name": "MiniMax M1 80K",
+          "score": 0.968,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.966,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-exp",
+          "model_name": "DeepSeek-V3.2-Exp",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
+          "score": 0.849,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.826,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-redux",
+      "benchmark_name": "MMLU-Redux",
+      "models": [
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.949,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.944,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.938,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.937,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.934,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.931,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.927,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.927,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.925,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.922,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.893,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "benchmark_name": "SWE-Bench Verified",
+      "models": [
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.809,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.808,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.806,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
+          "score": 0.802,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.8,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.796,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.78,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5",
+          "model_name": "GLM-5",
+          "score": 0.778,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.768,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.765,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.594,
+          "rank": 49,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "tau2-airline",
+      "benchmark_name": "Tau2 Airline",
+      "models": [
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.765,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.675,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.67,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.67,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.67,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.648,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-4-5-20251001",
+          "model_name": "Claude Haiku 4.5",
+          "score": 0.636,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.626,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.605,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-chat",
+          "model_name": "LongCat-Flash-Chat",
+          "score": 0.58,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-lite",
+          "model_name": "LongCat-Flash-Lite",
+          "score": 0.58,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.58,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "tau2-retail",
+      "benchmark_name": "Tau2 Retail",
+      "models": [
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.919,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.917,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.889,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.886,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-4-5-20251001",
+          "model_name": "Claude Haiku 4.5",
+          "score": 0.832,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.82,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.811,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.802,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.779,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.779,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.779,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.715,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "tau2-telecom",
+      "benchmark_name": "Tau2 Telecom",
+      "models": [
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.993,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.993,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.987,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.982,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.979,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.967,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.956,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.956,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.956,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2",
+          "model_name": "MiniMax M2",
+          "score": 0.87,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.87,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.831,
+          "rank": 12,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

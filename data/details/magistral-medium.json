@@ -1,0 +1,708 @@
+{
+  "model_id": "magistral-medium",
+  "name": "Magistral Medium",
+  "organization": {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai"
+  },
+  "description": "Trained solely with reinforcement learning on top of Mistral Medium 3, Magistral Medium is a reasoning model that achieves strong performance on complex math and code tasks without relying on distillation from existing reasoning models. The training uses an RLVR framework with modifications to GRPO, enabling improved reasoning ability and multilingual consistency.",
+  "release_date": "2025-06-10",
+  "announcement_date": "2025-06-10",
+  "multimodal": true,
+  "knowledge_cutoff": "2025-06-01",
+  "param_count": 24000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Apache 2.0",
+    "allow_commercial": true
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://docs.mistral.ai/api/",
+    "playground": "https://chat.mistral.ai/",
+    "paper": "https://arxiv.org/pdf/2506.10910",
+    "scorecard_blog": "https://mistral.ai/news/magistral",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aider-polyglot",
+      "name": "Aider-Polyglot",
+      "description": "A coding benchmark that evaluates LLMs on 225 challenging Exercism programming exercises across C++, Go, Java, JavaScript, Python, and Rust. Models receive two attempts to solve each problem, with test error feedback provided after the first attempt if it fails. The benchmark measures both initial problem-solving ability and capacity to edit code based on error feedback, providing an end-to-end evaluation of code generation and editing capabilities across multiple programming languages.",
+      "categories": [
+        "code",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.471,
+      "normalized_score": 0.471,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2506.10910",
+      "analysis_method": "accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "aime-2024",
+      "name": "AIME 2024",
+      "description": "American Invitational Mathematics Examination 2024, consisting of 30 challenging mathematical reasoning problems from AIME I and AIME II competitions. Each problem requires an integer answer between 0-999 and tests advanced mathematical reasoning across algebra, geometry, combinatorics, and number theory. Used as a benchmark for evaluating mathematical reasoning capabilities in large language models at Olympiad-level difficulty.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.736,
+      "normalized_score": 0.736,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2506.10910",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "name": "AIME 2025",
+      "description": "All 30 problems from the 2025 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.649,
+      "normalized_score": 0.649,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2506.10910",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.708,
+      "normalized_score": 0.708,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2506.10910",
+      "analysis_method": "Diamond",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.09,
+      "normalized_score": 0.09,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2506.10910",
+      "analysis_method": "text subset",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "name": "LiveCodeBench",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "code",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.503,
+      "normalized_score": 0.503,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2506.10910",
+      "analysis_method": "v6",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aider-polyglot",
+      "benchmark_name": "Aider-Polyglot",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.88,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.822,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.813,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.765,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-exp",
+          "model_name": "DeepSeek-V3.2-Exp",
+          "score": 0.745,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.716,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.689,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.1",
+          "model_name": "DeepSeek-V3.1",
+          "score": 0.684,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.667,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.619,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "magistral-medium",
+          "model_name": "Magistral Medium",
+          "score": 0.471,
+          "rank": 18,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "aime-2024",
+      "benchmark_name": "AIME 2024",
+      "models": [
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.958,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.934,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.92,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.916,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.914,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.91,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-14b-latest",
+          "model_name": "Ministral 3 (14B Reasoning 2512)",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.894,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "magistral-medium",
+          "model_name": "Magistral Medium",
+          "score": 0.736,
+          "rank": 35,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "benchmark_name": "AIME 2025",
+      "models": [
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.9979,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.997,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-nano-30b-a3b",
+          "model_name": "Nemotron 3 Nano (30B A3B)",
+          "score": 0.992,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "magistral-medium",
+          "model_name": "Magistral Medium",
+          "score": 0.649,
+          "rank": 79,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "magistral-medium",
+          "model_name": "Magistral Medium",
+          "score": 0.708,
+          "rank": 79,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.531,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.514,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.51,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.507,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.502,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.49,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.458,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.435,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.7",
+          "model_name": "GLM-4.7",
+          "score": 0.428,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4",
+          "model_name": "Grok-4",
+          "score": 0.4,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "magistral-medium",
+          "model_name": "Magistral Medium",
+          "score": 0.09,
+          "rank": 41,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "benchmark_name": "LiveCodeBench",
+      "models": [
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2",
+          "model_name": "MiniMax M2",
+          "score": 0.83,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.828,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.804,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-fast",
+          "model_name": "Grok 4 Fast",
+          "score": 0.8,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4",
+          "model_name": "Grok-4",
+          "score": 0.79,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.78,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "magistral-medium",
+          "model_name": "Magistral Medium",
+          "score": 0.503,
+          "rank": 36,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

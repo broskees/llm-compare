@@ -1,0 +1,1155 @@
+{
+  "model_id": "pixtral-12b-2409",
+  "name": "Pixtral-12B",
+  "organization": {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai"
+  },
+  "description": "A 12B parameter multimodal model with a 400M parameter vision encoder, capable of understanding both natural images and documents. Excels at multimodal tasks while maintaining strong text-only performance. Supports variable image sizes and multiple images in context.",
+  "release_date": "2024-09-17",
+  "announcement_date": "2024-09-17",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 12400000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Apache 2.0",
+    "allow_commercial": true
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://docs.mistral.ai/platform/endpoints/",
+    "playground": "https://chat.mistral.ai",
+    "paper": null,
+    "scorecard_blog": "https://mistral.ai/news/pixtral-12b/",
+    "repo": "https://huggingface.co/mistralai/Pixtral-12B-2409",
+    "weights": "https://huggingface.co/mistralai/Pixtral-12B-2409"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "chartqa",
+      "name": "ChartQA",
+      "description": "ChartQA is a large-scale benchmark comprising 9.6K human-written questions and 23.1K questions generated from human-written chart summaries, designed to evaluate models' abilities in visual and logical reasoning over charts.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.818,
+      "normalized_score": 0.818,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Chain of Thought (CoT)",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "docvqa",
+      "name": "DocVQA",
+      "description": "A dataset for Visual Question Answering on document images containing 50,000 questions defined on 12,000+ document images. The benchmark tests AI's ability to understand document structure and content, requiring models to comprehend document layout and perform information retrieval to answer questions about document images.",
+      "categories": [
+        "image_to_text",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.907,
+      "normalized_score": 0.907,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "ANLS",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.72,
+      "normalized_score": 0.72,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ifeval",
+      "name": "IFEval",
+      "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
+      "categories": [
+        "general",
+        "instruction_following",
+        "structured_output"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.613,
+      "normalized_score": 0.613,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Text Instruction Following Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math",
+      "name": "MATH",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.481,
+      "normalized_score": 0.481,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mathvista",
+      "name": "MathVista",
+      "description": "MathVista evaluates mathematical reasoning of foundation models in visual contexts. It consists of 6,141 examples derived from 28 existing multimodal datasets and 3 newly created datasets (IQTest, FunctionQA, and PaperQA), combining challenges from diverse mathematical and visual tasks to assess models' ability to understand complex figures and perform rigorous reasoning.",
+      "categories": [
+        "math",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.58,
+      "normalized_score": 0.58,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Chain of Thought (CoT)",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mm-if-eval",
+      "name": "MM IF-Eval",
+      "description": "A challenging multimodal instruction-following benchmark that includes both compose-level constraints for output responses and perception-level constraints tied to input images, with comprehensive evaluation pipeline.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "structured_output"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.527,
+      "normalized_score": 0.527,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Multimodal Instruction Following Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.692,
+      "normalized_score": 0.692,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "5-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mm-mt-bench",
+      "name": "MM-MT-Bench",
+      "description": "A multi-turn LLM-as-a-judge evaluation benchmark for testing multimodal instruction-tuned models' ability to follow user instructions in multi-turn dialogues and answer open-ended questions in a zero-shot manner.",
+      "categories": [
+        "communication",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 100,
+      "score": 0.605,
+      "normalized_score": 0.605,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Multimodal MT-Bench Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu",
+      "name": "MMMU",
+      "description": "MMMU (Massive Multi-discipline Multimodal Understanding) is a benchmark designed to evaluate multimodal models on college-level subject knowledge and deliberate reasoning. Contains 11.5K meticulously collected multimodal questions from college exams, quizzes, and textbooks, covering six core disciplines: Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering across 30 subjects and 183 subfields.",
+      "categories": [
+        "general",
+        "healthcare",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.525,
+      "normalized_score": 0.525,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Chain of Thought (CoT)",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mt-bench",
+      "name": "MT-Bench",
+      "description": "MT-Bench is a challenging multi-turn benchmark that measures the ability of large language models to engage in coherent, informative, and engaging conversations. It uses strong LLMs as judges for scalable and explainable evaluation of multi-turn dialogue capabilities.",
+      "categories": [
+        "communication",
+        "creativity",
+        "general",
+        "reasoning",
+        "roleplay"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 0.768,
+      "normalized_score": 0.768,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "Text MT-Bench Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vqav2",
+      "name": "VQAv2",
+      "description": "VQAv2 is a balanced Visual Question Answering dataset that addresses language bias by providing complementary images for each question, forcing models to rely on visual understanding rather than language priors. It contains approximately twice the number of image-question pairs compared to the original VQA dataset.",
+      "categories": [
+        "image_to_text",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.786,
+      "normalized_score": 0.786,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/pixtral-12b/",
+      "analysis_method": "VQA Match",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "mistral",
+      "name": "Mistral AI",
+      "website": "https://mistral.ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.15,
+        "output_per_million": 0.15
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 128000,
+        "max_output_tokens": 8192
+      },
+      "performance": {
+        "throughput": "0.1",
+        "latency": "0.5"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "chartqa",
+      "benchmark_name": "ChartQA",
+      "models": [
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.908,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.9,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-72b",
+          "model_name": "Qwen2.5 VL 72B Instruct",
+          "score": 0.895,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.892,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.888,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.883,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-large",
+          "model_name": "Pixtral Large",
+          "score": 0.881,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-3.2-24b-instruct-2506",
+          "model_name": "Mistral Small 3.2 24B Instruct",
+          "score": 0.874,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.873,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.868,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.818,
+          "rank": 17,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "docvqa",
+      "benchmark_name": "DocVQA",
+      "models": [
+        {
+          "model_id": "qwen2.5-vl-72b",
+          "model_name": "Qwen2.5 VL 72B Instruct",
+          "score": 0.964,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.957,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.952,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-omni-7b",
+          "model_name": "Qwen2.5-Omni-7B",
+          "score": 0.952,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-3.2-24b-instruct-2506",
+          "model_name": "Mistral Small 3.2 24B Instruct",
+          "score": 0.9486,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.948,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.944,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.944,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-2",
+          "model_name": "Grok-2",
+          "score": 0.936,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.935,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.907,
+          "rank": 18,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.915,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.72,
+          "rank": 53,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifeval",
+      "benchmark_name": "IFEval",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.939,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-7-sonnet-20250219",
+          "model_name": "Claude 3.7 Sonnet",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.926,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.921,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.921,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nvidia-nemotron-nano-9b-v2",
+          "model_name": "Nemotron Nano 9B v2",
+          "score": 0.903,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.613,
+          "rank": 53,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math",
+      "benchmark_name": "MATH",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.979,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.897,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.89,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-8b-instruct-2512",
+          "model_name": "Ministral 3 (8B Instruct 2512)",
+          "score": 0.876,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.868,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.481,
+          "rank": 57,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mathvista",
+      "benchmark_name": "MathVista",
+      "models": [
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.868,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.843,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step3-vl-10b",
+          "model_name": "Step3-VL-10B",
+          "score": 0.84,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k1.5",
+          "model_name": "Kimi-k1.5",
+          "score": 0.749,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.737,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-mini-2025-04-14",
+          "model_name": "GPT-4.1 mini",
+          "score": 0.731,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.723,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.722,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.718,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qvq-72b-preview",
+          "model_name": "QvQ-72B-Preview",
+          "score": 0.714,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.58,
+          "rank": 25,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.692,
+          "rank": 83,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mm-mt-bench",
+      "benchmark_name": "MM-MT-Bench",
+      "models": [
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 84.9,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 8.5,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 8.5,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 8.4,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 8.3,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 8.1,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 8,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 7.9,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 7.7,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 7.7,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.605,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu",
+      "benchmark_name": "MMMU",
+      "models": [
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.842,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.829,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.82,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.816,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.797,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.796,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step3-vl-10b",
+          "model_name": "Step3-VL-10B",
+          "score": 0.781,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.525,
+          "rank": 49,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mt-bench",
+      "benchmark_name": "MT-Bench",
+      "models": [
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 8.99,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.935,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.917,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.902,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-7b-instruct",
+          "model_name": "Qwen2.5 7B Instruct",
+          "score": 0.875,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.863,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-7b-instruct",
+          "model_name": "Qwen2 7B Instruct",
+          "score": 0.841,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-instruct-2501",
+          "model_name": "Mistral Small 3 24B Instruct",
+          "score": 0.835,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-8b-instruct-2410",
+          "model_name": "Ministral 8B Instruct",
+          "score": 0.83,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-nano-8b-v1",
+          "model_name": "Llama 3.1 Nemotron Nano 8B V1",
+          "score": 0.81,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-12b-2409",
+          "model_name": "Pixtral-12B",
+          "score": 0.768,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

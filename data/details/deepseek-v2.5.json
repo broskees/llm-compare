@@ -1,0 +1,1023 @@
+{
+  "model_id": "deepseek-v2.5",
+  "name": "DeepSeek-V2.5",
+  "organization": {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "website": "https://deepseek.com"
+  },
+  "description": "DeepSeek-V2.5 is an upgraded version that combines DeepSeek-V2-Chat and DeepSeek-Coder-V2-Instruct, integrating general and coding abilities. It better aligns with human preferences and has been optimized in various aspects, including writing and instruction following.",
+  "release_date": "2024-05-08",
+  "announcement_date": "2024-05-08",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 236000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "deepseek",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://www.deepseek.com/",
+    "playground": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+    "paper": "https://arxiv.org/abs/2405.04434",
+    "scorecard_blog": null,
+    "repo": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+    "weights": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aider",
+      "name": "Aider",
+      "description": "Aider is a comprehensive code editing benchmark based on 133 practice exercises from Exercism's Python repository, designed to evaluate AI models' ability to translate natural language coding requests into executable code that passes unit tests. The benchmark measures end-to-end code editing capabilities, including GPT's ability to edit existing code and format code changes for automated saving to local files. The Aider Polyglot variant extends this evaluation across 225 challenging exercises spanning C++, Go, Java, JavaScript, Python, and Rust, making it a standard benchmark for assessing multilingual code editing performance in AI research.",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.722,
+      "normalized_score": 0.722,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "alignbench",
+      "name": "AlignBench",
+      "description": "AlignBench is a comprehensive multi-dimensional benchmark for evaluating Chinese alignment of Large Language Models. It contains 8 main categories: Fundamental Language Ability, Advanced Chinese Understanding, Open-ended Questions, Writing Ability, Logical Reasoning, Mathematics, Task-oriented Role Play, and Professional Knowledge. The benchmark includes 683 real-scenario rooted queries with human-verified references and uses a rule-calibrated multi-dimensional LLM-as-Judge approach with Chain-of-Thought for evaluation.",
+      "categories": [
+        "creativity",
+        "general",
+        "language",
+        "math",
+        "reasoning",
+        "roleplay"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.804,
+      "normalized_score": 0.804,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.deepseek.com/",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "alpacaeval-2.0",
+      "name": "AlpacaEval 2.0",
+      "description": "AlpacaEval 2.0 is a length-controlled automatic evaluator for instruction-following language models that uses GPT-4 Turbo to assess model responses against a baseline. It evaluates models on 805 diverse instruction-following tasks including creative writing, classification, programming, and general knowledge questions. The benchmark achieves 0.98 Spearman correlation with ChatBot Arena while being fast (< 3 minutes) and affordable (< $10 in OpenAI credits). It addresses length bias in automatic evaluation through length-controlled win-rates and uses weighted scoring based on response quality.",
+      "categories": [
+        "creativity",
+        "general",
+        "reasoning",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.505,
+      "normalized_score": 0.505,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arena-hard",
+      "name": "Arena Hard",
+      "description": "Arena-Hard-Auto is an automatic evaluation benchmark for instruction-tuned LLMs consisting of 500 challenging real-world prompts curated by BenchBuilder. It includes open-ended software engineering problems, mathematical questions, and creative writing tasks. The benchmark uses LLM-as-a-Judge methodology with GPT-4.1 and Gemini-2.5 as automatic judges to approximate human preference. Arena-Hard achieves 98.6% correlation with human preference rankings and provides 3x higher separation of model performances compared to MT-Bench, making it highly effective for distinguishing between models of similar quality.",
+      "categories": [
+        "creativity",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.762,
+      "normalized_score": 0.762,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bbh",
+      "name": "BBH",
+      "description": "Big-Bench Hard (BBH) is a suite of 23 challenging tasks selected from BIG-Bench for which prior language model evaluations did not outperform the average human-rater. These tasks require multi-step reasoning across diverse domains including arithmetic, logical reasoning, reading comprehension, and commonsense reasoning. The benchmark was designed to test capabilities believed to be beyond current language models and focuses on evaluating complex reasoning skills including temporal understanding, spatial reasoning, causal understanding, and deductive logical reasoning.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.843,
+      "normalized_score": 0.843,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.deepseek.com/",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ds-arena-code",
+      "name": "DS-Arena-Code",
+      "description": "Data Science Arena Code benchmark for evaluating LLMs on realistic data science code generation tasks. Tests capabilities in complex data processing, analysis, and programming across popular Python libraries used in data science workflows.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.631,
+      "normalized_score": 0.631,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ds-fim-eval",
+      "name": "DS-FIM-Eval",
+      "description": "DeepSeek's internal Fill-in-the-Middle evaluation dataset for measuring code completion performance improvements in data science contexts",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.783,
+      "normalized_score": 0.783,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "name": "GSM8k",
+      "description": "Grade School Math 8K, a dataset of 8.5K high-quality linguistically diverse grade school math word problems requiring multi-step reasoning and elementary arithmetic operations.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.951,
+      "normalized_score": 0.951,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.deepseek.com/",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.89,
+      "normalized_score": 0.89,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.deepseek.com/",
+      "analysis_method": "Pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval-mul",
+      "name": "HumanEval-Mul",
+      "description": "A multilingual variant of the HumanEval benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.738,
+      "normalized_score": 0.738,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench(01-09)",
+      "name": "LiveCodeBench(01-09)",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.418,
+      "normalized_score": 0.418,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math",
+      "name": "MATH",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.747,
+      "normalized_score": 0.747,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.deepseek.com/",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.804,
+      "normalized_score": 0.804,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.deepseek.com/",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mt-bench",
+      "name": "MT-Bench",
+      "description": "MT-Bench is a challenging multi-turn benchmark that measures the ability of large language models to engage in coherent, informative, and engaging conversations. It uses strong LLMs as judges for scalable and explainable evaluation of multi-turn dialogue capabilities.",
+      "categories": [
+        "communication",
+        "creativity",
+        "general",
+        "reasoning",
+        "roleplay"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 0.902,
+      "normalized_score": 0.902,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.deepseek.com/",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "name": "SWE-Bench Verified",
+      "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
+      "categories": [
+        "code",
+        "frontend_development",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.168,
+      "normalized_score": 0.168,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "deepseek",
+      "name": "DeepSeek",
+      "website": "https://deepseek.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.14,
+        "output_per_million": 0.28
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 8192,
+        "max_output_tokens": 8192
+      },
+      "performance": {
+        "throughput": "100.0",
+        "latency": "0.5"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.7,
+        "output_per_million": 1.4
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 8192,
+        "max_output_tokens": 8192
+      },
+      "performance": {
+        "throughput": "63.0",
+        "latency": "0.5"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "hyperbolic",
+      "name": "Hyperbolic",
+      "website": "https://hyperbolic.xyz",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 2,
+        "output_per_million": 2
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 8192,
+        "max_output_tokens": 8192
+      },
+      "performance": {
+        "throughput": "100.0",
+        "latency": "0.5"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "arena-hard",
+      "benchmark_name": "Arena Hard",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.956,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.938,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-30b-a3b",
+          "model_name": "Qwen3 30B A3B",
+          "score": 0.91,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.883,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-instruct-2501",
+          "model_name": "Mistral Small 3 24B Instruct",
+          "score": 0.876,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.812,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-reasoning-plus",
+          "model_name": "Phi 4 Reasoning Plus",
+          "score": 0.79,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.762,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "phi-4",
+          "model_name": "Phi 4",
+          "score": 0.754,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-reasoning",
+          "model_name": "Phi 4 Reasoning",
+          "score": 0.733,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "benchmark_name": "GSM8k",
+      "models": [
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.973,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.971,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.97,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.968,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.958,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.951,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.915,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.89,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math",
+      "benchmark_name": "MATH",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.979,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.897,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.89,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-8b-instruct-2512",
+          "model_name": "Ministral 3 (8B Instruct 2512)",
+          "score": 0.876,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.868,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.747,
+          "rank": 28,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.804,
+          "rank": 57,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mt-bench",
+      "benchmark_name": "MT-Bench",
+      "models": [
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 8.99,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.935,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.917,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.902,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen-2.5-7b-instruct",
+          "model_name": "Qwen2.5 7B Instruct",
+          "score": 0.875,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.863,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-7b-instruct",
+          "model_name": "Qwen2 7B Instruct",
+          "score": 0.841,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-instruct-2501",
+          "model_name": "Mistral Small 3 24B Instruct",
+          "score": 0.835,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-8b-instruct-2410",
+          "model_name": "Ministral 8B Instruct",
+          "score": 0.83,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-nano-8b-v1",
+          "model_name": "Llama 3.1 Nemotron Nano 8B V1",
+          "score": 0.81,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "benchmark_name": "SWE-Bench Verified",
+      "models": [
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.809,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.808,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.806,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
+          "score": 0.802,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.8,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.796,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.78,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5",
+          "model_name": "GLM-5",
+          "score": 0.778,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.768,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.765,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.168,
+          "rank": 70,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

@@ -1,0 +1,1636 @@
+{
+  "model_id": "gemini-1.5-pro",
+  "name": "Gemini 1.5 Pro",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "Gemini 1.5 Pro is a mid-size multimodal model optimized for a wide range of reasoning tasks. It can process large amounts of data at once, including 2 hours of video, 19 hours of audio, codebases with 60,000 lines of code, or 2,000 pages of text.",
+  "release_date": "2024-05-01",
+  "announcement_date": "2024-05-01",
+  "multimodal": true,
+  "knowledge_cutoff": "2023-11-01",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Proprietary",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro",
+    "playground": "https://ai.google.dev/studio",
+    "paper": "https://arxiv.org/pdf/2403.05530",
+    "scorecard_blog": "https://deepmind.google/technologies/gemini/pro/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "amc-2022-23",
+      "name": "AMC_2022_23",
+      "description": "American Mathematics Competition problems from the 2022-23 academic year, consisting of multiple-choice mathematics competition problems designed for high school students. These problems require advanced mathematical reasoning, problem-solving strategies, and mathematical knowledge covering topics like algebra, geometry, number theory, and combinatorics. The benchmark is derived from the official AMC competitions sponsored by the Mathematical Association of America.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.464,
+      "normalized_score": 0.464,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "4-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "big-bench-hard",
+      "name": "BIG-Bench Hard",
+      "description": "BIG-Bench Hard (BBH) is a subset of 23 challenging BIG-Bench tasks selected because prior language model evaluations did not outperform average human-rater performance. The benchmark contains 6,511 evaluation examples testing various forms of multi-step reasoning including arithmetic, logical reasoning (Boolean expressions, logical deduction), geometric reasoning, temporal reasoning, and language understanding. Tasks require capabilities such as causal judgment, object counting, navigation, pattern recognition, and complex problem solving.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.892,
+      "normalized_score": 0.892,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "3-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "drop",
+      "name": "DROP",
+      "description": "DROP (Discrete Reasoning Over Paragraphs) is a reading comprehension benchmark requiring discrete reasoning over paragraph content. It contains crowdsourced, adversarially-created questions that require resolving references and performing discrete operations like addition, counting, or sorting, demanding comprehensive paragraph understanding beyond paraphrase-and-entity-typing shortcuts.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.749,
+      "normalized_score": 0.749,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "Variable shots",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "fleurs",
+      "name": "FLEURS",
+      "description": "Few-shot Learning Evaluation of Universal Representations of Speech - a parallel speech dataset in 102 languages built on FLoRes-101 with approximately 12 hours of speech supervision per language for tasks including ASR, speech language identification, translation and retrieval",
+      "categories": [
+        "language",
+        "speech_to_text"
+      ],
+      "modality": "audio",
+      "max_score": 100,
+      "score": 0.067,
+      "normalized_score": 0.067,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Word Error Rate",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "functionalmath",
+      "name": "FunctionalMATH",
+      "description": "A functional variant of the MATH benchmark that tests language models' ability to generalize reasoning patterns across different problem instances, revealing the reasoning gap between static and functional performance.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.646,
+      "normalized_score": 0.646,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.591,
+      "normalized_score": 0.591,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "name": "GSM8k",
+      "description": "Grade School Math 8K, a dataset of 8.5K high-quality linguistically diverse grade school math word problems requiring multi-step reasoning and elementary arithmetic operations.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.908,
+      "normalized_score": 0.908,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "11-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "name": "HellaSwag",
+      "description": "A challenging commonsense natural language inference dataset that uses Adversarial Filtering to create questions trivial for humans (>95% accuracy) but difficult for state-of-the-art models, requiring completion of sentence endings based on physical situations and everyday activities",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.933,
+      "normalized_score": 0.933,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "10-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hiddenmath",
+      "name": "HiddenMath",
+      "description": "Google DeepMind's internal mathematical reasoning benchmark that introduces novel problems not encountered during model training to evaluate true mathematical reasoning capabilities rather than memorization",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.52,
+      "normalized_score": 0.52,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.841,
+      "normalized_score": 0.841,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math",
+      "name": "MATH",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.865,
+      "normalized_score": 0.865,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mathvista",
+      "name": "MathVista",
+      "description": "MathVista evaluates mathematical reasoning of foundation models in visual contexts. It consists of 6,141 examples derived from 28 existing multimodal datasets and 3 newly created datasets (IQTest, FunctionQA, and PaperQA), combining challenges from diverse mathematical and visual tasks to assess models' ability to understand complex figures and perform rigorous reasoning.",
+      "categories": [
+        "math",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.681,
+      "normalized_score": 0.681,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mgsm",
+      "name": "MGSM",
+      "description": "MGSM (Multilingual Grade School Math) is a benchmark of grade-school math problems. Contains 250 grade-school math problems manually translated from the GSM8K dataset into ten typologically diverse languages: Spanish, French, German, Russian, Chinese, Japanese, Thai, Swahili, Bengali, and Telugu. Evaluates multilingual mathematical reasoning capabilities.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.875,
+      "normalized_score": 0.875,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "8-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.859,
+      "normalized_score": 0.859,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "5-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.758,
+      "normalized_score": 0.758,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "0-shot CoT",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu",
+      "name": "MMMU",
+      "description": "MMMU (Massive Multi-discipline Multimodal Understanding) is a benchmark designed to evaluate multimodal models on college-level subject knowledge and deliberate reasoning. Contains 11.5K meticulously collected multimodal questions from college exams, quizzes, and textbooks, covering six core disciplines: Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering across 30 subjects and 183 subfields.",
+      "categories": [
+        "general",
+        "healthcare",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.659,
+      "normalized_score": 0.659,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr",
+      "name": "MRCR",
+      "description": "MRCR (Multi-Round Coreference Resolution) is a synthetic long-context reasoning task where models must navigate long conversations to reproduce specific model outputs. It tests the ability to distinguish between similar requests and reason about ordering while maintaining attention across extended contexts.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.826,
+      "normalized_score": 0.826,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "natural2code",
+      "name": "Natural2Code",
+      "description": "NaturalCodeBench (NCB) is a challenging code benchmark designed to mirror the complexity and variety of real-world coding tasks. It comprises 402 high-quality problems in Python and Java, selected from natural user queries from online coding services, covering 6 different domains.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.854,
+      "normalized_score": 0.854,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "physicsfinals",
+      "name": "PhysicsFinals",
+      "description": "PHYSICS is a comprehensive benchmark for university-level physics problem solving, containing 1,297 expert-annotated problems covering six core areas: classical mechanics, quantum mechanics, thermodynamics and statistical mechanics, electromagnetism, atomic physics, and optics. Each problem requires advanced physics knowledge and mathematical reasoning. Even advanced models like o3-mini achieve only 59.9% accuracy.",
+      "categories": [
+        "math",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.639,
+      "normalized_score": 0.639,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/pdf/2403.05530",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vibe-eval",
+      "name": "Vibe-Eval",
+      "description": "VIBE-Eval is a hard evaluation suite for measuring progress of multimodal language models, consisting of 269 visual understanding prompts with gold-standard responses authored by experts. The benchmark has dual objectives: vibe checking multimodal chat models for day-to-day tasks and rigorously testing frontier models, with the hard set containing >50% questions that all frontier models answer incorrectly.",
+      "categories": [
+        "general",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.539,
+      "normalized_score": 0.539,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "video-mme",
+      "name": "Video-MME",
+      "description": "Video-MME is the first-ever comprehensive evaluation benchmark of Multi-modal Large Language Models (MLLMs) in video analysis. It features 900 videos totaling 254 hours with 2,700 human-annotated question-answer pairs across 6 primary visual domains (Knowledge, Film & Television, Sports Competition, Life Record, Multilingual, and others) and 30 subfields. The benchmark evaluates models across diverse temporal dimensions (11 seconds to 1 hour), integrates multi-modal inputs including video frames, subtitles, and audio, and uses rigorous manual labeling by expert annotators for precise assessment.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.786,
+      "normalized_score": 0.786,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "wmt23",
+      "name": "WMT23",
+      "description": "The Eighth Conference on Machine Translation (WMT23) benchmark evaluating machine translation systems across 8 language pairs (14 translation directions) including general, biomedical, literary, and low-resource language translation tasks. Features specialized shared tasks for quality estimation, metrics evaluation, sign language translation, and discourse-level literary translation with professional human assessment.",
+      "categories": [
+        "healthcare",
+        "language"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.751,
+      "normalized_score": 0.751,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Score",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "xstest",
+      "name": "XSTest",
+      "description": "XSTest is a test suite designed to identify exaggerated safety behaviours in large language models. It comprises 450 prompts: 250 safe prompts across ten prompt types that well-calibrated models should not refuse to comply with, and 200 unsafe prompts as contrasts that models should refuse. The benchmark systematically evaluates whether models refuse to respond to clearly safe prompts due to overly cautious safety mechanisms.",
+      "categories": [
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.988,
+      "normalized_score": 0.988,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/technologies/gemini/pro/",
+      "analysis_method": "Safety Compliance",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "google",
+      "name": "Google",
+      "website": "https://ai.google.dev",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 2.5,
+        "output_per_million": 10
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 2097152,
+        "max_output_tokens": 8192
+      },
+      "performance": {
+        "throughput": "85.0",
+        "latency": "0.7"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "big-bench-hard",
+      "benchmark_name": "BIG-Bench Hard",
+      "models": [
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.931,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.931,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.892,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.876,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.868,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.857,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.855,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.829,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.791,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-haiku-20240307",
+          "model_name": "Claude 3 Haiku",
+          "score": 0.737,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "drop",
+      "benchmark_name": "DROP",
+      "models": [
+        {
+          "model_id": "deepseek-v3",
+          "model_name": "DeepSeek-V3",
+          "score": 0.916,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.871,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.871,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-turbo-2024-04-09",
+          "model_name": "GPT-4 Turbo",
+          "score": 0.86,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.854,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.848,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.834,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-haiku-20241022",
+          "model_name": "Claude 3.5 Haiku",
+          "score": 0.831,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.831,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.809,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.749,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.591,
+          "rank": 111,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "benchmark_name": "GSM8k",
+      "models": [
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.973,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.971,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.97,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.968,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.958,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.951,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.908,
+          "rank": 25,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "benchmark_name": "HellaSwag",
+      "models": [
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.954,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.953,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.89,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "command-r-plus-04-2024",
+          "model_name": "Command R+",
+          "score": 0.886,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8819,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.876,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.865,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.864,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-haiku-20240307",
+          "model_name": "Claude 3 Haiku",
+          "score": 0.859,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hiddenmath",
+      "benchmark_name": "HiddenMath",
+      "models": [
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.63,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.603,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.553,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.545,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.52,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.472,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.43,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.377,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.377,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash-8b",
+          "model_name": "Gemini 1.5 Flash 8B",
+          "score": 0.328,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.915,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.841,
+          "rank": 37,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math",
+      "benchmark_name": "MATH",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.979,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.897,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.89,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-8b-instruct-2512",
+          "model_name": "Ministral 3 (8B Instruct 2512)",
+          "score": 0.876,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.868,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mathvista",
+      "benchmark_name": "MathVista",
+      "models": [
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.868,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.843,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step3-vl-10b",
+          "model_name": "Step3-VL-10B",
+          "score": 0.84,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k1.5",
+          "model_name": "Kimi-k1.5",
+          "score": 0.749,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.737,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-mini-2025-04-14",
+          "model_name": "GPT-4.1 mini",
+          "score": 0.731,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.723,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.722,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.718,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qvq-72b-preview",
+          "model_name": "QvQ-72B-Preview",
+          "score": 0.714,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.681,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mgsm",
+      "benchmark_name": "MGSM",
+      "models": [
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.923,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.92,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.911,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.907,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.906,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.905,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.893,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.875,
+          "rank": 12,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.859,
+          "rank": 33,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-exp",
+          "model_name": "DeepSeek-V3.2-Exp",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
+          "score": 0.849,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.758,
+          "rank": 44,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu",
+      "benchmark_name": "MMMU",
+      "models": [
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.842,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.829,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.82,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.816,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.797,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.796,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step3-vl-10b",
+          "model_name": "Step3-VL-10B",
+          "score": 0.781,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.659,
+          "rank": 31,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

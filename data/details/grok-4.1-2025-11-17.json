@@ -1,0 +1,236 @@
+{
+  "model_id": "grok-4.1-2025-11-17",
+  "name": "Grok-4.1",
+  "organization": {
+    "id": "xai",
+    "name": "xAI",
+    "website": "https://x.ai"
+  },
+  "description": "Grok 4.1 (Non-Thinking) brings significant improvements to the real-world usability of Grok. The model is exceptionally capable in creative, emotional, and collaborative interactions. It is more perceptive to nuanced intent, compelling to speak with, and coherent in personality, while fully retaining the razor-sharp intelligence and reliability of its predecessors. Grok 4.1 uses no thinking tokens for immediate responses, making it faster while maintaining high quality. The model features reduced hallucinations compared to previous versions, with significant improvements in factual accuracy for information-seeking prompts. To achieve this, xAI used large scale reinforcement learning infrastructure to optimize style, personality, helpfulness, and alignment, developing new methods that use frontier agentic reasoning models as reward models to autonomously evaluate and iterate on responses at scale. Grok 4.1 includes comprehensive safety mitigations including refusal training, input filters for restricted knowledge, and adversarial robustness measures. The model demonstrates strong refusal rates on harmful queries (5% answer rate on chat refusals, 4% on agentic refusals) and improved honesty training to reduce deception.",
+  "release_date": "2025-11-17",
+  "announcement_date": "2025-11-17",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Proprietary",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://x.ai/api",
+    "playground": "https://grok.com",
+    "paper": null,
+    "scorecard_blog": "https://x.ai/news/grok-4.1",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "creative-writing-v3",
+      "name": "Creative Writing v3",
+      "description": "EQ-Bench Creative Writing v3 is an LLM-judged creative writing benchmark that evaluates models across 32 writing prompts with 3 iterations per prompt. Uses a hybrid scoring system combining rubric assessment and Elo ratings through pairwise comparisons. Challenges models in areas like humor, romance, spatial awareness, and unique perspectives to assess emotional intelligence and creative writing capabilities.",
+      "categories": [
+        "creativity",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 1708.6,
+      "normalized_score": 0.8543,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "Creative Writing v3 - Normalized Elo score. Evaluates creative writing capabilities across 32 writing prompts with 3 iterations per prompt.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "eq-bench",
+      "name": "EQ-Bench",
+      "description": "EQ-Bench is an LLM-judged test evaluating active emotional intelligence abilities, understanding, insight, empathy, and interpersonal skills. The test set contains 45 challenging roleplay scenarios, most of which constitute pre-written prompts spanning 3 turns. The benchmark evaluates the performance of models by validating responses against several criteria and conducts pairwise comparisons to report a normalized Elo computation for each model.",
+      "categories": [
+        "creativity",
+        "general",
+        "reasoning",
+        "roleplay"
+      ],
+      "modality": "text",
+      "max_score": 2000,
+      "score": 1585,
+      "normalized_score": 0.7925,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "EQ-Bench Emotional Intelligence Benchmark - Normalized Elo score. Evaluates active emotional intelligence abilities, understanding, insight, empathy, and interpersonal skills.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "factscore",
+      "name": "FActScore",
+      "description": "A fine-grained atomic evaluation metric for factual precision in long-form text generation that breaks generated text into atomic facts and computes the percentage supported by reliable knowledge sources, with automated assessment using retrieval and language models",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9703,
+      "normalized_score": 0.9703,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "FActScore benchmark - 2.97% error rate (lower is better, converted to accuracy score). Evaluated on non-reasoning model with web search tools. Significant reduction from Grok 4 Fast's 9.89% error rate.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lmarena-text",
+      "name": "LMArena Text Leaderboard",
+      "description": "LMArena Text Leaderboard is a blind human preference evaluation benchmark that ranks models based on pairwise comparisons in real-world conversations. The leaderboard uses Elo ratings computed from user preferences in head-to-head model battles, providing a comprehensive measure of overall model capability and style.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 2000,
+      "score": 1465,
+      "normalized_score": 0.7325,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "Grok 4.1 non-reasoning mode (code name: tensor) - LMArena Text Leaderboard Elo rating. Uses no thinking tokens for immediate response.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "xai",
+      "name": "xAI",
+      "website": "https://docs.x.ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 3,
+        "output_per_million": 15
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 256000,
+        "max_output_tokens": 8000
+      },
+      "performance": {
+        "throughput": "100.0",
+        "latency": "0.7"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "creative-writing-v3",
+      "benchmark_name": "Creative Writing v3",
+      "models": [
+        {
+          "model_id": "grok-4.1-thinking-2025-11-17",
+          "model_name": "Grok-4.1 Thinking",
+          "score": 1721.9,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.1-2025-11-17",
+          "model_name": "Grok-4.1",
+          "score": 1708.6,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.875,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.865,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.861,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.857,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.856,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.853,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.833,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

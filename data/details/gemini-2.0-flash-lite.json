@@ -1,0 +1,1030 @@
+{
+  "model_id": "gemini-2.0-flash-lite",
+  "name": "Gemini 2.0 Flash-Lite",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "A Gemini 2.0 Flash model optimized for cost efficiency and low latency",
+  "release_date": "2025-02-05",
+  "announcement_date": "2025-02-05",
+  "multimodal": true,
+  "knowledge_cutoff": "2024-06-01",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Proprietary",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-lite",
+    "playground": "https://aistudio.google.com/prompts/new_chat?model=gemini-2.0-flash-lite",
+    "paper": null,
+    "scorecard_blog": "https://developers.googleblog.com/en/gemini-2-family-expands",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "bird-sql-(dev)",
+      "name": "Bird-SQL (dev)",
+      "description": "BIRD (BIg Bench for LaRge-scale Database Grounded Text-to-SQLs) is a comprehensive text-to-SQL benchmark containing 12,751 question-SQL pairs across 95 databases (33.4 GB total) spanning 37+ professional domains. It evaluates large language models' ability to convert natural language to executable SQL queries in real-world scenarios with complex database schemas and dirty data.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.574,
+      "normalized_score": 0.574,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "- evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "covost2",
+      "name": "CoVoST2",
+      "description": "CoVoST 2 is a large-scale multilingual speech translation corpus derived from Common Voice, covering translations from 21 languages into English and from English into 15 languages. The dataset contains 2,880 hours of speech with 78K speakers for speech translation research.",
+      "categories": [
+        "audio",
+        "language",
+        "speech_to_text"
+      ],
+      "modality": "audio",
+      "max_score": 1,
+      "score": 0.384,
+      "normalized_score": 0.384,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "Automatic speech translation (BLEU score) across 21 languages",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "egoschema",
+      "name": "EgoSchema",
+      "description": "A diagnostic benchmark for very long-form video language understanding consisting of over 5000 human curated multiple choice questions based on 3-minute video clips from Ego4D, covering a broad range of natural human activities and behaviors",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "video",
+      "max_score": 1,
+      "score": 0.672,
+      "normalized_score": 0.672,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "Video analysis across multiple domains",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "facts-grounding",
+      "name": "FACTS Grounding",
+      "description": "A benchmark evaluating language models' ability to generate factually accurate and well-grounded responses based on long-form input context, comprising 1,719 examples with documents up to 32k tokens requiring detailed responses that are fully grounded in provided documents",
+      "categories": [
+        "factuality",
+        "grounding",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.836,
+      "normalized_score": 0.836,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "- evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "global-mmlu-lite",
+      "name": "Global-MMLU-Lite",
+      "description": "A lightweight version of Global MMLU benchmark that evaluates language models across multiple languages while addressing cultural and linguistic biases in multilingual evaluation.",
+      "categories": [
+        "general",
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.782,
+      "normalized_score": 0.782,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "0-shot evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.515,
+      "normalized_score": 0.515,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "Diamond",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hiddenmath",
+      "name": "HiddenMath",
+      "description": "Google DeepMind's internal mathematical reasoning benchmark that introduces novel problems not encountered during model training to evaluate true mathematical reasoning capabilities rather than memorization",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.553,
+      "normalized_score": 0.553,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "0-shot evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench-v5",
+      "name": "LiveCodeBench v5",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.289,
+      "normalized_score": 0.289,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "Pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math",
+      "name": "MATH",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.868,
+      "normalized_score": 0.868,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "standard",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.716,
+      "normalized_score": 0.716,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://developers.googleblog.com/en/gemini-2-family-expands/",
+      "analysis_method": "Chain-of-Thought accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu",
+      "name": "MMMU",
+      "description": "MMMU (Massive Multi-discipline Multimodal Understanding) is a benchmark designed to evaluate multimodal models on college-level subject knowledge and deliberate reasoning. Contains 11.5K meticulously collected multimodal questions from college exams, quizzes, and textbooks, covering six core disciplines: Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering across 30 subjects and 183 subfields.",
+      "categories": [
+        "general",
+        "healthcare",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.68,
+      "normalized_score": 0.68,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "Multi-discipline college-level multimodal understanding and reasoning problems",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-1m",
+      "name": "MRCR 1M",
+      "description": "MRCR 1M is a variant of the Multi-Round Coreference Resolution benchmark designed for testing extremely long context capabilities with approximately 1 million tokens. It evaluates models' ability to maintain reasoning and attention across ultra-long conversations.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.58,
+      "normalized_score": 0.58,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "Long-context comprehension accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "simpleqa",
+      "name": "SimpleQA",
+      "description": "SimpleQA is a factuality benchmark developed by OpenAI that measures the short-form factual accuracy of large language models. The benchmark contains 4,326 short, fact-seeking questions that are adversarially collected and designed to have single, indisputable answers. Questions cover diverse topics from science and technology to entertainment, and the benchmark also measures model calibration by evaluating whether models know what they know.",
+      "categories": [
+        "factuality",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.217,
+      "normalized_score": 0.217,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://ai.google.dev/gemini-api/docs/models",
+      "analysis_method": "Factuality",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "google",
+      "name": "Google",
+      "website": "https://ai.google.dev",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.07,
+        "output_per_million": 0.3
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 8192
+      },
+      "performance": {
+        "throughput": "85.0",
+        "latency": "0.7"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "facts-grounding",
+      "benchmark_name": "FACTS Grounding",
+      "models": [
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.878,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.853,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash-lite",
+          "model_name": "Gemini 2.5 Flash-Lite",
+          "score": 0.841,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.836,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.836,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.758,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.749,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.705,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.701,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.619,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "global-mmlu-lite",
+      "benchmark_name": "Global-MMLU-Lite",
+      "models": [
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.892,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.886,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.884,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash-lite",
+          "model_name": "Gemini 2.5 Flash-Lite",
+          "score": 0.811,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.782,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.751,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.695,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-diffusion",
+          "model_name": "Gemini Diffusion",
+          "score": 0.691,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.645,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.645,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.515,
+          "rank": 121,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hiddenmath",
+      "benchmark_name": "HiddenMath",
+      "models": [
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.63,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.603,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.553,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.545,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.52,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.472,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.43,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.377,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.377,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash-8b",
+          "model_name": "Gemini 1.5 Flash 8B",
+          "score": 0.328,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math",
+      "benchmark_name": "MATH",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.979,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.897,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.89,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-8b-instruct-2512",
+          "model_name": "Ministral 3 (8B Instruct 2512)",
+          "score": 0.876,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.868,
+          "rank": 9,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-exp",
+          "model_name": "DeepSeek-V3.2-Exp",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
+          "score": 0.849,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.716,
+          "rank": 53,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu",
+      "benchmark_name": "MMMU",
+      "models": [
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.842,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.829,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.82,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.816,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.797,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.796,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step3-vl-10b",
+          "model_name": "Step3-VL-10B",
+          "score": 0.781,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.68,
+          "rank": 29,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "simpleqa",
+      "benchmark_name": "SimpleQA",
+      "models": [
+        {
+          "model_id": "deepseek-v3.2-exp",
+          "model_name": "DeepSeek-V3.2-Exp",
+          "score": 0.971,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-fast",
+          "model_name": "Grok 4 Fast",
+          "score": 0.95,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.1",
+          "model_name": "DeepSeek-V3.1",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.923,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.75,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.721,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.687,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.625,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.554,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.543,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.217,
+          "rank": 31,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

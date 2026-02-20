@@ -1,0 +1,336 @@
+{
+  "model_id": "codestral-22b",
+  "name": "Codestral-22B",
+  "organization": {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai"
+  },
+  "description": "A 22B parameter code generation model trained on 80+ programming languages including Python, Java, C, C++, JavaScript, and Bash. Supports both instruction-following and fill-in-the-middle (FIM) capabilities for code completion and generation tasks.",
+  "release_date": "2024-05-29",
+  "announcement_date": "2024-05-29",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 22200000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "MNPL-0.1",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://docs.mistral.ai/api/",
+    "playground": "https://chat.mistral.ai/",
+    "paper": null,
+    "scorecard_blog": "https://mistral.ai/news/codestral/",
+    "repo": null,
+    "weights": "https://huggingface.co/mistralai/Codestral-22B-v0.1"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "cruxeval-o",
+      "name": "CruxEval-O",
+      "description": "CruxEval-O is the output prediction task of the CRUXEval benchmark, designed to evaluate code reasoning, understanding, and execution capabilities. It consists of 800 Python functions (3-13 lines) where models must predict the output given a function and input. The benchmark tests fundamental code execution reasoning abilities and goes beyond simple code generation to assess deeper understanding of program behavior.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.513,
+      "normalized_score": 0.513,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/codestral/",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.811,
+      "normalized_score": 0.811,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/codestral/",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval-average",
+      "name": "HumanEval-Average",
+      "description": "A variant of the HumanEval benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.615,
+      "normalized_score": 0.615,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/codestral/",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanevalfim-average",
+      "name": "HumanEvalFIM-Average",
+      "description": "Average evaluation of HumanEval Fill-in-the-Middle benchmark variants (single-line, multi-line, random-span) for assessing code infilling capabilities of language models",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.916,
+      "normalized_score": 0.916,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/codestral/",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mbpp",
+      "name": "MBPP",
+      "description": "MBPP (Mostly Basic Python Problems) is a benchmark of 974 crowd-sourced Python programming problems designed to be solvable by entry-level programmers. Each problem consists of a task description, code solution, and 3 automated test cases covering programming fundamentals and standard library functionality.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 0.782,
+      "normalized_score": 0.782,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/codestral/",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "repobench",
+      "name": "RepoBench",
+      "description": "RepoBench is a benchmark for evaluating repository-level code auto-completion systems through three interconnected tasks: RepoBench-R (retrieval of relevant code snippets across files), RepoBench-C (code completion with cross-file and in-file context), and RepoBench-P (pipeline combining retrieval and prediction). Supports Python and Java programming languages and addresses the gap in evaluating real-world, multi-file programming scenarios by providing a more complete comparison of performance in auto-completion systems.",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.34,
+      "normalized_score": 0.34,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/codestral/",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "spider",
+      "name": "Spider",
+      "description": "A large-scale, complex and cross-domain semantic parsing and text-to-SQL dataset annotated by 11 college students. Contains 10,181 questions and 5,693 unique complex SQL queries on 200 databases with multiple tables, covering 138 different domains. Requires models to generalize to both new SQL queries and new database schemas, making it distinct from previous semantic parsing tasks that use single databases.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.635,
+      "normalized_score": 0.635,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/codestral/",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.915,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "codestral-22b",
+          "model_name": "Codestral-22B",
+          "score": 0.811,
+          "rank": 41,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mbpp",
+      "benchmark_name": "MBPP",
+      "models": [
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.913,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.902,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.882,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-nano-8b-v1",
+          "model_name": "Llama 3.1 Nemotron Nano 8B V1",
+          "score": 0.846,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.84,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.84,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-7b-instruct",
+          "model_name": "Qwen2.5-Coder 7B Instruct",
+          "score": 0.835,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-14b-instruct",
+          "model_name": "Qwen2.5 14B Instruct",
+          "score": 0.82,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.814,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.808,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "codestral-22b",
+          "model_name": "Codestral-22B",
+          "score": 0.782,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

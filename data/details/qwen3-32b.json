@@ -1,0 +1,801 @@
+{
+  "model_id": "qwen3-32b",
+  "name": "Qwen3 32B",
+  "organization": {
+    "id": "qwen",
+    "name": "Alibaba Cloud / Qwen Team",
+    "website": "https://qwenlm.github.io"
+  },
+  "description": "Qwen3-32B is a large language model from Alibaba's Qwen3 series. It features 32.8 billion parameters, a 128k token context window, support for 119 languages, and hybrid thinking modes allowing switching between deep reasoning and fast responses. It demonstrates strong performance in reasoning, instruction-following, and agent capabilities.",
+  "release_date": "2025-04-29",
+  "announcement_date": "2025-04-29",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 32800000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Apache 2.0",
+    "allow_commercial": true
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": null,
+    "playground": "https://chat.qwen.ai/",
+    "paper": null,
+    "scorecard_blog": "https://qwenlm.github.io/blog/qwen3/",
+    "repo": "https://github.com/QwenLM/Qwen3",
+    "weights": "https://huggingface.co/Qwen/Qwen3-32B"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aider",
+      "name": "Aider",
+      "description": "Aider is a comprehensive code editing benchmark based on 133 practice exercises from Exercism's Python repository, designed to evaluate AI models' ability to translate natural language coding requests into executable code that passes unit tests. The benchmark measures end-to-end code editing capabilities, including GPT's ability to edit existing code and format code changes for automated saving to local files. The Aider Polyglot variant extends this evaluation across 225 challenging exercises spanning C++, Go, Java, JavaScript, Python, and Rust, making it a standard benchmark for assessing multilingual code editing performance in AI research.",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.502,
+      "normalized_score": 0.502,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "Pass@2",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "aime-2024",
+      "name": "AIME 2024",
+      "description": "American Invitational Mathematics Examination 2024, consisting of 30 challenging mathematical reasoning problems from AIME I and AIME II competitions. Each problem requires an integer answer between 0-999 and tests advanced mathematical reasoning across algebra, geometry, combinatorics, and number theory. Used as a benchmark for evaluating mathematical reasoning capabilities in large language models at Olympiad-level difficulty.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.814,
+      "normalized_score": 0.814,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "Pass@64",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "name": "AIME 2025",
+      "description": "All 30 problems from the 2025 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.729,
+      "normalized_score": 0.729,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "Pass@64",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arena-hard",
+      "name": "Arena Hard",
+      "description": "Arena-Hard-Auto is an automatic evaluation benchmark for instruction-tuned LLMs consisting of 500 challenging real-world prompts curated by BenchBuilder. It includes open-ended software engineering problems, mathematical questions, and creative writing tasks. The benchmark uses LLM-as-a-Judge methodology with GPT-4.1 and Gemini-2.5 as automatic judges to approximate human preference. Arena-Hard achieves 98.6% correlation with human preference rankings and provides 3x higher separation of model performances compared to MT-Bench, making it highly effective for distinguishing between models of similar quality.",
+      "categories": [
+        "creativity",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.938,
+      "normalized_score": 0.938,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bfcl",
+      "name": "BFCL",
+      "description": "The Berkeley Function Calling Leaderboard (BFCL) is the first comprehensive and executable function call evaluation dedicated to assessing Large Language Models' ability to invoke functions. It evaluates serial and parallel function calls across multiple programming languages (Python, Java, JavaScript, REST API) using a novel Abstract Syntax Tree (AST) evaluation method. The benchmark consists of over 2,000 question-function-answer pairs covering diverse application domains and complex use cases including multiple function calls, parallel function calls, and multi-turn interactions.",
+      "categories": [
+        "general",
+        "reasoning",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.703,
+      "normalized_score": 0.703,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "v3",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "codeforces",
+      "name": "CodeForces",
+      "description": "A competitive programming benchmark using problems from the CodeForces platform. The benchmark evaluates code generation capabilities of LLMs on algorithmic problems with difficulty ratings ranging from 800 to 2400. Problems cover diverse algorithmic categories including dynamic programming, graph algorithms, data structures, and mathematical problems with standardized evaluation through direct platform submission.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 0.659,
+      "normalized_score": 0.659,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "Elo Rating",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livebench",
+      "name": "LiveBench",
+      "description": "LiveBench is a challenging, contamination-limited LLM benchmark that addresses test set contamination by releasing new questions monthly based on recently-released datasets, arXiv papers, news articles, and IMDb movie synopses. It comprises tasks across math, coding, reasoning, language, instruction following, and data analysis with verifiable, objective ground-truth answers.",
+      "categories": [
+        "general",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.749,
+      "normalized_score": 0.749,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "name": "LiveCodeBench",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "code",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.657,
+      "normalized_score": 0.657,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "v5",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "multilf",
+      "name": "MultiLF",
+      "description": "MultiLF benchmark",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.73,
+      "normalized_score": 0.73,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwenlm.github.io/blog/qwen3/",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.1,
+        "output_per_million": 0.3
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": "26.95",
+        "latency": "1.19"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "novita",
+      "name": "Novita",
+      "website": "https://novita.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.1,
+        "output_per_million": 0.44
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": "32.43",
+        "latency": "0.93"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "sambanova",
+      "name": "Sambanova",
+      "website": "https://sambanova.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.4,
+        "output_per_million": 0.8
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": "327.7",
+        "latency": "1.08"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2024",
+      "benchmark_name": "AIME 2024",
+      "models": [
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.958,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.934,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.92,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.916,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.914,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.91,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-14b-latest",
+          "model_name": "Ministral 3 (14B Reasoning 2512)",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.894,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.814,
+          "rank": 22,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "benchmark_name": "AIME 2025",
+      "models": [
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.9979,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.997,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-nano-30b-a3b",
+          "model_name": "Nemotron 3 Nano (30B A3B)",
+          "score": 0.992,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.729,
+          "rank": 68,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "arena-hard",
+      "benchmark_name": "Arena Hard",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.956,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.938,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-30b-a3b",
+          "model_name": "Qwen3 30B A3B",
+          "score": 0.91,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.883,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-instruct-2501",
+          "model_name": "Mistral Small 3 24B Instruct",
+          "score": 0.876,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.812,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-reasoning-plus",
+          "model_name": "Phi 4 Reasoning Plus",
+          "score": 0.79,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.762,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4",
+          "model_name": "Phi 4",
+          "score": 0.754,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-reasoning",
+          "model_name": "Phi 4 Reasoning",
+          "score": 0.733,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livebench",
+      "benchmark_name": "LiveBench",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.846,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.771,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.764,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.764,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.749,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-30b-a3b",
+          "model_name": "Qwen3 30B A3B",
+          "score": 0.743,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwq-32b",
+          "model_name": "QwQ-32B",
+          "score": 0.731,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.67,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.523,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.523,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "benchmark_name": "LiveCodeBench",
+      "models": [
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2",
+          "model_name": "MiniMax M2",
+          "score": 0.83,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.828,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.804,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-fast",
+          "model_name": "Grok 4 Fast",
+          "score": 0.8,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4",
+          "model_name": "Grok-4",
+          "score": 0.79,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.78,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.657,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gpt-5.2-2025-12-11",
+    "name": "GPT-5.2",
+    "organization_name": "OpenAI",
+    "release_date": "2025-12-11",
+    "announcement_date": "2025-12-11",
+    "knowledge_cutoff": "2025-08-25",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "aime-2025": 1,
+      "arc-agi": 0.862,
+      "arc-agi-v2": 0.529,
+      "browsecomp": 0.658,
+      "browsecomp-long-128k": 0.92,
+      "browsecomp-long-256k": 0.898,
+      "charxiv-r": 0.821,
+      "frontiermath": 0.403,
+      "gpqa": 0.924,
+      "graphwalks-bfs-<128k": 0.94,
+      "graphwalks-parents-<128k": 0.89,
+      "hmmt-2025": 0.994,
+      "humanity's-last-exam": 0.345,
+      "mcp-atlas": 0.606,
+      "mmmlu": 0.896,
+      "mmmu-pro": 0.795,
+      "screenspot-pro": 0.863,
+      "swe-bench-verified": 0.8,
+      "swe-lancer-(ic-diamond-subset)": 0.746,
+      "tau2-retail": 0.82,
+      "tau2-telecom": 0.987,
+      "toolathlon": 0.463,
+      "videommmu": 0.859
+    },
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 1.75,
+      "output_cost": 14,
+      "max_input_tokens": 400000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

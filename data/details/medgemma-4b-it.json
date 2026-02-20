@@ -1,0 +1,182 @@
+{
+  "model_id": "medgemma-4b-it",
+  "name": "MedGemma 4B IT",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "MedGemma is a collection of Gemma 3 variants that are trained for performance on medical text and image comprehension. MedGemma 4B utilizes a SigLIP image encoder that has been specifically pre-trained on a variety of de-identified medical data, including chest X-rays, dermatology images, ophthalmology images, and histopathology slides. Its LLM component is trained on a diverse set of medical data, including radiology images, histopathology patches, ophthalmology images, and dermatology images. MedGemma is a multimodal model primarily evaluated on single-image tasks. It has not been evaluated for multi-turn applications and may be more sensitive to specific prompts than its predecessor, Gemma 3. Developers should consider bias in validation data and data contamination concerns when using MedGemma.",
+  "release_date": "2025-05-20",
+  "announcement_date": "2025-05-20",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 4300000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Health AI Developer Foundations terms of use",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "instruct"
+  },
+  "sources": {
+    "api_ref": "https://developers.google.com/health-ai-developer-foundations/medgemma/get-started",
+    "playground": null,
+    "paper": null,
+    "scorecard_blog": "https://developers.google.com/health-ai-developer-foundations/medgemma/model-card",
+    "repo": null,
+    "weights": "https://huggingface.co/google/medgemma-4b-it"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "chexpert-cxr",
+      "name": "CheXpert CXR",
+      "description": "CheXpert is a large dataset of 224,316 chest radiographs from 65,240 patients for automated chest X-ray interpretation. The dataset includes uncertainty labels for 14 medical observations extracted from radiology reports. It serves as a benchmark for developing and evaluating automated chest radiograph interpretation models.",
+      "categories": [
+        "healthcare",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 1,
+      "score": 0.481,
+      "normalized_score": 0.481,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/medgemma-4b-it",
+      "analysis_method": "Average F1 for top 5 conditions",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "dermmcqa",
+      "name": "DermMCQA",
+      "description": "Dermatology multiple choice question assessment benchmark for evaluating medical knowledge and diagnostic reasoning in dermatological conditions and treatments.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.718,
+      "normalized_score": 0.718,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/medgemma-4b-it",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "medxpertqa",
+      "name": "MedXpertQA",
+      "description": "A comprehensive benchmark to evaluate expert-level medical knowledge and advanced reasoning, featuring 4,460 questions spanning 17 specialties and 11 body systems. Includes both text-only and multimodal subsets with expert-level exam questions incorporating diverse medical images and rich clinical information.",
+      "categories": [
+        "healthcare",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.188,
+      "normalized_score": 0.188,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/medgemma-4b-it",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mimic-cxr",
+      "name": "MIMIC CXR",
+      "description": "MIMIC-CXR is a large publicly available dataset of chest radiographs with free-text radiology reports. Contains 377,110 images corresponding to 227,835 radiographic studies from 65,379 patients at Beth Israel Deaconess Medical Center. The dataset is de-identified and widely used for medical imaging research, automated report generation, and medical AI development.",
+      "categories": [
+        "healthcare",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.889,
+      "normalized_score": 0.889,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/medgemma-4b-it",
+      "analysis_method": "Average F1 for top 5 conditions",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "pathmcqa",
+      "name": "PathMCQA",
+      "description": "PathMMU is a massive multimodal expert-level benchmark for understanding and reasoning in pathology, containing 33,428 multimodal multi-choice questions and 24,067 images validated by seven pathologists. It evaluates Large Multimodal Models (LMMs) performance on pathology tasks, with the top-performing model GPT-4V achieving only 49.8% zero-shot performance compared to 71.8% for human pathologists.",
+      "categories": [
+        "healthcare",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.698,
+      "normalized_score": 0.698,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/medgemma-4b-it",
+      "analysis_method": "Accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "slakevqa",
+      "name": "SlakeVQA",
+      "description": "A semantically-labeled knowledge-enhanced dataset for medical visual question answering. Contains 642 radiology images (CT scans, MRI scans, X-rays) covering five body parts and 14,028 bilingual English-Chinese question-answer pairs annotated by experienced physicians. Features comprehensive semantic labels and a structural medical knowledge base with both vision-only and knowledge-based questions requiring external medical knowledge reasoning.",
+      "categories": [
+        "healthcare",
+        "image_to_text",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.623,
+      "normalized_score": 0.623,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/medgemma-4b-it",
+      "analysis_method": "Tokenized F1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vqa-rad",
+      "name": "VQA-Rad",
+      "description": "VQA-RAD (Visual Question Answering in Radiology) is the first manually constructed dataset of medical visual question answering containing 3,515 clinically generated visual questions and answers about radiology images. The dataset includes questions created by clinical trainees on 315 radiology images from MedPix covering head, chest, and abdominal scans, designed to support AI development for medical image analysis and improve patient care.",
+      "categories": [
+        "healthcare",
+        "image_to_text",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.499,
+      "normalized_score": 0.499,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/medgemma-4b-it",
+      "analysis_method": "Tokenized F1",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [],
+  "comparison_model": null
+}

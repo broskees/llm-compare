@@ -1,0 +1,1478 @@
+{
+  "model_id": "gemma-3n-e4b-it",
+  "name": "Gemma 3n E4B Instructed",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "Gemma 3n is a multimodal model designed to run locally on hardware, supporting image, text, audio, and video inputs. It features a language decoder, audio encoder, and vision encoder, and is available in two sizes: E2B and E4B. The model is optimized for memory efficiency, allowing it to run on devices with limited GPU RAM. Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. Gemma models are well-suited for a variety of content understanding tasks, including question answering, summarization, and reasoning. Their relatively small size makes it possible to deploy them in environments with limited resources such as laptops, desktops or your own cloud infrastructure, democratizing access to state of the art AI models and helping foster innovation for everyone. Gemma 3n models are designed for efficient execution on low-resource devices. They are capable of multimodal input, handling text, image, video, and audio input, and generating text outputs, with open weights for instruction-tuned variants. These models were trained with data in over 140 spoken languages.",
+  "release_date": "2025-06-26",
+  "announcement_date": "2025-06-26",
+  "multimodal": true,
+  "knowledge_cutoff": "2024-06-01",
+  "param_count": 8000000000,
+  "training_tokens": 11000000000000,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Proprietary",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "instruct"
+  },
+  "sources": {
+    "api_ref": "https://huggingface.co/blog/gemma3n",
+    "playground": "https://aistudio.google.com/",
+    "paper": null,
+    "scorecard_blog": "https://ai.google.dev/gemma/docs/gemma-3n",
+    "repo": null,
+    "weights": "https://huggingface.co/google/gemma-3n-E4B-it"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aime-2025",
+      "name": "AIME 2025",
+      "description": "All 30 problems from the 2025 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.116,
+      "normalized_score": 0.116,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "Accuracy. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "codegolf-v2.2",
+      "name": "Codegolf v2.2",
+      "description": "Codegolf v2.2 benchmark",
+      "categories": [
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.168,
+      "normalized_score": 0.168,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "pass@1. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "eclektic",
+      "name": "ECLeKTic",
+      "description": "A multilingual closed-book question answering dataset that evaluates cross-lingual knowledge transfer in large language models across 12 languages, using knowledge-seeking questions based on Wikipedia articles that exist only in one language",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.19,
+      "normalized_score": 0.19,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "global-mmlu",
+      "name": "Global-MMLU",
+      "description": "A comprehensive multilingual benchmark covering 42 languages that addresses cultural and linguistic biases in evaluation, with improved translation quality and culturally sensitive question subsets.",
+      "categories": [
+        "general",
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.603,
+      "normalized_score": 0.603,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "global-mmlu-lite",
+      "name": "Global-MMLU-Lite",
+      "description": "A lightweight version of Global MMLU benchmark that evaluates language models across multiple languages while addressing cultural and linguistic biases in multilingual evaluation.",
+      "categories": [
+        "general",
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.645,
+      "normalized_score": 0.645,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "Accuracy. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.237,
+      "normalized_score": 0.237,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "Diamond. 0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hiddenmath",
+      "name": "HiddenMath",
+      "description": "Google DeepMind's internal mathematical reasoning benchmark that introduces novel problems not encountered during model training to evaluate true mathematical reasoning capabilities rather than memorization",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.377,
+      "normalized_score": 0.377,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "Accuracy. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.75,
+      "normalized_score": 0.75,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "pass@1. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "include",
+      "name": "Include",
+      "description": "Include benchmark - specific documentation not found in official sources",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.572,
+      "normalized_score": 0.572,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "name": "LiveCodeBench",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "code",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.132,
+      "normalized_score": 0.132,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "pass@1. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench-v5",
+      "name": "LiveCodeBench v5",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.257,
+      "normalized_score": 0.257,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "pass@1. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mbpp",
+      "name": "MBPP",
+      "description": "MBPP (Mostly Basic Python Problems) is a benchmark of 974 crowd-sourced Python programming problems designed to be solvable by entry-level programmers. Each problem consists of a task description, code solution, and 3 automated test cases covering programming fundamentals and standard library functionality.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 0.636,
+      "normalized_score": 0.636,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "pass@1. 3-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mgsm",
+      "name": "MGSM",
+      "description": "MGSM (Multilingual Grade School Math) is a benchmark of grade-school math problems. Contains 250 grade-school math problems manually translated from the GSM8K dataset into ten typologically diverse languages: Spanish, French, German, Russian, Chinese, Japanese, Thai, Swahili, Bengali, and Telugu. Evaluates multilingual mathematical reasoning capabilities.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.67,
+      "normalized_score": 0.67,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.649,
+      "normalized_score": 0.649,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "Accuracy. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.506,
+      "normalized_score": 0.506,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "Accuracy. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-prox",
+      "name": "MMLU-ProX",
+      "description": "Extended version of MMLU-Pro providing additional challenging multiple-choice questions for evaluating language models across diverse academic and professional domains. Built on the foundation of the Massive Multitask Language Understanding benchmark framework.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.199,
+      "normalized_score": 0.199,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "openai-mmlu",
+      "name": "OpenAI MMLU",
+      "description": "MMLU (Massive Multitask Language Understanding) is a comprehensive benchmark that measures a text model's multitask accuracy across 57 diverse academic and professional subjects. The test covers elementary mathematics, US history, computer science, law, morality, business ethics, clinical knowledge, and many other domains spanning STEM, humanities, social sciences, and professional fields. To attain high accuracy, models must possess extensive world knowledge and problem-solving ability.",
+      "categories": [
+        "chemistry",
+        "economics",
+        "finance",
+        "general",
+        "healthcare",
+        "legal",
+        "math",
+        "physics",
+        "psychology",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.356,
+      "normalized_score": 0.356,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "wmt24++",
+      "name": "WMT24++",
+      "description": "WMT24++ is a comprehensive multilingual machine translation benchmark that expands the WMT24 dataset to cover 55 languages and dialects. It includes human-written references and post-edits across four domains (literary, news, social, and speech) to evaluate machine translation systems and large language models across diverse linguistic contexts.",
+      "categories": [
+        "language"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.501,
+      "normalized_score": 0.501,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-3n-E4B-it",
+      "analysis_method": "Character-level F-score. 0-shot.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "together",
+      "name": "Together",
+      "website": "https://together.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 20,
+        "output_per_million": 40
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 32000,
+        "max_output_tokens": 32000
+      },
+      "performance": {
+        "throughput": "42.09",
+        "latency": "0.43"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2025",
+      "benchmark_name": "AIME 2025",
+      "models": [
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.9979,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.997,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-nano-30b-a3b",
+          "model_name": "Nemotron 3 Nano (30B A3B)",
+          "score": 0.992,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.116,
+          "rank": 97,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "global-mmlu-lite",
+      "benchmark_name": "Global-MMLU-Lite",
+      "models": [
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.892,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.886,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.884,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash-lite",
+          "model_name": "Gemini 2.5 Flash-Lite",
+          "score": 0.811,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.782,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.751,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.695,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-diffusion",
+          "model_name": "Gemini Diffusion",
+          "score": 0.691,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.645,
+          "rank": 9,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.645,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.237,
+          "rank": 179,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hiddenmath",
+      "benchmark_name": "HiddenMath",
+      "models": [
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.63,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.603,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.553,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.545,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.52,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.472,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.43,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.377,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.377,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash-8b",
+          "model_name": "Gemini 1.5 Flash 8B",
+          "score": 0.328,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.915,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.75,
+          "rank": 47,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "include",
+      "benchmark_name": "Include",
+      "models": [
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.856,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.81,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.8,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.8,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.795,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.789,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.789,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.763,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.745,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.74,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.572,
+          "rank": 17,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench",
+      "benchmark_name": "LiveCodeBench",
+      "models": [
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2",
+          "model_name": "MiniMax M2",
+          "score": 0.83,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.828,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.804,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-fast",
+          "model_name": "Grok 4 Fast",
+          "score": 0.8,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.794,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4",
+          "model_name": "Grok-4",
+          "score": 0.79,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.78,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.132,
+          "rank": 60,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mbpp",
+      "benchmark_name": "MBPP",
+      "models": [
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.913,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.902,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.882,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-nano-8b-v1",
+          "model_name": "Llama 3.1 Nemotron Nano 8B V1",
+          "score": 0.846,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.84,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.84,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-7b-instruct",
+          "model_name": "Qwen2.5-Coder 7B Instruct",
+          "score": 0.835,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-14b-instruct",
+          "model_name": "Qwen2.5 14B Instruct",
+          "score": 0.82,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.814,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.808,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.636,
+          "rank": 24,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mgsm",
+      "benchmark_name": "MGSM",
+      "models": [
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.923,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.92,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.911,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.907,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.906,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.905,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.893,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.67,
+          "rank": 23,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.649,
+          "rank": 90,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-exp",
+          "model_name": "DeepSeek-V3.2-Exp",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
+          "score": 0.849,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.506,
+          "rank": 82,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-prox",
+      "benchmark_name": "MMLU-ProX",
+      "models": [
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.847,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.81,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.806,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.794,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.787,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.778,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.772,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.767,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.761,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.734,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.199,
+          "rank": 17,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

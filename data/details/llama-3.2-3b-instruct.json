@@ -1,0 +1,1089 @@
+{
+  "model_id": "llama-3.2-3b-instruct",
+  "name": "Llama 3.2 3B Instruct",
+  "organization": {
+    "id": "meta",
+    "name": "Meta",
+    "website": "https://meta.com"
+  },
+  "description": "Llama 3.2 3B Instruct is a large language model that supports a context length of 128K tokens and are state-of-the-art in their class for on-device use cases like summarization, instruction following, and rewriting tasks running locally at the edge.",
+  "release_date": "2024-09-25",
+  "announcement_date": "2024-09-25",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 3210000000,
+  "training_tokens": 9000000000000,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Llama 3.2 Community License",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "instruct"
+  },
+  "sources": {
+    "api_ref": "https://github.com/meta-llama/llama-models",
+    "playground": "https://llama.meta.com/llama-downloads",
+    "paper": null,
+    "scorecard_blog": "https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/",
+    "repo": "https://github.com/meta-llama/llama-models",
+    "weights": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "arc-c",
+      "name": "ARC-C",
+      "description": "The AI2 Reasoning Challenge (ARC) Challenge Set is a multiple-choice question-answering benchmark containing grade-school level science questions that require advanced reasoning capabilities. ARC-C specifically contains questions that were answered incorrectly by both retrieval-based and word co-occurrence algorithms, making it a particularly challenging subset designed to test commonsense reasoning abilities in AI systems.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.786,
+      "normalized_score": 0.786,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, acc",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bfcl-v2",
+      "name": "BFCL v2",
+      "description": "Berkeley Function Calling Leaderboard (BFCL) v2 is a comprehensive benchmark for evaluating large language models' function calling capabilities. It features 2,251 question-function-answer pairs with enterprise and OSS-contributed functions, addressing data contamination and bias through live, user-contributed scenarios. The benchmark evaluates AST accuracy, executable accuracy, irrelevance detection, and relevance detection across multiple programming languages (Python, Java, JavaScript) and includes complex real-world function calling scenarios with multi-lingual prompts.",
+      "categories": [
+        "general",
+        "reasoning",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.67,
+      "normalized_score": 0.67,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, acc",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.328,
+      "normalized_score": 0.328,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, acc",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "name": "GSM8k",
+      "description": "Grade School Math 8K, a dataset of 8.5K high-quality linguistically diverse grade school math word problems requiring multi-step reasoning and elementary arithmetic operations.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.777,
+      "normalized_score": 0.777,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "8-shot, em_maj1@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "name": "HellaSwag",
+      "description": "A challenging commonsense natural language inference dataset that uses Adversarial Filtering to create questions trivial for humans (>95% accuracy) but difficult for state-of-the-art models, requiring completion of sentence endings based on physical situations and everyday activities",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.698,
+      "normalized_score": 0.698,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, acc",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ifeval",
+      "name": "IFEval",
+      "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
+      "categories": [
+        "general",
+        "instruction_following",
+        "structured_output"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.774,
+      "normalized_score": 0.774,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "Avg(Prompt/Instruction acc Loose/Strict)",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "infinitebench-en.mc",
+      "name": "InfiniteBench/En.MC",
+      "description": "InfiniteBench English Multiple Choice variant - first LLM benchmark featuring average data length surpassing 100K tokens for evaluating long-context capabilities with 12 tasks spanning diverse domains",
+      "categories": [
+        "long_context"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.633,
+      "normalized_score": 0.633,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, longbook_choice/acc",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "infinitebench-en.qa",
+      "name": "InfiniteBench/En.QA",
+      "description": "InfiniteBench English Question Answering variant - first LLM benchmark featuring average data length surpassing 100K tokens for evaluating long-context capabilities with 12 tasks spanning diverse domains",
+      "categories": [
+        "long_context"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.198,
+      "normalized_score": 0.198,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, longbook_qa/f1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math",
+      "name": "MATH",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.48,
+      "normalized_score": 0.48,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, final_em",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mgsm",
+      "name": "MGSM",
+      "description": "MGSM (Multilingual Grade School Math) is a benchmark of grade-school math problems. Contains 250 grade-school math problems manually translated from the GSM8K dataset into ten typologically diverse languages: Spanish, French, German, Russian, Chinese, Japanese, Thai, Swahili, Bengali, and Telugu. Evaluates multilingual mathematical reasoning capabilities.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.582,
+      "normalized_score": 0.582,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "CoT, em",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.634,
+      "normalized_score": 0.634,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "5-shot, macro_avg/acc",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "nexus",
+      "name": "Nexus",
+      "description": "NexusRaven benchmark for evaluating function calling capabilities of large language models in zero-shot scenarios across cybersecurity tools and API interactions",
+      "categories": [
+        "general",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.343,
+      "normalized_score": 0.343,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, macro_avg/acc",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "nih-multi-needle",
+      "name": "NIH/Multi-needle",
+      "description": "Multi-needle in a haystack benchmark for evaluating long-context comprehension capabilities of language models by testing retrieval of multiple target pieces of information from extended documents",
+      "categories": [
+        "long_context"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.847,
+      "normalized_score": 0.847,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, recall",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "open-rewrite",
+      "name": "Open-rewrite",
+      "description": "OpenRewriteEval is a benchmark for evaluating open-ended rewriting of long-form texts, covering a wide variety of rewriting types expressed through natural language instructions including formality, expansion, conciseness, paraphrasing, and tone and style transfer.",
+      "categories": [
+        "language",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.401,
+      "normalized_score": 0.401,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "0-shot, micro_avg/rougeL",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tldr9+-(test)",
+      "name": "TLDR9+ (test)",
+      "description": "A large-scale summarization dataset containing over 9 million training instances extracted from Reddit, designed for extreme summarization (generating one-sentence summaries with high compression and abstraction). More than twice larger than previously proposed datasets.",
+      "categories": [
+        "language",
+        "summarization"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.19,
+      "normalized_score": 0.19,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct",
+      "analysis_method": "1-shot, rougeL",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.01,
+        "output_per_million": 0.02
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": "171.5",
+        "latency": "0.24"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "arc-c",
+      "benchmark_name": "ARC-C",
+      "models": [
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.969,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-70b-instruct",
+          "model_name": "Llama 3.1 70B Instruct",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.932,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "jamba-1.5-large",
+          "model_name": "Jamba 1.5 Large",
+          "score": 0.93,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.924,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-base-2501",
+          "model_name": "Mistral Small 3 24B Base",
+          "score": 0.9129,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.91,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-micro",
+          "model_name": "Nova Micro",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.786,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.328,
+          "rank": 166,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "benchmark_name": "GSM8k",
+      "models": [
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.973,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.971,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.97,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.968,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.958,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.951,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.777,
+          "rank": 39,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "benchmark_name": "HellaSwag",
+      "models": [
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.954,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.953,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.89,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "command-r-plus-04-2024",
+          "model_name": "Command R+",
+          "score": 0.886,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8819,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.876,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.865,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.864,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-haiku-20240307",
+          "model_name": "Claude 3 Haiku",
+          "score": 0.859,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.698,
+          "rank": 23,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifeval",
+      "benchmark_name": "IFEval",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.939,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-7-sonnet-20250219",
+          "model_name": "Claude 3.7 Sonnet",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.926,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.921,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.921,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nvidia-nemotron-nano-9b-v2",
+          "model_name": "Nemotron Nano 9B v2",
+          "score": 0.903,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.774,
+          "rank": 46,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math",
+      "benchmark_name": "MATH",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.979,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.897,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.89,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-8b-instruct-2512",
+          "model_name": "Ministral 3 (8B Instruct 2512)",
+          "score": 0.876,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.868,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.48,
+          "rank": 58,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mgsm",
+      "benchmark_name": "MGSM",
+      "models": [
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.923,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.92,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.911,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.907,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.906,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.905,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.893,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.582,
+          "rank": 27,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.2-3b-instruct",
+          "model_name": "Llama 3.2 3B Instruct",
+          "score": 0.634,
+          "rank": 93,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

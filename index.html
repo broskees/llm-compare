@@ -579,6 +579,11 @@
   let loading    = new Set();   // model_ids currently being fetched
   const MAX      = 10;
 
+  // Converts a model_id to a safe filename (matches scripts/fetch-data.js)
+  function sanitizeId(modelId) {
+    return modelId.replace(/\//g, '--').replace(/\s+/g, '-');
+  }
+
   // arenas we surface on cards (text/code relevant)
   const ARENA_NAMES = [
     'chat-arena',
@@ -623,7 +628,7 @@
 
   // ── init ───────────────────────────────────────────────────────────────────
   async function init() {
-    const res = await fetch('./models.json');
+    const res = await fetch('./data/models.json');
     if (!res.ok) throw new Error('Failed to load models.json');
     modelList = await res.json();
     modelList.sort((a, b) => (b.gpqa_score ?? -1) - (a.gpqa_score ?? -1));
@@ -648,7 +653,7 @@
   // ── fetch rich data per model ───────────────────────────────────────────────
   async function fetchRich(id) {
     if (richData[id]) return richData[id];
-    const res = await fetch(`/api/leaderboard/models/${id}`);
+    const res = await fetch(`./data/details/${sanitizeId(id)}.json`);
     if (!res.ok) throw new Error(`${res.status}`);
     richData[id] = await res.json();
     return richData[id];
@@ -660,11 +665,10 @@
   async function fetchArenaScores(id) {
     if (arenaData[id]) return;
     try {
-      const arenaParam = ARENA_NAMES.join(',');
-      const res = await fetch(`/api/magia/models/scores?model_ids=${encodeURIComponent(id)}&arena_names=${encodeURIComponent(arenaParam)}`);
+      const res = await fetch(`./data/arena/${sanitizeId(id)}.json`);
       if (!res.ok) return;
       const data = await res.json();
-      arenaData[id] = data[id] ?? {};
+      arenaData[id] = data ?? {};
     } catch (e) {
       arenaData[id] = {};
     }

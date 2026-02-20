@@ -1,0 +1,1727 @@
+{
+  "model_id": "nova-lite",
+  "name": "Nova Lite",
+  "organization": {
+    "id": "amazon",
+    "name": "Amazon",
+    "website": "https://aws.amazon.com"
+  },
+  "description": "A low-cost multimodal model that is lightning fast for processing images, video, documents, and text.",
+  "release_date": "2024-11-20",
+  "announcement_date": "2024-11-20",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Proprietary",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://aws.amazon.com/bedrock/amazon-nova-lite",
+    "playground": null,
+    "paper": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+    "scorecard_blog": null,
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "arc-c",
+      "name": "ARC-C",
+      "description": "The AI2 Reasoning Challenge (ARC) Challenge Set is a multiple-choice question-answering benchmark containing grade-school level science questions that require advanced reasoning capabilities. ARC-C specifically contains questions that were answered incorrectly by both retrieval-based and word co-occurrence algorithms, making it a particularly challenging subset designed to test commonsense reasoning abilities in AI systems.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.924,
+      "normalized_score": 0.924,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "0-shot chain-of-thought",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bbh",
+      "name": "BBH",
+      "description": "Big-Bench Hard (BBH) is a suite of 23 challenging tasks selected from BIG-Bench for which prior language model evaluations did not outperform the average human-rater. These tasks require multi-step reasoning across diverse domains including arithmetic, logical reasoning, reading comprehension, and commonsense reasoning. The benchmark was designed to test capabilities believed to be beyond current language models and focuses on evaluating complex reasoning skills including temporal understanding, spatial reasoning, causal understanding, and deductive logical reasoning.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.824,
+      "normalized_score": 0.824,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "3-shot CoT",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bfcl",
+      "name": "BFCL",
+      "description": "The Berkeley Function Calling Leaderboard (BFCL) is the first comprehensive and executable function call evaluation dedicated to assessing Large Language Models' ability to invoke functions. It evaluates serial and parallel function calls across multiple programming languages (Python, Java, JavaScript, REST API) using a novel Abstract Syntax Tree (AST) evaluation method. The benchmark consists of over 2,000 question-function-answer pairs covering diverse application domains and complex use cases including multiple function calls, parallel function calls, and multi-turn interactions.",
+      "categories": [
+        "general",
+        "reasoning",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.666,
+      "normalized_score": 0.666,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartqa",
+      "name": "ChartQA",
+      "description": "ChartQA is a large-scale benchmark comprising 9.6K human-written questions and 23.1K questions generated from human-written chart summaries, designed to evaluate models' abilities in visual and logical reasoning over charts.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.868,
+      "normalized_score": 0.868,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "relaxed accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "crag",
+      "name": "CRAG",
+      "description": "CRAG (Comprehensive RAG Benchmark) is a factual question answering benchmark consisting of 4,409 question-answer pairs across 5 domains (finance, sports, music, movie, open domain) and 8 question categories. The benchmark includes mock APIs to simulate web and Knowledge Graph search, designed to represent the diverse and dynamic nature of real-world QA tasks with temporal dynamism ranging from years to seconds. It evaluates retrieval-augmented generation systems for trustworthy question answering.",
+      "categories": [
+        "economics",
+        "finance",
+        "reasoning",
+        "search"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.438,
+      "normalized_score": 0.438,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "docvqa",
+      "name": "DocVQA",
+      "description": "A dataset for Visual Question Answering on document images containing 50,000 questions defined on 12,000+ document images. The benchmark tests AI's ability to understand document structure and content, requiring models to comprehend document layout and perform information retrieval to answer questions about document images.",
+      "categories": [
+        "image_to_text",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.924,
+      "normalized_score": 0.924,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "ANLS",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "drop",
+      "name": "DROP",
+      "description": "DROP (Discrete Reasoning Over Paragraphs) is a reading comprehension benchmark requiring discrete reasoning over paragraph content. It contains crowdsourced, adversarially-created questions that require resolving references and performing discrete operations like addition, counting, or sorting, demanding comprehensive paragraph understanding beyond paraphrase-and-entity-typing shortcuts.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.802,
+      "normalized_score": 0.802,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "egoschema",
+      "name": "EgoSchema",
+      "description": "A diagnostic benchmark for very long-form video language understanding consisting of over 5000 human curated multiple choice questions based on 3-minute video clips from Ego4D, covering a broad range of natural human activities and behaviors",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "video",
+      "max_score": 1,
+      "score": 0.714,
+      "normalized_score": 0.714,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "finqa",
+      "name": "FinQA",
+      "description": "A large-scale dataset for numerical reasoning over financial data with question-answering pairs written by financial experts, featuring complex numerical reasoning and understanding of heterogeneous representations with annotated gold reasoning programs for full explainability",
+      "categories": [
+        "economics",
+        "finance",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.736,
+      "normalized_score": 0.736,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "0-shot accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.42,
+      "normalized_score": 0.42,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "6-shot CoT",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "groundui-1k",
+      "name": "GroundUI-1K",
+      "description": "A subset of GroundUI-18K for UI grounding evaluation, where models must predict action coordinates on screenshots based on single-step instructions across web, desktop, and mobile platforms.",
+      "categories": [
+        "grounding",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.802,
+      "normalized_score": 0.802,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "name": "GSM8k",
+      "description": "Grade School Math 8K, a dataset of 8.5K high-quality linguistically diverse grade school math word problems requiring multi-step reasoning and elementary arithmetic operations.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.945,
+      "normalized_score": 0.945,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "0-shot CoT",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.854,
+      "normalized_score": 0.854,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "pass@1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ifeval",
+      "name": "IFEval",
+      "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
+      "categories": [
+        "general",
+        "instruction_following",
+        "structured_output"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.897,
+      "normalized_score": 0.897,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "0-shot CoT",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lvbench",
+      "name": "LVBench",
+      "description": "LVBench is an extreme long video understanding benchmark designed to evaluate multimodal models on videos up to two hours in duration. It contains 6 major categories and 21 subcategories, with videos averaging five times longer than existing datasets. The benchmark addresses applications requiring comprehension of extremely long videos.",
+      "categories": [
+        "long_context",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.404,
+      "normalized_score": 0.404,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math",
+      "name": "MATH",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.733,
+      "normalized_score": 0.733,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "0-shot CoT",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.805,
+      "normalized_score": 0.805,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "0-shot chain-of-thought",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mm-mind2web",
+      "name": "MM-Mind2Web",
+      "description": "A multimodal web navigation benchmark comprising 2,000 open-ended tasks spanning 137 websites across 31 domains. Each task includes HTML documents paired with webpage screenshots, action sequences, and complex web interactions.",
+      "categories": [
+        "agents",
+        "frontend_development",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.607,
+      "normalized_score": 0.607,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu",
+      "name": "MMMU",
+      "description": "MMMU (Massive Multi-discipline Multimodal Understanding) is a benchmark designed to evaluate multimodal models on college-level subject knowledge and deliberate reasoning. Contains 11.5K meticulously collected multimodal questions from college exams, quizzes, and textbooks, covering six core disciplines: Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering across 30 subjects and 183 subfields.",
+      "categories": [
+        "general",
+        "healthcare",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.562,
+      "normalized_score": 0.562,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "CoT accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "squality",
+      "name": "SQuALITY",
+      "description": "SQuALITY (Summarization-format QUestion Answering with Long Input Texts, Yes!) is a long-document summarization dataset built by hiring highly-qualified contractors to read public-domain short stories (3000-6000 words) and write original summaries from scratch. Each document has five summaries: one overview and four question-focused summaries. Designed to address limitations in existing summarization datasets by providing high-quality, faithful summaries.",
+      "categories": [
+        "language",
+        "long_context",
+        "summarization"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.192,
+      "normalized_score": 0.192,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "rouge-l",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "textvqa",
+      "name": "TextVQA",
+      "description": "TextVQA contains 45,336 questions on 28,408 images that require reasoning about text to answer. Introduced to benchmark VQA models' ability to read and reason about text within images, particularly for assistive technologies for visually impaired users. The dataset addresses the gap where existing VQA datasets had few text-based questions or were too small.",
+      "categories": [
+        "image_to_text",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.802,
+      "normalized_score": 0.802,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "weighted accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "translation-en→set1-comet22",
+      "name": "Translation en→Set1 COMET22",
+      "description": "COMET-22 is an ensemble machine translation evaluation metric combining a COMET estimator model trained with Direct Assessments and a multitask model that predicts sentence-level scores and word-level OK/BAD tags. It demonstrates improved correlations compared to state-of-the-art metrics and increased robustness to critical errors.",
+      "categories": [
+        "language"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.888,
+      "normalized_score": 0.888,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "COMET22",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "translation-en→set1-spbleu",
+      "name": "Translation en→Set1 spBleu",
+      "description": "Translation evaluation using spBLEU (SentencePiece BLEU), a BLEU metric computed over text tokenized with a language-agnostic SentencePiece subword model. Introduced in the FLORES-101 evaluation benchmark for low-resource and multilingual machine translation.",
+      "categories": [
+        "language"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.415,
+      "normalized_score": 0.415,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "spBleu",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "translation-set1→en-comet22",
+      "name": "Translation Set1→en COMET22",
+      "description": "COMET-22 is a neural machine translation evaluation metric that uses an ensemble of two models: a COMET estimator trained with Direct Assessments and a multitask model that predicts sentence-level scores and word-level OK/BAD tags. It provides improved correlations with human judgments and increased robustness to critical errors compared to previous metrics.",
+      "categories": [
+        "language"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.888,
+      "normalized_score": 0.888,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "COMET22",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "translation-set1→en-spbleu",
+      "name": "Translation Set1→en spBleu",
+      "description": "spBLEU (SentencePiece BLEU) evaluation metric for machine translation quality assessment, using language-agnostic SentencePiece tokenization with BLEU scoring. Part of the FLORES-101 evaluation benchmark for low-resource and multilingual machine translation.",
+      "categories": [
+        "language"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.431,
+      "normalized_score": 0.431,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "spBleu",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vatex",
+      "name": "VATEX",
+      "description": "VaTeX: A Large-Scale, High-Quality Multilingual Dataset for Video-and-Language Research. Contains over 41,250 videos and 825,000 captions in both English and Chinese, with over 206,000 English-Chinese parallel translation pairs. Supports multilingual video captioning and video-guided machine translation tasks.",
+      "categories": [
+        "language",
+        "multimodal",
+        "video"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.778,
+      "normalized_score": 0.778,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "CIDEr",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "visualwebbench",
+      "name": "VisualWebBench",
+      "description": "A multimodal benchmark designed to assess the capabilities of multimodal large language models (MLLMs) across web page understanding and grounding tasks. Comprises 7 tasks (captioning, webpage QA, heading OCR, element OCR, element grounding, action prediction, and action grounding) with 1.5K human-curated instances from 139 real websites across 87 sub-domains.",
+      "categories": [
+        "frontend_development",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.777,
+      "normalized_score": 0.777,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.amazon.science/publications/the-amazon-nova-family-of-models-technical-report-and-model-card",
+      "analysis_method": "composite step accuracy",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "bedrock",
+      "name": "Bedrock",
+      "website": "https://aws.amazon.com/bedrock/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.06,
+        "output_per_million": 0.24
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 300000,
+        "max_output_tokens": 2048
+      },
+      "performance": {
+        "throughput": "100.0",
+        "latency": "0.5"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "arc-c",
+      "benchmark_name": "ARC-C",
+      "models": [
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.969,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-70b-instruct",
+          "model_name": "Llama 3.1 70B Instruct",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.932,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "jamba-1.5-large",
+          "model_name": "Jamba 1.5 Large",
+          "score": 0.93,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.924,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "mistral-small-24b-base-2501",
+          "model_name": "Mistral Small 3 24B Base",
+          "score": 0.9129,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.91,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-micro",
+          "model_name": "Nova Micro",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "chartqa",
+      "benchmark_name": "ChartQA",
+      "models": [
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.908,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.9,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-72b",
+          "model_name": "Qwen2.5 VL 72B Instruct",
+          "score": 0.895,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.892,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.888,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.883,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "pixtral-large",
+          "model_name": "Pixtral Large",
+          "score": 0.881,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-3.2-24b-instruct-2506",
+          "model_name": "Mistral Small 3.2 24B Instruct",
+          "score": 0.874,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.873,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.868,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "docvqa",
+      "benchmark_name": "DocVQA",
+      "models": [
+        {
+          "model_id": "qwen2.5-vl-72b",
+          "model_name": "Qwen2.5 VL 72B Instruct",
+          "score": 0.964,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.957,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.952,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-omni-7b",
+          "model_name": "Qwen2.5-Omni-7B",
+          "score": 0.952,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-3.2-24b-instruct-2506",
+          "model_name": "Mistral Small 3.2 24B Instruct",
+          "score": 0.9486,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.948,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.944,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.944,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-2",
+          "model_name": "Grok-2",
+          "score": 0.936,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.935,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.924,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "drop",
+      "benchmark_name": "DROP",
+      "models": [
+        {
+          "model_id": "deepseek-v3",
+          "model_name": "DeepSeek-V3",
+          "score": 0.916,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.871,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.871,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-turbo-2024-04-09",
+          "model_name": "GPT-4 Turbo",
+          "score": 0.86,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.854,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.848,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.834,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-haiku-20241022",
+          "model_name": "Claude 3.5 Haiku",
+          "score": 0.831,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.831,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.809,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.802,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.42,
+          "rank": 148,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "benchmark_name": "GSM8k",
+      "models": [
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.973,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.971,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.97,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.968,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.958,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.951,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.945,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.915,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.854,
+          "rank": 32,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifeval",
+      "benchmark_name": "IFEval",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.939,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-7-sonnet-20250219",
+          "model_name": "Claude 3.7 Sonnet",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.926,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.921,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.921,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nvidia-nemotron-nano-9b-v2",
+          "model_name": "Nemotron Nano 9B v2",
+          "score": 0.903,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.897,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "lvbench",
+      "benchmark_name": "LVBench",
+      "models": [
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.759,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.677,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.638,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.636,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.626,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.625,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.592,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 0.58,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-instruct",
+          "model_name": "Qwen3 VL 4B Instruct",
+          "score": 0.562,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.558,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.404,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math",
+      "benchmark_name": "MATH",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.979,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.897,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.89,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-8b-instruct-2512",
+          "model_name": "Ministral 3 (8B Instruct 2512)",
+          "score": 0.876,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.868,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.733,
+          "rank": 30,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.805,
+          "rank": 55,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu",
+      "benchmark_name": "MMMU",
+      "models": [
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.842,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.829,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.82,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.816,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.797,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.796,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step3-vl-10b",
+          "model_name": "Step3-VL-10B",
+          "score": 0.781,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.562,
+          "rank": 43,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "textvqa",
+      "benchmark_name": "TextVQA",
+      "models": [
+        {
+          "model_id": "qwen2-vl-72b",
+          "model_name": "Qwen2-VL-72B-Instruct",
+          "score": 0.855,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-7b",
+          "model_name": "Qwen2.5 VL 7B Instruct",
+          "score": 0.849,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-omni-7b",
+          "model_name": "Qwen2.5-Omni-7B",
+          "score": 0.844,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-vl2",
+          "model_name": "DeepSeek VL2",
+          "score": 0.842,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-vl2-small",
+          "model_name": "DeepSeek VL2 Small",
+          "score": 0.834,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.815,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-vl2-tiny",
+          "model_name": "DeepSeek VL2 Tiny",
+          "score": 0.807,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.802,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "grok-1.5v",
+          "model_name": "Grok-1.5V",
+          "score": 0.781,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-multimodal-instruct",
+          "model_name": "Phi-4-multimodal-instruct",
+          "score": 0.756,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

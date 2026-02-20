@@ -1,0 +1,378 @@
+{
+  "model_id": "grok-4.1-thinking-2025-11-17",
+  "name": "Grok-4.1 Thinking",
+  "organization": {
+    "id": "xai",
+    "name": "xAI",
+    "website": "https://x.ai"
+  },
+  "description": "Grok 4.1 Thinking (code name: quasarflux) is the reasoning variant of Grok 4.1, bringing significant improvements to the real-world usability of Grok. The model is exceptionally capable in creative, emotional, and collaborative interactions. It is more perceptive to nuanced intent, compelling to speak with, and coherent in personality, while fully retaining the razor-sharp intelligence and reliability of its predecessors. Grok 4.1 Thinking uses thinking tokens for deeper reasoning, achieving state-of-the-art performance on blind human preference evaluations. The model features reduced hallucinations compared to previous versions, with significant improvements in factual accuracy for information-seeking prompts. To achieve this, xAI used large scale reinforcement learning infrastructure to optimize style, personality, helpfulness, and alignment, developing new methods that use frontier agentic reasoning models as reward models to autonomously evaluate and iterate on responses at scale. Grok 4.1 Thinking includes comprehensive safety mitigations including refusal training, input filters for restricted knowledge, and adversarial robustness measures. The model demonstrates strong refusal rates on harmful queries (7% answer rate on chat refusals, 14% on agentic refusals) and improved honesty training to reduce deception.",
+  "release_date": "2025-11-17",
+  "announcement_date": "2025-11-17",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Proprietary",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://x.ai/api",
+    "playground": "https://grok.com",
+    "paper": null,
+    "scorecard_blog": "https://x.ai/news/grok-4.1",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "biolp-bench",
+      "name": "BioLP-Bench",
+      "description": "BioLP-Bench is a model-graded evaluation measuring ability to find and correct mistakes in common biological laboratory protocols. It evaluates dual-use biological knowledge relevant to bioweapons development.",
+      "categories": [
+        "biology",
+        "healthcare",
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.37,
+      "normalized_score": 0.37,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "BioLP-Bench accuracy - Model-graded evaluation measuring ability to find and correct mistakes in common biological laboratory protocols.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cloningscenarios",
+      "name": "CloningScenarios",
+      "description": "CloningScenarios is an expert-level multi-step reasoning benchmark about difficult genetic cloning scenarios in multiple-choice format. It evaluates dual-use biological knowledge relevant to bioweapons development.",
+      "categories": [
+        "healthcare",
+        "reasoning",
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.46,
+      "normalized_score": 0.46,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "CloningScenarios accuracy - Expert-level multi-step reasoning questions about difficult genetic cloning scenarios in multiple-choice format.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "creative-writing-v3",
+      "name": "Creative Writing v3",
+      "description": "EQ-Bench Creative Writing v3 is an LLM-judged creative writing benchmark that evaluates models across 32 writing prompts with 3 iterations per prompt. Uses a hybrid scoring system combining rubric assessment and Elo ratings through pairwise comparisons. Challenges models in areas like humor, romance, spatial awareness, and unique perspectives to assess emotional intelligence and creative writing capabilities.",
+      "categories": [
+        "creativity",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 1721.9,
+      "normalized_score": 0.86095,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "Creative Writing v3 - Normalized Elo score. Evaluates creative writing capabilities across 32 writing prompts with 3 iterations per prompt.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cybench",
+      "name": "CyBench",
+      "description": "CyBench is a suite of Capture-the-Flag (CTF) challenges measuring agentic cyber attack capabilities. It evaluates dual-use cybersecurity knowledge and measures the 'unguided success rate', where agents complete tasks end-to-end without guidance on appropriate subtasks.",
+      "categories": [
+        "agents",
+        "code",
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.39,
+      "normalized_score": 0.39,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "CyBench success rate - Suite of Capture-the-Flag (CTF) challenges measuring agentic cyber attack capabilities. Unguided success rate where agents complete tasks end-to-end without guidance.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "eq-bench",
+      "name": "EQ-Bench",
+      "description": "EQ-Bench is an LLM-judged test evaluating active emotional intelligence abilities, understanding, insight, empathy, and interpersonal skills. The test set contains 45 challenging roleplay scenarios, most of which constitute pre-written prompts spanning 3 turns. The benchmark evaluates the performance of models by validating responses against several criteria and conducts pairwise comparisons to report a normalized Elo computation for each model.",
+      "categories": [
+        "creativity",
+        "general",
+        "reasoning",
+        "roleplay"
+      ],
+      "modality": "text",
+      "max_score": 2000,
+      "score": 1586,
+      "normalized_score": 0.793,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "EQ-Bench Emotional Intelligence Benchmark - Normalized Elo score. Evaluates active emotional intelligence abilities, understanding, insight, empathy, and interpersonal skills.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "figqa",
+      "name": "FigQA",
+      "description": "FigQA is a multiple-choice benchmark on interpreting scientific figures from biology papers. It evaluates dual-use biological knowledge and multimodal reasoning relevant to bioweapons development.",
+      "categories": [
+        "healthcare",
+        "safety",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.34,
+      "normalized_score": 0.34,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "FigQA accuracy - Multiple-choice benchmark on interpreting scientific figures from biology papers. Multimodal reasoning evaluation.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lmarena-text",
+      "name": "LMArena Text Leaderboard",
+      "description": "LMArena Text Leaderboard is a blind human preference evaluation benchmark that ranks models based on pairwise comparisons in real-world conversations. The leaderboard uses Elo ratings computed from user preferences in head-to-head model battles, providing a comprehensive measure of overall model capability and style.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 2000,
+      "score": 1483,
+      "normalized_score": 0.7415,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "Grok 4.1 Thinking (code name: quasarflux) - LMArena Text Leaderboard Elo rating. Holds #1 overall position with 1483 Elo, a commanding margin of 31 points over the highest non-xAI model.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mask",
+      "name": "MASK",
+      "description": "MASK is a collection of 1000 questions measuring whether models faithfully report their beliefs when pressured to lie. It operationalizes deception as the rate at which the model lies, i.e., knowingly making false statements intended to be received as true. Lower dishonesty rates indicate better honesty.",
+      "categories": [
+        "reasoning",
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.51,
+      "normalized_score": 0.51,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "MASK honesty score (1 - dishonesty rate) - Measures whether models faithfully report their beliefs when pressured to lie. Dishonesty rate: 0.49. Lower dishonesty rates indicate better honesty.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "protocolqa",
+      "name": "ProtocolQA",
+      "description": "ProtocolQA is a multiple-choice benchmark on troubleshooting failed experimental outcomes from common biological laboratory protocols. It evaluates dual-use biological knowledge relevant to bioweapons development.",
+      "categories": [
+        "healthcare",
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.79,
+      "normalized_score": 0.79,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "ProtocolQA accuracy - Multiple-choice benchmark on troubleshooting failed experimental outcomes from common biological laboratory protocols.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vct",
+      "name": "Virology Capabilities Test",
+      "description": "Virology Capabilities Test (VCT) is an expert-level multiple-choice benchmark measuring the capability to troubleshoot complex virology laboratory protocols. It evaluates dual-use biological knowledge relevant to bioweapons development.",
+      "categories": [
+        "healthcare",
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.61,
+      "normalized_score": 0.61,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "Virology Capabilities Test (VCT) accuracy - Expert-level multiple-choice benchmark measuring capability to troubleshoot complex virology laboratory protocols. Text-only questions evaluated.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "wmdp",
+      "name": "WMDP",
+      "description": "Weapons of Mass Destruction (WMDP) is a multiple-choice benchmark on dual-use biology, chemistry, and cyber knowledge. It measures a model's capacity to enable malicious actors to design, synthesize, acquire, or use chemical, biological, radiological, or nuclear (CBRN) weapons.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "healthcare",
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.84,
+      "normalized_score": 0.84,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4.1",
+      "analysis_method": "WMDP Cybersecurity accuracy - Multiple-choice benchmark on dual-use cyber knowledge. Evaluates model's capacity to enable malicious actors to engage in offensive cyber operations.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "xai",
+      "name": "xAI",
+      "website": "https://docs.x.ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 3,
+        "output_per_million": 15
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 256000,
+        "max_output_tokens": 8000
+      },
+      "performance": {
+        "throughput": "80.0",
+        "latency": "1.2"
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "creative-writing-v3",
+      "benchmark_name": "Creative Writing v3",
+      "models": [
+        {
+          "model_id": "grok-4.1-thinking-2025-11-17",
+          "model_name": "Grok-4.1 Thinking",
+          "score": 1721.9,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "grok-4.1-2025-11-17",
+          "model_name": "Grok-4.1",
+          "score": 1708.6,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.875,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.865,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.861,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.857,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.856,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.853,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.833,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

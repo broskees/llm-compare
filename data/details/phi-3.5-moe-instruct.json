@@ -1,0 +1,1985 @@
+{
+  "model_id": "phi-3.5-moe-instruct",
+  "name": "Phi-3.5-MoE-instruct",
+  "organization": {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "website": "https://microsoft.com"
+  },
+  "description": "Phi-3.5-MoE-instruct is a mixture-of-experts model with ~42B total parameters (6.6B active) and a 128K context window. It excels at reasoning, math, coding, and multilingual tasks, outperforming larger dense models in many benchmarks. It underwent a thorough safety post-training process (SFT + DPO) and is licensed under MIT. This model is ideal for scenarios where efficiency and high performance are both required, particularly in multi-lingual or reasoning-intensive tasks.",
+  "release_date": "2024-08-23",
+  "announcement_date": "2024-08-23",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 60000000000,
+  "training_tokens": 4900000000000,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "MIT",
+    "allow_commercial": true
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "instruct"
+  },
+  "sources": {
+    "api_ref": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+    "playground": null,
+    "paper": "https://arxiv.org/abs/2404.14219",
+    "scorecard_blog": "https://techcommunity.microsoft.com/blog/azure-ai-services-blog/discover-the-new-multi-lingual-high-quality-phi-3-5-slms/4225280",
+    "repo": null,
+    "weights": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "arc-c",
+      "name": "ARC-C",
+      "description": "The AI2 Reasoning Challenge (ARC) Challenge Set is a multiple-choice question-answering benchmark containing grade-school level science questions that require advanced reasoning capabilities. ARC-C specifically contains questions that were answered incorrectly by both retrieval-based and word co-occurrence algorithms, making it a particularly challenging subset designed to test commonsense reasoning abilities in AI systems.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.91,
+      "normalized_score": 0.91,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "10-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arena-hard",
+      "name": "Arena Hard",
+      "description": "Arena-Hard-Auto is an automatic evaluation benchmark for instruction-tuned LLMs consisting of 500 challenging real-world prompts curated by BenchBuilder. It includes open-ended software engineering problems, mathematical questions, and creative writing tasks. The benchmark uses LLM-as-a-Judge methodology with GPT-4.1 and Gemini-2.5 as automatic judges to approximate human preference. Arena-Hard achieves 98.6% correlation with human preference rankings and provides 3x higher separation of model performances compared to MT-Bench, making it highly effective for distinguishing between models of similar quality.",
+      "categories": [
+        "creativity",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.379,
+      "normalized_score": 0.379,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "big-bench-hard",
+      "name": "BIG-Bench Hard",
+      "description": "BIG-Bench Hard (BBH) is a subset of 23 challenging BIG-Bench tasks selected because prior language model evaluations did not outperform average human-rater performance. The benchmark contains 6,511 evaluation examples testing various forms of multi-step reasoning including arithmetic, logical reasoning (Boolean expressions, logical deduction), geometric reasoning, temporal reasoning, and language understanding. Tasks require capabilities such as causal judgment, object counting, navigation, pattern recognition, and complex problem solving.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.791,
+      "normalized_score": 0.791,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "0-shot chain-of-thought",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "boolq",
+      "name": "BoolQ",
+      "description": "BoolQ is a reading comprehension dataset for yes/no questions containing 15,942 naturally occurring examples. Each example consists of a question, passage, and boolean answer, where questions are generated in unprompted and unconstrained settings. The dataset challenges models with complex, non-factoid information requiring entailment-like inference to solve.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.846,
+      "normalized_score": 0.846,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "2-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "govreport",
+      "name": "GovReport",
+      "description": "A long document summarization dataset consisting of reports from government research agencies including Congressional Research Service and U.S. Government Accountability Office, with significantly longer documents and summaries than other datasets.",
+      "categories": [
+        "long_context",
+        "summarization"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.264,
+      "normalized_score": 0.264,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "biology",
+        "chemistry",
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.368,
+      "normalized_score": 0.368,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "0-shot chain-of-thought",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "name": "GSM8k",
+      "description": "Grade School Math 8K, a dataset of 8.5K high-quality linguistically diverse grade school math word problems requiring multi-step reasoning and elementary arithmetic operations.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.887,
+      "normalized_score": 0.887,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "8-shot chain-of-thought",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "name": "HellaSwag",
+      "description": "A challenging commonsense natural language inference dataset that uses Adversarial Filtering to create questions trivial for humans (>95% accuracy) but difficult for state-of-the-art models, requiring completion of sentence endings based on physical situations and everyday activities",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.838,
+      "normalized_score": 0.838,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "5-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.707,
+      "normalized_score": 0.707,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "0-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "math",
+      "name": "MATH",
+      "description": "MATH dataset contains 12,500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels (1-5) across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.595,
+      "normalized_score": 0.595,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "0-shot chain-of-thought",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mbpp",
+      "name": "MBPP",
+      "description": "MBPP (Mostly Basic Python Problems) is a benchmark of 974 crowd-sourced Python programming problems designed to be solvable by entry-level programmers. Each problem consists of a task description, code solution, and 3 automated test cases covering programming fundamentals and standard library functionality.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 0.808,
+      "normalized_score": 0.808,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "3-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mega-mlqa",
+      "name": "MEGA MLQA",
+      "description": "MLQA as part of the MEGA (Multilingual Evaluation of Generative AI) benchmark suite. A multi-way aligned extractive QA evaluation benchmark for cross-lingual question answering across 7 languages (English, Arabic, German, Spanish, Hindi, Vietnamese, and Simplified Chinese) with over 12K QA instances in English and 5K in each other language.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.653,
+      "normalized_score": 0.653,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mega-tydi-qa",
+      "name": "MEGA TyDi QA",
+      "description": "TyDi QA as part of the MEGA benchmark suite. A question answering dataset covering 11 typologically diverse languages (Arabic, Bengali, English, Finnish, Indonesian, Japanese, Korean, Russian, Swahili, Telugu, and Thai) with 204K question-answer pairs. Features realistic information-seeking questions written by people who want to know the answer but don't know it yet.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.671,
+      "normalized_score": 0.671,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mega-udpos",
+      "name": "MEGA UDPOS",
+      "description": "Universal Dependencies POS tagging as part of the MEGA benchmark suite. A multilingual part-of-speech tagging dataset based on Universal Dependencies treebanks, utilizing the universal POS tag set of 17 tags across 38 diverse languages from different language families. Used for evaluating multilingual POS tagging systems.",
+      "categories": [
+        "language"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.604,
+      "normalized_score": 0.604,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mega-xcopa",
+      "name": "MEGA XCOPA",
+      "description": "XCOPA (Cross-lingual Choice of Plausible Alternatives) as part of the MEGA benchmark suite. A typologically diverse multilingual dataset for causal commonsense reasoning in 11 languages, including resource-poor languages like Eastern Apurímac Quechua and Haitian Creole. Requires models to select which choice is the effect or cause of a given premise.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.766,
+      "normalized_score": 0.766,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mega-xstorycloze",
+      "name": "MEGA XStoryCloze",
+      "description": "XStoryCloze as part of the MEGA benchmark suite. A cross-lingual story completion task that consists of professionally translated versions of the English StoryCloze dataset to 10 non-English languages. Requires models to predict the correct ending for a given four-sentence story, evaluating commonsense reasoning and narrative understanding.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.828,
+      "normalized_score": 0.828,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mgsm",
+      "name": "MGSM",
+      "description": "MGSM (Multilingual Grade School Math) is a benchmark of grade-school math problems. Contains 250 grade-school math problems manually translated from the GSM8K dataset into ten typologically diverse languages: Spanish, French, German, Russian, Chinese, Japanese, Thai, Swahili, Bengali, and Telugu. Evaluates multilingual mathematical reasoning capabilities.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.587,
+      "normalized_score": 0.587,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "0-shot chain-of-thought",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.789,
+      "normalized_score": 0.789,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "5-shot evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.453,
+      "normalized_score": 0.453,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmlu",
+      "name": "MMMLU",
+      "description": "Multilingual Massive Multitask Language Understanding dataset released by OpenAI, featuring professionally translated MMLU test questions across 14 languages including Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Swahili, Yoruba, and Chinese. Contains approximately 15,908 multiple-choice questions per language covering 57 subjects.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.699,
+      "normalized_score": 0.699,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "5-shot evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "openbookqa",
+      "name": "OpenBookQA",
+      "description": "OpenBookQA is a question-answering dataset modeled after open book exams for assessing human understanding. It contains 5,957 multiple-choice elementary-level science questions that probe understanding of 1,326 core science facts and their application to novel situations, requiring combination of open book facts with broad common knowledge through multi-hop reasoning.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.896,
+      "normalized_score": 0.896,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "10-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "piqa",
+      "name": "PIQA",
+      "description": "PIQA (Physical Interaction: Question Answering) is a benchmark dataset for physical commonsense reasoning in natural language. It tests AI systems' ability to answer questions requiring physical world knowledge through multiple choice questions with everyday situations, focusing on atypical solutions inspired by instructables.com. The dataset contains 21,000 multiple choice questions where models must choose the most appropriate solution for physical interactions.",
+      "categories": [
+        "general",
+        "physics",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.886,
+      "normalized_score": 0.886,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "5-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "qasper",
+      "name": "Qasper",
+      "description": "QASPER is a dataset of 5,049 information-seeking questions and answers anchored in 1,585 NLP research papers. Questions are written by NLP practitioners who read only titles and abstracts, while answers require understanding the full paper text and provide supporting evidence. The dataset challenges models with complex reasoning across document sections for academic document question answering. Each question seeks information present in the full text and is answered by a separate set of NLP practitioners who also provide supporting evidence to answers.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.4,
+      "normalized_score": 0.4,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "qmsum",
+      "name": "QMSum",
+      "description": "QMSum is a benchmark for query-based multi-domain meeting summarization consisting of 1,808 query-summary pairs over 232 meetings across academic, product, and committee domains. The dataset enables models to select and summarize relevant spans of meetings in response to specific queries. Published at NAACL 2021, QMSum presents significant challenges in long meeting summarization where models must identify and summarize relevant content based on user queries.",
+      "categories": [
+        "long_context",
+        "summarization"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.199,
+      "normalized_score": 0.199,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "repoqa",
+      "name": "RepoQA",
+      "description": "RepoQA is a benchmark for evaluating long-context code understanding capabilities of Large Language Models through the Searching Needle Function (SNF) task, where LLMs must locate specific functions in code repositories using natural language descriptions. The benchmark contains 500 code search tasks spanning 50 repositories across 5 modern programming languages (Python, Java, TypeScript, C++, and Rust), tested on 26 general and code-specific LLMs to assess their ability to comprehend and navigate code repositories.",
+      "categories": [
+        "code",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.85,
+      "normalized_score": 0.85,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "average",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ruler",
+      "name": "RULER",
+      "description": "RULER (What's the Real Context Size of Your Long-Context Language Models?) is a synthetic benchmark designed to comprehensively evaluate the long-context capabilities of language models. It expands on needle-in-a-haystack (NIAH) testing by introducing new task categories including multi-hop tracing and aggregation tasks. The benchmark provides flexible configurations for customized sequence length and task complexity, evaluating 17 long-context language models across 13 representative tasks to reveal that despite models claiming 32K+ token context sizes, only half maintain satisfactory performance at 32K length.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.871,
+      "normalized_score": 0.871,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "long context (128K) evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "social-iqa",
+      "name": "Social IQa",
+      "description": "The first large-scale benchmark for commonsense reasoning about social situations. Contains 38,000 multiple choice questions probing emotional and social intelligence in everyday situations, testing commonsense understanding of social interactions and theory of mind reasoning about the implied emotions and behavior of others.",
+      "categories": [
+        "creativity",
+        "psychology",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.78,
+      "normalized_score": 0.78,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "5-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "squality",
+      "name": "SQuALITY",
+      "description": "SQuALITY (Summarization-format QUestion Answering with Long Input Texts, Yes!) is a long-document summarization dataset built by hiring highly-qualified contractors to read public-domain short stories (3000-6000 words) and write original summaries from scratch. Each document has five summaries: one overview and four question-focused summaries. Designed to address limitations in existing summarization datasets by providing high-quality, faithful summaries.",
+      "categories": [
+        "language",
+        "long_context",
+        "summarization"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.241,
+      "normalized_score": 0.241,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "summscreenfd",
+      "name": "SummScreenFD",
+      "description": "SummScreenFD is the ForeverDreaming subset of the SummScreen dataset for abstractive screenplay summarization, comprising pairs of TV series transcripts and human-written recaps from 88 different shows. The dataset provides a challenging testbed for abstractive summarization where plot details are often expressed indirectly in character dialogues and scattered across the entirety of the transcript, requiring models to find and integrate these details to form succinct plot descriptions.",
+      "categories": [
+        "long_context",
+        "summarization"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.169,
+      "normalized_score": 0.169,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "standard evaluation",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "truthfulqa",
+      "name": "TruthfulQA",
+      "description": "TruthfulQA is a benchmark to measure whether language models are truthful in generating answers to questions. It comprises 817 questions that span 38 categories, including health, law, finance and politics. The questions are crafted such that some humans would answer falsely due to a false belief or misconception, testing models' ability to avoid generating false answers learned from human texts.",
+      "categories": [
+        "finance",
+        "general",
+        "healthcare",
+        "legal",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.775,
+      "normalized_score": 0.775,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "10-shot",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "winogrande",
+      "name": "Winogrande",
+      "description": "WinoGrande: An Adversarial Winograd Schema Challenge at Scale. A large-scale dataset of 44,000 pronoun resolution problems designed to test machine commonsense reasoning. Uses adversarial filtering to reduce spurious biases and provides a more robust evaluation of whether AI systems truly understand commonsense or exploit statistical shortcuts. Current best AI methods achieve 59.4-79.1% accuracy, significantly below human performance of 94.0%.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.813,
+      "normalized_score": 0.813,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/microsoft/Phi-3.5-MoE-instruct",
+      "analysis_method": "5-shot",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "arc-c",
+      "benchmark_name": "ARC-C",
+      "models": [
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.969,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-70b-instruct",
+          "model_name": "Llama 3.1 70B Instruct",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.932,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "jamba-1.5-large",
+          "model_name": "Jamba 1.5 Large",
+          "score": 0.93,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.924,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-base-2501",
+          "model_name": "Mistral Small 3 24B Base",
+          "score": 0.9129,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.91,
+          "rank": 9,
+          "is_current_model": true
+        },
+        {
+          "model_id": "nova-micro",
+          "model_name": "Nova Micro",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "arena-hard",
+      "benchmark_name": "Arena Hard",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.956,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.938,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-30b-a3b",
+          "model_name": "Qwen3 30B A3B",
+          "score": 0.91,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.883,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-instruct-2501",
+          "model_name": "Mistral Small 3 24B Instruct",
+          "score": 0.876,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.812,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-reasoning-plus",
+          "model_name": "Phi 4 Reasoning Plus",
+          "score": 0.79,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.762,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4",
+          "model_name": "Phi 4",
+          "score": 0.754,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-reasoning",
+          "model_name": "Phi 4 Reasoning",
+          "score": 0.733,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.379,
+          "rank": 21,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "big-bench-hard",
+      "benchmark_name": "BIG-Bench Hard",
+      "models": [
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.931,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.931,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.892,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.876,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.868,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.857,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.855,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.829,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.791,
+          "rank": 9,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-3-haiku-20240307",
+          "model_name": "Claude 3 Haiku",
+          "score": 0.737,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.899,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.889,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.884,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.368,
+          "rank": 159,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gsm8k",
+      "benchmark_name": "GSM8k",
+      "models": [
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.973,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.971,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.97,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.968,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.958,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.951,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.887,
+          "rank": 29,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "benchmark_name": "HellaSwag",
+      "models": [
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.954,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.953,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.89,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "command-r-plus-04-2024",
+          "model_name": "Command R+",
+          "score": 0.886,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8819,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.876,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.865,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.864,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-haiku-20240307",
+          "model_name": "Claude 3 Haiku",
+          "score": 0.859,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.838,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.915,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.707,
+          "rank": 55,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math",
+      "benchmark_name": "MATH",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.979,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.964,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.897,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.89,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-8b-instruct-2512",
+          "model_name": "Ministral 3 (8B Instruct 2512)",
+          "score": 0.876,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.868,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.595,
+          "rank": 48,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mbpp",
+      "benchmark_name": "MBPP",
+      "models": [
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.913,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.902,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.882,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-nano-8b-v1",
+          "model_name": "Llama 3.1 Nemotron Nano 8B V1",
+          "score": 0.846,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.84,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.84,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-7b-instruct",
+          "model_name": "Qwen2.5-Coder 7B Instruct",
+          "score": 0.835,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-14b-instruct",
+          "model_name": "Qwen2.5 14B Instruct",
+          "score": 0.82,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.814,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.808,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mgsm",
+      "benchmark_name": "MGSM",
+      "models": [
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.923,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.92,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.911,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.907,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-4-scout",
+          "model_name": "Llama 4 Scout",
+          "score": 0.906,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4o-2024-05-13",
+          "model_name": "GPT-4o",
+          "score": 0.905,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.893,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.587,
+          "rank": 26,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.789,
+          "rank": 65,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-exp",
+          "model_name": "DeepSeek-V3.2-Exp",
+          "score": 0.85,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
+          "score": 0.849,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.453,
+          "rank": 89,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmlu",
+      "benchmark_name": "MMMLU",
+      "models": [
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.926,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.911,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.908,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.896,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-1-20250805",
+          "model_name": "Claude Opus 4.1",
+          "score": 0.895,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.893,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-5-20250929",
+          "model_name": "Claude Sonnet 4.5",
+          "score": 0.891,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-20250514",
+          "model_name": "Claude Opus 4",
+          "score": 0.888,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.699,
+          "rank": 28,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "piqa",
+      "benchmark_name": "PIQA",
+      "models": [
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.886,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8444,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.832,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-9b-it",
+          "model_name": "Gemma 2 9B",
+          "score": 0.817,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b",
+          "model_name": "Gemma 3n E4B",
+          "score": 0.81,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.81,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-mini-instruct",
+          "model_name": "Phi-3.5-mini-instruct",
+          "score": 0.81,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e2b",
+          "model_name": "Gemma 3n E2B",
+          "score": 0.789,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e2b-it-litert-preview",
+          "model_name": "Gemma 3n E2B Instructed LiteRT (Preview)",
+          "score": 0.789,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-mini",
+          "model_name": "Phi 4 Mini",
+          "score": 0.776,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "truthfulqa",
+      "benchmark_name": "TruthfulQA",
+      "models": [
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.775,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "granite-3.3-8b-instruct",
+          "model_name": "Granite 3.3 8B Instruct",
+          "score": 0.6686,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-mini",
+          "model_name": "Phi 4 Mini",
+          "score": 0.664,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-mini-instruct",
+          "model_name": "Phi-3.5-mini-instruct",
+          "score": 0.64,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.6329,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-70b-instruct",
+          "model_name": "Llama 3.1 Nemotron 70B Instruct",
+          "score": 0.5863,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-14b-instruct",
+          "model_name": "Qwen2.5 14B Instruct",
+          "score": 0.584,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "jamba-1.5-large",
+          "model_name": "Jamba 1.5 Large",
+          "score": 0.583,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "granite-4.0-tiny-preview",
+          "model_name": "IBM Granite 4.0 Tiny Preview",
+          "score": 0.581,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.578,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "winogrande",
+      "benchmark_name": "Winogrande",
+      "models": [
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.875,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "command-r-plus-04-2024",
+          "model_name": "Command R+",
+          "score": 0.854,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.851,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-70b-instruct",
+          "model_name": "Llama 3.1 Nemotron 70B Instruct",
+          "score": 0.8453,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.837,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8319,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.82,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.813,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.808,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-9b-it",
+          "model_name": "Gemma 2 9B",
+          "score": 0.806,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3.1-pro-preview",
+    "name": "Gemini 3.1 Pro",
+    "organization_name": "Google",
+    "release_date": "2026-02-19",
+    "announcement_date": "2026-02-19",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "apex-agents": 0.335,
+      "arc-agi-v2": 0.771,
+      "browsecomp": 0.859,
+      "gdpval-aa": 1317,
+      "gpqa": 0.943,
+      "humanity's-last-exam": 0.514,
+      "livecodebench-pro": 2887,
+      "mcp-atlas": 0.692,
+      "mmmlu": 0.926,
+      "mmmu-pro": 0.805,
+      "mrcr-v2-(8-needle)": 0.263,
+      "scicode": 0.59,
+      "swe-bench-pro": 0.542,
+      "swe-bench-verified": 0.806,
+      "t2-bench": 0.993,
+      "terminal-bench-2": 0.685
+    },
+    "provider": {
+      "name": "Google",
+      "input_cost": 2.5,
+      "output_cost": 15,
+      "max_input_tokens": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}
