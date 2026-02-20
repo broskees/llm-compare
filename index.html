@@ -1330,17 +1330,37 @@
     // ── TRACK 7: Links ──
     {
       const s = section();
+      const linkDefs = [];
+
+      // Existing zeroeval sources (minus weights — handled separately below)
       if (rich.sources) {
-        const links = Object.entries(rich.sources)
-          .filter(([, url]) => url)
-          .map(([key, url]) => {
-            const labels = { api_ref:'API Ref', playground:'Playground', paper:'Paper', scorecard_blog:'Blog', repo:'Repo', weights:'Weights' };
-            return `<a class="source-link" href="${url}" target="_blank" rel="noopener">${labels[key] ?? key}</a>`;
-          }).join('');
-        if (links) {
-          s.innerHTML = `<div class="section-label">Links</div><div class="sources-row">${links}</div>`;
+        const labels = { api_ref:'API Ref', playground:'Playground', paper:'Paper', scorecard_blog:'Blog', repo:'Repo' };
+        for (const [key, url] of Object.entries(rich.sources)) {
+          if (url && key !== 'weights') linkDefs.push({ label: labels[key] ?? key, url });
         }
       }
+
+      // OpenRouter — stored in detail JSON when name matched
+      if (rich.openrouter_id) {
+        linkDefs.push({ label: 'OpenRouter', url: `https://openrouter.ai/${rich.openrouter_id}` });
+      }
+
+      // HuggingFace — in sources.weights for open models
+      if (rich.sources?.weights) {
+        linkDefs.push({ label: 'HuggingFace', url: rich.sources.weights });
+      }
+
+      // LMSYS Chatbot Arena — no per-model page, link to leaderboard
+      linkDefs.push({ label: 'Chatbot Arena', url: 'https://lmarena.ai/' });
+
+      // Artificial Analysis — no reliable auto-derivable slug, link to index
+      linkDefs.push({ label: 'Artificial Analysis', url: 'https://artificialanalysis.ai/leaderboards/models' });
+
+      const linksHtml = linkDefs.map(({ label, url }) =>
+        `<a class="source-link" href="${url}" target="_blank" rel="noopener">${label}</a>`
+      ).join('');
+
+      s.innerHTML = `<div class="section-label">Links</div><div class="sources-row">${linksHtml}</div>`;
       body.appendChild(s);
     }
 

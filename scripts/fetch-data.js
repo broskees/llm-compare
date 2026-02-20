@@ -34,18 +34,40 @@ async function fetchWithRetry(url, retries = MAX_RETRIES) {
   }
 }
 
+// Build a name->id lookup from OpenRouter's public model list.
+// OR model names are like "Anthropic: Claude Opus 4" — strip the org prefix for matching.
+async function buildOpenRouterLookup() {
+  try {
+    console.log('Fetching OpenRouter model list...');
+    const data = await fetchWithRetry('https://openrouter.ai/api/v1/models');
+    const lookup = new Map(); // normalized name -> OR model id
+    for (const m of data.data) {
+      const cleanName = m.name.split(': ').slice(1).join(': ') || m.name;
+      lookup.set(cleanName.toLowerCase(), m.id);
+    }
+    console.log(`  Got ${lookup.size} OpenRouter models`);
+    return lookup;
+  } catch (err) {
+    console.warn(`  OpenRouter lookup failed: ${err.message} — skipping OR links`);
+    return new Map();
+  }
+}
+
 async function main() {
   // Create directories
   fs.mkdirSync(path.join(DATA_DIR, 'details'), { recursive: true });
   fs.mkdirSync(path.join(DATA_DIR, 'arena'), { recursive: true });
 
-  // Step 1: Fetch model list
+  // Step 1: Fetch OpenRouter model list for cross-referencing
+  const orLookup = await buildOpenRouterLookup();
+
+  // Step 2: Fetch model list
   console.log('Fetching model list...');
   const models = await fetchWithRetry(`${BASE_URL}/leaderboard/models/full?justCanonicals=true`);
   fs.writeFileSync(path.join(DATA_DIR, 'models.json'), JSON.stringify(models, null, 2));
   console.log(`  Wrote data/models.json (${models.length} models)`);
 
-  // Step 2: Fetch per-model detail + arena scores
+  // Step 3: Fetch per-model detail + arena scores
   let detailOk = 0, detailFail = 0, arenaOk = 0, arenaFail = 0;
 
   for (let i = 0; i < models.length; i++) {
@@ -56,6 +78,9 @@ async function main() {
     // Detail
     try {
       const detail = await fetchWithRetry(`${BASE_URL}/leaderboard/models/${encodeURIComponent(model_id)}`);
+      // Attach OpenRouter ID if we can match by name
+      const orId = orLookup.get((detail.name || '').toLowerCase());
+      if (orId) detail.openrouter_id = orId;
       fs.writeFileSync(path.join(DATA_DIR, 'details', `${safe}.json`), JSON.stringify(detail, null, 2));
       detailOk++;
     } catch (err) {
