@@ -731,14 +731,42 @@
   const searchInput = document.getElementById('searchInput');
   const dropdown    = document.getElementById('dropdown');
 
+  // Fuzzy score: returns null if no match, otherwise a numeric score (higher = better).
+  // Rewards: substring match > consecutive chars > prefix > scattered chars.
+  function fuzzyScore(query, target) {
+    if (!query) return 0;
+    const q = query.toLowerCase();
+    const t = target.toLowerCase();
+    if (t.includes(q)) return 1000 + (1000 - t.indexOf(q)) + (1000 - t.length);
+    let qi = 0, score = 0, consecutive = 0, lastMatch = -1;
+    for (let ti = 0; ti < t.length && qi < q.length; ti++) {
+      if (t[ti] === q[qi]) {
+        consecutive = lastMatch === ti - 1 ? consecutive + 1 : 1;
+        score += consecutive * 10 + (ti === 0 ? 5 : 0);
+        lastMatch = ti;
+        qi++;
+      } else {
+        consecutive = 0;
+      }
+    }
+    return qi === q.length ? score : null;
+  }
+
   function renderDropdown(q) {
-    const lq = q.toLowerCase();
-    const hits = modelList.filter(m =>
-      !q ||
-      m.name.toLowerCase().includes(lq) ||
-      m.model_id.toLowerCase().includes(lq) ||
-      (m.organization || '').toLowerCase().includes(lq)
-    ).slice(0, 80);
+    const hits = modelList
+      .map(m => {
+        if (!q) return { m, score: 0 };
+        const s = Math.max(
+          fuzzyScore(q, m.name) ?? -Infinity,
+          fuzzyScore(q, m.model_id) ?? -Infinity,
+          fuzzyScore(q, m.organization || '') ?? -Infinity,
+        );
+        return s > -Infinity ? { m, score: s } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 80)
+      .map(x => x.m);
 
     dropdown.innerHTML = '';
     (hits.length ? hits : [null]).forEach(m => {
