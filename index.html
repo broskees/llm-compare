@@ -330,6 +330,23 @@
     /* tooltip on bench name */
     .bench-name[title] { cursor: help; border-bottom: 1px dotted var(--border); }
 
+    /* click popover for bench descriptions */
+    #bench-popover {
+      position: fixed;
+      z-index: 1000;
+      max-width: 320px;
+      background: var(--surface3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text);
+      box-shadow: 0 4px 16px rgba(0,0,0,.5);
+      display: none;
+    }
+    #bench-popover.visible { display: block; }
+
     /* provider block */
     .provider-block {
       background: var(--surface2);
@@ -1320,6 +1337,44 @@
   };
   updateHeaderHeight();
   new ResizeObserver(updateHeaderHeight).observe(hdr);
+
+  // ── bench name click popover ──────────────────────────────────────────────
+  const popover = document.createElement('div');
+  popover.id = 'bench-popover';
+  document.body.appendChild(popover);
+
+  let popoverTarget = null;
+
+  document.addEventListener('click', e => {
+    const benchName = e.target.closest('.bench-name[title]');
+    if (benchName) {
+      e.stopPropagation();
+      if (popoverTarget === benchName && popover.classList.contains('visible')) {
+        popover.classList.remove('visible');
+        popoverTarget = null;
+        return;
+      }
+      popoverTarget = benchName;
+      popover.textContent = benchName.title;
+      popover.classList.add('visible');
+
+      // position: prefer below, flip above if not enough room
+      const r = benchName.getBoundingClientRect();
+      const gap = 6;
+      popover.style.left = Math.min(r.left, window.innerWidth - 328) + 'px';
+      const below = r.bottom + gap;
+      const above = r.top - gap;
+      if (below + popover.offsetHeight < window.innerHeight || below < above) {
+        popover.style.top = below + 'px';
+      } else {
+        popover.style.top = (above - popover.offsetHeight) + 'px';
+      }
+      return;
+    }
+    // click outside closes
+    popover.classList.remove('visible');
+    popoverTarget = null;
+  });
 
 })();
 </script>
