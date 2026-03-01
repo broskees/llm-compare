@@ -1111,6 +1111,34 @@
     });
   }
 
+  // ── mobile section height equalizer ──────────────────────────────────────
+  // On desktop, CSS subgrid aligns same-index sections across cards automatically.
+  // On mobile, subgrid is off so we measure each section by index and set
+  // min-height to the tallest one — matching the desktop experience.
+  function equalizeMobileSectionHeights() {
+    if (!window.matchMedia('(max-width: 639px)').matches) return;
+    const bodies = Array.from(document.querySelectorAll('.card-body'));
+    if (bodies.length < 2) return;
+
+    // Collect sections-per-card as arrays indexed by position
+    const sectionsByIndex = [];
+    bodies.forEach(body => {
+      const sections = Array.from(body.querySelectorAll('.card-section'));
+      sections.forEach((sec, i) => {
+        // Clear any previously set min-height so we measure natural height
+        sec.style.minHeight = '';
+        if (!sectionsByIndex[i]) sectionsByIndex[i] = [];
+        sectionsByIndex[i].push(sec);
+      });
+    });
+
+    // For each section slot, find the tallest and apply it to all
+    sectionsByIndex.forEach(group => {
+      const maxH = Math.max(...group.map(el => el.offsetHeight));
+      group.forEach(el => { el.style.minHeight = maxH + 'px'; });
+    });
+  }
+
   function renderCards() {
     const area = document.getElementById('cards');
 
@@ -1134,6 +1162,7 @@
 
     area.appendChild(grid);
     bindMobileScrollSync();
+    equalizeMobileSectionHeights();
   }
 
   function renderCard(id, aligned) {
