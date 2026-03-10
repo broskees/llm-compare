@@ -27,6 +27,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Inject commit hash for cache busting
+        run: sed -i "s/__COMMIT_HASH__/${{ github.sha }}/g" index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

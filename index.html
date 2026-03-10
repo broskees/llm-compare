@@ -653,6 +653,9 @@
   const MAX      = 10;
   let dragState  = null;        // { id } while a drag is in progress
 
+  // Injected at deploy time by deploy.yml — cache-busts data files on each release
+  const DATA_VERSION = '__COMMIT_HASH__';
+
   // Converts a model_id to a safe filename (matches scripts/fetch-data.js)
   function sanitizeId(modelId) {
     return modelId.replace(/\//g, '--').replace(/\s+/g, '-');
@@ -726,7 +729,7 @@
 
   async function loadFreshness() {
     try {
-      const res = await fetch('./data/meta.json');
+      const res = await fetch(`./data/meta.json?v=${DATA_VERSION}`);
       if (!res.ok) return;
       const { lastUpdated } = await res.json();
       const last = new Date(lastUpdated);
@@ -744,7 +747,7 @@
 
   // ── init ───────────────────────────────────────────────────────────────────
   async function init() {
-    const res = await fetch('./data/models.json');
+    const res = await fetch(`./data/models.json?v=${DATA_VERSION}`);
     if (!res.ok) throw new Error('Failed to load models.json');
     modelList = await res.json();
     modelList.sort((a, b) => (b.gpqa_score ?? -1) - (a.gpqa_score ?? -1));
@@ -770,7 +773,7 @@
   // ── fetch rich data per model ───────────────────────────────────────────────
   async function fetchRich(id) {
     if (richData[id]) return richData[id];
-    const res = await fetch(`./data/details/${sanitizeId(id)}.json`);
+    const res = await fetch(`./data/details/${sanitizeId(id)}.json?v=${DATA_VERSION}`);
     if (!res.ok) throw new Error(`${res.status}`);
     richData[id] = await res.json();
     return richData[id];
@@ -782,7 +785,7 @@
   async function fetchArenaScores(id) {
     if (arenaData[id]) return;
     try {
-      const res = await fetch(`./data/arena/${sanitizeId(id)}.json`);
+      const res = await fetch(`./data/arena/${sanitizeId(id)}.json?v=${DATA_VERSION}`);
       if (!res.ok) return;
       const data = await res.json();
       arenaData[id] = data ?? {};

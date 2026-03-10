@@ -25,8 +25,8 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // Network-first for API calls and data files — always want fresh data
-  if (url.hostname === 'api.zeroeval.com' || url.pathname.includes('/data/')) {
+  // Network-first for API calls — always want fresh data
+  if (url.hostname === 'api.zeroeval.com') {
     e.respondWith(fetch(e.request));
     return;
   }
