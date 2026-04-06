@@ -1,0 +1,578 @@
+{
+  "model_id": "glm-5v-turbo",
+  "name": "GLM-5V-Turbo",
+  "organization": {
+    "id": "zai-org",
+    "name": "Zhipu AI",
+    "website": "https://z.ai"
+  },
+  "description": "GLM-5V-Turbo is Z.AI's first multimodal coding foundation model, built for vision-based coding tasks. It natively processes multimodal inputs including images, video, text, and files, while excelling at long-horizon planning, complex coding, and action execution. Deeply optimized for agent workflows, it works seamlessly with agents such as Claude Code and OpenClaw to complete the full loop of perceiving, planning, and executing tasks. It features systematic upgrades across model architecture, training methods, data construction, and tooling, including native multimodal fusion, 30+ task joint reinforcement learning, and an expanded multimodal toolchain.",
+  "release_date": "2026-04-02",
+  "announcement_date": "2026-04-02",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Proprietary",
+    "allow_commercial": false
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+    "playground": "https://chat.z.ai",
+    "paper": null,
+    "scorecard_blog": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "androidworld",
+      "name": "AndroidWorld",
+      "description": "AndroidWorld evaluates an agent's ability to operate in real Android GUI environments, completing multi-step tasks by perceiving screen content and executing touch/type actions.",
+      "categories": [
+        "vision",
+        "agents"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.757,
+      "normalized_score": 0.757,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp-vl",
+      "name": "BrowseComp-VL",
+      "description": "BrowseComp-VL is the vision-language variant of BrowseComp, evaluating multimodal models on web browsing comprehension tasks that require processing visual web page content alongside text.",
+      "categories": [
+        "vision",
+        "agents",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.519,
+      "normalized_score": 0.519,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cc-bench-v2-backend",
+      "name": "CC-Bench-V2 Backend",
+      "description": "CC-Bench-V2 Backend evaluates coding agents on backend development tasks, measuring practical engineering ability to implement server-side logic, APIs, and system components.",
+      "categories": [
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.228,
+      "normalized_score": 0.228,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cc-bench-v2-frontend",
+      "name": "CC-Bench-V2 Frontend",
+      "description": "CC-Bench-V2 Frontend evaluates coding agents on frontend development tasks, measuring ability to build UI components, handle styling, and implement client-side logic.",
+      "categories": [
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.684,
+      "normalized_score": 0.684,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cc-bench-v2-repo",
+      "name": "CC-Bench-V2 Repo Exploration",
+      "description": "CC-Bench-V2 Repo Exploration evaluates coding agents on repository-level understanding and navigation, measuring ability to explore, comprehend, and work across entire codebases.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.722,
+      "normalized_score": 0.722,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "claw-eval",
+      "name": "Claw-Eval",
+      "description": "Claw-Eval tests real-world agentic task completion across complex multi-step scenarios, evaluating a model's ability to use tools, navigate environments, and complete end-to-end tasks autonomously.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.75,
+      "normalized_score": 0.75,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": "Pass@3",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "design2code",
+      "name": "Design2Code",
+      "description": "Design2Code evaluates the ability to generate code (HTML/CSS/JS) from visual designs.",
+      "categories": [
+        "vision",
+        "code",
+        "multimodal"
+      ],
+      "modality": "image",
+      "max_score": 100,
+      "score": 0.948,
+      "normalized_score": 0.948,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "facts-grounding",
+      "name": "FACTS Grounding",
+      "description": "A benchmark evaluating language models' ability to generate factually accurate and well-grounded responses based on long-form input context, comprising 1,719 examples with documents up to 32k tokens requiring detailed responses that are fully grounded in provided documents",
+      "categories": [
+        "factuality",
+        "grounding",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.586,
+      "normalized_score": 0.586,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "flame-vlm-code",
+      "name": "Flame-VLM-Code",
+      "description": "Flame-VLM-Code evaluates multimodal models on visual code generation tasks, measuring ability to generate code from visual inputs such as UI mockups and design specifications.",
+      "categories": [
+        "vision",
+        "coding",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.938,
+      "normalized_score": 0.938,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "imagemining",
+      "name": "ImageMining",
+      "description": "ImageMining evaluates multimodal models on extracting structured information from images using tool use, measuring ability to combine visual understanding with tool-based retrieval and analysis.",
+      "categories": [
+        "vision",
+        "agents",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.307,
+      "normalized_score": 0.307,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmsearch",
+      "name": "MMSearch",
+      "description": "MMSearch evaluates multimodal models on search-based retrieval and question answering tasks that require processing both visual and textual information from search results.",
+      "categories": [
+        "agents",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.729,
+      "normalized_score": 0.729,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmsearch-plus",
+      "name": "MMSearch-Plus",
+      "description": "MMSearch-Plus is an extended variant of MMSearch with harder multimodal search and retrieval tasks requiring deeper reasoning over visual and textual search results.",
+      "categories": [
+        "agents",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.3,
+      "normalized_score": 0.3,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld",
+      "name": "OSWorld",
+      "description": "OSWorld: The first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across Ubuntu, Windows, and macOS with 369 computer tasks involving real web and desktop applications, OS file I/O, and multi-application workflows",
+      "categories": [
+        "vision",
+        "agents",
+        "general",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.623,
+      "normalized_score": 0.623,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "pinchbench",
+      "name": "PinchBench",
+      "description": "PinchBench evaluates coding agents on real-world agentic coding tasks, measuring both best-case and average performance across complex software engineering scenarios.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.807,
+      "normalized_score": 0.807,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": "Average",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "simplevqa",
+      "name": "SimpleVQA",
+      "description": "SimpleVQA is a visual question answering benchmark focused on simple queries.",
+      "categories": [
+        "vision",
+        "general",
+        "image_to_text",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 100,
+      "score": 0.782,
+      "normalized_score": 0.782,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "v-star",
+      "name": "V*",
+      "description": "A visual reasoning benchmark evaluating multimodal inference under challenging spatial and grounded tasks.",
+      "categories": [
+        "vision",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.89,
+      "normalized_score": 0.89,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vision2web",
+      "name": "Vision2Web",
+      "description": "Vision2Web evaluates multimodal models on converting visual designs and screenshots into functional web pages, measuring end-to-end design-to-code capability.",
+      "categories": [
+        "vision",
+        "coding",
+        "multimodal"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.31,
+      "normalized_score": 0.31,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "webvoyager",
+      "name": "WebVoyager",
+      "description": "WebVoyager evaluates an agent's ability to navigate and complete tasks on real websites by perceiving page screenshots and executing browser actions.",
+      "categories": [
+        "vision",
+        "agents"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.885,
+      "normalized_score": 0.885,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "zclawbench",
+      "name": "ZClawBench",
+      "description": "ZClawBench evaluates Claw-style agent task execution quality, measuring a model's ability to autonomously complete complex multi-step coding tasks in real-world environments.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.576,
+      "normalized_score": 0.576,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "facts-grounding",
+      "benchmark_name": "FACTS Grounding",
+      "models": [
+        {
+          "model_id": "gemini-2.5-pro-preview-06-05",
+          "model_name": "Gemini 2.5 Pro Preview 06-05",
+          "score": 0.878,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "score": 0.853,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-flash-lite",
+          "model_name": "Gemini 2.5 Flash-Lite",
+          "score": 0.841,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash-lite",
+          "model_name": "Gemini 2.0 Flash-Lite",
+          "score": 0.836,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.0-flash",
+          "model_name": "Gemini 2.0 Flash",
+          "score": 0.836,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.758,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.749,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.705,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.701,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.619,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5v-turbo",
+          "model_name": "GLM-5V-Turbo",
+          "score": 0.586,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "osworld",
+      "benchmark_name": "OSWorld",
+      "models": [
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.727,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.725,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.667,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.663,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5v-turbo",
+          "model_name": "GLM-5V-Turbo",
+          "score": 0.623,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-sonnet-4-5-20250929",
+          "model_name": "Claude Sonnet 4.5",
+          "score": 0.614,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-4-5-20251001",
+          "model_name": "Claude Haiku 4.5",
+          "score": 0.507,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.41,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.381,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.339,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 0.339,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

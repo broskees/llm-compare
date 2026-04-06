@@ -113,10 +113,10 @@
       "name": "CharXiv-D",
       "description": "CharXiv-D is the descriptive questions subset of the CharXiv benchmark, designed to assess multimodal large language models' ability to extract basic information from scientific charts. It contains descriptive questions covering information extraction, enumeration, pattern recognition, and counting across 2,323 diverse charts from arXiv papers, all curated and verified by human experts.",
       "categories": [
-        "multimodal",
-        "reasoning",
         "structured_output",
-        "vision"
+        "vision",
+        "multimodal",
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -134,9 +134,9 @@
       "name": "CharXiv-R",
       "description": "CharXiv-R is the reasoning component of the CharXiv benchmark, focusing on complex reasoning questions that require synthesizing information across visual chart elements. It evaluates multimodal large language models on their ability to understand and reason about scientific charts from arXiv papers through various reasoning tasks.",
       "categories": [
+        "vision",
         "multimodal",
-        "reasoning",
-        "vision"
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -154,9 +154,9 @@
       "name": "COLLIE",
       "description": "COLLIE is a grammar-based framework for systematic construction of constrained text generation tasks. It allows specification of rich, compositional constraints across diverse generation levels and modeling challenges including language understanding, logical reasoning, and semantic planning. The COLLIE-v1 dataset contains 2,080 instances across 13 constraint structures.",
       "categories": [
+        "writing",
         "language",
-        "reasoning",
-        "writing"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -174,10 +174,10 @@
       "name": "ComplexFuncBench",
       "description": "ComplexFuncBench is a benchmark designed to evaluate large language models' capabilities in handling complex function calling scenarios. It encompasses multi-step and constrained function calling tasks that require long-parameter filling, parameter value reasoning, and managing contexts up to 128k tokens. The benchmark includes 1,000 samples across five real-world scenarios.",
       "categories": [
-        "long_context",
-        "reasoning",
         "structured_output",
-        "tool_calling"
+        "tool_calling",
+        "long_context",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -332,9 +332,9 @@
       "name": "IFEval",
       "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
       "categories": [
+        "structured_output",
         "general",
-        "instruction_following",
-        "structured_output"
+        "instruction_following"
       ],
       "modality": "text",
       "max_score": 1,
@@ -352,8 +352,8 @@
       "name": "Internal API instruction following (hard)",
       "description": "Internal API instruction following (hard) benchmark - specific documentation not found in official sources",
       "categories": [
-        "general",
-        "structured_output"
+        "structured_output",
+        "general"
       ],
       "modality": "text",
       "max_score": 1,
@@ -371,9 +371,9 @@
       "name": "MathVista",
       "description": "MathVista evaluates mathematical reasoning of foundation models in visual contexts. It consists of 6,141 examples derived from 28 existing multimodal datasets and 3 newly created datasets (IQTest, FunctionQA, and PaperQA), combining challenges from diverse mathematical and visual tasks to assess models' ability to understand complex figures and perform rigorous reasoning.",
       "categories": [
+        "vision",
         "math",
-        "multimodal",
-        "vision"
+        "multimodal"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -469,34 +469,15 @@
       "verification_notes": null
     },
     {
-      "benchmark_id": "multichallenge-(o3-mini-grader)",
-      "name": "MultiChallenge (o3-mini grader)",
-      "description": "A realistic multi-turn conversation evaluation benchmark that challenges frontier LLMs across four key areas: instruction retention, inference memory, reliable versioned editing, and self-coherence. Despite near-perfect scores on existing benchmarks, frontier models achieve less than 50% accuracy on MultiChallenge.",
-      "categories": [
-        "language",
-        "reasoning"
-      ],
-      "modality": "text",
-      "max_score": 1,
-      "score": 0.422,
-      "normalized_score": 0.422,
-      "verified": false,
-      "self_reported": true,
-      "self_reported_source": "https://openai.com/index/introducing-gpt-5-for-developers/",
-      "analysis_method": "Standard benchmark (o3-mini grader, see footnote [3])",
-      "verification_date": null,
-      "verification_notes": null
-    },
-    {
       "benchmark_id": "multi-if",
       "name": "Multi-IF",
       "description": "Multi-IF benchmarks LLMs on multi-turn and multilingual instruction following. It expands upon IFEval by incorporating multi-turn sequences and translating English prompts into 7 other languages, resulting in 4,501 multilingual conversations with three turns each. The benchmark reveals that current leading LLMs struggle with maintaining accuracy in multi-turn instructions and shows higher error rates for non-Latin script languages.",
       "categories": [
+        "structured_output",
         "communication",
         "instruction_following",
         "language",
-        "reasoning",
-        "structured_output"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -572,9 +553,9 @@
       "name": "TAU-bench Airline",
       "description": "Part of τ-bench (TAU-bench), a benchmark for Tool-Agent-User interaction in real-world domains. The airline domain evaluates language agents' ability to interact with users through dynamic conversations while following domain-specific rules and using API tools. Agents must handle airline-related tasks and policies reliably.",
       "categories": [
+        "tool_calling",
         "communication",
-        "reasoning",
-        "tool_calling"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -592,9 +573,9 @@
       "name": "TAU-bench Retail",
       "description": "A benchmark for evaluating tool-agent-user interaction in retail environments. Tests language agents' ability to handle dynamic conversations with users while using domain-specific API tools and following policy guidelines. Evaluates agents on tasks like order cancellations, address changes, and order status checks through multi-turn conversations.",
       "categories": [
+        "tool_calling",
         "communication",
-        "reasoning",
-        "tool_calling"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -755,15 +736,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-3",
-          "model_name": "Grok-3",
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
           "score": 0.933,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking",
-          "model_name": "LongCat-Flash-Thinking",
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
           "score": 0.933,
           "rank": 3,
           "is_current_model": false
@@ -824,8 +805,15 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -838,13 +826,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
           "score": 1,
@@ -852,8 +833,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -990,65 +971,65 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.815,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.814,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5-2025-08-07",
           "model_name": "GPT-5",
           "score": 0.811,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-flash-preview",
           "model_name": "Gemini 3 Flash",
           "score": 0.803,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.795,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "o3-2025-04-16",
           "model_name": "o3",
           "score": 0.786,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.775,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.775,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.774,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-122b-a10b",
-          "model_name": "Qwen3.5-122B-A10B",
-          "score": 0.772,
           "rank": 10,
           "is_current_model": false
         },
@@ -1056,7 +1037,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.568,
-          "rank": 18,
+          "rank": 19,
           "is_current_model": true
         }
       ]
@@ -1115,30 +1096,23 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.904,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-sonnet-4-6",
           "model_name": "Claude Sonnet 4.6",
           "score": 0.899,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.0-pro",
           "model_name": "Seed 2.0 Pro",
           "score": 0.889,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-397b-a17b",
-          "model_name": "Qwen3.5-397B-A17B",
-          "score": 0.884,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
-          "score": 0.884,
           "rank": 10,
           "is_current_model": false
         },
@@ -1146,7 +1120,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.65,
-          "rank": 116,
+          "rank": 119,
           "is_current_model": true
         }
       ]
@@ -1198,18 +1172,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-4.1-mini-2025-04-14",
-          "model_name": "GPT-4.1 mini",
-          "score": 0.617,
-          "rank": 7,
-          "is_current_model": true
-        },
-        {
           "model_id": "gpt-4.1-2025-04-14",
           "model_name": "GPT-4.1",
           "score": 0.617,
           "rank": 7,
           "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-mini-2025-04-14",
+          "model_name": "GPT-4.1 mini",
+          "score": 0.617,
+          "rank": 7,
+          "is_current_model": true
         },
         {
           "model_id": "o3-mini",
@@ -1336,30 +1310,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.967,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.954,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.948,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "nemotron-3-super-120b-a12b",
           "model_name": "Nemotron 3 Super (120B A12B)",
           "score": 0.9473,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
-          "model_id": "grok-4-fast",
-          "model_name": "Grok 4 Fast",
-          "score": 0.933,
           "rank": 8,
           "is_current_model": false
         },
@@ -1367,21 +1341,21 @@
           "model_id": "gpt-5-2025-08-07",
           "model_name": "GPT-5",
           "score": 0.933,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-27b",
-          "model_name": "Qwen3.5-27B",
-          "score": 0.92,
-          "rank": 10,
+          "model_id": "grok-4-fast",
+          "model_name": "Grok 4 Fast",
+          "score": 0.933,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.35,
-          "rank": 25,
+          "rank": 26,
           "is_current_model": true
         }
       ]
@@ -1464,7 +1438,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.037,
-          "rank": 59,
+          "rank": 62,
           "is_current_model": true
         }
       ]
@@ -1481,65 +1455,65 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.943,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "o3-mini",
           "model_name": "o3-mini",
           "score": 0.939,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.934,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-7-sonnet-20250219",
           "model_name": "Claude 3.7 Sonnet",
           "score": 0.932,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.926,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "nova-pro",
           "model_name": "Nova Pro",
           "score": 0.921,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.921,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.919,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-9b",
           "model_name": "Qwen3.5-9B",
           "score": 0.915,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemma-3-27b-it",
-          "model_name": "Gemma 3 27B",
-          "score": 0.904,
           "rank": 10,
           "is_current_model": false
         },
@@ -1547,7 +1521,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.841,
-          "rank": 38,
+          "rank": 39,
           "is_current_model": true
         }
       ]
@@ -1661,15 +1635,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-235b-a22b-thinking",
-          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "sarvam-105b",
-          "model_name": "Sarvam-105B",
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
@@ -1765,23 +1739,23 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.895,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-sonnet-4-6",
           "model_name": "Claude Sonnet 4.6",
           "score": 0.893,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "claude-sonnet-4-5-20250929",
           "model_name": "Claude Sonnet 4.5",
           "score": 0.891,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3.1-flash-lite-preview",
-          "model_name": "Gemini 3.1 Flash-Lite",
-          "score": 0.889,
           "rank": 10,
           "is_current_model": false
         },
@@ -1789,7 +1763,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.785,
-          "rank": 31,
+          "rank": 34,
           "is_current_model": true
         }
       ]
@@ -1799,72 +1773,72 @@
       "benchmark_name": "MMMU",
       "models": [
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.86,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.1-2025-11-13",
           "model_name": "GPT-5.1",
           "score": 0.854,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.1-instant-2025-11-12",
           "model_name": "GPT-5.1 Instant",
           "score": 0.854,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.1-thinking-2025-11-12",
           "model_name": "GPT-5.1 Thinking",
           "score": 0.854,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5-2025-08-07",
           "model_name": "GPT-5",
           "score": 0.842,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.839,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "o3-2025-04-16",
           "model_name": "o3",
           "score": 0.829,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.823,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemini-2.5-pro-preview-06-05",
           "model_name": "Gemini 2.5 Pro Preview 06-05",
           "score": 0.82,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "o4-mini",
           "model_name": "o4-mini",
           "score": 0.816,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
-          "score": 0.814,
           "rank": 10,
           "is_current_model": false
         },
@@ -1872,7 +1846,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.727,
-          "rank": 23,
+          "rank": 24,
           "is_current_model": true
         }
       ]
@@ -1882,79 +1856,79 @@
       "benchmark_name": "Multi-Challenge",
       "models": [
         {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.696,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.676,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "step3-vl-10b",
           "model_name": "Step3-VL-10B",
           "score": 0.626,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.615,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.608,
-          "rank": 4,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.604,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.6,
-          "rank": 5,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-super-120b-a12b",
+          "model_name": "Nemotron 3 Super (120B A12B)",
+          "score": 0.5523,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-9b",
           "model_name": "Qwen3.5-9B",
           "score": 0.545,
-          "rank": 6,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2-instruct",
-          "model_name": "Kimi K2 Instruct",
-          "score": 0.541,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2-instruct-0905",
           "model_name": "Kimi K2-Instruct-0905",
           "score": 0.541,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-4b",
-          "model_name": "Qwen3.5-4B",
-          "score": 0.49,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "minimax-m1-80k",
-          "model_name": "MiniMax M1 80K",
-          "score": 0.447,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m1-40k",
-          "model_name": "MiniMax M1 40K",
-          "score": 0.447,
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.541,
           "rank": 10,
           "is_current_model": false
         },
@@ -1962,7 +1936,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.358,
-          "rank": 15,
+          "rank": 21,
           "is_current_model": true
         }
       ]
@@ -2097,30 +2071,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.788,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-flash-preview",
           "model_name": "Gemini 3 Flash",
           "score": 0.78,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.78,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "glm-5",
           "model_name": "GLM-5",
           "score": 0.778,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2.5",
-          "model_name": "Kimi K2.5",
-          "score": 0.768,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "seed-2.0-pro",
-          "model_name": "Seed 2.0 Pro",
-          "score": 0.765,
           "rank": 10,
           "is_current_model": false
         },
@@ -2128,7 +2102,7 @@
           "model_id": "gpt-4.1-mini-2025-04-14",
           "model_name": "GPT-4.1 mini",
           "score": 0.236,
-          "rank": 74,
+          "rank": 77,
           "is_current_model": true
         }
       ]
@@ -2166,15 +2140,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-sonnet-4-20250514",
-          "model_name": "Claude Sonnet 4",
+          "model_id": "minimax-m1-40k",
+          "model_name": "MiniMax M1 40K",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m1-40k",
-          "model_name": "MiniMax M1 40K",
+          "model_id": "claude-sonnet-4-20250514",
+          "model_name": "Claude Sonnet 4",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false

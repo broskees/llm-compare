@@ -56,9 +56,9 @@
       "name": "ARC-AGI v2",
       "description": "ARC-AGI-2 is an upgraded benchmark for measuring abstract reasoning and problem-solving abilities in AI systems through visual grid transformation tasks. It evaluates fluid intelligence via input-output grid pairs (1x1 to 30x30) using colored cells (0-9), requiring models to identify underlying transformation rules from demonstration examples and apply them to test cases. Designed to be easy for humans but challenging for AI, focusing on core cognitive abilities like spatial reasoning, pattern recognition, and compositional generalization.",
       "categories": [
+        "vision",
         "reasoning",
-        "spatial_reasoning",
-        "vision"
+        "spatial_reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -76,9 +76,9 @@
       "name": "CharXiv-R",
       "description": "CharXiv-R is the reasoning component of the CharXiv benchmark, focusing on complex reasoning questions that require synthesizing information across visual chart elements. It evaluates multimodal large language models on their ability to understand and reason about scientific charts from arXiv papers through various reasoning tasks.",
       "categories": [
+        "vision",
         "multimodal",
-        "reasoning",
-        "vision"
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -237,10 +237,10 @@
       "name": "MMMU-Pro",
       "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
       "categories": [
+        "vision",
         "general",
         "multimodal",
-        "reasoning",
-        "vision"
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -278,10 +278,10 @@
       "name": "OmniDocBench 1.5",
       "description": "OmniDocBench 1.5 is a comprehensive benchmark for evaluating multimodal large language models on document understanding tasks, including OCR, document parsing, information extraction, and visual question answering across diverse document types. Lower Overall Edit Distance scores are better.",
       "categories": [
-        "multimodal",
-        "reasoning",
         "structured_output",
-        "vision"
+        "vision",
+        "multimodal",
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -299,10 +299,10 @@
       "name": "ScreenSpot Pro",
       "description": "ScreenSpot-Pro is a novel GUI grounding benchmark designed to rigorously evaluate the grounding capabilities of multimodal large language models (MLLMs) in professional high-resolution computing environments. The benchmark comprises 1,581 instructions across 23 applications spanning 5 industries and 3 operating systems, featuring authentic high-resolution images from professional domains with expert annotations. Unlike previous benchmarks that focus on cropped screenshots in consumer applications, ScreenSpot-Pro addresses the complexity and diversity of real-world professional software scenarios, revealing significant performance gaps in current MLLM GUI perception capabilities.",
       "categories": [
+        "vision",
         "grounding",
         "multimodal",
-        "spatial_reasoning",
-        "vision"
+        "spatial_reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -360,9 +360,9 @@
       "name": "t2-bench",
       "description": "t2-bench is a benchmark for evaluating agentic tool use capabilities, measuring how well models can select, sequence, and utilize tools to solve complex tasks. It tests autonomous planning and execution in multi-step scenarios.",
       "categories": [
+        "tool_calling",
         "agents",
-        "reasoning",
-        "tool_calling"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -380,10 +380,10 @@
       "name": "Terminal-Bench 2.0",
       "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
       "categories": [
+        "tool_calling",
         "agents",
         "code",
-        "reasoning",
-        "tool_calling"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -420,10 +420,10 @@
       "name": "VideoMMMU",
       "description": "Video-MMMU evaluates Large Multimodal Models' ability to acquire knowledge from expert-level professional videos across six disciplines through three cognitive stages: perception, comprehension, and adaptation. Contains 300 videos and 900 human-annotated questions spanning Art, Business, Science, Medicine, Humanities, and Engineering.",
       "categories": [
+        "vision",
         "healthcare",
         "multimodal",
-        "reasoning",
-        "vision"
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -454,7 +454,7 @@
         "max_output_tokens": 65536
       },
       "performance": {
-        "throughput": 30.151003396009898,
+        "throughput": 90,
         "latency": 0.6
       },
       "features": {
@@ -487,8 +487,8 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -501,18 +501,18 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": true
-        },
-        {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
         },
         {
           "model_id": "gpt-5.2-2025-12-11",
@@ -536,15 +536,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -646,65 +646,65 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.815,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.814,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": true
         },
         {
           "model_id": "gpt-5-2025-08-07",
           "model_name": "GPT-5",
           "score": 0.811,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-flash-preview",
           "model_name": "Gemini 3 Flash",
           "score": 0.803,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.795,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "o3-2025-04-16",
           "model_name": "o3",
           "score": 0.786,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.775,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.775,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.774,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-122b-a10b",
-          "model_name": "Qwen3.5-122B-A10B",
-          "score": 0.772,
           "rank": 10,
           "is_current_model": false
         }
@@ -787,6 +787,82 @@
       ]
     },
     {
+      "benchmark_id": "global-piqa",
+      "benchmark_name": "Global PIQA",
+      "models": [
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.934,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.928,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.898,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.898,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.884,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.875,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.866,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-9b",
+          "model_name": "Qwen3.5-9B",
+          "score": 0.832,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-4b",
+          "model_name": "Qwen3.5-4B",
+          "score": 0.789,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-2b",
+          "model_name": "Qwen3.5-2B",
+          "score": 0.693,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
       "benchmark_id": "gpqa",
       "benchmark_name": "GPQA",
       "models": [
@@ -840,30 +916,23 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.904,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-sonnet-4-6",
           "model_name": "Claude Sonnet 4.6",
           "score": 0.899,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.0-pro",
           "model_name": "Seed 2.0 Pro",
           "score": 0.889,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-397b-a17b",
-          "model_name": "Qwen3.5-397B-A17B",
-          "score": 0.884,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
-          "score": 0.884,
           "rank": 10,
           "is_current_model": false
         }
@@ -957,18 +1026,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
-          "score": 0.918,
-          "rank": 2,
-          "is_current_model": false
-        },
-        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.918,
           "rank": 2,
           "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.918,
+          "rank": 2,
+          "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
@@ -992,6 +1061,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.895,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-1-20250805",
           "model_name": "Claude Opus 4.1",
           "score": 0.895,
@@ -1002,20 +1078,13 @@
           "model_id": "claude-sonnet-4-6",
           "model_name": "Claude Sonnet 4.6",
           "score": 0.893,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "claude-sonnet-4-5-20250929",
           "model_name": "Claude Sonnet 4.5",
           "score": 0.891,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3.1-flash-lite-preview",
-          "model_name": "Gemini 3.1 Flash-Lite",
-          "score": 0.889,
           "rank": 10,
           "is_current_model": false
         }
@@ -1061,37 +1130,44 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.788,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.785,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5-2025-08-07",
           "model_name": "GPT-5",
           "score": 0.784,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.773,
-          "rank": 8,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.769,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.769,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3.1-flash-lite-preview",
-          "model_name": "Gemini 3.1 Flash-Lite",
-          "score": 0.768,
           "rank": 10,
           "is_current_model": false
         }
@@ -1144,30 +1220,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.682,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3-vl-235b-a22b-instruct",
           "model_name": "Qwen3 VL 235B A22B Instruct",
           "score": 0.62,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.618,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-30b-a3b-instruct",
           "model_name": "Qwen3 VL 30B A3B Instruct",
           "score": 0.605,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3-vl-4b-instruct",
-          "model_name": "Qwen3 VL 4B Instruct",
-          "score": 0.595,
           "rank": 10,
           "is_current_model": false
         }
@@ -1296,30 +1372,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.788,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.78,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-flash-preview",
           "model_name": "Gemini 3 Flash",
           "score": 0.78,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "glm-5",
           "model_name": "GLM-5",
           "score": 0.778,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2.5",
-          "model_name": "Kimi K2.5",
-          "score": 0.768,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "seed-2.0-pro",
-          "model_name": "Seed 2.0 Pro",
-          "score": 0.765,
           "rank": 10,
           "is_current_model": false
         },
@@ -1327,7 +1403,7 @@
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.762,
-          "rank": 15,
+          "rank": 17,
           "is_current_model": true
         }
       ]
@@ -1365,44 +1441,44 @@
           "is_current_model": false
         },
         {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.864,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-26b-a4b-it",
+          "model_name": "Gemma 4 26B-A4B",
+          "score": 0.855,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.854,
-          "rank": 5,
+          "rank": 7,
           "is_current_model": true
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.812,
-          "rank": 6,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v3.2-speciale",
           "model_name": "DeepSeek-V3.2-Speciale",
           "score": 0.803,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-reasoner",
           "model_name": "DeepSeek-V3.2 (Thinking)",
           "score": 0.802,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-4b",
-          "model_name": "Qwen3.5-4B",
-          "score": 0.799,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-122b-a10b",
-          "model_name": "Qwen3.5-122B-A10B",
-          "score": 0.795,
           "rank": 10,
           "is_current_model": false
         }
@@ -1448,38 +1524,45 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.616,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.4-mini",
           "model_name": "GPT-5.4 mini",
           "score": 0.6,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-5-20251101",
           "model_name": "Claude Opus 4.5",
           "score": 0.593,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "claude-sonnet-4-6",
           "model_name": "Claude Sonnet 4.6",
           "score": 0.591,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "glm-5",
-          "model_name": "GLM-5",
-          "score": 0.562,
-          "rank": 9,
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.571,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.542,
-          "rank": 10,
+          "rank": 13,
           "is_current_model": true
         }
       ]
@@ -1531,30 +1614,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.84,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-2.5-pro-preview-06-05",
           "model_name": "Gemini 2.5 Pro Preview 06-05",
           "score": 0.836,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "o3-2025-04-16",
           "model_name": "o3",
           "score": 0.833,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.823,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-122b-a10b",
-          "model_name": "Qwen3.5-122B-A10B",
-          "score": 0.82,
           "rank": 10,
           "is_current_model": false
         }
