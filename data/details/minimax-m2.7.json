@@ -59,7 +59,9 @@
       "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
       "categories": [
         "agents",
+        "finance",
         "general",
+        "legal",
         "reasoning"
       ],
       "modality": "text",
@@ -193,10 +195,10 @@
       "name": "Terminal-Bench 2.0",
       "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
       "categories": [
-        "tool_calling",
         "agents",
         "code",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -214,9 +216,9 @@
       "name": "Toolathlon",
       "description": "Tool Decathlon is a comprehensive benchmark for evaluating AI agents' ability to use multiple tools across diverse task categories. It measures proficiency in tool selection, sequencing, and execution across ten different tool-use scenarios.",
       "categories": [
-        "tool_calling",
         "agents",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -249,51 +251,94 @@
       "verification_notes": null
     }
   ],
-  "providers": [],
+  "providers": [
+    {
+      "provider_id": "minimax",
+      "name": "MiniMax",
+      "website": "https://platform.minimax.io",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.3,
+        "output_per_million": 1.2
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 204800,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
   "benchmark_rankings": [
     {
       "benchmark_id": "swe-bench-multilingual",
       "benchmark_name": "SWE-bench Multilingual",
       "models": [
         {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.873,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.7783,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "minimax-m2.7",
           "model_name": "MiniMax M2.7",
           "score": 0.765,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": true
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.738,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.73,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "minimax-m2.1",
           "model_name": "MiniMax M2.1",
           "score": 0.725,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
-          "model_id": "mimo-v2-pro",
-          "model_name": "MiMo-V2-Pro",
-          "score": 0.717,
           "rank": 6,
           "is_current_model": false
         },
@@ -301,27 +346,103 @@
           "model_id": "mimo-v2-flash",
           "model_name": "MiMo-V2-Flash",
           "score": 0.717,
-          "rank": 6,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.717,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2",
+          "model_name": "DeepSeek-V3.2",
+          "score": 0.702,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-reasoner",
           "model_name": "DeepSeek-V3.2 (Thinking)",
           "score": 0.702,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "benchmark_name": "SWE-Bench Pro",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.778,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.584,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.577,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.3-codex",
+          "model_name": "GPT-5.3 Codex",
+          "score": 0.568,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.566,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-codex",
+          "model_name": "GPT-5.2 Codex",
+          "score": 0.564,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.7",
+          "model_name": "MiniMax M2.7",
+          "score": 0.562,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
+          "score": 0.554,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-397b-a17b",
-          "model_name": "Qwen3.5-397B-A17B",
-          "score": 0.693,
+          "model_id": "gpt-5.4-mini",
+          "model_name": "GPT-5.4 mini",
+          "score": 0.544,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "glm-4.7",
-          "model_name": "GLM-4.7",
-          "score": 0.667,
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.542,
           "rank": 10,
           "is_current_model": false
         }
@@ -332,72 +453,72 @@
       "benchmark_name": "Terminal-Bench 2.0",
       "models": [
         {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.82,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.3-codex",
           "model_name": "GPT-5.3 Codex",
           "score": 0.773,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4",
           "model_name": "GPT-5.4",
           "score": 0.751,
-          "rank": 2,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.69,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3.1-pro-preview",
           "model_name": "Gemini 3.1 Pro",
           "score": 0.685,
-          "rank": 3,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.654,
-          "rank": 4,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.2-codex",
           "model_name": "GPT-5.2 Codex",
           "score": 0.64,
-          "rank": 5,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.616,
-          "rank": 6,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4-mini",
           "model_name": "GPT-5.4 mini",
           "score": 0.6,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-5-20251101",
           "model_name": "Claude Opus 4.5",
           "score": 0.593,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-sonnet-4-6",
-          "model_name": "Claude Sonnet 4.6",
-          "score": 0.591,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "mimo-v2-pro",
-          "model_name": "MiMo-V2-Pro",
-          "score": 0.571,
           "rank": 10,
           "is_current_model": false
         },
@@ -405,7 +526,7 @@
           "model_id": "minimax-m2.7",
           "model_name": "MiniMax M2.7",
           "score": 0.57,
-          "rank": 11,
+          "rank": 14,
           "is_current_model": true
         }
       ]
@@ -457,37 +578,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.407,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.398,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.383,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4-nano",
           "model_name": "GPT-5.4 nano",
           "score": 0.355,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-reasoner",
-          "model_name": "DeepSeek-V3.2 (Thinking)",
-          "score": 0.352,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v3.2-speciale",
-          "model_name": "DeepSeek-V3.2-Speciale",
-          "score": 0.352,
           "rank": 10,
           "is_current_model": false
         }
