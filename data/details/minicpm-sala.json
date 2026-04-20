@@ -1,0 +1,1179 @@
+{
+  "model_id": "minicpm-sala",
+  "name": "MiniCPM-SALA",
+  "model_type": "llm",
+  "organization": {
+    "id": "openbmb",
+    "name": "OpenBMB",
+    "website": "https://www.openbmb.cn"
+  },
+  "description": "MiniCPM-SALA (Sparse Attention and Linear Attention) is a 9B hybrid model built from a MiniCPM-4.0 checkpoint via continual training (~2T tokens, 25% of training-from-scratch cost). It interleaves 25% InfLLM-V2 sparse attention and 75% Lightning Attention layers, achieving up to 3.5x inference speed over dense baselines at 256K tokens. With HyPE (Hybrid Positional Encoding) and NoPE in sparse layers, the model extrapolates to 2048K tokens despite a 520K training length, enabling 1M-token inference on consumer GPUs like the RTX 5090.",
+  "release_date": "2026-02-11",
+  "announcement_date": "2026-02-11",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 9477203968,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "name": "Apache 2.0",
+    "allow_commercial": true
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "false",
+    "tuning": "instruct"
+  },
+  "sources": {
+    "api_ref": null,
+    "playground": null,
+    "paper": "https://github.com/OpenBMB/MiniCPM/blob/main/docs/MiniCPM_SALA.pdf",
+    "scorecard_blog": null,
+    "repo": "https://github.com/OpenBMB/MiniCPM",
+    "weights": "https://huggingface.co/openbmb/MiniCPM-SALA"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aime-2024",
+      "name": "AIME 2024",
+      "description": "American Invitational Mathematics Examination 2024, consisting of 30 challenging mathematical reasoning problems from AIME I and AIME II competitions. Each problem requires an integer answer between 0-999 and tests advanced mathematical reasoning across algebra, geometry, combinatorics, and number theory. Used as a benchmark for evaluating mathematical reasoning capabilities in large language models at Olympiad-level difficulty.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8375,
+      "normalized_score": 0.8375,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "name": "AIME 2025",
+      "description": "All 30 problems from the 2025 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7833,
+      "normalized_score": 0.7833,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bbh",
+      "name": "BBH",
+      "description": "Big-Bench Hard (BBH) is a suite of 23 challenging tasks selected from BIG-Bench for which prior language model evaluations did not outperform the average human-rater. These tasks require multi-step reasoning across diverse domains including arithmetic, logical reasoning, reading comprehension, and commonsense reasoning. The benchmark was designed to test capabilities believed to be beyond current language models and focuses on evaluating complex reasoning skills including temporal understanding, spatial reasoning, causal understanding, and deductive logical reasoning.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8155,
+      "normalized_score": 0.8155,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cmmlu",
+      "name": "CMMLU",
+      "description": "CMMLU (Chinese Massive Multitask Language Understanding) is a comprehensive Chinese benchmark that evaluates the knowledge and reasoning capabilities of large language models across 67 different subject topics. The benchmark covers natural sciences, social sciences, engineering, and humanities with multiple-choice questions ranging from basic to advanced professional levels.",
+      "categories": [
+        "general",
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8155,
+      "normalized_score": 0.8155,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humaneval",
+      "name": "HumanEval",
+      "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
+      "categories": [
+        "code",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9512,
+      "normalized_score": 0.9512,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ifeval",
+      "name": "IFEval",
+      "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
+      "categories": [
+        "general",
+        "instruction_following",
+        "structured_output"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7634,
+      "normalized_score": 0.7634,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench-v5",
+      "name": "LiveCodeBench v5",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6048,
+      "normalized_score": 0.6048,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "name": "LiveCodeBench v6",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.52,
+      "normalized_score": 0.52,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mbpp",
+      "name": "MBPP",
+      "description": "MBPP (Mostly Basic Python Problems) is a benchmark of 974 crowd-sourced Python programming problems designed to be solvable by entry-level programmers. Each problem consists of a task description, code solution, and 3 automated test cases covering programming fundamentals and standard library functionality.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 0.8911,
+      "normalized_score": 0.8911,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "finance",
+        "general",
+        "healthcare",
+        "language",
+        "legal",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6704,
+      "normalized_score": 0.6704,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-128k-(2-needle)",
+      "name": "MRCR 128K (2-needle)",
+      "description": "MRCR (Multi-Round Coreference Resolution) at 128K context length with 2 needles. Models must navigate long conversations to reproduce specific model outputs, testing attention and reasoning across 128K-token contexts with 2 items to retrieve.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.2862,
+      "normalized_score": 0.2862,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-128k-(4-needle)",
+      "name": "MRCR 128K (4-needle)",
+      "description": "MRCR (Multi-Round Coreference Resolution) at 128K context length with 4 needles. Models must navigate long conversations to reproduce specific model outputs, testing attention and reasoning across 128K-token contexts with 4 items to retrieve.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.1962,
+      "normalized_score": 0.1962,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-128k-(8-needle)",
+      "name": "MRCR 128K (8-needle)",
+      "description": "MRCR (Multi-Round Coreference Resolution) at 128K context length with 8 needles. Models must navigate long conversations to reproduce specific model outputs, testing attention and reasoning across 128K-token contexts with 8 items to retrieve.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.1012,
+      "normalized_score": 0.1012,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-64k-(2-needle)",
+      "name": "MRCR 64K (2-needle)",
+      "description": "MRCR (Multi-Round Coreference Resolution) at 64K context length with 2 needles. Models must navigate long conversations to reproduce specific model outputs, testing attention and reasoning across 64K-token contexts with 2 items to retrieve.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.2977,
+      "normalized_score": 0.2977,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-64k-(4-needle)",
+      "name": "MRCR 64K (4-needle)",
+      "description": "MRCR (Multi-Round Coreference Resolution) at 64K context length with 4 needles. Models must navigate long conversations to reproduce specific model outputs, testing attention and reasoning across 64K-token contexts with 4 items to retrieve.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.2057,
+      "normalized_score": 0.2057,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-64k-(8-needle)",
+      "name": "MRCR 64K (8-needle)",
+      "description": "MRCR (Multi-Round Coreference Resolution) at 64K context length with 8 needles. Models must navigate long conversations to reproduce specific model outputs, testing attention and reasoning across 64K-token contexts with 8 items to retrieve.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.1656,
+      "normalized_score": 0.1656,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "nolima-128k",
+      "name": "NoLiMa 128K",
+      "description": "NoLiMa evaluated at a 131072-token context length. Tests latent associative reasoning in long contexts with minimal lexical overlap between questions and needles.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.2386,
+      "normalized_score": 0.2386,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "nolima-32k",
+      "name": "NoLiMa 32K",
+      "description": "NoLiMa evaluated at a 32768-token context length. Tests latent associative reasoning in long contexts with minimal lexical overlap between questions and needles.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5454,
+      "normalized_score": 0.5454,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "nolima-64k",
+      "name": "NoLiMa 64K",
+      "description": "NoLiMa evaluated at a 65536-token context length. Tests latent associative reasoning in long contexts with minimal lexical overlap between questions and needles.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.4295,
+      "normalized_score": 0.4295,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ruler-1000k",
+      "name": "RULER 1000K",
+      "description": "RULER 1000K evaluates the official 13-task RULER v1 suite at a 1048576-token (1M) context budget.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.863,
+      "normalized_score": 0.863,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ruler-128k",
+      "name": "RULER 128k",
+      "description": "RULER 128k evaluates the official 13-task RULER v1 suite at a 131072-token context budget.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8937,
+      "normalized_score": 0.8937,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ruler-2048k",
+      "name": "RULER 2048K",
+      "description": "RULER 2048K evaluates the official 13-task RULER v1 suite at a 2097152-token (2M) context budget.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.816,
+      "normalized_score": 0.816,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ruler-512k",
+      "name": "RULER 512K",
+      "description": "RULER 512K evaluates the official 13-task RULER v1 suite at a 524288-token context budget.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.871,
+      "normalized_score": 0.871,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ruler-64k",
+      "name": "RULER 64k",
+      "description": "RULER 64k evaluates the official 13-task RULER v1 suite at a 65536-token context budget.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9265,
+      "normalized_score": 0.9265,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/openbmb/MiniCPM-SALA",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2024",
+      "benchmark_name": "AIME 2024",
+      "models": [
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.958,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.934,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.92,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.916,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.914,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.91,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-14b-latest",
+          "model_name": "Ministral 3 (14B Reasoning 2512)",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.894,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.8375,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "benchmark_name": "AIME 2025",
+      "models": [
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.9979,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.997,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-nano-30b-a3b",
+          "model_name": "Nemotron 3 Nano (30B A3B)",
+          "score": 0.992,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.7833,
+          "rank": 66,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "bbh",
+      "benchmark_name": "BBH",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.8887,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.869,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.845,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.843,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.824,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.824,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.8155,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "nova-micro",
+          "model_name": "Nova Micro",
+          "score": 0.795,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-14b-instruct",
+          "model_name": "Qwen2.5 14B Instruct",
+          "score": 0.782,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.6782,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humaneval",
+      "benchmark_name": "HumanEval",
+      "models": [
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.9512,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.945,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.937,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.934,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.933,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.927,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-mini",
+          "model_name": "o1-mini",
+          "score": 0.924,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sarvam-30b",
+          "model_name": "Sarvam-30B",
+          "score": 0.921,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.92,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.92,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifeval",
+      "benchmark_name": "IFEval",
+      "models": [
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.943,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.939,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.934,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-7-sonnet-20250219",
+          "model_name": "Claude 3.7 Sonnet",
+          "score": 0.932,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.926,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.921,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.921,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.919,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-9b",
+          "model_name": "Qwen3.5-9B",
+          "score": 0.915,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.7634,
+          "rank": 55,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "benchmark_name": "LiveCodeBench v6",
+      "models": [
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.878,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.871,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step-3.5-flash",
+          "model_name": "Step-3.5-Flash",
+          "score": 0.864,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.85,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.7",
+          "model_name": "GLM-4.7",
+          "score": 0.849,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.836,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.831,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.6",
+          "model_name": "GLM-4.6",
+          "score": 0.828,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b-high",
+          "model_name": "GPT OSS 120B High",
+          "score": 0.819,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-lite",
+          "model_name": "Seed 2.0 Lite",
+          "score": 0.817,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.52,
+          "rank": 34,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mbpp",
+      "benchmark_name": "MBPP",
+      "models": [
+        {
+          "model_id": "sarvam-30b",
+          "model_name": "Sarvam-30B",
+          "score": 0.927,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.913,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-32b-instruct",
+          "model_name": "Qwen2.5-Coder 32B Instruct",
+          "score": 0.902,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.8911,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.882,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-nano-8b-v1",
+          "model_name": "Llama 3.1 Nemotron Nano 8B V1",
+          "score": 0.846,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
+          "score": 0.84,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.84,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-coder-7b-instruct",
+          "model_name": "Qwen2.5-Coder 7B Instruct",
+          "score": 0.835,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-14b-instruct",
+          "model_name": "Qwen2.5 14B Instruct",
+          "score": 0.82,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.885,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.867,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.861,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.853,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-35b-a3b",
+          "model_name": "Qwen3.6-35B-A3B",
+          "score": 0.852,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.852,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.6704,
+          "rank": 82,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "grok-4-heavy",
+    "name": "Grok-4 Heavy",
+    "organization_name": "xAI",
+    "release_date": null,
+    "announcement_date": "2025-07-09",
+    "knowledge_cutoff": "2024-12-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "aime-2025": 1,
+      "gpqa": 0.884,
+      "hmmt25": 0.967,
+      "humanity's-last-exam": 0.507,
+      "livecodebench": 0.794,
+      "usamo25": 0.619
+    },
+    "provider": null
+  }
+}
