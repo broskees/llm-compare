@@ -14,7 +14,7 @@
   "knowledge_cutoff": null,
   "param_count": 480000000000,
   "training_tokens": null,
-  "available_in_zeroeval": true,
+  "available_in_zeroeval": false,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -59,12 +59,12 @@
       "name": "BFCL-v3",
       "description": "Berkeley Function Calling Leaderboard v3 (BFCL-v3) is an advanced benchmark that evaluates large language models' function calling capabilities through multi-turn and multi-step interactions. It introduces extended conversational exchanges where models must retain contextual information across turns and execute multiple internal function calls for complex user requests. The benchmark includes 1000 test cases across domains like vehicle control, trading bots, travel booking, and file system management, using state-based evaluation to verify both system state changes and execution path correctness.",
       "categories": [
-        "structured_output",
-        "tool_calling",
         "agents",
         "finance",
         "general",
-        "reasoning"
+        "reasoning",
+        "structured_output",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -180,9 +180,9 @@
       "name": "TAU-bench Airline",
       "description": "Part of τ-bench (TAU-bench), a benchmark for Tool-Agent-User interaction in real-world domains. The airline domain evaluates language agents' ability to interact with users through dynamic conversations while following domain-specific rules and using API tools. Agents must handle airline-related tasks and policies reliably.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -200,9 +200,9 @@
       "name": "TAU-bench Retail",
       "description": "A benchmark for evaluating tool-agent-user interaction in retail environments. Tests language agents' ability to handle dynamic conversations with users while using domain-specific API tools and following policy guidelines. Evaluates agents on tasks like order cancellations, address changes, and order status checks through multi-turn conversations.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -220,10 +220,10 @@
       "name": "Terminal-Bench 2.0",
       "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
       "categories": [
-        "tool_calling",
         "agents",
         "code",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -473,15 +473,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "mimo-v2-pro",
-          "model_name": "MiMo-V2-Pro",
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
           "score": 0.717,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "mimo-v2-flash",
-          "model_name": "MiMo-V2-Flash",
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
           "score": 0.717,
           "rank": 10,
           "is_current_model": false
@@ -542,15 +542,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m2.5",
-          "model_name": "MiniMax M2.5",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
@@ -611,6 +611,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "minimax-m1-40k",
+          "model_name": "MiniMax M1 40K",
+          "score": 0.6,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-sonnet-4-20250514",
           "model_name": "Claude Sonnet 4",
           "score": 0.6,
@@ -623,13 +630,6 @@
           "score": 0.6,
           "rank": 5,
           "is_current_model": true
-        },
-        {
-          "model_id": "minimax-m1-40k",
-          "model_name": "MiniMax M1 40K",
-          "score": 0.6,
-          "rank": 5,
-          "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-20250514",

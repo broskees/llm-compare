@@ -60,10 +60,10 @@
       "name": "Arena-Hard v2",
       "description": "Arena-Hard-Auto v2 is a challenging benchmark consisting of 500 carefully curated prompts sourced from Chatbot Arena and WildChat-1M, designed to evaluate large language models on real-world user queries. The benchmark covers diverse domains including open-ended software engineering problems, mathematics, creative writing, and technical problem-solving. It uses LLM-as-a-Judge for automatic evaluation, achieving 98.6% correlation with human preference rankings while providing 3x higher separation of model performances compared to MT-Bench. The benchmark emphasizes prompt specificity, complexity, and domain knowledge to better distinguish between model capabilities.",
       "categories": [
-        "writing",
         "creativity",
         "general",
-        "reasoning"
+        "reasoning",
+        "writing"
       ],
       "modality": "text",
       "max_score": 1,
@@ -103,9 +103,9 @@
       "name": "Humanity's Last Exam",
       "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
       "categories": [
-        "vision",
         "math",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -252,9 +252,9 @@
       "name": "Tau2 Airline",
       "description": "TAU2 airline domain benchmark for evaluating conversational agents in dual-control environments where both AI agents and users interact with tools in airline customer service scenarios. Tests agent coordination, communication, and ability to guide user actions in tasks like flight booking, modifications, cancellations, and refunds.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -272,9 +272,9 @@
       "name": "Tau2 Retail",
       "description": "τ²-bench retail domain evaluates conversational AI agents in customer service scenarios within a dual-control environment where both agent and user can interact with tools. Tests tool-agent-user interaction, rule adherence, and task consistency in retail customer support contexts.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -292,9 +292,9 @@
       "name": "Tau2 Telecom",
       "description": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -363,8 +363,8 @@
         "max_output_tokens": 262144
       },
       "performance": {
-        "throughput": 47.04605240324377,
-        "latency": 12.6535
+        "throughput": null,
+        "latency": null
       },
       "features": {
         "web_search": null,
@@ -396,8 +396,22 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -410,22 +424,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "grok-4-heavy",
           "model_name": "Grok-4 Heavy",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -445,15 +445,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -880,15 +880,15 @@
       "benchmark_name": "MMLU-ProX",
       "models": [
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
           "score": 0.847,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-397b-a17b",
-          "model_name": "Qwen3.5-397B-A17B",
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
           "score": 0.847,
           "rank": 1,
           "is_current_model": false
@@ -908,15 +908,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.81,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-235b-a22b-thinking-2507",
-          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
           "score": 0.81,
           "rank": 5,
           "is_current_model": false
@@ -1178,15 +1178,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m2.5",
-          "model_name": "MiniMax M2.5",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
@@ -1233,13 +1233,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
-          "score": 0.67,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-5.1-instant-2025-11-12",
           "model_name": "GPT-5.1 Instant",
           "score": 0.67,
@@ -1249,6 +1242,13 @@
         {
           "model_id": "gpt-5.1-2025-11-13",
           "model_name": "GPT-5.1",
+          "score": 0.67,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.67,
           "rank": 3,
           "is_current_model": false
@@ -1282,6 +1282,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "longcat-flash-chat",
+          "model_name": "LongCat-Flash-Chat",
+          "score": 0.58,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.58,
@@ -1291,13 +1298,6 @@
         {
           "model_id": "longcat-flash-lite",
           "model_name": "LongCat-Flash-Lite",
-          "score": 0.58,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "longcat-flash-chat",
-          "model_name": "LongCat-Flash-Chat",
           "score": 0.58,
           "rank": 10,
           "is_current_model": false
@@ -1379,15 +1379,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.779,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.779,
           "rank": 9,
           "is_current_model": false
@@ -1469,15 +1469,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false

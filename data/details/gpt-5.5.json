@@ -11,10 +11,10 @@
   "release_date": "2026-04-23",
   "announcement_date": "2026-04-23",
   "multimodal": true,
-  "knowledge_cutoff": null,
+  "knowledge_cutoff": "2025-12-01",
   "param_count": null,
   "training_tokens": null,
-  "available_in_zeroeval": false,
+  "available_in_zeroeval": true,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -27,7 +27,7 @@
     "thinking": "true"
   },
   "sources": {
-    "api_ref": "https://platform.openai.com/docs/models",
+    "api_ref": "https://developers.openai.com/api/docs/models/gpt-5.5",
     "playground": "https://platform.openai.com/playground?mode=chat&model=gpt-5.5",
     "paper": null,
     "scorecard_blog": "https://openai.com/index/introducing-gpt-5-5/",
@@ -40,9 +40,9 @@
       "name": "ARC-AGI",
       "description": "The Abstraction and Reasoning Corpus for Artificial General Intelligence (ARC-AGI) is a benchmark designed to test general intelligence and abstract reasoning capabilities through visual grid-based transformation tasks. Each task consists of 2-5 demonstration pairs showing input grids transformed into output grids according to underlying rules, with test-takers required to infer these rules and apply them to novel test inputs. The benchmark uses colored grids (up to 30x30) with 10 discrete colors/symbols, designed to measure human-like general fluid intelligence and skill-acquisition efficiency with minimal prior knowledge.",
       "categories": [
+        "reasoning",
         "spatial_reasoning",
-        "vision",
-        "reasoning"
+        "vision"
       ],
       "modality": "image",
       "max_score": 1,
@@ -60,9 +60,9 @@
       "name": "ARC-AGI v2",
       "description": "ARC-AGI-2 is an upgraded benchmark for measuring abstract reasoning and problem-solving abilities in AI systems through visual grid transformation tasks. It evaluates fluid intelligence via input-output grid pairs (1x1 to 30x30) using colored cells (0-9), requiring models to identify underlying transformation rules from demonstration examples and apply them to test cases. Designed to be easy for humans but challenging for AI, focusing on core cognitive abilities like spatial reasoning, pattern recognition, and compositional generalization.",
       "categories": [
+        "reasoning",
         "spatial_reasoning",
-        "vision",
-        "reasoning"
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -242,9 +242,9 @@
       "name": "Graphwalks BFS >128k",
       "description": "A graph reasoning benchmark that evaluates language models' ability to perform breadth-first search (BFS) operations on graphs with context length over 128k tokens, testing long-context reasoning capabilities.",
       "categories": [
-        "spatial_reasoning",
         "long_context",
-        "reasoning"
+        "reasoning",
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -262,9 +262,9 @@
       "name": "Graphwalks parents >128k",
       "description": "A graph reasoning benchmark that evaluates language models' ability to find parent nodes in graphs with context length over 128k tokens, testing long-context reasoning and graph structure understanding.",
       "categories": [
-        "spatial_reasoning",
         "long_context",
-        "reasoning"
+        "reasoning",
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -282,9 +282,9 @@
       "name": "Humanity's Last Exam",
       "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
       "categories": [
-        "vision",
         "math",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -302,10 +302,10 @@
       "name": "MCP Atlas",
       "description": "MCP Atlas is a benchmark for evaluating AI models on scaled tool use capabilities, measuring how well models can coordinate and utilize multiple tools across complex multi-step tasks.",
       "categories": [
-        "tool_calling",
         "agents",
         "code",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -323,10 +323,10 @@
       "name": "MMMU-Pro",
       "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
       "categories": [
-        "vision",
         "general",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -384,10 +384,10 @@
       "name": "OSWorld-Verified",
       "description": "OSWorld-Verified is a verified subset of OSWorld, a scalable real computer environment for multimodal agents supporting task setup, execution-based evaluation, and interactive learning across Ubuntu, Windows, and macOS.",
       "categories": [
-        "vision",
         "agents",
         "general",
-        "multimodal"
+        "multimodal",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -425,9 +425,9 @@
       "name": "Tau2 Telecom",
       "description": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -445,10 +445,10 @@
       "name": "Terminal-Bench 2.0",
       "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
       "categories": [
-        "tool_calling",
         "agents",
         "code",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -466,9 +466,9 @@
       "name": "Toolathlon",
       "description": "Tool Decathlon is a comprehensive benchmark for evaluating AI agents' ability to use multiple tools across diverse task categories. It measures proficiency in tool selection, sequencing, and execution across ten different tool-use scenarios.",
       "categories": [
-        "tool_calling",
         "agents",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -495,12 +495,12 @@
       },
       "quantization": null,
       "limits": {
-        "max_input_tokens": 1000000,
+        "max_input_tokens": 1050000,
         "max_output_tokens": 128000
       },
       "performance": {
-        "throughput": null,
-        "latency": null
+        "throughput": 51.02750102499181,
+        "latency": 1.6415
       },
       "features": {
         "web_search": null,
@@ -664,15 +664,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
@@ -712,8 +712,8 @@
           "is_current_model": true
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.267,
           "rank": 5,
           "is_current_model": false
@@ -726,8 +726,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.267,
           "rank": 5,
           "is_current_model": false
@@ -995,15 +995,15 @@
           "is_current_model": true
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
           "score": 0.812,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.4",
-          "model_name": "GPT-5.4",
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
           "score": 0.812,
           "rank": 2,
           "is_current_model": false
@@ -1216,15 +1216,15 @@
       "benchmark_name": "Tau2 Telecom",
       "models": [
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
           "score": 0.993,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.993,
           "rank": 1,
           "is_current_model": false
@@ -1286,15 +1286,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
@@ -1424,15 +1424,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
+          "model_id": "minimax-m2.7",
+          "model_name": "MiniMax M2.7",
           "score": 0.463,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m2.7",
-          "model_name": "MiniMax M2.7",
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
           "score": 0.463,
           "rank": 7,
           "is_current_model": false

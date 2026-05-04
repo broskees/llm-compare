@@ -38,9 +38,9 @@
       "name": "ARC-AGI v2",
       "description": "ARC-AGI-2 is an upgraded benchmark for measuring abstract reasoning and problem-solving abilities in AI systems through visual grid transformation tasks. It evaluates fluid intelligence via input-output grid pairs (1x1 to 30x30) using colored cells (0-9), requiring models to identify underlying transformation rules from demonstration examples and apply them to test cases. Designed to be easy for humans but challenging for AI, focusing on core cognitive abilities like spatial reasoning, pattern recognition, and compositional generalization.",
       "categories": [
+        "reasoning",
         "spatial_reasoning",
-        "vision",
-        "reasoning"
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -80,10 +80,10 @@
       "name": "MCP Atlas",
       "description": "MCP Atlas is a benchmark for evaluating AI models on scaled tool use capabilities, measuring how well models can coordinate and utilize multiple tools across complex multi-step tasks.",
       "categories": [
-        "tool_calling",
         "agents",
         "code",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -122,11 +122,11 @@
       "name": "MMMU (validation)",
       "description": "Validation set of the Massive Multi-discipline Multimodal Understanding and Reasoning benchmark. Features college-level multimodal questions across 6 core disciplines (Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, Tech & Engineering) spanning 30 subjects and 183 subfields with diverse image types including charts, diagrams, maps, and tables.",
       "categories": [
-        "vision",
         "general",
         "healthcare",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -144,10 +144,10 @@
       "name": "OSWorld",
       "description": "OSWorld: The first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across Ubuntu, Windows, and macOS with 369 computer tasks involving real web and desktop applications, OS file I/O, and multi-application workflows",
       "categories": [
-        "vision",
         "agents",
         "general",
-        "multimodal"
+        "multimodal",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -185,9 +185,9 @@
       "name": "Tau2 Retail",
       "description": "τ²-bench retail domain evaluates conversational AI agents in customer service scenarios within a dual-control environment where both agent and user can interact with tools. Tests tool-agent-user interaction, rule adherence, and task consistency in retail customer support contexts.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -205,9 +205,9 @@
       "name": "Tau2 Telecom",
       "description": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
       "categories": [
-        "tool_calling",
         "communication",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -225,10 +225,10 @@
       "name": "Terminal-Bench 2.0",
       "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
       "categories": [
-        "tool_calling",
         "agents",
         "code",
-        "reasoning"
+        "reasoning",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -259,8 +259,8 @@
         "max_output_tokens": 64000
       },
       "performance": {
-        "throughput": 156.48992880151806,
-        "latency": 1.837
+        "throughput": 50.14824255582998,
+        "latency": 1.4155
       },
       "features": {
         "web_search": null,
@@ -721,15 +721,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v4-pro-max",
-          "model_name": "DeepSeek-V4-Pro-Max",
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
           "score": 0.806,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.806,
           "rank": 5,
           "is_current_model": false
@@ -832,15 +832,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.779,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.779,
           "rank": 9,
           "is_current_model": false
@@ -915,6 +915,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.956,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.1-instant-2025-11-12",
           "model_name": "GPT-5.1 Instant",
           "score": 0.956,
@@ -924,13 +931,6 @@
         {
           "model_id": "gpt-5.1-thinking-2025-11-12",
           "model_name": "GPT-5.1 Thinking",
-          "score": 0.956,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
