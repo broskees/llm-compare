@@ -60,10 +60,10 @@
       "name": "Arena-Hard v2",
       "description": "Arena-Hard-Auto v2 is a challenging benchmark consisting of 500 carefully curated prompts sourced from Chatbot Arena and WildChat-1M, designed to evaluate large language models on real-world user queries. The benchmark covers diverse domains including open-ended software engineering problems, mathematics, creative writing, and technical problem-solving. It uses LLM-as-a-Judge for automatic evaluation, achieving 98.6% correlation with human preference rankings while providing 3x higher separation of model performances compared to MT-Bench. The benchmark emphasizes prompt specificity, complexity, and domain knowledge to better distinguish between model capabilities.",
       "categories": [
-        "creativity",
         "general",
         "reasoning",
-        "writing"
+        "writing",
+        "creativity"
       ],
       "modality": "text",
       "max_score": 1,
@@ -81,9 +81,9 @@
       "name": "BrowseComp",
       "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
       "categories": [
-        "agents",
         "reasoning",
-        "search"
+        "search",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -101,11 +101,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -245,8 +245,8 @@
       "name": "SWE-bench Multilingual",
       "description": "A multilingual benchmark for issue resolving in software engineering that covers Java, TypeScript, JavaScript, Go, Rust, C, and C++. Contains 1,632 high-quality instances carefully annotated from 2,456 candidates by 68 expert annotators, designed to evaluate Large Language Models across diverse software ecosystems beyond Python.",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -264,9 +264,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "code",
         "frontend_development",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -284,10 +284,10 @@
       "name": "Tau-bench",
       "description": "τ-bench: A benchmark for tool-agent-user interaction in real-world domains. Tests language agents' ability to interact with users and follow domain-specific rules through dynamic conversations using API tools and policy guidelines across retail and airline domains. Evaluates consistency and reliability of agent behavior over multiple trials.",
       "categories": [
-        "agents",
         "general",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -305,9 +305,9 @@
       "name": "Terminal-Bench",
       "description": "Terminal-Bench is a benchmark for testing AI agents in real terminal environments. It evaluates how well agents can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities. The benchmark consists of a dataset of ~100 hand-crafted, human-verified tasks and an execution harness that connects language models to a terminal sandbox.",
       "categories": [
+        "reasoning",
         "agents",
-        "code",
-        "reasoning"
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -325,10 +325,10 @@
       "name": "Terminal-Bench 2.0",
       "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
       "categories": [
-        "agents",
-        "code",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "agents",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -347,8 +347,8 @@
       "provider_id": "xiaomi",
       "name": "Xiaomi",
       "website": "https://mimo.xiaomi.com/",
-      "deprecated": false,
-      "deprecated_at": null,
+      "deprecated": true,
+      "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.1,
         "output_per_million": 0.3
@@ -392,13 +392,6 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "kimi-k2-thinking-0905",
           "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
@@ -422,6 +415,13 @@
         {
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -607,15 +607,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
@@ -707,7 +707,7 @@
           "model_id": "mimo-v2-flash",
           "model_name": "MiMo-V2-Flash",
           "score": 0.837,
-          "rank": 49,
+          "rank": 50,
           "is_current_model": true
         }
       ]
@@ -1250,15 +1250,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m2.5",
-          "model_name": "MiniMax M2.5",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
@@ -1484,27 +1484,7 @@
       "terminal-bench-2": 0.82,
       "usamo25": 0.976
     },
-    "provider": {
-      "name": "Anthropic",
-      "input_cost": 25,
-      "output_cost": 125,
-      "max_input_tokens": null,
-      "max_output_tokens": null,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
+    "provider": null
   },
   "openrouter_id": "xiaomi/mimo-v2-flash"
 }

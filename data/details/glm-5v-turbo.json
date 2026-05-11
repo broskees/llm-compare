@@ -40,8 +40,8 @@
       "name": "AndroidWorld",
       "description": "AndroidWorld evaluates an agent's ability to operate in real Android GUI environments, completing multi-step tasks by perceiving screen content and executing touch/type actions.",
       "categories": [
-        "agents",
-        "vision"
+        "vision",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -59,10 +59,10 @@
       "name": "BrowseComp-VL",
       "description": "BrowseComp-VL is the vision-language variant of BrowseComp, evaluating multimodal models on web browsing comprehension tasks that require processing visual web page content alongside text.",
       "categories": [
-        "agents",
         "multimodal",
         "search",
-        "vision"
+        "vision",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -154,9 +154,9 @@
       "name": "Design2Code",
       "description": "Design2Code evaluates the ability to generate code (HTML/CSS/JS) from visual designs.",
       "categories": [
-        "code",
         "multimodal",
-        "vision"
+        "vision",
+        "code"
       ],
       "modality": "image",
       "max_score": 100,
@@ -194,9 +194,9 @@
       "name": "Flame-VLM-Code",
       "description": "Flame-VLM-Code evaluates multimodal models on visual code generation tasks, measuring ability to generate code from visual inputs such as UI mockups and design specifications.",
       "categories": [
-        "coding",
         "multimodal",
-        "vision"
+        "vision",
+        "coding"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -214,9 +214,9 @@
       "name": "ImageMining",
       "description": "ImageMining evaluates multimodal models on extracting structured information from images using tool use, measuring ability to combine visual understanding with tool-based retrieval and analysis.",
       "categories": [
-        "agents",
         "multimodal",
-        "vision"
+        "vision",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -234,9 +234,9 @@
       "name": "MMSearch",
       "description": "MMSearch evaluates multimodal models on search-based retrieval and question answering tasks that require processing both visual and textual information from search results.",
       "categories": [
-        "agents",
         "multimodal",
-        "search"
+        "search",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -254,9 +254,9 @@
       "name": "MMSearch-Plus",
       "description": "MMSearch-Plus is an extended variant of MMSearch with harder multimodal search and retrieval tasks requiring deeper reasoning over visual and textual search results.",
       "categories": [
-        "agents",
         "multimodal",
-        "search"
+        "search",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -274,10 +274,10 @@
       "name": "OSWorld",
       "description": "OSWorld: The first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across Ubuntu, Windows, and macOS with 369 computer tasks involving real web and desktop applications, OS file I/O, and multi-application workflows",
       "categories": [
-        "agents",
         "general",
         "multimodal",
-        "vision"
+        "vision",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -355,9 +355,9 @@
       "name": "Vision2Web",
       "description": "Vision2Web evaluates multimodal models on converting visual designs and screenshots into functional web pages, measuring end-to-end design-to-code capability.",
       "categories": [
-        "coding",
         "multimodal",
-        "vision"
+        "vision",
+        "coding"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -375,8 +375,8 @@
       "name": "WebVoyager",
       "description": "WebVoyager evaluates an agent's ability to navigate and complete tasks on real websites by perceiving page screenshots and executing browser actions.",
       "categories": [
-        "agents",
-        "vision"
+        "vision",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -409,7 +409,50 @@
       "verification_notes": null
     }
   ],
-  "providers": [],
+  "providers": [
+    {
+      "provider_id": "z",
+      "name": "ZAI",
+      "website": "https://zai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1.2,
+        "output_per_million": 4
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 200000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
   "benchmark_rankings": [
     {
       "benchmark_id": "facts-grounding",

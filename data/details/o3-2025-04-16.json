@@ -14,7 +14,7 @@
   "knowledge_cutoff": "2024-05-31",
   "param_count": null,
   "training_tokens": null,
-  "available_in_zeroeval": true,
+  "available_in_zeroeval": false,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -38,8 +38,8 @@
       "name": "Aider-Polyglot",
       "description": "A coding benchmark that evaluates LLMs on 225 challenging Exercism programming exercises across C++, Go, Java, JavaScript, Python, and Rust. Models receive two attempts to solve each problem, with test error feedback provided after the first attempt if it fails. The benchmark measures both initial problem-solving ability and capacity to edit code based on error feedback, providing an end-to-end evaluation of code generation and editing capabilities across multiple programming languages.",
       "categories": [
-        "code",
-        "general"
+        "general",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -135,9 +135,9 @@
       "name": "BrowseComp",
       "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
       "categories": [
-        "agents",
         "reasoning",
-        "search"
+        "search",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -234,11 +234,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -339,8 +339,8 @@
       "name": "Multi-Challenge",
       "description": "MultiChallenge is a realistic multi-turn conversation evaluation benchmark that challenges frontier LLMs across four key categories: instruction retention (maintaining instructions throughout conversations), inference memory (recalling and connecting details from previous turns), reliable versioned editing (adapting to evolving instructions during collaborative editing), and self-coherence (avoiding contradictions in responses). The benchmark evaluates models on sustained, contextually complex dialogues across diverse topics including travel planning, technical documentation, and professional communication.",
       "categories": [
-        "communication",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -358,9 +358,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "code",
         "frontend_development",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -378,9 +378,9 @@
       "name": "Tau2 Airline",
       "description": "TAU2 airline domain benchmark for evaluating conversational agents in dual-control environments where both AI agents and users interact with tools in airline customer service scenarios. Tests agent coordination, communication, and ability to guide user actions in tasks like flight booking, modifications, cancellations, and refunds.",
       "categories": [
-        "communication",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -398,9 +398,9 @@
       "name": "Tau2 Retail",
       "description": "τ²-bench retail domain evaluates conversational AI agents in customer service scenarios within a dual-control environment where both agent and user can interact with tools. Tests tool-agent-user interaction, rule adherence, and task consistency in retail customer support contexts.",
       "categories": [
-        "communication",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -418,9 +418,9 @@
       "name": "Tau2 Telecom",
       "description": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
       "categories": [
-        "communication",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -438,10 +438,10 @@
       "name": "Tau-bench",
       "description": "τ-bench: A benchmark for tool-agent-user interaction in real-world domains. Tests language agents' ability to interact with users and follow domain-specific rules through dynamic conversations using API tools and policy guidelines across retail and airline domains. Evaluates consistency and reliability of agent behavior over multiple trials.",
       "categories": [
-        "agents",
         "general",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -481,8 +481,8 @@
       "provider_id": "openai",
       "name": "OpenAI",
       "website": "https://openai.com",
-      "deprecated": false,
-      "deprecated_at": null,
+      "deprecated": true,
+      "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 2,
         "output_per_million": 8
@@ -678,22 +678,8 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "grok-4-heavy",
           "model_name": "Grok-4 Heavy",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -706,8 +692,22 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -900,15 +900,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
@@ -962,37 +962,37 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.5-instant",
+          "model_name": "GPT-5.5 Instant",
+          "score": 0.816,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.815,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.814,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5-2025-08-07",
           "model_name": "GPT-5",
           "score": 0.811,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-flash-preview",
           "model_name": "Gemini 3 Flash",
           "score": 0.803,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-27b",
-          "model_name": "Qwen3.5-27B",
-          "score": 0.795,
           "rank": 10,
           "is_current_model": false
         },
@@ -1000,7 +1000,7 @@
           "model_id": "o3-2025-04-16",
           "model_name": "o3",
           "score": 0.786,
-          "rank": 11,
+          "rank": 12,
           "is_current_model": true
         }
       ]
@@ -1010,15 +1010,15 @@
       "benchmark_name": "ERQA",
       "models": [
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
           "score": 0.657,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5-2025-08-07",
-          "model_name": "GPT-5",
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
           "score": 0.657,
           "rank": 1,
           "is_current_model": false
@@ -1114,15 +1114,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.267,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.267,
           "rank": 5,
           "is_current_model": false
@@ -1235,7 +1235,7 @@
           "model_id": "o3-2025-04-16",
           "model_name": "o3",
           "score": 0.833,
-          "rank": 51,
+          "rank": 52,
           "is_current_model": true
         }
       ]
@@ -1418,15 +1418,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
@@ -1487,15 +1487,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.4",
-          "model_name": "GPT-5.4",
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
           "score": 0.812,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
           "score": 0.812,
           "rank": 2,
           "is_current_model": false
@@ -1674,15 +1674,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.806,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v4-pro-max",
-          "model_name": "DeepSeek-V4-Pro-Max",
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
           "score": 0.806,
           "rank": 5,
           "is_current_model": false
@@ -1799,15 +1799,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-235b-a22b-thinking-2507",
-          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "model_id": "longcat-flash-lite",
+          "model_name": "LongCat-Flash-Lite",
           "score": 0.58,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-lite",
-          "model_name": "LongCat-Flash-Lite",
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.58,
           "rank": 10,
           "is_current_model": false
@@ -1972,15 +1972,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
@@ -2109,27 +2109,7 @@
       "terminal-bench-2": 0.82,
       "usamo25": 0.976
     },
-    "provider": {
-      "name": "Anthropic",
-      "input_cost": 25,
-      "output_cost": 125,
-      "max_input_tokens": null,
-      "max_output_tokens": null,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
+    "provider": null
   },
   "openrouter_id": "openai/o3"
 }

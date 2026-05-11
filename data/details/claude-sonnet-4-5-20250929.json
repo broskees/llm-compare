@@ -57,11 +57,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -122,10 +122,10 @@
       "name": "OSWorld",
       "description": "OSWorld: The first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across Ubuntu, Windows, and macOS with 369 computer tasks involving real web and desktop applications, OS file I/O, and multi-application workflows",
       "categories": [
-        "agents",
         "general",
         "multimodal",
-        "vision"
+        "vision",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -143,8 +143,8 @@
       "name": "SWE-bench Verified (Agentic Coding)",
       "description": "SWE-bench Verified is a human-filtered subset of 500 software engineering problems drawn from real GitHub issues across 12 popular Python repositories. Given a codebase and an issue description, language models are tasked with generating patches that resolve the described problems. This benchmark evaluates AI's real-world agentic coding skills by requiring models to navigate complex codebases, understand software engineering problems, and coordinate changes across multiple functions, classes, and files to fix well-defined issues with clear descriptions.",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -162,9 +162,9 @@
       "name": "TAU-bench Airline",
       "description": "Part of τ-bench (TAU-bench), a benchmark for Tool-Agent-User interaction in real-world domains. The airline domain evaluates language agents' ability to interact with users through dynamic conversations while following domain-specific rules and using API tools. Agents must handle airline-related tasks and policies reliably.",
       "categories": [
-        "communication",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -182,9 +182,9 @@
       "name": "TAU-bench Retail",
       "description": "A benchmark for evaluating tool-agent-user interaction in retail environments. Tests language agents' ability to handle dynamic conversations with users while using domain-specific API tools and following policy guidelines. Evaluates agents on tasks like order cancellations, address changes, and order status checks through multi-turn conversations.",
       "categories": [
-        "communication",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -202,9 +202,9 @@
       "name": "Terminal-Bench",
       "description": "Terminal-Bench is a benchmark for testing AI agents in real terminal environments. It evaluates how well agents can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities. The benchmark consists of a dataset of ~100 hand-crafted, human-verified tasks and an execution harness that connects language models to a terminal sandbox.",
       "categories": [
+        "reasoning",
         "agents",
-        "code",
-        "reasoning"
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -235,8 +235,8 @@
         "max_output_tokens": 64000
       },
       "performance": {
-        "throughput": 39.19261898494288,
-        "latency": 1.397
+        "throughput": 45.50631362650197,
+        "latency": 0.4
       },
       "features": {
         "web_search": null,
@@ -268,15 +268,8 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -289,8 +282,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -298,6 +291,13 @@
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -317,15 +317,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -424,7 +424,7 @@
           "model_id": "claude-sonnet-4-5-20250929",
           "model_name": "Claude Sonnet 4.5",
           "score": 0.834,
-          "rank": 50,
+          "rank": 51,
           "is_current_model": true
         }
       ]
@@ -448,15 +448,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
@@ -628,15 +628,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-sonnet-4-20250514",
-          "model_name": "Claude Sonnet 4",
+          "model_id": "qwen3-coder-480b-a35b-instruct",
+          "model_name": "Qwen3-Coder 480B A35B Instruct",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-coder-480b-a35b-instruct",
-          "model_name": "Qwen3-Coder 480B A35B Instruct",
+          "model_id": "claude-sonnet-4-20250514",
+          "model_name": "Claude Sonnet 4",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
@@ -855,27 +855,7 @@
       "terminal-bench-2": 0.82,
       "usamo25": 0.976
     },
-    "provider": {
-      "name": "Anthropic",
-      "input_cost": 25,
-      "output_cost": 125,
-      "max_input_tokens": null,
-      "max_output_tokens": null,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
+    "provider": null
   },
   "openrouter_id": "anthropic/claude-sonnet-4.5"
 }

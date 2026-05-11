@@ -14,7 +14,7 @@
   "knowledge_cutoff": null,
   "param_count": null,
   "training_tokens": null,
-  "available_in_zeroeval": true,
+  "available_in_zeroeval": false,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -38,8 +38,8 @@
       "name": "Aider-Polyglot Edit",
       "description": "A challenging multi-language coding benchmark that evaluates models' code editing abilities across C++, Go, Java, JavaScript, Python, and Rust. Contains 225 of Exercism's most difficult programming problems, selected as problems that were solved by 3 or fewer out of 7 top coding models. The benchmark focuses on code editing tasks and measures both correctness of solutions and proper edit format usage. Designed to re-calibrate evaluation scales so top models score between 5-50%.",
       "categories": [
-        "code",
-        "general"
+        "general",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -158,11 +158,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -237,8 +237,8 @@
       "name": "HumanEval",
       "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -382,8 +382,8 @@
       "name": "Multi-Challenge",
       "description": "MultiChallenge is a realistic multi-turn conversation evaluation benchmark that challenges frontier LLMs across four key categories: instruction retention (maintaining instructions throughout conversations), inference memory (recalling and connecting details from previous turns), reliable versioned editing (adapting to evolving instructions during collaborative editing), and self-coherence (avoiding contradictions in responses). The benchmark evaluates models on sustained, contextually complex dialogues across diverse topics including travel planning, technical documentation, and professional communication.",
       "categories": [
-        "communication",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -401,11 +401,11 @@
       "name": "Multi-IF",
       "description": "Multi-IF benchmarks LLMs on multi-turn and multilingual instruction following. It expands upon IFEval by incorporating multi-turn sequences and translating English prompts into 7 other languages, resulting in 4,501 multilingual conversations with three turns each. The benchmark reveals that current leading LLMs struggle with maintaining accuracy in multi-turn instructions and shows higher error rates for non-Latin script languages.",
       "categories": [
-        "communication",
         "instruction_following",
         "language",
         "reasoning",
-        "structured_output"
+        "structured_output",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -462,9 +462,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "code",
         "frontend_development",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -482,8 +482,8 @@
       "name": "SWE-Lancer",
       "description": "A benchmark for evaluating large language models on real-world freelance software engineering tasks from Upwork. Contains over 1,400 tasks valued at $1 million USD total, ranging from $50 bug fixes to $32,000 feature implementations. Includes both independent engineering tasks graded via end-to-end tests and managerial tasks assessed against original engineering managers' choices.",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -501,8 +501,8 @@
       "name": "SWE-Lancer (IC-Diamond subset)",
       "description": "SWE-Lancer (IC-Diamond subset) is a benchmark of real-world freelance software engineering tasks from Upwork, ranging from $50 bug fixes to $32,000 feature implementations. It evaluates AI models on independent engineering tasks using end-to-end tests triple-verified by experienced software engineers, and includes managerial tasks where models choose between technical implementation proposals.",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -520,9 +520,9 @@
       "name": "TAU-bench Airline",
       "description": "Part of τ-bench (TAU-bench), a benchmark for Tool-Agent-User interaction in real-world domains. The airline domain evaluates language agents' ability to interact with users through dynamic conversations while following domain-specific rules and using API tools. Agents must handle airline-related tasks and policies reliably.",
       "categories": [
-        "communication",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -540,9 +540,9 @@
       "name": "TAU-bench Retail",
       "description": "A benchmark for evaluating tool-agent-user interaction in retail environments. Tests language agents' ability to handle dynamic conversations with users while using domain-specific API tools and following policy guidelines. Evaluates agents on tasks like order cancellations, address changes, and order status checks through multi-turn conversations.",
       "categories": [
-        "communication",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -561,8 +561,8 @@
       "provider_id": "openai",
       "name": "OpenAI",
       "website": "https://openai.com",
-      "deprecated": false,
-      "deprecated_at": null,
+      "deprecated": true,
+      "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 75,
         "output_per_million": 150
@@ -800,37 +800,37 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.5-instant",
+          "model_name": "GPT-5.5 Instant",
+          "score": 0.816,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.815,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.814,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5-2025-08-07",
           "model_name": "GPT-5",
           "score": 0.811,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-flash-preview",
           "model_name": "Gemini 3 Flash",
           "score": 0.803,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-27b",
-          "model_name": "Qwen3.5-27B",
-          "score": 0.795,
           "rank": 10,
           "is_current_model": false
         },
@@ -838,7 +838,7 @@
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.554,
-          "rank": 28,
+          "rank": 29,
           "is_current_model": true
         }
       ]
@@ -921,7 +921,7 @@
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.695,
-          "rank": 112,
+          "rank": 113,
           "is_current_model": true
         }
       ]
@@ -1215,15 +1215,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-2-2407",
-          "model_name": "Mistral Large 2",
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
@@ -1415,18 +1415,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "o1-preview",
-          "model_name": "o1-preview",
-          "score": 0.908,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.908,
           "rank": 3,
           "is_current_model": true
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
         },
         {
           "model_id": "sarvam-105b",
@@ -1457,15 +1457,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-4.1-2025-04-14",
-          "model_name": "GPT-4.1",
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-0905",
-          "model_name": "Kimi K2 0905",
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
@@ -1491,15 +1491,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
@@ -1533,15 +1533,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
+          "model_id": "claude-opus-4-1-20250805",
+          "model_name": "Claude Opus 4.1",
           "score": 0.895,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-1-20250805",
-          "model_name": "Claude Opus 4.1",
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
           "score": 0.895,
           "rank": 9,
           "is_current_model": false
@@ -1602,15 +1602,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "o3-2025-04-16",
-          "model_name": "o3",
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
           "score": 0.829,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-27b",
-          "model_name": "Qwen3.6-27B",
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
           "score": 0.829,
           "rank": 7,
           "is_current_model": false
@@ -1789,15 +1789,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-8b-instruct",
-          "model_name": "Qwen3 VL 8B Instruct",
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
           "score": 0.751,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-8b-thinking",
-          "model_name": "Qwen3 VL 8B Thinking",
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
           "score": 0.751,
           "rank": 9,
           "is_current_model": false
@@ -1920,13 +1920,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
-          "score": 0.806,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
           "model_id": "deepseek-v4-pro-max",
           "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.806,
@@ -1934,15 +1927,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m2.5",
-          "model_name": "MiniMax M2.5",
-          "score": 0.802,
-          "rank": 7,
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.806,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.6",
           "model_name": "Kimi K2.6",
+          "score": 0.802,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
@@ -2003,13 +2003,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-sonnet-4-20250514",
-          "model_name": "Claude Sonnet 4",
-          "score": 0.6,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
           "model_id": "qwen3-coder-480b-a35b-instruct",
           "model_name": "Qwen3-Coder 480B A35B Instruct",
           "score": 0.6,
@@ -2019,6 +2012,13 @@
         {
           "model_id": "minimax-m1-40k",
           "model_name": "MiniMax M1 40K",
+          "score": 0.6,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-20250514",
+          "model_name": "Claude Sonnet 4",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
@@ -2168,26 +2168,6 @@
       "terminal-bench-2": 0.82,
       "usamo25": 0.976
     },
-    "provider": {
-      "name": "Anthropic",
-      "input_cost": 25,
-      "output_cost": 125,
-      "max_input_tokens": null,
-      "max_output_tokens": null,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
+    "provider": null
   }
 }

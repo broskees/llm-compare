@@ -60,10 +60,10 @@
       "name": "Arena-Hard v2",
       "description": "Arena-Hard-Auto v2 is a challenging benchmark consisting of 500 carefully curated prompts sourced from Chatbot Arena and WildChat-1M, designed to evaluate large language models on real-world user queries. The benchmark covers diverse domains including open-ended software engineering problems, mathematics, creative writing, and technical problem-solving. It uses LLM-as-a-Judge for automatic evaluation, achieving 98.6% correlation with human preference rankings while providing 3x higher separation of model performances compared to MT-Bench. The benchmark emphasizes prompt specificity, complexity, and domain knowledge to better distinguish between model capabilities.",
       "categories": [
-        "creativity",
         "general",
         "reasoning",
-        "writing"
+        "writing",
+        "creativity"
       ],
       "modality": "text",
       "max_score": 1,
@@ -100,9 +100,9 @@
       "name": "BrowseComp",
       "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
       "categories": [
-        "agents",
         "reasoning",
-        "search"
+        "search",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -120,11 +120,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -178,8 +178,8 @@
       "name": "HumanEval",
       "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -302,9 +302,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "code",
         "frontend_development",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -324,20 +324,6 @@
       "benchmark_id": "aime-2025",
       "benchmark_name": "AIME 2025",
       "models": [
-        {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
@@ -360,6 +346,20 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.9979,
@@ -374,15 +374,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -547,15 +547,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
@@ -647,7 +647,7 @@
           "model_id": "sarvam-30b",
           "model_name": "Sarvam-30B",
           "score": 0.665,
-          "rank": 122,
+          "rank": 123,
           "is_current_model": true
         }
       ]
@@ -1017,15 +1017,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-instruct-0905",
-          "model_name": "Kimi K2-Instruct-0905",
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
           "score": 0.974,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-instruct",
-          "model_name": "Kimi K2 Instruct",
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
           "score": 0.974,
           "rank": 6,
           "is_current_model": false
@@ -1045,15 +1045,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m1-80k",
-          "model_name": "MiniMax M1 80K",
+          "model_id": "longcat-flash-lite",
+          "model_name": "LongCat-Flash-Lite",
           "score": 0.968,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-lite",
-          "model_name": "LongCat-Flash-Lite",
+          "model_id": "minimax-m1-80k",
+          "model_name": "MiniMax M1 80K",
           "score": 0.968,
           "rank": 10,
           "is_current_model": false
@@ -1107,15 +1107,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen-2.5-32b-instruct",
-          "model_name": "Qwen2.5 32B Instruct",
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
           "score": 0.84,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen2.5-vl-32b",
-          "model_name": "Qwen2.5 VL 32B Instruct",
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
           "score": 0.84,
           "rank": 7,
           "is_current_model": false
@@ -1155,15 +1155,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-4.5",
-          "model_name": "GPT-4.5",
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
           "score": 0.908,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "o1-preview",
-          "model_name": "o1-preview",
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
           "score": 0.908,
           "rank": 3,
           "is_current_model": false
@@ -1183,14 +1183,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
           "rank": 7,
@@ -1335,15 +1335,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.806,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v4-pro-max",
-          "model_name": "DeepSeek-V4-Pro-Max",
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
           "score": 0.806,
           "rank": 5,
           "is_current_model": false
@@ -1417,26 +1417,6 @@
       "terminal-bench-2": 0.82,
       "usamo25": 0.976
     },
-    "provider": {
-      "name": "Anthropic",
-      "input_cost": 25,
-      "output_cost": 125,
-      "max_input_tokens": null,
-      "max_output_tokens": null,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
+    "provider": null
   }
 }

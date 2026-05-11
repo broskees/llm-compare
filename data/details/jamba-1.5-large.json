@@ -14,7 +14,7 @@
   "knowledge_cutoff": "2024-03-05",
   "param_count": 398000000000,
   "training_tokens": null,
-  "available_in_zeroeval": true,
+  "available_in_zeroeval": false,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -57,10 +57,10 @@
       "name": "Arena Hard",
       "description": "Arena-Hard-Auto is an automatic evaluation benchmark for instruction-tuned LLMs consisting of 500 challenging real-world prompts curated by BenchBuilder. It includes open-ended software engineering problems, mathematical questions, and creative writing tasks. The benchmark uses LLM-as-a-Judge methodology with GPT-4.1 and Gemini-2.5 as automatic judges to approximate human preference. Arena-Hard achieves 98.6% correlation with human preference rankings and provides 3x higher separation of model performances compared to MT-Bench, making it highly effective for distinguishing between models of similar quality.",
       "categories": [
-        "creativity",
         "general",
         "reasoning",
-        "writing"
+        "writing",
+        "creativity"
       ],
       "modality": "text",
       "max_score": 1,
@@ -78,11 +78,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -189,9 +189,9 @@
       "name": "Wild Bench",
       "description": "WildBench is an automated evaluation framework that benchmarks large language models using 1,024 challenging, real-world tasks selected from over one million human-chatbot conversation logs. It introduces two evaluation metrics (WB-Reward and WB-Score) that achieve high correlation with human preferences and uses task-specific checklists for systematic evaluation.",
       "categories": [
-        "communication",
         "general",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -210,8 +210,8 @@
       "provider_id": "bedrock",
       "name": "Bedrock",
       "website": "https://aws.amazon.com/bedrock/",
-      "deprecated": false,
-      "deprecated_at": null,
+      "deprecated": true,
+      "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 2,
         "output_per_million": 8
@@ -252,8 +252,8 @@
       "provider_id": "google",
       "name": "Google",
       "website": "https://ai.google.dev",
-      "deprecated": false,
-      "deprecated_at": null,
+      "deprecated": true,
+      "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 2,
         "output_per_million": 8
@@ -529,7 +529,7 @@
           "model_id": "jamba-1.5-large",
           "model_name": "Jamba 1.5 Large",
           "score": 0.369,
-          "rank": 189,
+          "rank": 190,
           "is_current_model": true
         }
       ]
@@ -581,15 +581,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemma-3-27b-it",
-          "model_name": "Gemma 3 27B",
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
           "score": 0.959,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen-2.5-32b-instruct",
-          "model_name": "Qwen2.5 32B Instruct",
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
           "score": 0.959,
           "rank": 7,
           "is_current_model": false
@@ -650,15 +650,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "sarvam-105b",
-          "model_name": "Sarvam-105B",
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-235b-a22b-thinking",
-          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
@@ -678,15 +678,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-4.1-2025-04-14",
-          "model_name": "GPT-4.1",
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-0905",
-          "model_name": "Kimi K2 0905",
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
@@ -891,26 +891,6 @@
       "terminal-bench-2": 0.82,
       "usamo25": 0.976
     },
-    "provider": {
-      "name": "Anthropic",
-      "input_cost": 25,
-      "output_cost": 125,
-      "max_input_tokens": null,
-      "max_output_tokens": null,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
+    "provider": null
   }
 }

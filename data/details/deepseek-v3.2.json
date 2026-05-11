@@ -60,9 +60,9 @@
       "name": "BrowseComp",
       "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
       "categories": [
-        "agents",
         "reasoning",
-        "search"
+        "search",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -118,11 +118,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -197,9 +197,9 @@
       "name": "LiveCodeBench",
       "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
       "categories": [
-        "code",
         "general",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -217,8 +217,8 @@
       "name": "MCP-Mark",
       "description": "MCP-Mark evaluates LLMs on their ability to use Model Context Protocol (MCP) tools effectively, testing tool discovery, selection, invocation, and result interpretation across diverse MCP server scenarios.",
       "categories": [
-        "agents",
-        "tool_calling"
+        "tool_calling",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -236,8 +236,8 @@
       "name": "MCP-Universe",
       "description": "MCP-Universe evaluates LLMs on complex multi-step agentic tasks using Model Context Protocol (MCP) tools across diverse interactive environments, testing planning, tool orchestration, and task completion.",
       "categories": [
-        "agents",
-        "tool_calling"
+        "tool_calling",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -279,8 +279,8 @@
       "name": "SWE-bench Multilingual",
       "description": "A multilingual benchmark for issue resolving in software engineering that covers Java, TypeScript, JavaScript, Go, Rust, C, and C++. Contains 1,632 high-quality instances carefully annotated from 2,456 candidates by 68 expert annotators, designed to evaluate Large Language Models across diverse software ecosystems beyond Python.",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -298,9 +298,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "code",
         "frontend_development",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -318,9 +318,9 @@
       "name": "t2-bench",
       "description": "t2-bench is a benchmark for evaluating agentic tool use capabilities, measuring how well models can select, sequence, and utilize tools to solve complex tasks. It tests autonomous planning and execution in multi-step scenarios.",
       "categories": [
-        "agents",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -338,10 +338,10 @@
       "name": "Terminal-Bench 2.0",
       "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
       "categories": [
-        "agents",
-        "code",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "agents",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -359,9 +359,9 @@
       "name": "Toolathlon",
       "description": "Tool Decathlon is a comprehensive benchmark for evaluating AI agents' ability to use multiple tools across diverse task categories. It measures proficiency in tool selection, sequencing, and execution across ten different tool-use scenarios.",
       "categories": [
-        "agents",
         "reasoning",
-        "tool_calling"
+        "tool_calling",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
@@ -392,8 +392,8 @@
         "max_output_tokens": 163840
       },
       "performance": {
-        "throughput": 41.453973250659566,
-        "latency": 1.6642307692307692
+        "throughput": 15.218214717495185,
+        "latency": 0.82
       },
       "features": {
         "web_search": null,
@@ -509,15 +509,8 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -530,8 +523,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -539,6 +532,13 @@
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -648,15 +648,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
@@ -710,18 +710,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v3.2",
-          "model_name": "DeepSeek-V3.2",
-          "score": 0.65,
-          "rank": 6,
-          "is_current_model": true
-        },
-        {
           "model_id": "deepseek-reasoner",
           "model_name": "DeepSeek-V3.2 (Thinking)",
           "score": 0.65,
           "rank": 6,
           "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2",
+          "model_name": "DeepSeek-V3.2",
+          "score": 0.65,
+          "rank": 6,
+          "is_current_model": true
         },
         {
           "model_id": "kimi-k2-thinking-0905",
@@ -751,15 +751,15 @@
       "benchmark_name": "CodeForces",
       "models": [
         {
-          "model_id": "deepseek-v4-pro-max",
-          "model_name": "DeepSeek-V4-Pro-Max",
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
           "score": 1,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v4-flash-max",
-          "model_name": "DeepSeek-V4-Flash-Max",
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -900,7 +900,7 @@
           "model_id": "deepseek-v3.2",
           "model_name": "DeepSeek-V3.2",
           "score": 0.824,
-          "rank": 56,
+          "rank": 57,
           "is_current_model": true
         }
       ]
@@ -1222,15 +1222,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-3",
-          "model_name": "Grok-3",
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
           "score": 0.794,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking",
-          "model_name": "LongCat-Flash-Thinking",
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
           "score": 0.794,
           "rank": 10,
           "is_current_model": false
@@ -1561,18 +1561,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v3.2-speciale",
-          "model_name": "DeepSeek-V3.2-Speciale",
-          "score": 0.803,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
           "model_id": "deepseek-v3.2",
           "model_name": "DeepSeek-V3.2",
           "score": 0.803,
           "rank": 9,
           "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v3.2-speciale",
+          "model_name": "DeepSeek-V3.2-Speciale",
+          "score": 0.803,
+          "rank": 9,
+          "is_current_model": false
         }
       ]
     },
@@ -1774,26 +1774,6 @@
       "terminal-bench-2": 0.82,
       "usamo25": 0.976
     },
-    "provider": {
-      "name": "Anthropic",
-      "input_cost": 25,
-      "output_cost": 125,
-      "max_input_tokens": null,
-      "max_output_tokens": null,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
+    "provider": null
   }
 }
