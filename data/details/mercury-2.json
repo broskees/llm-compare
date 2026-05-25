@@ -60,11 +60,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
+        "biology",
+        "chemistry",
         "general",
         "physics",
-        "reasoning",
-        "biology",
-        "chemistry"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -101,9 +101,9 @@
       "name": "LiveCodeBench",
       "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
       "categories": [
+        "code",
         "general",
-        "reasoning",
-        "code"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -121,12 +121,12 @@
       "name": "SciCode",
       "description": "SciCode is a research coding benchmark curated by scientists that challenges language models to code solutions for scientific problems. It contains 338 subproblems decomposed from 80 challenging main problems across 16 natural science sub-fields including mathematics, physics, chemistry, biology, and materials science. Problems require knowledge recall, reasoning, and code synthesis skills.",
       "categories": [
-        "math",
-        "physics",
-        "reasoning",
         "biology",
         "chemistry",
-        "code"
+        "code",
+        "math",
+        "physics",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -144,9 +144,9 @@
       "name": "Tau2 Airline",
       "description": "TAU2 airline domain benchmark for evaluating conversational agents in dual-control environments where both AI agents and users interact with tools in airline customer service scenarios. Tests agent coordination, communication, and ability to guide user actions in tasks like flight booking, modifications, cancellations, and refunds.",
       "categories": [
-        "reasoning",
         "tool_calling",
-        "communication"
+        "communication",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -177,8 +177,8 @@
         "max_output_tokens": 8192
       },
       "performance": {
-        "throughput": 552.2515646350504,
-        "latency": 0.6181428571428571
+        "throughput": 379.3581015028579,
+        "latency": 2.1294444444444443
       },
       "features": {
         "web_search": null,
@@ -210,22 +210,15 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -238,8 +231,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -466,15 +466,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v3.2",
-          "model_name": "DeepSeek-V3.2",
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
           "score": 0.833,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-reasoner",
-          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "model_id": "deepseek-v3.2",
+          "model_name": "DeepSeek-V3.2",
           "score": 0.833,
           "rank": 3,
           "is_current_model": false
@@ -522,15 +522,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-3",
-          "model_name": "Grok-3",
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
           "score": 0.794,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
           "score": 0.794,
           "rank": 10,
           "is_current_model": false
@@ -639,6 +639,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.67,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.1-instant-2025-11-12",
           "model_name": "GPT-5.1 Instant",
           "score": 0.67,
@@ -648,13 +655,6 @@
         {
           "model_id": "gpt-5.1-2025-11-13",
           "model_name": "GPT-5.1",
-          "score": 0.67,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
           "score": 0.67,
           "rank": 3,
           "is_current_model": false
@@ -688,6 +688,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "longcat-flash-chat",
+          "model_name": "LongCat-Flash-Chat",
+          "score": 0.58,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
           "model_id": "longcat-flash-lite",
           "model_name": "LongCat-Flash-Lite",
           "score": 0.58,
@@ -697,13 +704,6 @@
         {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
-          "score": 0.58,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "longcat-flash-chat",
-          "model_name": "LongCat-Flash-Chat",
           "score": 0.58,
           "rank": 10,
           "is_current_model": false

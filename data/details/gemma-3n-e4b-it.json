@@ -136,11 +136,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
+        "biology",
+        "chemistry",
         "general",
         "physics",
-        "reasoning",
-        "biology",
-        "chemistry"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -177,8 +177,8 @@
       "name": "HumanEval",
       "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
       "categories": [
-        "reasoning",
-        "code"
+        "code",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -214,9 +214,9 @@
       "name": "LiveCodeBench",
       "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
       "categories": [
+        "code",
         "general",
-        "reasoning",
-        "code"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -363,6 +363,8 @@
       "name": "OpenAI MMLU",
       "description": "MMLU (Massive Multitask Language Understanding) is a comprehensive benchmark that measures a text model's multitask accuracy across 57 diverse academic and professional subjects. The test covers elementary mathematics, US history, computer science, law, morality, business ethics, clinical knowledge, and many other domains spanning STEM, humanities, social sciences, and professional fields. To attain high accuracy, models must possess extensive world knowledge and problem-solving ability.",
       "categories": [
+        "chemistry",
+        "economics",
         "finance",
         "general",
         "healthcare",
@@ -370,9 +372,7 @@
         "math",
         "physics",
         "psychology",
-        "reasoning",
-        "chemistry",
-        "economics"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -454,6 +454,20 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 1,
@@ -468,22 +482,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -527,7 +527,7 @@
           "model_id": "gemma-3n-e4b-it",
           "model_name": "Gemma 3n E4B Instructed",
           "score": 0.116,
-          "rank": 105,
+          "rank": 106,
           "is_current_model": true
         }
       ]
@@ -593,18 +593,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemma-3n-e4b-it",
-          "model_name": "Gemma 3n E4B Instructed",
-          "score": 0.645,
-          "rank": 9,
-          "is_current_model": true
-        },
-        {
           "model_id": "gemma-3n-e4b-it-litert-preview",
           "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
           "score": 0.645,
           "rank": 9,
           "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it",
+          "model_name": "Gemma 3n E4B Instructed",
+          "score": 0.645,
+          "rank": 9,
+          "is_current_model": true
         }
       ]
     },
@@ -828,15 +828,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-2-2407",
-          "model_name": "Mistral Large 2",
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
@@ -1139,14 +1139,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.916,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.916,
           "rank": 3,
@@ -1236,13 +1236,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-235b-a22b-thinking",
-          "model_name": "Qwen3 VL 235B A22B Thinking",
-          "score": 0.906,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
           "model_id": "sarvam-105b",
           "model_name": "Sarvam-105B",
           "score": 0.906,
@@ -1250,10 +1243,10 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
-          "score": 0.904,
-          "rank": 7,
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
           "is_current_model": false
         },
         {
@@ -1264,15 +1257,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-4.1-2025-04-14",
-          "model_name": "GPT-4.1",
-          "score": 0.902,
-          "rank": 9,
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2-0905",
           "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
@@ -1374,15 +1374,15 @@
       "benchmark_name": "MMLU-ProX",
       "models": [
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
           "score": 0.847,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-397b-a17b",
-          "model_name": "Qwen3.5-397B-A17B",
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
           "score": 0.847,
           "rank": 1,
           "is_current_model": false
@@ -1402,15 +1402,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.81,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-235b-a22b-thinking-2507",
-          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
           "score": 0.81,
           "rank": 5,
           "is_current_model": false

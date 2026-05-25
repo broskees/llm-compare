@@ -64,9 +64,9 @@
       "name": "BrowseComp",
       "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
       "categories": [
+        "agents",
         "reasoning",
-        "search",
-        "agents"
+        "search"
       ],
       "modality": "text",
       "max_score": 1,
@@ -103,10 +103,10 @@
       "name": "FinSearchComp-T3",
       "description": "FinSearchComp-T3 is a benchmark for evaluating financial search and reasoning capabilities, testing models' ability to retrieve and analyze financial information using tools.",
       "categories": [
+        "economics",
         "finance",
         "reasoning",
-        "search",
-        "economics"
+        "search"
       ],
       "modality": "text",
       "max_score": 1,
@@ -143,11 +143,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
+        "biology",
+        "chemistry",
         "general",
         "physics",
-        "reasoning",
-        "biology",
-        "chemistry"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -201,9 +201,9 @@
       "name": "Humanity's Last Exam",
       "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
       "categories": [
+        "vision",
         "math",
-        "reasoning",
-        "vision"
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -304,8 +304,8 @@
       "name": "Multi-SWE-Bench",
       "description": "A multilingual benchmark for issue resolving that evaluates Large Language Models' ability to resolve software issues across diverse programming ecosystems. Covers 7 programming languages (Java, TypeScript, JavaScript, Go, Rust, C, and C++) with 1,632 high-quality instances carefully annotated by 68 expert annotators. Addresses limitations of existing benchmarks that focus almost exclusively on Python.",
       "categories": [
-        "reasoning",
-        "code"
+        "code",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -341,12 +341,12 @@
       "name": "SciCode",
       "description": "SciCode is a research coding benchmark curated by scientists that challenges language models to code solutions for scientific problems. It contains 338 subproblems decomposed from 80 challenging main problems across 16 natural science sub-fields including mathematics, physics, chemistry, biology, and materials science. Problems require knowledge recall, reasoning, and code synthesis skills.",
       "categories": [
-        "math",
-        "physics",
-        "reasoning",
         "biology",
         "chemistry",
-        "code"
+        "code",
+        "math",
+        "physics",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -383,8 +383,8 @@
       "name": "SWE-bench Multilingual",
       "description": "A multilingual benchmark for issue resolving in software engineering that covers Java, TypeScript, JavaScript, Go, Rust, C, and C++. Contains 1,632 high-quality instances carefully annotated from 2,456 candidates by 68 expert annotators, designed to evaluate Large Language Models across diverse software ecosystems beyond Python.",
       "categories": [
-        "reasoning",
-        "code"
+        "code",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -402,9 +402,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
+        "code",
         "frontend_development",
-        "reasoning",
-        "code"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -422,9 +422,9 @@
       "name": "Terminal-Bench",
       "description": "Terminal-Bench is a benchmark for testing AI agents in real terminal environments. It evaluates how well agents can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities. The benchmark consists of a dataset of ~100 hand-crafted, human-verified tasks and an execution harness that connects language models to a terminal sandbox.",
       "categories": [
-        "reasoning",
         "agents",
-        "code"
+        "code",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -442,11 +442,11 @@
       "name": "WritingBench",
       "description": "A comprehensive benchmark for evaluating large language models' generative writing capabilities across 6 core writing domains (Academic & Engineering, Finance & Business, Politics & Law, Literature & Art, Education, Advertising & Marketing) and 100 subdomains. Contains 1,239 queries with a query-dependent evaluation framework that dynamically generates 5 instance-specific assessment criteria for each writing task, using a fine-tuned critic model to score responses on style, format, and length dimensions.",
       "categories": [
-        "finance",
-        "legal",
         "writing",
         "communication",
-        "creativity"
+        "creativity",
+        "finance",
+        "legal"
       ],
       "modality": "text",
       "max_score": 1,
@@ -594,6 +594,13 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 1,
@@ -603,13 +610,6 @@
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -643,15 +643,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -726,15 +726,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
@@ -1272,15 +1272,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-27b",
-          "model_name": "Qwen3.6-27B",
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
           "score": 0.862,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v4-flash-max",
-          "model_name": "DeepSeek-V4-Flash-Max",
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
           "score": 0.862,
           "rank": 8,
           "is_current_model": false
@@ -1362,15 +1362,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-35b-a3b",
-          "model_name": "Qwen3.6-35B-A3B",
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
           "score": 0.933,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
+          "model_id": "qwen3.6-35b-a3b",
+          "model_name": "Qwen3.6-35B-A3B",
           "score": 0.933,
           "rank": 9,
           "is_current_model": false
@@ -1521,15 +1521,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "mimo-v2-pro",
-          "model_name": "MiMo-V2-Pro",
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
           "score": 0.717,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "mimo-v2-flash",
-          "model_name": "MiMo-V2-Flash",
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
           "score": 0.717,
           "rank": 10,
           "is_current_model": false
@@ -1590,15 +1590,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m2.5",
-          "model_name": "MiniMax M2.5",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "minimax-m2.5",
+          "model_name": "MiniMax M2.5",
           "score": 0.802,
           "rank": 7,
           "is_current_model": false
@@ -1621,7 +1621,7 @@
           "model_id": "kimi-k2-thinking-0905",
           "model_name": "Kimi K2-Thinking-0905",
           "score": 0.713,
-          "rank": 43,
+          "rank": 44,
           "is_current_model": true
         }
       ]
@@ -1749,15 +1749,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-30b-a3b-thinking",
-          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
           "score": 0.852,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-235b-a22b-instruct-2507",
-          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
           "score": 0.852,
           "rank": 7,
           "is_current_model": false

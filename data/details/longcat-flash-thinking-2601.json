@@ -60,9 +60,9 @@
       "name": "BrowseComp",
       "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
       "categories": [
+        "agents",
         "reasoning",
-        "search",
-        "agents"
+        "search"
       ],
       "modality": "text",
       "max_score": 1,
@@ -99,11 +99,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
+        "biology",
+        "chemistry",
         "general",
         "physics",
-        "reasoning",
-        "biology",
-        "chemistry"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -121,9 +121,9 @@
       "name": "Humanity's Last Exam",
       "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
       "categories": [
+        "vision",
         "math",
-        "reasoning",
-        "vision"
+        "reasoning"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -160,9 +160,9 @@
       "name": "LiveCodeBench",
       "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
       "categories": [
+        "code",
         "general",
-        "reasoning",
-        "code"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -180,9 +180,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
+        "code",
         "frontend_development",
-        "reasoning",
-        "code"
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -200,9 +200,9 @@
       "name": "Tau2 Airline",
       "description": "TAU2 airline domain benchmark for evaluating conversational agents in dual-control environments where both AI agents and users interact with tools in airline customer service scenarios. Tests agent coordination, communication, and ability to guide user actions in tasks like flight booking, modifications, cancellations, and refunds.",
       "categories": [
-        "reasoning",
         "tool_calling",
-        "communication"
+        "communication",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -220,9 +220,9 @@
       "name": "Tau2 Retail",
       "description": "τ²-bench retail domain evaluates conversational AI agents in customer service scenarios within a dual-control environment where both agent and user can interact with tools. Tests tool-agent-user interaction, rule adherence, and task consistency in retail customer support contexts.",
       "categories": [
-        "reasoning",
         "tool_calling",
-        "communication"
+        "communication",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -240,9 +240,9 @@
       "name": "Tau2 Telecom",
       "description": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
       "categories": [
-        "reasoning",
         "tool_calling",
-        "communication"
+        "communication",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -306,15 +306,8 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -327,6 +320,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 1,
@@ -334,8 +334,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -355,18 +355,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
-          "score": 0.996,
-          "rank": 8,
-          "is_current_model": true
-        },
-        {
           "model_id": "gpt-5.1-high-2025-11-12",
           "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": true
         },
         {
           "model_id": "nemotron-3-nano-30b-a3b",
@@ -438,15 +438,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
           "score": 0.793,
           "rank": 9,
           "is_current_model": false
@@ -500,15 +500,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v3.2",
-          "model_name": "DeepSeek-V3.2",
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
           "score": 0.65,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-reasoner",
-          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "model_id": "deepseek-v3.2",
+          "model_name": "DeepSeek-V3.2",
           "score": 0.65,
           "rank": 6,
           "is_current_model": false
@@ -697,7 +697,7 @@
           "model_id": "longcat-flash-thinking-2601",
           "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.252,
-          "rank": 33,
+          "rank": 34,
           "is_current_model": true
         }
       ]
@@ -853,13 +853,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-3",
-          "model_name": "Grok-3",
-          "score": 0.794,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
           "model_id": "grok-4-heavy",
           "model_name": "Grok-4 Heavy",
           "score": 0.794,
@@ -869,6 +862,13 @@
         {
           "model_id": "longcat-flash-thinking",
           "model_name": "LongCat-Flash-Thinking",
+          "score": 0.794,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
           "score": 0.794,
           "rank": 10,
           "is_current_model": false
@@ -953,7 +953,7 @@
           "model_id": "longcat-flash-thinking-2601",
           "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.7,
-          "rank": 46,
+          "rank": 47,
           "is_current_model": true
         }
       ]
@@ -977,8 +977,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.67,
           "rank": 3,
           "is_current_model": false
@@ -991,8 +991,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.67,
           "rank": 3,
           "is_current_model": false
@@ -1109,8 +1109,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.779,
           "rank": 9,
           "is_current_model": false
@@ -1123,8 +1123,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.779,
           "rank": 9,
           "is_current_model": false
@@ -1199,6 +1199,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.956,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.1-thinking-2025-11-12",
           "model_name": "GPT-5.1 Thinking",
           "score": 0.956,
@@ -1208,13 +1215,6 @@
         {
           "model_id": "gpt-5.1-2025-11-13",
           "model_name": "GPT-5.1",
-          "score": 0.956,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
