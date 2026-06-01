@@ -18,8 +18,10 @@
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
+    "id": "llama_4_community_license_agreement",
     "name": "Llama 4 Community License Agreement",
-    "allow_commercial": false
+    "allow_commercial": false,
+    "description": "Llama 4 Community License Agreement license"
   },
   "model_family": null,
   "fine_tuned_from": null,
@@ -78,11 +80,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -100,9 +102,9 @@
       "name": "LiveCodeBench",
       "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
       "categories": [
-        "code",
         "general",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -291,7 +293,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.08,
-        "output_per_million": 0.3
+        "output_per_million": 0.3,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -333,7 +341,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.08,
-        "output_per_million": 0.3
+        "output_per_million": 0.3,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -375,7 +389,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.1,
-        "output_per_million": 0.5
+        "output_per_million": 0.5,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -417,7 +437,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.11,
-        "output_per_million": 0.34
+        "output_per_million": 0.34,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -459,7 +485,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.15,
-        "output_per_million": 0.6
+        "output_per_million": 0.6,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -501,7 +533,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.18,
-        "output_per_million": 0.59
+        "output_per_million": 0.59,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -660,18 +698,18 @@
           "is_current_model": false
         },
         {
-          "model_id": "llama-4-maverick",
-          "model_name": "Llama 4 Maverick",
-          "score": 0.944,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
           "model_id": "llama-4-scout",
           "model_name": "Llama 4 Scout",
           "score": 0.944,
           "rank": 7,
           "is_current_model": true
+        },
+        {
+          "model_id": "llama-4-maverick",
+          "model_name": "Llama 4 Maverick",
+          "score": 0.944,
+          "rank": 7,
+          "is_current_model": false
         },
         {
           "model_id": "grok-2",
@@ -715,6 +753,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.5",
           "model_name": "GPT-5.5",
           "score": 0.936,
@@ -725,41 +770,34 @@
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
           "score": 0.932,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4",
           "model_name": "GPT-5.4",
           "score": 0.928,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 0.924,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.924,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.919,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
-          "score": 0.913,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
-          "score": 0.905,
           "rank": 10,
           "is_current_model": false
         },
@@ -767,7 +805,7 @@
           "model_id": "llama-4-scout",
           "model_name": "Llama 4 Scout",
           "score": 0.572,
-          "rank": 144,
+          "rank": 146,
           "is_current_model": true
         }
       ]
@@ -791,15 +829,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v3.2",
-          "model_name": "DeepSeek-V3.2",
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
           "score": 0.833,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-reasoner",
-          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "model_id": "deepseek-v3.2",
+          "model_name": "DeepSeek-V3.2",
           "score": 0.833,
           "rank": 3,
           "is_current_model": false
@@ -840,8 +878,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
           "score": 0.794,
           "rank": 10,
           "is_current_model": false
@@ -854,8 +892,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-3",
-          "model_name": "Grok-3",
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
           "score": 0.794,
           "rank": 10,
           "is_current_model": false
@@ -888,15 +926,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-3-2509",
-          "model_name": "Mistral Large 3",
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "ministral-3-14b-instruct-2512",
-          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
@@ -1082,15 +1120,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen2.5-vl-32b",
-          "model_name": "Qwen2.5 VL 32B Instruct",
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
           "score": 0.84,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen-2.5-32b-instruct",
-          "model_name": "Qwen2.5 32B Instruct",
+          "model_id": "qwen2.5-vl-32b",
+          "model_name": "Qwen2.5 VL 32B Instruct",
           "score": 0.84,
           "rank": 7,
           "is_current_model": false
@@ -1213,13 +1251,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-4.5",
-          "model_name": "GPT-4.5",
-          "score": 0.908,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
           "model_id": "o1-preview",
           "model_name": "o1-preview",
           "score": 0.908,
@@ -1227,15 +1258,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "sarvam-105b",
-          "model_name": "Sarvam-105B",
-          "score": 0.906,
-          "rank": 5,
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
@@ -1282,80 +1320,80 @@
       "benchmark_name": "MMLU-Pro",
       "models": [
         {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.896,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.885,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "minimax-m2.1",
           "model_name": "MiniMax M2.1",
           "score": 0.88,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.878,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v4-pro-max",
           "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.875,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.871,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "ernie-5.0",
           "model_name": "ERNIE 5.0",
           "score": 0.87,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.867,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-27b",
           "model_name": "Qwen3.6-27B",
           "score": 0.862,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v4-flash-max",
           "model_name": "DeepSeek-V4-Flash-Max",
           "score": 0.862,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-27b",
-          "model_name": "Qwen3.5-27B",
-          "score": 0.861,
-          "rank": 10,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "llama-4-scout",
           "model_name": "Llama 4 Scout",
           "score": 0.743,
-          "rank": 64,
+          "rank": 65,
           "is_current_model": true
         }
       ]
@@ -1372,6 +1410,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.854,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.1-2025-11-13",
           "model_name": "GPT-5.1",
           "score": 0.854,
@@ -1381,13 +1426,6 @@
         {
           "model_id": "gpt-5.1-instant-2025-11-12",
           "model_name": "GPT-5.1 Instant",
-          "score": 0.854,
-          "rank": 2,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false

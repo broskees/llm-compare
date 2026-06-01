@@ -18,8 +18,10 @@
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
+    "id": "proprietary",
     "name": "Proprietary",
-    "allow_commercial": false
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
   },
   "model_family": null,
   "fine_tuned_from": null,
@@ -38,8 +40,8 @@
       "name": "Aider-Polyglot",
       "description": "A coding benchmark that evaluates LLMs on 225 challenging Exercism programming exercises across C++, Go, Java, JavaScript, Python, and Rust. Models receive two attempts to solve each problem, with test error feedback provided after the first attempt if it fails. The benchmark measures both initial problem-solving ability and capacity to edit code based on error feedback, providing an end-to-end evaluation of code generation and editing capabilities across multiple programming languages.",
       "categories": [
-        "code",
-        "general"
+        "general",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -57,8 +59,8 @@
       "name": "Aider-Polyglot Edit",
       "description": "A challenging multi-language coding benchmark that evaluates models' code editing abilities across C++, Go, Java, JavaScript, Python, and Rust. Contains 225 of Exercism's most difficult programming problems, selected as problems that were solved by 3 or fewer out of 7 top coding models. The benchmark focuses on code editing tasks and measures both correctness of solutions and proper edit format usage. Designed to re-calibrate evaluation scales so top models score between 5-50%.",
       "categories": [
-        "code",
-        "general"
+        "general",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -95,10 +97,10 @@
       "name": "CharXiv-D",
       "description": "CharXiv-D is the descriptive questions subset of the CharXiv benchmark, designed to assess multimodal large language models' ability to extract basic information from scientific charts. It contains descriptive questions covering information extraction, enumeration, pattern recognition, and counting across 2,323 diverse charts from arXiv papers, all curated and verified by human experts.",
       "categories": [
-        "structured_output",
         "vision",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "structured_output"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -156,10 +158,10 @@
       "name": "ComplexFuncBench",
       "description": "ComplexFuncBench is a benchmark designed to evaluate large language models' capabilities in handling complex function calling scenarios. It encompasses multi-step and constrained function calling tasks that require long-parameter filling, parameter value reasoning, and managing contexts up to 128k tokens. The benchmark includes 1,000 samples across five real-world scenarios.",
       "categories": [
-        "structured_output",
         "tool_calling",
         "long_context",
-        "reasoning"
+        "reasoning",
+        "structured_output"
       ],
       "modality": "text",
       "max_score": 1,
@@ -177,11 +179,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -199,8 +201,8 @@
       "name": "Graphwalks BFS <128k",
       "description": "A graph reasoning benchmark that evaluates language models' ability to perform breadth-first search (BFS) operations on graphs with context length under 128k tokens, returning nodes reachable at specified depths.",
       "categories": [
-        "spatial_reasoning",
-        "reasoning"
+        "reasoning",
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -218,9 +220,9 @@
       "name": "Graphwalks BFS >128k",
       "description": "A graph reasoning benchmark that evaluates language models' ability to perform breadth-first search (BFS) operations on graphs with context length over 128k tokens, testing long-context reasoning capabilities.",
       "categories": [
-        "spatial_reasoning",
         "long_context",
-        "reasoning"
+        "reasoning",
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -238,8 +240,8 @@
       "name": "Graphwalks parents <128k",
       "description": "A graph reasoning benchmark that evaluates language models' ability to find parent nodes in graphs with context length under 128k tokens, requiring understanding of graph structure and edge relationships.",
       "categories": [
-        "spatial_reasoning",
-        "reasoning"
+        "reasoning",
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -257,9 +259,9 @@
       "name": "Graphwalks parents >128k",
       "description": "A graph reasoning benchmark that evaluates language models' ability to find parent nodes in graphs with context length over 128k tokens, testing long-context reasoning and graph structure understanding.",
       "categories": [
-        "spatial_reasoning",
         "long_context",
-        "reasoning"
+        "reasoning",
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -277,9 +279,9 @@
       "name": "IFEval",
       "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
       "categories": [
-        "structured_output",
         "general",
-        "instruction_following"
+        "instruction_following",
+        "structured_output"
       ],
       "modality": "text",
       "max_score": 1,
@@ -297,8 +299,8 @@
       "name": "Internal API instruction following (hard)",
       "description": "Internal API instruction following (hard) benchmark - specific documentation not found in official sources",
       "categories": [
-        "structured_output",
-        "general"
+        "general",
+        "structured_output"
       ],
       "modality": "text",
       "max_score": 1,
@@ -403,8 +405,8 @@
       "name": "Multi-Challenge",
       "description": "MultiChallenge is a realistic multi-turn conversation evaluation benchmark that challenges frontier LLMs across four key categories: instruction retention (maintaining instructions throughout conversations), inference memory (recalling and connecting details from previous turns), reliable versioned editing (adapting to evolving instructions during collaborative editing), and self-coherence (avoiding contradictions in responses). The benchmark evaluates models on sustained, contextually complex dialogues across diverse topics including travel planning, technical documentation, and professional communication.",
       "categories": [
-        "communication",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -422,11 +424,11 @@
       "name": "Multi-IF",
       "description": "Multi-IF benchmarks LLMs on multi-turn and multilingual instruction following. It expands upon IFEval by incorporating multi-turn sequences and translating English prompts into 7 other languages, resulting in 4,501 multilingual conversations with three turns each. The benchmark reveals that current leading LLMs struggle with maintaining accuracy in multi-turn instructions and shows higher error rates for non-Latin script languages.",
       "categories": [
-        "structured_output",
-        "communication",
         "instruction_following",
         "language",
-        "reasoning"
+        "reasoning",
+        "structured_output",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -483,8 +485,8 @@
       "description": "Part of τ-bench (TAU-bench), a benchmark for Tool-Agent-User interaction in real-world domains. The airline domain evaluates language agents' ability to interact with users through dynamic conversations while following domain-specific rules and using API tools. Agents must handle airline-related tasks and policies reliably.",
       "categories": [
         "tool_calling",
-        "communication",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -503,8 +505,8 @@
       "description": "A benchmark for evaluating tool-agent-user interaction in retail environments. Tests language agents' ability to handle dynamic conversations with users while using domain-specific API tools and following policy guidelines. Evaluates agents on tasks like order cancellations, address changes, and order status checks through multi-turn conversations.",
       "categories": [
         "tool_calling",
-        "communication",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -527,7 +529,13 @@
       "deprecated_at": null,
       "pricing": {
         "input_per_million": 0.1,
-        "output_per_million": 0.4
+        "output_per_million": 0.4,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -535,8 +543,8 @@
         "max_output_tokens": 32768
       },
       "performance": {
-        "throughput": 461.19554424704955,
-        "latency": 0.6508333333333334
+        "throughput": 245.3106894783831,
+        "latency": 0.963
       },
       "features": {
         "web_search": null,
@@ -831,58 +839,58 @@
           "is_current_model": false
         },
         {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.899,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "kimi-k2.6",
           "model_name": "Kimi K2.6",
           "score": 0.867,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "muse-spark",
           "model_name": "Muse Spark",
           "score": 0.864,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3.5-flash",
           "model_name": "Gemini 3.5 Flash",
           "score": 0.842,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 0.821,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.5-instant",
           "model_name": "GPT-5.5 Instant",
           "score": 0.816,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.815,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.814,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5-2025-08-07",
-          "model_name": "GPT-5",
-          "score": 0.811,
           "rank": 10,
           "is_current_model": false
         },
@@ -890,7 +898,7 @@
           "model_id": "gpt-4.1-nano-2025-04-14",
           "model_name": "GPT-4.1 nano",
           "score": 0.405,
-          "rank": 35,
+          "rank": 36,
           "is_current_model": true
         }
       ]
@@ -928,44 +936,44 @@
           "is_current_model": false
         },
         {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
           "score": 0.932,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4",
           "model_name": "GPT-5.4",
           "score": 0.928,
-          "rank": 6,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.924,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 0.924,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.919,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
-          "score": 0.913,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
-          "score": 0.905,
           "rank": 10,
           "is_current_model": false
         },
@@ -973,7 +981,7 @@
           "model_id": "gpt-4.1-nano-2025-04-14",
           "model_name": "GPT-4.1 nano",
           "score": 0.503,
-          "rank": 158,
+          "rank": 160,
           "is_current_model": true
         }
       ]
@@ -1163,58 +1171,58 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.943,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "o3-mini",
           "model_name": "o3-mini",
           "score": 0.939,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.934,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-7-sonnet-20250219",
           "model_name": "Claude 3.7 Sonnet",
           "score": 0.932,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.926,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.921,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "nova-pro",
           "model_name": "Nova Pro",
           "score": 0.921,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.919,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-9b",
-          "model_name": "Qwen3.5-9B",
-          "score": 0.915,
           "rank": 10,
           "is_current_model": false
         },
@@ -1222,7 +1230,7 @@
           "model_id": "gpt-4.1-nano-2025-04-14",
           "model_name": "GPT-4.1 nano",
           "score": 0.745,
-          "rank": 58,
+          "rank": 59,
           "is_current_model": true
         }
       ]
@@ -1329,13 +1337,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "o1-preview",
-          "model_name": "o1-preview",
-          "score": 0.908,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.908,
@@ -1343,10 +1344,10 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-235b-a22b-thinking",
-          "model_name": "Qwen3 VL 235B A22B Thinking",
-          "score": 0.906,
-          "rank": 5,
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
           "is_current_model": false
         },
         {
@@ -1357,14 +1358,21 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
           "rank": 7,
@@ -1447,16 +1455,16 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
-          "score": 0.896,
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.903,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
-          "score": 0.895,
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.896,
           "rank": 9,
           "is_current_model": false
         },
@@ -1464,14 +1472,21 @@
           "model_id": "claude-opus-4-1-20250805",
           "model_name": "Claude Opus 4.1",
           "score": 0.895,
-          "rank": 9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.895,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.1-nano-2025-04-14",
           "model_name": "GPT-4.1 nano",
           "score": 0.669,
-          "rank": 42,
+          "rank": 43,
           "is_current_model": true
         }
       ]
@@ -1523,15 +1538,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "o3-2025-04-16",
-          "model_name": "o3",
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
           "score": 0.829,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-27b",
-          "model_name": "Qwen3.6-27B",
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
           "score": 0.829,
           "rank": 7,
           "is_current_model": false
@@ -1627,15 +1642,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-instruct",
-          "model_name": "Kimi K2 Instruct",
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
           "score": 0.541,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-instruct-0905",
-          "model_name": "Kimi K2-Instruct-0905",
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
           "score": 0.541,
           "rank": 10,
           "is_current_model": false
@@ -1710,15 +1725,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-8b-thinking",
-          "model_name": "Qwen3 VL 8B Thinking",
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
           "score": 0.751,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-8b-instruct",
-          "model_name": "Qwen3 VL 8B Instruct",
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
           "score": 0.751,
           "rank": 9,
           "is_current_model": false
@@ -1772,15 +1787,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-coder-480b-a35b-instruct",
-          "model_name": "Qwen3-Coder 480B A35B Instruct",
+          "model_id": "claude-sonnet-4-20250514",
+          "model_name": "Claude Sonnet 4",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "claude-sonnet-4-20250514",
-          "model_name": "Claude Sonnet 4",
+          "model_id": "qwen3-coder-480b-a35b-instruct",
+          "model_name": "Qwen3-Coder 480B A35B Instruct",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false

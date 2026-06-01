@@ -18,8 +18,10 @@
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
+    "id": "proprietary",
     "name": "Proprietary",
-    "allow_commercial": false
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
   },
   "model_family": null,
   "fine_tuned_from": null,
@@ -97,10 +99,10 @@
       "name": "CRAG",
       "description": "CRAG (Comprehensive RAG Benchmark) is a factual question answering benchmark consisting of 4,409 question-answer pairs across 5 domains (finance, sports, music, movie, open domain) and 8 question categories. The benchmark includes mock APIs to simulate web and Knowledge Graph search, designed to represent the diverse and dynamic nature of real-world QA tasks with temporal dynamism ranging from years to seconds. It evaluates retrieval-augmented generation systems for trustworthy question answering.",
       "categories": [
-        "economics",
         "finance",
         "reasoning",
-        "search"
+        "search",
+        "economics"
       ],
       "modality": "text",
       "max_score": 1,
@@ -137,10 +139,10 @@
       "name": "FinQA",
       "description": "A large-scale dataset for numerical reasoning over financial data with question-answering pairs written by financial experts, featuring complex numerical reasoning and understanding of heterogeneous representations with annotated gold reasoning programs for full explainability",
       "categories": [
-        "economics",
         "finance",
         "math",
-        "reasoning"
+        "reasoning",
+        "economics"
       ],
       "modality": "text",
       "max_score": 1,
@@ -158,11 +160,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -199,8 +201,8 @@
       "name": "HumanEval",
       "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -218,9 +220,9 @@
       "name": "IFEval",
       "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
       "categories": [
-        "structured_output",
         "general",
-        "instruction_following"
+        "instruction_following",
+        "structured_output"
       ],
       "modality": "text",
       "max_score": 1,
@@ -281,9 +283,9 @@
       "name": "SQuALITY",
       "description": "SQuALITY (Summarization-format QUestion Answering with Long Input Texts, Yes!) is a long-document summarization dataset built by hiring highly-qualified contractors to read public-domain short stories (3000-6000 words) and write original summaries from scratch. Each document has five summaries: one overview and four question-focused summaries. Designed to address limitations in existing summarization datasets by providing high-quality, faithful summaries.",
       "categories": [
-        "summarization",
         "language",
-        "long_context"
+        "long_context",
+        "summarization"
       ],
       "modality": "text",
       "max_score": 1,
@@ -378,7 +380,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.03,
-        "output_per_million": 0.14
+        "output_per_million": 0.14,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -523,15 +531,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen2-72b-instruct",
-          "model_name": "Qwen2 72B Instruct",
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
           "score": 0.824,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "nova-lite",
-          "model_name": "Nova Lite",
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
           "score": 0.824,
           "rank": 5,
           "is_current_model": false
@@ -578,14 +586,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.871,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.871,
           "rank": 2,
@@ -620,15 +628,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-opus-20240229",
-          "model_name": "Claude 3 Opus",
+          "model_id": "claude-3-5-haiku-20241022",
+          "model_name": "Claude 3.5 Haiku",
           "score": 0.831,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-haiku-20241022",
-          "model_name": "Claude 3.5 Haiku",
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
           "score": 0.831,
           "rank": 8,
           "is_current_model": false
@@ -682,44 +690,44 @@
           "is_current_model": false
         },
         {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
           "score": 0.932,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4",
           "model_name": "GPT-5.4",
           "score": 0.928,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 0.924,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.924,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.919,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
-          "score": 0.913,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
-          "score": 0.905,
           "rank": 10,
           "is_current_model": false
         },
@@ -727,7 +735,7 @@
           "model_id": "nova-micro",
           "model_name": "Nova Micro",
           "score": 0.4,
-          "rank": 187,
+          "rank": 189,
           "is_current_model": true
         }
       ]
@@ -765,14 +773,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.964,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.964,
           "rank": 5,
@@ -876,15 +884,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-2-2407",
-          "model_name": "Mistral Large 2",
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
@@ -910,6 +918,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.943,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.943,
@@ -920,55 +935,48 @@
           "model_id": "o3-mini",
           "model_name": "o3-mini",
           "score": 0.939,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.934,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-7-sonnet-20250219",
           "model_name": "Claude 3.7 Sonnet",
           "score": 0.932,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.926,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "nova-pro",
           "model_name": "Nova Pro",
           "score": 0.921,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.921,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.919,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-9b",
-          "model_name": "Qwen3.5-9B",
-          "score": 0.915,
           "rank": 10,
           "is_current_model": false
         },
@@ -976,7 +984,7 @@
           "model_id": "nova-micro",
           "model_name": "Nova Micro",
           "score": 0.872,
-          "rank": 32,
+          "rank": 33,
           "is_current_model": true
         }
       ]
@@ -1000,15 +1008,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "ministral-3-14b-instruct-2512",
-          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-3-2509",
-          "model_name": "Mistral Large 3",
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
@@ -1097,13 +1105,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "sarvam-105b",
-          "model_name": "Sarvam-105B",
-          "score": 0.906,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.906,
@@ -1111,10 +1112,10 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
-          "score": 0.904,
-          "rank": 7,
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
+          "score": 0.906,
+          "rank": 5,
           "is_current_model": false
         },
         {
@@ -1125,15 +1126,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-0905",
-          "model_name": "Kimi K2 0905",
-          "score": 0.902,
-          "rank": 9,
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.1-2025-04-14",
           "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false

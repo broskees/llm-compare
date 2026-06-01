@@ -18,8 +18,10 @@
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
+    "id": "proprietary",
     "name": "Proprietary",
-    "allow_commercial": false
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
   },
   "model_family": null,
   "fine_tuned_from": null,
@@ -76,11 +78,11 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "biology",
-        "chemistry",
         "general",
         "physics",
-        "reasoning"
+        "reasoning",
+        "biology",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -98,10 +100,10 @@
       "name": "GPQA Biology",
       "description": "Biology subset of GPQA, containing challenging multiple-choice questions written by domain experts in biology. These Google-proof questions require graduate-level knowledge and reasoning.",
       "categories": [
-        "biology",
         "general",
         "healthcare",
-        "reasoning"
+        "reasoning",
+        "biology"
       ],
       "modality": "text",
       "max_score": 1,
@@ -119,8 +121,8 @@
       "name": "GPQA Chemistry",
       "description": "Chemistry subset of GPQA, containing challenging multiple-choice questions written by domain experts in chemistry. These Google-proof questions require graduate-level knowledge and reasoning.",
       "categories": [
-        "chemistry",
-        "reasoning"
+        "reasoning",
+        "chemistry"
       ],
       "modality": "text",
       "max_score": 1,
@@ -176,8 +178,8 @@
       "name": "HumanEval",
       "description": "A benchmark that measures functional correctness for synthesizing programs from docstrings, consisting of 164 original programming problems assessing language comprehension, algorithms, and simple mathematics",
       "categories": [
-        "code",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -360,9 +362,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "code",
         "frontend_development",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -381,8 +383,8 @@
       "description": "Part of τ-bench (TAU-bench), a benchmark for Tool-Agent-User interaction in real-world domains. The airline domain evaluates language agents' ability to interact with users through dynamic conversations while following domain-specific rules and using API tools. Agents must handle airline-related tasks and policies reliably.",
       "categories": [
         "tool_calling",
-        "communication",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -401,8 +403,8 @@
       "description": "A benchmark for evaluating tool-agent-user interaction in retail environments. Tests language agents' ability to handle dynamic conversations with users while using domain-specific API tools and following policy guidelines. Evaluates agents on tasks like order cancellations, address changes, and order status checks through multi-turn conversations.",
       "categories": [
         "tool_calling",
-        "communication",
-        "reasoning"
+        "reasoning",
+        "communication"
       ],
       "modality": "text",
       "max_score": 1,
@@ -425,7 +427,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 15,
-        "output_per_million": 60
+        "output_per_million": 60,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -467,7 +475,13 @@
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
         "input_per_million": 15,
-        "output_per_million": 60
+        "output_per_million": 60,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -626,15 +640,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.267,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.267,
           "rank": 5,
           "is_current_model": false
@@ -695,6 +709,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.5",
           "model_name": "GPT-5.5",
           "score": 0.936,
@@ -705,41 +726,34 @@
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
           "score": 0.932,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4",
           "model_name": "GPT-5.4",
           "score": 0.928,
-          "rank": 6,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.924,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 0.924,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3-pro-preview",
           "model_name": "Gemini 3 Pro",
           "score": 0.919,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
-          "score": 0.913,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
-          "score": 0.905,
           "rank": 10,
           "is_current_model": false
         },
@@ -747,7 +761,7 @@
           "model_id": "o1-2024-12-17",
           "model_name": "o1",
           "score": 0.78,
-          "rank": 77,
+          "rank": 79,
           "is_current_model": true
         }
       ]
@@ -785,13 +799,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
-          "model_name": "Claude 3.5 Sonnet",
-          "score": 0.964,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
           "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.964,
@@ -799,15 +806,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemma-3-27b-it",
-          "model_name": "Gemma 3 27B",
-          "score": 0.959,
-          "rank": 7,
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.964,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen-2.5-32b-instruct",
           "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.959,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
           "score": 0.959,
           "rank": 7,
           "is_current_model": false
@@ -972,15 +986,15 @@
           "is_current_model": true
         },
         {
-          "model_id": "o1-preview",
-          "model_name": "o1-preview",
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
           "score": 0.523,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen-2.5-72b-instruct",
-          "model_name": "Qwen2.5 72B Instruct",
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
           "score": 0.523,
           "rank": 9,
           "is_current_model": false
@@ -1006,15 +1020,15 @@
           "is_current_model": true
         },
         {
-          "model_id": "mistral-large-3-2509",
-          "model_name": "Mistral Large 3",
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "ministral-3-14b-instruct-2512",
-          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
@@ -1158,14 +1172,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.916,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.916,
           "rank": 3,
@@ -1234,13 +1248,6 @@
           "is_current_model": true
         },
         {
-          "model_id": "o1-preview",
-          "model_name": "o1-preview",
-          "score": 0.908,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.908,
@@ -1248,15 +1255,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "sarvam-105b",
-          "model_name": "Sarvam-105B",
-          "score": 0.906,
-          "rank": 5,
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
@@ -1310,15 +1324,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
@@ -1345,31 +1359,38 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.903,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 0.896,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.895,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-1-20250805",
           "model_name": "Claude Opus 4.1",
           "score": 0.895,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "o1-2024-12-17",
           "model_name": "o1",
           "score": 0.877,
-          "rank": 17,
+          "rank": 18,
           "is_current_model": true
         }
       ]
@@ -1552,30 +1573,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.886,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-7",
           "model_name": "Claude Opus 4.7",
           "score": 0.876,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-5-20251101",
           "model_name": "Claude Opus 4.5",
           "score": 0.809,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.808,
-          "rank": 4,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-pro-max",
-          "model_name": "DeepSeek-V4-Pro-Max",
-          "score": 0.806,
           "rank": 5,
           "is_current_model": false
         },
@@ -1583,42 +1604,42 @@
           "model_id": "gemini-3.1-pro-preview",
           "model_name": "Gemini 3.1 Pro",
           "score": 0.806,
-          "rank": 5,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.806,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.804,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "minimax-m2.5",
           "model_name": "MiniMax M2.5",
           "score": 0.802,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.6",
           "model_name": "Kimi K2.6",
           "score": 0.802,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
-          "score": 0.8,
           "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-sonnet-4-6",
-          "model_name": "Claude Sonnet 4.6",
-          "score": 0.796,
-          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "o1-2024-12-17",
           "model_name": "o1",
           "score": 0.41,
-          "rank": 80,
+          "rank": 82,
           "is_current_model": true
         }
       ]
@@ -1663,15 +1684,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-sonnet-4-20250514",
-          "model_name": "Claude Sonnet 4",
+          "model_id": "minimax-m1-40k",
+          "model_name": "MiniMax M1 40K",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m1-40k",
-          "model_name": "MiniMax M1 40K",
+          "model_id": "claude-sonnet-4-20250514",
+          "model_name": "Claude Sonnet 4",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false

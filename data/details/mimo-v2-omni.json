@@ -18,8 +18,10 @@
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
+    "id": "proprietary",
     "name": "Proprietary",
-    "allow_commercial": false
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
   },
   "model_family": null,
   "fine_tuned_from": null,
@@ -59,11 +61,11 @@
       "name": "GDPval-AA",
       "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
       "categories": [
-        "agents",
         "finance",
         "general",
         "legal",
-        "reasoning"
+        "reasoning",
+        "agents"
       ],
       "modality": "text",
       "max_score": 3000,
@@ -81,9 +83,9 @@
       "name": "MM-BrowserComp",
       "description": "MM-BrowserComp evaluates multimodal agents on web browsing and information retrieval tasks, testing a model's ability to perceive, navigate, and extract information from real web environments.",
       "categories": [
-        "agents",
         "multimodal",
-        "search"
+        "search",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -101,9 +103,9 @@
       "name": "OmniGAIA",
       "description": "OmniGAIA evaluates multimodal perception and reasoning in agentic contexts, testing a model's ability to process diverse inputs and perform complex multi-step reasoning tasks.",
       "categories": [
-        "agents",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "agents"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -140,9 +142,9 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "code",
         "frontend_development",
-        "reasoning"
+        "reasoning",
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -165,7 +167,13 @@
       "deprecated_at": "2026-05-13T00:00:00+00:00",
       "pricing": {
         "input_per_million": 0.4,
-        "output_per_million": 2
+        "output_per_million": 2,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
       },
       "quantization": null,
       "limits": {
@@ -202,6 +210,82 @@
   ],
   "benchmark_rankings": [
     {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 1890,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 1656,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 1633,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 1606,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 1554,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.7",
+          "model_name": "MiniMax M2.7",
+          "score": 1494,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 1444,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 1426,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-omni",
+          "model_name": "MiMo-V2-Omni",
+          "score": 1410,
+          "rank": 9,
+          "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 1395,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
       "benchmark_id": "swe-bench-verified",
       "benchmark_name": "SWE-Bench Verified",
       "models": [
@@ -213,30 +297,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.886,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-7",
           "model_name": "Claude Opus 4.7",
           "score": 0.876,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-5-20251101",
           "model_name": "Claude Opus 4.5",
           "score": 0.809,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.808,
-          "rank": 4,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-pro-max",
-          "model_name": "DeepSeek-V4-Pro-Max",
-          "score": 0.806,
           "rank": 5,
           "is_current_model": false
         },
@@ -244,47 +328,46 @@
           "model_id": "gemini-3.1-pro-preview",
           "model_name": "Gemini 3.1 Pro",
           "score": 0.806,
-          "rank": 5,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.806,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.804,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.6",
           "model_name": "Kimi K2.6",
           "score": 0.802,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "minimax-m2.5",
           "model_name": "MiniMax M2.5",
           "score": 0.802,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
-          "score": 0.8,
           "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-sonnet-4-6",
-          "model_name": "Claude Sonnet 4.6",
-          "score": 0.796,
-          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "mimo-v2-omni",
           "model_name": "MiMo-V2-Omni",
           "score": 0.748,
-          "rank": 27,
+          "rank": 29,
           "is_current_model": true
         }
       ]
     }
   ],
-  "comparison_model": null,
-  "openrouter_id": "xiaomi/mimo-v2-omni"
+  "comparison_model": null
 }
