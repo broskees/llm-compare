@@ -1,0 +1,330 @@
+{
+  "model_id": "nova-2-sonic",
+  "name": "Nova 2 Sonic",
+  "model_type": "llm",
+  "organization": {
+    "id": "amazon",
+    "name": "Amazon",
+    "website": "https://aws.amazon.com"
+  },
+  "description": "Amazon Nova 2 Sonic is Amazon's second-generation speech-to-speech foundation model for real-time conversational AI. It delivers expressive, native-sounding voices and high streaming speech-understanding accuracy across English, French, Italian, German, Spanish, Hindi, and Portuguese, surpassing GPT-Realtime and Gemini 2.5 Flash Live on conversational quality in human evaluations. It supports asynchronous tool calling, configurable turn-taking, and seamless switching between voice and text modalities for low-latency interactions.",
+  "release_date": "2025-12-02",
+  "announcement_date": "2025-12-02",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html",
+    "playground": null,
+    "paper": "https://cdn.amazon.science/c5/3d/84514a224666b5be6de4b43ef4aa/nova-2-0-technical-report2.pdf",
+    "scorecard_blog": null,
+    "repo": "https://huggingface.co/amazon-agi",
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "bfcl",
+      "name": "BFCL",
+      "description": "The Berkeley Function Calling Leaderboard (BFCL) is the first comprehensive and executable function call evaluation dedicated to assessing Large Language Models' ability to invoke functions. It evaluates serial and parallel function calls across multiple programming languages (Python, Java, JavaScript, REST API) using a novel Abstract Syntax Tree (AST) evaluation method. The benchmark consists of over 2,000 question-function-answer pairs covering diverse application domains and complex use cases including multiple function calls, parallel function calls, and multi-turn interactions.",
+      "categories": [
+        "tool_calling",
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.745,
+      "normalized_score": 0.745,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://cdn.amazon.science/c5/3d/84514a224666b5be6de4b43ef4aa/nova-2-0-technical-report2.pdf",
+      "analysis_method": "accuracy (filtered BFCL-v3 single-turn, single-function, python-only via TTS)",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "big-bench-audio",
+      "name": "Big Bench Audio",
+      "description": "Big Bench Audio is an audio reasoning benchmark adapted from a subset of Big Bench Hard, with text questions converted to spoken audio. It evaluates the reasoning ability of speech-to-speech and audio language models on tasks delivered as audio input, with accuracy scored by an independent evaluation (Artificial Analysis).",
+      "categories": [
+        "reasoning",
+        "audio"
+      ],
+      "modality": "audio",
+      "max_score": 1,
+      "score": 0.87,
+      "normalized_score": 0.87,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://cdn.amazon.science/c5/3d/84514a224666b5be6de4b43ef4aa/nova-2-0-technical-report2.pdf",
+      "analysis_method": "accuracy (Artificial Analysis)",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "complexfuncbench",
+      "name": "ComplexFuncBench",
+      "description": "ComplexFuncBench is a benchmark designed to evaluate large language models' capabilities in handling complex function calling scenarios. It encompasses multi-step and constrained function calling tasks that require long-parameter filling, parameter value reasoning, and managing contexts up to 128k tokens. The benchmark includes 1,000 samples across five real-world scenarios.",
+      "categories": [
+        "structured_output",
+        "tool_calling",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.652,
+      "normalized_score": 0.652,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://cdn.amazon.science/c5/3d/84514a224666b5be6de4b43ef4aa/nova-2-0-technical-report2.pdf",
+      "analysis_method": "accuracy (via TTS)",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ifbench",
+      "name": "IFBench",
+      "description": "Instruction Following Benchmark evaluating model's ability to follow complex instructions",
+      "categories": [
+        "general",
+        "instruction_following"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.375,
+      "normalized_score": 0.375,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://cdn.amazon.science/c5/3d/84514a224666b5be6de4b43ef4aa/nova-2-0-technical-report2.pdf",
+      "analysis_method": "instruction level accuracy (via TTS)",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "bedrock",
+      "name": "Bedrock",
+      "website": "https://aws.amazon.com/bedrock/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.33,
+        "output_per_million": 2.75,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 65536
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": true,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": true,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "bfcl",
+      "benchmark_name": "BFCL",
+      "models": [
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.885,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-70b-instruct",
+          "model_name": "Llama 3.1 70B Instruct",
+          "score": 0.848,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-8b-instruct",
+          "model_name": "Llama 3.1 8B Instruct",
+          "score": 0.761,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-sonic",
+          "model_name": "Nova 2 Sonic",
+          "score": 0.745,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.708,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.703,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-30b-a3b",
+          "model_name": "Qwen3 30B A3B",
+          "score": 0.691,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.684,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.666,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwq-32b",
+          "model_name": "QwQ-32B",
+          "score": 0.664,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifbench",
+      "benchmark_name": "IFBench",
+      "models": [
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8121,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.802,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.791,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.765,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.765,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.761,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-code-1-flash",
+          "model_name": "MAI-Code-1-Flash",
+          "score": 0.75,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.742,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-super-120b-a12b",
+          "model_name": "Nemotron 3 Super (120B A12B)",
+          "score": 0.7256,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-2",
+          "model_name": "Mercury 2",
+          "score": 0.71,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-sonic",
+          "model_name": "Nova 2 Sonic",
+          "score": 0.375,
+          "rank": 23,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}
