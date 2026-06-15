@@ -1,0 +1,342 @@
+{
+  "model_id": "kimi-k2.7-code",
+  "name": "Kimi K2.7 Code",
+  "model_type": "llm",
+  "organization": {
+    "id": "moonshotai",
+    "name": "Moonshot AI",
+    "website": "https://moonshot.cn"
+  },
+  "description": "Kimi K2.7 Code is Moonshot AI's coding-focused agentic model built on Kimi K2.6. It improves real-world long-horizon coding task completion, instruction following, and token efficiency while reducing thinking-token usage by approximately 30% versus Kimi K2.6. The model uses a native multimodal Mixture-of-Experts architecture with 1T total parameters, 32B activated parameters, a 256K-token context window, image and video input support, and forced thinking with preserve_thinking enabled for multi-turn coding agent workflows.",
+  "release_date": "2026-06-12",
+  "announcement_date": "2026-06-12",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 1000000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "modified_mit_license",
+    "name": "Modified MIT License",
+    "allow_commercial": false,
+    "description": "Modified MIT License license"
+  },
+  "model_family": null,
+  "fine_tuned_from": {
+    "id": "kimi-k2.6",
+    "name": "Kimi K2.6"
+  },
+  "tags": {
+    "moe": "true",
+    "coding": "true",
+    "tuning": "instruct",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://platform.kimi.ai/docs/guide/kimi-k2-7-code-quickstart",
+    "playground": "https://www.kimi.com/code",
+    "paper": null,
+    "scorecard_blog": null,
+    "repo": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+    "weights": "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "kimi-claw-24-7-bench",
+      "name": "Kimi Claw 24/7 Bench",
+      "description": "Kimi Claw 24/7 Bench is Moonshot AI's in-house benchmark for evaluating long-horizon agentic performance in persistent, multi-day coworking tasks. It spans 17 professional scenarios across 610 evaluation points, covering software engineering, ML research, recruiting, trading, and marketing tasks executed through the OpenClaw harness.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.469,
+      "normalized_score": 0.469,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "analysis_method": "OpenClaw harness, average pass rate over 610 evaluation points and 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "kimi-code-bench-v2",
+      "name": "Kimi Code Bench v2",
+      "description": "Kimi Code Bench v2 is Moonshot AI's in-house benchmark for evaluating coding agents on realistic software engineering tasks across 10+ mainstream programming languages and a production tech stack spanning backend services, infrastructure, performance engineering, systems programming, security, frontend development, and ML/data engineering.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.62,
+      "normalized_score": 0.62,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "analysis_method": "Kimi Code CLI, thinking mode, temperature 1.0, top_p 0.95, 262144-token context",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mcp-atlas",
+      "name": "MCP Atlas",
+      "description": "MCP Atlas is a benchmark for evaluating AI models on scaled tool use capabilities, measuring how well models can coordinate and utilize multiple tools across complex multi-step tasks.",
+      "categories": [
+        "tool_calling",
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.76,
+      "normalized_score": 0.76,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "analysis_method": "Official MCP-Atlas configuration, 100 tool-call budget, 32k max tokens per step, averaged over 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mcp-mark",
+      "name": "MCP-Mark",
+      "description": "MCP-Mark evaluates LLMs on their ability to use Model Context Protocol (MCP) tools effectively, testing tool discovery, selection, invocation, and result interpretation across diverse MCP server scenarios.",
+      "categories": [
+        "tool_calling",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.811,
+      "normalized_score": 0.811,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "analysis_method": "Verified; 100-step tool-call budget and 32k max tokens per step, averaged over 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mls-bench-lite",
+      "name": "MLS-Bench Lite",
+      "description": "MLS-Bench Lite is the official 30-task subset of MLS-Bench for evaluating whether AI systems can invent generalizable and scalable machine learning methods across LLM pretraining and post-training, robotics, world models, computer vision, reinforcement learning, optimization, ML systems, and AI for Science.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.351,
+      "normalized_score": 0.351,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "analysis_method": "Kimi Code CLI, thinking mode, temperature 1.0, top_p 0.95, 262144-token context",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "program-bench",
+      "name": "Program Bench",
+      "description": "Program Bench evaluates code-generation agents by asking them to recreate a program's behavior from only a compiled binary and documentation. It spans 200 tasks from small CLI tools to large systems such as FFmpeg and SQLite, with submissions judged against more than 248,000 fuzz-generated behavioral tests.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.536,
+      "normalized_score": 0.536,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "analysis_method": "Kimi Code CLI, thinking mode, temperature 1.0, top_p 0.95, 262144-token context",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "moonshot",
+      "name": "Moonshot AI",
+      "website": "https://www.moonshot.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.95,
+        "output_per_million": 4,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144
+      },
+      "performance": {
+        "throughput": 0,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "novita",
+      "name": "Novita",
+      "website": "https://novita.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.95,
+        "output_per_million": 4,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": "int4",
+      "limits": {
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144
+      },
+      "performance": {
+        "throughput": 18.886177831547645,
+        "latency": 13.078
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "mcp-atlas",
+      "benchmark_name": "MCP Atlas",
+      "models": [
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.822,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.773,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.764,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.7-code",
+          "model_name": "Kimi K2.7 Code",
+          "score": 0.76,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.753,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.742,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.741,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.736,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.718,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "moonshotai/kimi-k2.7-code"
+}

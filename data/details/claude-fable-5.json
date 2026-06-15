@@ -1,0 +1,758 @@
+{
+  "model_id": "claude-fable-5",
+  "name": "Claude Fable 5",
+  "model_type": "llm",
+  "organization": {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "website": "https://anthropic.com"
+  },
+  "description": "Claude Fable 5 is Anthropic's generally available deployment of the same underlying weights as the restricted Claude Mythos 5 model. Anthropic positions the model as a new capability tier above Opus: Mythos 5 is the unsafeguarded trusted-access configuration, while Fable 5 adds production safeguards for public use. The system card reports that Mythos 5 is Anthropic's most capable model to date, with state-of-the-art results across software engineering, long-context agentic tasks, vision, knowledge work, healthcare, cyber, and life-sciences evaluations; Fable 5 matches the underlying model where safeguards do not trigger and behaves closer to Claude Opus 4.8 in safeguarded domains. Fable-specific results include SWE-Bench Verified 95.0%, SWE-Bench Pro 80.0%, Terminal-Bench 2.1 84.3% mean reward with 20.9% of trials hitting a safety fallback, OSWorld-Verified 85.0%, FrontierCode Diamond 29.3%, FrontierCode Main 46.3%, GDPval-AA 1932 Elo, GDP.pdf 29.8%, Blueprint-Bench 2 38.6%, and AutomationBench 17.4%. Fable 5 uses classifiers for cybersecurity, biology and chemistry, and distillation attempts; in Claude client apps these requests fall back to the latest Claude Opus model, while the Messages API blocks by default unless developers implement or opt into fallback. Separate competitive-use safeguards target frontier LLM development work and are estimated by Anthropic to affect about 0.03% of traffic. The model was trained on a proprietary mix of public web data, public and private datasets, and synthetic data. Anthropic prices Fable 5 at $10 per million input tokens and $50 per million output tokens, and exposes it through the Claude API as `claude-fable-5`.",
+  "release_date": null,
+  "announcement_date": "2026-06-09",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://docs.anthropic.com/en/docs/about-claude/models/all-models",
+    "playground": "https://claude.ai",
+    "paper": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+    "scorecard_blog": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "tool_calling",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.174,
+      "normalized_score": 0.174,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Zapier AutomationBench private held-out set at max effort. End-to-end business workflows across simulated company APIs.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "biomysterybench",
+      "name": "BioMysteryBench",
+      "description": "BioMysteryBench evaluates a model's ability to reason through challenging molecular biology problems, reporting performance on a hard subset and on the subset of problems solved by human experts.",
+      "categories": [
+        "reasoning",
+        "science",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.461,
+      "normalized_score": 0.461,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Hard subset: 46.1%. Human-solved subset: 83.9%. Blocking safeguards cause Fable 5 to perform closer to Opus 4.8 due to fallbacks. System card reports this as a Mythos 5 or combined launch-table score rather than a separate Fable-only production score; Fable may fall back to Opus 4.8 when safeguards trigger.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "blueprint-bench-2",
+      "name": "Blueprint-Bench 2",
+      "description": "Blueprint-Bench 2 is an agentic spatial reasoning benchmark that evaluates a model's ability to understand, plan, and reason over architectural blueprints and other structured spatial documents. Scores are reported as a normalized score.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.386,
+      "normalized_score": 0.386,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Spatial reasoning evaluation.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "exploitbench",
+      "name": "ExploitBench",
+      "description": "ExploitBench is a cybersecurity benchmark that evaluates a model's ability to discover and exploit software vulnerabilities, reported as the fraction of challenges where the model captures the target (Cap%).",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.78,
+      "normalized_score": 0.78,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Cybersecurity capture rate (Cap%). Blocking safeguards cause Fable 5 to perform closer to Opus 4.8 due to fallbacks; score reflects Claude Mythos 5. System card reports this as a Mythos 5 or combined launch-table score rather than a separate Fable-only production score; Fable may fall back to Opus 4.8 when safeguards trigger.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode",
+      "name": "FrontierCode",
+      "description": "FrontierCode is Cognition's coding evaluation that tests whether models can pass difficult coding tasks while meeting the standards of high-quality production codebases. The Diamond subset contains the hardest problems.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.463,
+      "normalized_score": 0.463,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "FrontierCode Main subset at xhigh reasoning effort. Score 46.3%, pass rate 48.8%; Fable 5 ranks #1 and outperforms every other model even at medium effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdp-pdf",
+      "name": "GDP.pdf",
+      "description": "GDP.pdf is a knowledge-work vision benchmark that evaluates models on economically valuable professional tasks presented as visual documents (PDFs), testing document-based reasoning, chart and table interpretation, and problem solving without tools.",
+      "categories": [
+        "general",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.298,
+      "normalized_score": 0.298,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Document and vision-heavy knowledge-work evaluation, no tools.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
+      "categories": [
+        "finance",
+        "general",
+        "legal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1932,
+      "normalized_score": 0.644,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Knowledge-work evaluation by Artificial Analysis. Elo score as of June 6, 2026.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.66,
+      "normalized_score": 0.66,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Health evaluation. Blocking safeguards cause Fable 5 to perform closer to Opus 4.8 due to fallbacks. System card reports this as a Mythos 5 or combined launch-table score rather than a separate Fable-only production score; Fable may fall back to Opus 4.8 when safeguards trigger.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.645,
+      "normalized_score": 0.645,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Multidisciplinary reasoning. With tools: 64.5%. Without tools: 59.0%. Blocking safeguards cause Fable 5 to perform closer to Opus 4.8 on some questions due to fallbacks. System card reports this as a Mythos 5 or combined launch-table score rather than a separate Fable-only production score; Fable may fall back to Opus 4.8 when safeguards trigger.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "legal-agent-benchmark",
+      "name": "Legal Agent Benchmark",
+      "description": "The Legal Agent Benchmark evaluates AI agents on complex legal work, testing their ability to complete realistic professional legal tasks autonomously.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.133,
+      "normalized_score": 0.133,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Legal Agent Benchmark, Harvey's held-out set.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-verified",
+      "name": "OSWorld-Verified",
+      "description": "OSWorld-Verified is a verified subset of OSWorld, a scalable real computer environment for multimodal agents supporting task setup, execution-based evaluation, and interactive learning across Ubuntu, Windows, and macOS.",
+      "categories": [
+        "general",
+        "multimodal",
+        "vision",
+        "agents"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.85,
+      "normalized_score": 0.85,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Fable 5 production-safeguarded configuration. OSWorld score reflects the updated harness with zoom-tool bug fix and 128K max tokens per turn.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "description": "SWE-Bench Pro is an advanced version of SWE-Bench that evaluates language models on complex, real-world software engineering tasks requiring extended reasoning and multi-step problem solving.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8,
+      "normalized_score": 0.8,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Fable 5 production-safeguarded configuration on SWE-Bench Pro; average over 5 trials with thinking blocks included. Mythos 5 scored 80.3%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "name": "SWE-Bench Verified",
+      "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
+      "categories": [
+        "frontend_development",
+        "reasoning",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.95,
+      "normalized_score": 0.95,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Fable 5 production-safeguarded configuration on the 500-problem SWE-Bench Verified subset; average over 5 trials with thinking blocks included. Mythos 5 scored 95.5%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "tool_calling",
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.843,
+      "normalized_score": 0.843,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+      "analysis_method": "Fable 5 production-safeguarded configuration on the mini-SWE-agent harness, high effort, 89 tasks x 5 attempts. 20.9% of trials hit a safety refusal and fell back to Claude Opus 4.8 for the rest of the trajectory; Mythos 5 scored 88.0%.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "anthropic",
+      "name": "Anthropic",
+      "website": "https://anthropic.com",
+      "deprecated": true,
+      "deprecated_at": "2026-06-14T00:00:00+00:00",
+      "pricing": {
+        "input_per_million": 10,
+        "output_per_million": 50,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": 22.960084580531728,
+        "latency": 20.807526315789474
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 1932,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 1890,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 1656,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 1633,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 1606,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 1581,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 1554,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.7",
+          "model_name": "MiniMax M2.7",
+          "score": 1494,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 1444,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 1426,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.647,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.645,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.584,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.579,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.572,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.547,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.531,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.523,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.522,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.514,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "osworld-verified",
+      "benchmark_name": "OSWorld-Verified",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.85,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.834,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.796,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.787,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.784,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.78,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.75,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.731,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4-mini",
+          "model_name": "GPT-5.4 mini",
+          "score": 0.721,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.7006,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "benchmark_name": "SWE-Bench Pro",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.8,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.778,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.692,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.643,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.606,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.59,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.586,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.586,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.584,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.577,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "benchmark_name": "SWE-Bench Verified",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.939,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.886,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.876,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.809,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.808,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.806,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.806,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.805,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.804,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "anthropic/claude-fable-5"
+}

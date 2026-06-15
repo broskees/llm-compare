@@ -77,21 +77,21 @@
     {
       "benchmark_id": "fleurs",
       "name": "FLEURS",
-      "description": "Few-shot Learning Evaluation of Universal Representations of Speech - a parallel speech dataset in 102 languages built on FLoRes-101 with approximately 12 hours of speech supervision per language for tasks including ASR, speech language identification, translation and retrieval",
+      "description": "Few-shot Learning Evaluation of Universal Representations of Speech - a parallel speech dataset in 102 languages built on FLoRes-101 with approximately 12 hours of speech supervision per language for tasks including ASR, speech language identification, translation and retrieval. Scores are shown as speech recognition accuracy (1 - word error rate), so higher is better.",
       "categories": [
-        "speech_to_text",
-        "language"
+        "language",
+        "speech_to_text"
       ],
       "modality": "audio",
-      "max_score": 100,
-      "score": 0.096,
-      "normalized_score": 0.096,
+      "max_score": 1,
+      "score": 0.904,
+      "normalized_score": 0.904,
       "verified": false,
       "self_reported": true,
       "self_reported_source": "https://deepmind.google/technologies/gemini/flash/",
-      "analysis_method": "Word Error Rate",
+      "analysis_method": "Speech recognition accuracy (1 - WER)",
       "verification_date": null,
-      "verification_notes": null
+      "verification_notes": "Original word error rate: 9.6%."
     },
     {
       "benchmark_id": "functionalmath",
@@ -233,9 +233,9 @@
       "name": "MathVista",
       "description": "MathVista evaluates mathematical reasoning of foundation models in visual contexts. It consists of 6,141 examples derived from 28 existing multimodal datasets and 3 newly created datasets (IQTest, FunctionQA, and PaperQA), combining challenges from diverse mathematical and visual tasks to assess models' ability to understand complex figures and perform rigorous reasoning.",
       "categories": [
-        "vision",
         "math",
-        "multimodal"
+        "multimodal",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -320,11 +320,11 @@
       "name": "MMMU",
       "description": "MMMU (Massive Multi-discipline Multimodal Understanding) is a benchmark designed to evaluate multimodal models on college-level subject knowledge and deliberate reasoning. Contains 11.5K meticulously collected multimodal questions from college exams, quizzes, and textbooks, covering six core disciplines: Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering across 30 subjects and 183 subfields.",
       "categories": [
-        "vision",
         "general",
         "healthcare",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -401,9 +401,9 @@
       "name": "Vibe-Eval",
       "description": "VIBE-Eval is a hard evaluation suite for measuring progress of multimodal language models, consisting of 269 visual understanding prompts with gold-standard responses authored by experts. The benchmark has dual objectives: vibe checking multimodal chat models for day-to-day tasks and rigorously testing frontier models, with the hard set containing >50% questions that all frontier models answer incorrectly.",
       "categories": [
-        "vision",
         "general",
-        "multimodal"
+        "multimodal",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -421,9 +421,9 @@
       "name": "Video-MME",
       "description": "Video-MME is the first-ever comprehensive evaluation benchmark of Multi-modal Large Language Models (MLLMs) in video analysis. It features 900 videos totaling 254 hours with 2,700 human-annotated question-answer pairs across 6 primary visual domains (Knowledge, Film & Television, Sports Competition, Life Record, Multilingual, and others) and 30 subfields. The benchmark evaluates models across diverse temporal dimensions (11 seconds to 1 hour), integrates multi-modal inputs including video frames, subtitles, and audio, and uses rigorous manual labeling by expert annotators for precise assessment.",
       "categories": [
-        "vision",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
@@ -530,14 +530,14 @@
       "benchmark_name": "BIG-Bench Hard",
       "models": [
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.931,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.931,
           "rank": 1,
@@ -627,15 +627,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
           "score": 0.936,
           "rank": 4,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-8",
-          "model_name": "Claude Opus 4.8",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.936,
           "rank": 4,
           "is_current_model": false
@@ -655,15 +655,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
           "score": 0.924,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-max",
-          "model_name": "Qwen3.7 Max",
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
           "score": 0.924,
           "rank": 8,
           "is_current_model": false
@@ -679,7 +679,7 @@
           "model_id": "gemini-1.5-flash",
           "model_name": "Gemini 1.5 Flash",
           "score": 0.51,
-          "rank": 159,
+          "rank": 162,
           "is_current_model": true
         }
       ]
@@ -689,72 +689,72 @@
       "benchmark_name": "GSM8k",
       "models": [
         {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.996,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "kimi-k2-instruct",
           "model_name": "Kimi K2 Instruct",
           "score": 0.973,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "o1-2024-12-17",
           "model_name": "o1",
           "score": 0.971,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.97,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "llama-3.1-405b-instruct",
           "model_name": "Llama 3.1 405B Instruct",
           "score": 0.968,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.964,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.964,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen-2.5-32b-instruct",
-          "model_name": "Qwen2.5 32B Instruct",
-          "score": 0.959,
-          "rank": 7,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gemma-3-27b-it",
           "model_name": "Gemma 3 27B",
           "score": 0.959,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.959,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen-2.5-72b-instruct",
           "model_name": "Qwen2.5 72B Instruct",
           "score": 0.958,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v2.5",
-          "model_name": "DeepSeek-V2.5",
-          "score": 0.951,
           "rank": 10,
           "is_current_model": false
         },
@@ -762,7 +762,7 @@
           "model_id": "gemini-1.5-flash",
           "model_name": "Gemini 1.5 Flash",
           "score": 0.862,
-          "rank": 33,
+          "rank": 34,
           "is_current_model": true
         }
       ]
@@ -793,51 +793,51 @@
           "is_current_model": false
         },
         {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.898,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-3-sonnet-20240229",
           "model_name": "Claude 3 Sonnet",
           "score": 0.89,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "command-r-plus-04-2024",
           "model_name": "Command R+",
           "score": 0.886,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "hermes-3-70b",
           "model_name": "Hermes 3 70B",
           "score": 0.8819,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen2-72b-instruct",
           "model_name": "Qwen2 72B Instruct",
           "score": 0.876,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemini-1.5-flash",
           "model_name": "Gemini 1.5 Flash",
           "score": 0.865,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": true
         },
         {
           "model_id": "gemma-2-27b-it",
           "model_name": "Gemma 2 27B",
           "score": 0.864,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-3-haiku-20240307",
-          "model_name": "Claude 3 Haiku",
-          "score": 0.859,
           "rank": 10,
           "is_current_model": false
         }
@@ -980,15 +980,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-2-2407",
-          "model_name": "Mistral Large 2",
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
           "score": 0.92,
           "rank": 9,
           "is_current_model": false
@@ -1021,15 +1021,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-3-2509",
-          "model_name": "Mistral Large 3",
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "ministral-3-14b-instruct-2512",
-          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
@@ -1080,7 +1080,7 @@
           "model_id": "gemini-1.5-flash",
           "model_name": "Gemini 1.5 Flash",
           "score": 0.779,
-          "rank": 21,
+          "rank": 22,
           "is_current_model": true
         }
       ]
@@ -1284,15 +1284,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "sarvam-105b",
-          "model_name": "Sarvam-105B",
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-235b-a22b-thinking",
-          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
           "score": 0.906,
           "rank": 5,
           "is_current_model": false
@@ -1312,15 +1312,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-4.1-2025-04-14",
-          "model_name": "GPT-4.1",
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-0905",
-          "model_name": "Kimi K2 0905",
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
@@ -1329,7 +1329,7 @@
           "model_id": "gemini-1.5-flash",
           "model_name": "Gemini 1.5 Flash",
           "score": 0.789,
-          "rank": 67,
+          "rank": 68,
           "is_current_model": true
         }
       ]
@@ -1412,7 +1412,7 @@
           "model_id": "gemini-1.5-flash",
           "model_name": "Gemini 1.5 Flash",
           "score": 0.673,
-          "rank": 88,
+          "rank": 91,
           "is_current_model": true
         }
       ]
@@ -1429,8 +1429,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
@@ -1443,8 +1443,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
@@ -1464,15 +1464,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "o3-2025-04-16",
-          "model_name": "o3",
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
           "score": 0.829,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-27b",
-          "model_name": "Qwen3.6-27B",
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
           "score": 0.829,
           "rank": 7,
           "is_current_model": false
@@ -1505,72 +1505,72 @@
       "benchmark_name": "Video-MME",
       "models": [
         {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.877,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.874,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "minimax-m3",
           "model_name": "MiniMax M3",
           "score": 0.854,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "gemini-2.5-pro",
           "model_name": "Gemini 2.5 Pro",
           "score": 0.848,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.842,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "gemini-1.5-pro",
           "model_name": "Gemini 1.5 Pro",
           "score": 0.786,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "nova-2-omni",
           "model_name": "Nova 2 Omni",
           "score": 0.779,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gemini-1.5-flash",
           "model_name": "Gemini 1.5 Flash",
           "score": 0.761,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": true
         },
         {
           "model_id": "qwen3-vl-30b-a3b-instruct",
           "model_name": "Qwen3 VL 30B A3B Instruct",
           "score": 0.745,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-30b-a3b-thinking",
           "model_name": "Qwen3 VL 30B A3B Thinking",
           "score": 0.733,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3-vl-8b-thinking",
-          "model_name": "Qwen3 VL 8B Thinking",
-          "score": 0.718,
           "rank": 10,
           "is_current_model": false
         }

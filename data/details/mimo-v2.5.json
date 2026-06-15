@@ -1,0 +1,892 @@
+{
+  "model_id": "mimo-v2.5",
+  "name": "MiMo-V2.5",
+  "model_type": "llm",
+  "organization": {
+    "id": "xiaomi",
+    "name": "Xiaomi",
+    "website": "https://mimo.xiaomi.com"
+  },
+  "description": "MiMo-V2.5 is Xiaomi's native omnimodal sparse Mixture-of-Experts model with 310B total parameters, 15B activated parameters, and a 1M-token context window. Built on the MiMo-V2-Flash backbone, it adds dedicated vision and audio encoders for text, image, video, and audio understanding, and is post-trained with SFT, agentic reinforcement learning, and Multi-Teacher On-Policy Distillation for multimodal perception, long-context reasoning, and agentic workflows.",
+  "release_date": "2026-04-22",
+  "announcement_date": "2026-04-22",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 310775040000,
+  "training_tokens": 48000000000000,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "mit",
+    "name": "MIT",
+    "allow_commercial": true,
+    "description": "MIT License - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": {
+    "id": "mimo-v2-flash",
+    "name": "MiMo-V2-Flash"
+  },
+  "tags": {
+    "moe": "true",
+    "audio": "true",
+    "video": "true",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": null,
+    "playground": "https://mimo.xiaomi.com",
+    "paper": null,
+    "scorecard_blog": "https://mimo.xiaomi.com/mimo-v2-5/",
+    "repo": null,
+    "weights": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "charxiv-r",
+      "name": "CharXiv-R",
+      "description": "CharXiv-R is the reasoning component of the CharXiv benchmark, focusing on complex reasoning questions that require synthesizing information across visual chart elements. It evaluates multimodal large language models on their ability to understand and reason about scientific charts from arXiv papers through various reasoning tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.81,
+      "normalized_score": 0.81,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": "RQ",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "claw-eval",
+      "name": "Claw-Eval",
+      "description": "Claw-Eval tests real-world agentic task completion across complex multi-step scenarios, evaluating a model's ability to use tools, navigate environments, and complete end-to-end tasks autonomously.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.632,
+      "normalized_score": 0.632,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": "Multi Turn, Pass^3",
+      "verification_date": null,
+      "verification_notes": "N=3; 38 tasks"
+    },
+    {
+      "benchmark_id": "dailyomni",
+      "name": "DailyOmni",
+      "description": "DailyOmni evaluates multimodal models on daily-life video understanding tasks.",
+      "categories": [
+        "video",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.835,
+      "normalized_score": 0.835,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "graphwalks",
+      "name": "GraphWalks",
+      "description": "GraphWalks is a synthetic multi-hop long-context reasoning benchmark in which a model is given an edge-list representation of a graph and must traverse it to find neighboring nodes (via breadth-first search) or parent nodes for a given start node. Performance is reported as F1 of the model-predicted answer set versus the ground truth.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.87,
+      "normalized_score": 0.87,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": "Parents 1M F1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hr-bench-4k",
+      "name": "HR-Bench (4k)",
+      "description": "HR-Bench (4k) evaluates image understanding on high-resolution visual inputs with a 4k setting.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.885,
+      "normalized_score": 0.885,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mimo-coding-bench",
+      "name": "MiMo Coding Bench",
+      "description": "MiMo Coding Bench evaluates coding-agent capabilities on software engineering tasks reported with the MiMo model family.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.718,
+      "normalized_score": 0.718,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "name": "MMMU-Pro",
+      "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
+      "categories": [
+        "general",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.779,
+      "normalized_score": 0.779,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "omnidocbench",
+      "name": "OmniDocBench",
+      "description": "OmniDocBench evaluates multimodal models on document understanding tasks such as OCR, layout parsing, and structured document comprehension.",
+      "categories": [
+        "document_understanding",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.872,
+      "normalized_score": 0.872,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "researchclawbench",
+      "name": "ResearchClawBench",
+      "description": "ResearchClawBench evaluates research agents on realistic, tool-using research tasks that require code execution and filesystem workspace interaction.",
+      "categories": [
+        "tool_calling",
+        "research",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.1691,
+      "normalized_score": 0.1691,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5",
+      "analysis_method": "Overall",
+      "verification_date": null,
+      "verification_notes": "ResearchHarness evaluation with tools enabled, code execution, and a file-system workspace; completed 39/40 ResearchClawBench tasks."
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "description": "SWE-Bench Pro is an advanced version of SWE-Bench that evaluates language models on complex, real-world software engineering tasks requiring extended reasoning and multi-step problem solving.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.561,
+      "normalized_score": 0.561,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2",
+      "name": "Terminal-Bench 2.0",
+      "description": "Terminal-Bench 2.0 is an updated benchmark for testing AI agents' tool use ability to operate a computer via terminal. It evaluates how well models can handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, security tasks, data science workflows, and cybersecurity vulnerabilities.",
+      "categories": [
+        "tool_calling",
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.658,
+      "normalized_score": 0.658,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "videoholmes",
+      "name": "VideoHolmes",
+      "description": "VideoHolmes evaluates video understanding and reasoning capabilities in multimodal models.",
+      "categories": [
+        "video",
+        "multimodal",
+        "reasoning"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.64,
+      "normalized_score": 0.64,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "video-mme",
+      "name": "Video-MME",
+      "description": "Video-MME is the first-ever comprehensive evaluation benchmark of Multi-modal Large Language Models (MLLMs) in video analysis. It features 900 videos totaling 254 hours with 2,700 human-annotated question-answer pairs across 6 primary visual domains (Knowledge, Film & Television, Sports Competition, Life Record, Multilingual, and others) and 30 subfields. The benchmark evaluates models across diverse temporal dimensions (11 seconds to 1 hour), integrates multi-modal inputs including video frames, subtitles, and audio, and uses rigorous manual labeling by expert annotators for precise assessment.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.877,
+      "normalized_score": 0.877,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mimo.xiaomi.com/mimo-v2-5/",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "novita",
+      "name": "Novita",
+      "website": "https://novita.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.168,
+        "output_per_million": 0.336,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": 19.62187821113559,
+        "latency": 10.835526315789474
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.4,
+        "output_per_million": 2,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": "fp8",
+      "limits": {
+        "max_input_tokens": 262144,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": 102.15169163896546,
+        "latency": 4.87875
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "charxiv-r",
+      "benchmark_name": "CharXiv-R",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.932,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.91,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.899,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.867,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.864,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.842,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.821,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-instant",
+          "model_name": "GPT-5.5 Instant",
+          "score": 0.816,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.815,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.814,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.81,
+          "rank": 12,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "claw-eval",
+      "benchmark_name": "Claw-Eval",
+      "models": [
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.809,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5v-turbo",
+          "model_name": "GLM-5V-Turbo",
+          "score": 0.75,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.745,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.652,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.64,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.632,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.615,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
+          "score": 0.606,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.587,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-omni",
+          "model_name": "MiMo-V2-Omni",
+          "score": 0.548,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "benchmark_name": "MMMU-Pro",
+      "models": [
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.832,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.812,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.812,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.81,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.805,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.804,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.801,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.795,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.788,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.779,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "benchmark_name": "SWE-Bench Pro",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.8,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.778,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.692,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.643,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.606,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.59,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.586,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.586,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.584,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.577,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.561,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2",
+      "benchmark_name": "Terminal-Bench 2.0",
+      "models": [
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.827,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.82,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.3-codex",
+          "model_name": "GPT-5.3 Codex",
+          "score": 0.773,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.762,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.751,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.746,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.697,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.694,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.69,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.685,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.658,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "video-mme",
+      "benchmark_name": "Video-MME",
+      "models": [
+        {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.877,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.874,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.854,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.848,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.842,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.786,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-omni",
+          "model_name": "Nova 2 Omni",
+          "score": 0.779,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.761,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.745,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.733,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "xiaomi/mimo-v2.5"
+}

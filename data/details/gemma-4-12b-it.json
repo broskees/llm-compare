@@ -1,0 +1,1366 @@
+{
+  "model_id": "gemma-4-12b-it",
+  "name": "Gemma 4 12B",
+  "model_type": "llm",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "Gemma 4 12B is Google DeepMind's encoder-free multimodal instruction-tuned model with 11.95 billion parameters and a 256K context window. It supports text, image, audio, and video inputs with text output, projecting image patches and audio waveforms directly into a single decoder-only transformer for streamlined local deployment.",
+  "release_date": "2026-05-23",
+  "announcement_date": "2026-05-23",
+  "multimodal": true,
+  "knowledge_cutoff": "2025-01-01",
+  "param_count": 11959730224,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "apache_2_0",
+    "name": "Apache 2.0",
+    "allow_commercial": true,
+    "description": "Apache License 2.0 - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "instruct",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://huggingface.co/google/gemma-4-12B-it",
+    "playground": null,
+    "paper": null,
+    "scorecard_blog": "https://huggingface.co/google/gemma-4-12B-it",
+    "repo": null,
+    "weights": "https://huggingface.co/google/gemma-4-12B-it"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aime-2026",
+      "name": "AIME 2026",
+      "description": "All 30 problems from the 2026 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.775,
+      "normalized_score": 0.775,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "No tools",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "big-bench-extra-hard",
+      "name": "BIG-Bench Extra Hard",
+      "description": "BIG-Bench Extra Hard (BBEH) is a challenging benchmark that replaces each task in BIG-Bench Hard with a novel task that probes similar reasoning capabilities but exhibits significantly increased difficulty. The benchmark contains 23 tasks testing diverse reasoning skills including many-hop reasoning, causal understanding, spatial reasoning, temporal arithmetic, geometric reasoning, linguistic reasoning, logic puzzles, and humor understanding. Designed to address saturation on existing benchmarks where state-of-the-art models achieve near-perfect scores, BBEH shows substantial room for improvement with best models achieving only 9.8-44.8% average accuracy.",
+      "categories": [
+        "general",
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.53,
+      "normalized_score": 0.53,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "codeforces",
+      "name": "CodeForces",
+      "description": "A competitive programming benchmark using problems from the CodeForces platform. The benchmark evaluates code generation capabilities of LLMs on algorithmic problems with difficulty ratings ranging from 800 to 2400. Problems cover diverse algorithmic categories including dynamic programming, graph algorithms, data structures, and mathematical problems with standardized evaluation through direct platform submission.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 0.553,
+      "normalized_score": 0.553,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "Elo rating",
+      "verification_date": null,
+      "verification_notes": "Raw rating 1659; normalized by 3000 max"
+    },
+    {
+      "benchmark_id": "covost2",
+      "name": "CoVoST2",
+      "description": "CoVoST 2 is a large-scale multilingual speech translation corpus derived from Common Voice, covering translations from 21 languages into English and from English into 15 languages. The dataset contains 2,880 hours of speech with 78K speakers for speech translation research.",
+      "categories": [
+        "language",
+        "speech_to_text",
+        "audio"
+      ],
+      "modality": "audio",
+      "max_score": 1,
+      "score": 0.385,
+      "normalized_score": 0.385,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "BLEU",
+      "verification_date": null,
+      "verification_notes": "Excluding Chinese language"
+    },
+    {
+      "benchmark_id": "fleurs",
+      "name": "FLEURS",
+      "description": "Few-shot Learning Evaluation of Universal Representations of Speech - a parallel speech dataset in 102 languages built on FLoRes-101 with approximately 12 hours of speech supervision per language for tasks including ASR, speech language identification, translation and retrieval. Scores are shown as speech recognition accuracy (1 - word error rate), so higher is better.",
+      "categories": [
+        "language",
+        "speech_to_text"
+      ],
+      "modality": "audio",
+      "max_score": 1,
+      "score": 0.931,
+      "normalized_score": 0.931,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "Speech recognition accuracy (1 - WER)",
+      "verification_date": null,
+      "verification_notes": "Original word error rate: 6.9%; excluding Chinese language."
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "general",
+        "physics",
+        "reasoning",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.788,
+      "normalized_score": 0.788,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": "GPQA Diamond subset"
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.052,
+      "normalized_score": 0.052,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "No tools",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "name": "LiveCodeBench v6",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "general",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.72,
+      "normalized_score": 0.72,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mathvision",
+      "name": "MathVision",
+      "description": "MATH-Vision is a dataset designed to measure multimodal mathematical reasoning capabilities. It focuses on evaluating how well models can solve mathematical problems that require both visual understanding and mathematical reasoning, bridging the gap between visual and mathematical domains.",
+      "categories": [
+        "math",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.797,
+      "normalized_score": 0.797,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "medxpertqa",
+      "name": "MedXpertQA",
+      "description": "A comprehensive benchmark to evaluate expert-level medical knowledge and advanced reasoning, featuring 4,460 questions spanning 17 specialties and 11 body systems. Includes both text-only and multimodal subsets with expert-level exam questions incorporating diverse medical images and rich clinical information.",
+      "categories": [
+        "healthcare",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.487,
+      "normalized_score": 0.487,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "MM",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "finance",
+        "general",
+        "healthcare",
+        "language",
+        "legal",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.772,
+      "normalized_score": 0.772,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmlu",
+      "name": "MMMLU",
+      "description": "Multilingual Massive Multitask Language Understanding dataset released by OpenAI, featuring professionally translated MMLU test questions across 14 languages including Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Swahili, Yoruba, and Chinese. Contains approximately 15,908 multiple-choice questions per language covering 57 subjects.",
+      "categories": [
+        "general",
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.834,
+      "normalized_score": 0.834,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "name": "MMMU-Pro",
+      "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
+      "categories": [
+        "general",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.691,
+      "normalized_score": 0.691,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": null,
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-v2",
+      "name": "MRCR v2",
+      "description": "MRCR v2 (Multi-Round Coreference Resolution version 2) is an enhanced version of the synthetic long-context reasoning task. It extends the original MRCR framework with improved evaluation criteria and additional complexity for testing models' ability to maintain attention and reasoning across extended contexts.",
+      "categories": [
+        "general",
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.434,
+      "normalized_score": 0.434,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "8 needle 128k",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "omnidocbench-1.5",
+      "name": "OmniDocBench 1.5",
+      "description": "OmniDocBench 1.5 is a comprehensive benchmark for evaluating multimodal large language models on document understanding tasks, including OCR, document parsing, information extraction, and visual question answering across diverse document types. Lower Overall Edit Distance scores are better.",
+      "categories": [
+        "structured_output",
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.164,
+      "normalized_score": 0.164,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/google/gemma-4-12B-it",
+      "analysis_method": "Average edit distance",
+      "verification_date": null,
+      "verification_notes": "Lower is better"
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2026",
+      "benchmark_name": "AIME 2026",
+      "models": [
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.964,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.953,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.953,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.945,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.942,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
+          "score": 0.941,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-35b-a3b",
+          "model_name": "Qwen3.6-35B-A3B",
+          "score": 0.927,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-code-1-flash",
+          "model_name": "MAI-Code-1-Flash",
+          "score": 0.925,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.913,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.892,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.775,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "big-bench-extra-hard",
+      "benchmark_name": "BIG-Bench Extra Hard",
+      "models": [
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.744,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-26b-a4b-it",
+          "model_name": "Gemma 4 26B-A4B",
+          "score": 0.648,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.53,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "diffusiongemma-26b-a4b-it",
+          "model_name": "DiffusionGemma 26B-A4B",
+          "score": 0.476,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-e4b-it",
+          "model_name": "Gemma 4 E4B",
+          "score": 0.331,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-e2b-it",
+          "model_name": "Gemma 4 E2B",
+          "score": 0.219,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-27b-it",
+          "model_name": "Gemma 3 27B",
+          "score": 0.193,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-12b-it",
+          "model_name": "Gemma 3 12B",
+          "score": 0.163,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-diffusion",
+          "model_name": "Gemini Diffusion",
+          "score": 0.15,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3-4b-it",
+          "model_name": "Gemma 3 4B",
+          "score": 0.11,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "codeforces",
+      "benchmark_name": "CodeForces",
+      "models": [
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-speciale",
+          "model_name": "DeepSeek-V3.2-Speciale",
+          "score": 0.9,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.851,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.822,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.821,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.807,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-reasoner",
+          "model_name": "DeepSeek-V3.2 (Thinking)",
+          "score": 0.795,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2",
+          "model_name": "DeepSeek-V3.2",
+          "score": 0.795,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-20b",
+          "model_name": "GPT OSS 20B",
+          "score": 0.7433,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.553,
+          "rank": 15,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.928,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.924,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.924,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.919,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.788,
+          "rank": 82,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.647,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.645,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.584,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.579,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.572,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.547,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.531,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.523,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.522,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.514,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.052,
+          "rank": 78,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "benchmark_name": "LiveCodeBench v6",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.916,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.896,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.878,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.877,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.871,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step-3.5-flash",
+          "model_name": "Step-3.5-Flash",
+          "score": 0.864,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.85,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.7",
+          "model_name": "GLM-4.7",
+          "score": 0.849,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
+          "score": 0.839,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.836,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.72,
+          "rank": 24,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mathvision",
+      "benchmark_name": "MathVision",
+      "models": [
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.932,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.88,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.862,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.86,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.856,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.842,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.839,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-26b-a4b-it",
+          "model_name": "Gemma 4 26B-A4B",
+          "score": 0.824,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.797,
+          "rank": 9,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.746,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "medxpertqa",
+      "benchmark_name": "MedXpertQA",
+      "models": [
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.784,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.673,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.624,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.614,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.613,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-26b-a4b-it",
+          "model_name": "Gemma 4 26B-A4B",
+          "score": 0.581,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "diffusiongemma-26b-a4b-it",
+          "model_name": "DiffusionGemma 26B-A4B",
+          "score": 0.49,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.487,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.43,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-e4b-it",
+          "model_name": "Gemma 4 E4B",
+          "score": 0.287,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.896,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.885,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.875,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.867,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 0.862,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
+          "score": 0.862,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.772,
+          "rank": 63,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmlu",
+      "benchmark_name": "MMMLU",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.927,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.926,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.918,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.918,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.915,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.911,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.908,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.903,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.896,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.895,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-1-20250805",
+          "model_name": "Claude Opus 4.1",
+          "score": 0.895,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.834,
+          "rank": 34,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "benchmark_name": "MMMU-Pro",
+      "models": [
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.832,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.812,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.812,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.81,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.805,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.804,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.801,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.795,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.788,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.691,
+          "rank": 29,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "omnidocbench-1.5",
+      "benchmark_name": "OmniDocBench 1.5",
+      "models": [
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.916,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.912,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-35b-a3b",
+          "model_name": "Qwen3.6-35B-A3B",
+          "score": 0.899,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.898,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.893,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.891,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.889,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.888,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-instant",
+          "model_name": "GPT-5.5 Instant",
+          "score": 0.875,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4-mini",
+          "model_name": "GPT-5.4 mini",
+          "score": 0.8737,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.164,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "claude-mythos-preview",
+    "name": "Claude Mythos Preview",
+    "organization_name": "Anthropic",
+    "release_date": null,
+    "announcement_date": "2026-04-07",
+    "knowledge_cutoff": null,
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "browsecomp": 0.869,
+      "charxiv-r": 0.932,
+      "cybench": 1,
+      "cybergym": 0.831,
+      "figqa": 0.89,
+      "gpqa": 0.946,
+      "graphwalks-bfs->128k": 0.8,
+      "humanity's-last-exam": 0.647,
+      "mmmlu": 0.927,
+      "osworld-verified": 0.796,
+      "swe-bench-multilingual": 0.873,
+      "swe-bench-multimodal": 0.59,
+      "swe-bench-pro": 0.778,
+      "swe-bench-verified": 0.939,
+      "terminal-bench-2": 0.82,
+      "usamo25": 0.976
+    },
+    "provider": null
+  }
+}
