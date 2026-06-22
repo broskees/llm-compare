@@ -82,14 +82,34 @@
       "verification_notes": null
     },
     {
+      "benchmark_id": "livebench",
+      "name": "LiveBench",
+      "description": "LiveBench is a challenging, contamination-limited LLM benchmark that addresses test set contamination by releasing new questions monthly based on recently-released datasets, arXiv papers, news articles, and IMDb movie synopses. It comprises tasks across math, coding, reasoning, language, instruction following, and data analysis with verifiable, objective ground-truth answers.",
+      "categories": [
+        "math",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7189,
+      "normalized_score": 0.7189,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://livebench.ai",
+      "analysis_method": "2026-01-08",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
       "benchmark_id": "mcp-atlas",
       "name": "MCP Atlas",
       "description": "MCP Atlas is a benchmark for evaluating AI models on scaled tool use capabilities, measuring how well models can coordinate and utilize multiple tools across complex multi-step tasks.",
       "categories": [
-        "tool_calling",
         "reasoning",
         "agents",
-        "code"
+        "code",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -107,8 +127,8 @@
       "name": "MCP-Mark",
       "description": "MCP-Mark evaluates LLMs on their ability to use Model Context Protocol (MCP) tools effectively, testing tool discovery, selection, invocation, and result interpretation across diverse MCP server scenarios.",
       "categories": [
-        "tool_calling",
-        "agents"
+        "agents",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -232,8 +252,8 @@
         "max_output_tokens": 262144
       },
       "performance": {
-        "throughput": 18.886177831547645,
-        "latency": 13.078
+        "throughput": 13.335880702469591,
+        "latency": 5.770708333333333
       },
       "features": {
         "web_search": null,
@@ -261,6 +281,89 @@
   ],
   "benchmark_rankings": [
     {
+      "benchmark_id": "livebench",
+      "benchmark_name": "LiveBench",
+      "models": [
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.846,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.8071,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.8028,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.7993,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7831,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.7722,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.771,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.7691,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.764,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.764,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.7-code",
+          "model_name": "Kimi K2.7 Code",
+          "score": 0.7189,
+          "rank": 27,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
       "benchmark_id": "mcp-atlas",
       "benchmark_name": "MCP Atlas",
       "models": [
@@ -286,51 +389,51 @@
           "is_current_model": false
         },
         {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.768,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.7-max",
           "model_name": "Qwen3.7 Max",
           "score": 0.764,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.7-code",
           "model_name": "Kimi K2.7 Code",
           "score": 0.76,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": true
         },
         {
           "model_id": "gpt-5.5",
           "model_name": "GPT-5.5",
           "score": 0.753,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "minimax-m3",
           "model_name": "MiniMax M3",
           "score": 0.742,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.741,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v4-pro-max",
           "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.736,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
-          "score": 0.718,
           "rank": 10,
           "is_current_model": false
         }

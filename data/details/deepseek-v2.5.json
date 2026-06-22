@@ -59,13 +59,13 @@
       "name": "AlignBench",
       "description": "AlignBench is a comprehensive multi-dimensional benchmark for evaluating Chinese alignment of Large Language Models. It contains 8 main categories: Fundamental Language Ability, Advanced Chinese Understanding, Open-ended Questions, Writing Ability, Logical Reasoning, Mathematics, Task-oriented Role Play, and Professional Knowledge. The benchmark includes 683 real-scenario rooted queries with human-verified references and uses a rule-calibrated multi-dimensional LLM-as-Judge approach with Chain-of-Thought for evaluation.",
       "categories": [
-        "general",
-        "language",
         "math",
         "reasoning",
         "roleplay",
-        "writing",
-        "creativity"
+        "language",
+        "general",
+        "creativity",
+        "writing"
       ],
       "modality": "text",
       "max_score": 1,
@@ -83,10 +83,10 @@
       "name": "AlpacaEval 2.0",
       "description": "AlpacaEval 2.0 is a length-controlled automatic evaluator for instruction-following language models that uses GPT-4 Turbo to assess model responses against a baseline. It evaluates models on 805 diverse instruction-following tasks including creative writing, classification, programming, and general knowledge questions. The benchmark achieves 0.98 Spearman correlation with ChatBot Arena while being fast (< 3 minutes) and affordable (< $10 in OpenAI credits). It addresses length bias in automatic evaluation through length-controlled win-rates and uses weighted scoring based on response quality.",
       "categories": [
-        "general",
         "reasoning",
-        "writing",
-        "creativity"
+        "general",
+        "creativity",
+        "writing"
       ],
       "modality": "text",
       "max_score": 1,
@@ -104,10 +104,10 @@
       "name": "Arena Hard",
       "description": "Arena-Hard-Auto is an automatic evaluation benchmark for instruction-tuned LLMs consisting of 500 challenging real-world prompts curated by BenchBuilder. It includes open-ended software engineering problems, mathematical questions, and creative writing tasks. The benchmark uses LLM-as-a-Judge methodology with GPT-4.1 and Gemini-2.5 as automatic judges to approximate human preference. Arena-Hard achieves 98.6% correlation with human preference rankings and provides 3x higher separation of model performances compared to MT-Bench, making it highly effective for distinguishing between models of similar quality.",
       "categories": [
-        "general",
         "reasoning",
-        "writing",
-        "creativity"
+        "general",
+        "creativity",
+        "writing"
       ],
       "modality": "text",
       "max_score": 1,
@@ -125,9 +125,9 @@
       "name": "BBH",
       "description": "Big-Bench Hard (BBH) is a suite of 23 challenging tasks selected from BIG-Bench for which prior language model evaluations did not outperform the average human-rater. These tasks require multi-step reasoning across diverse domains including arithmetic, logical reasoning, reading comprehension, and commonsense reasoning. The benchmark was designed to test capabilities believed to be beyond current language models and focuses on evaluating complex reasoning skills including temporal understanding, spatial reasoning, causal understanding, and deductive logical reasoning.",
       "categories": [
-        "language",
         "math",
-        "reasoning"
+        "reasoning",
+        "language"
       ],
       "modality": "text",
       "max_score": 1,
@@ -237,8 +237,8 @@
       "name": "LiveCodeBench(01-09)",
       "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
       "categories": [
-        "general",
-        "reasoning"
+        "reasoning",
+        "general"
       ],
       "modality": "text",
       "max_score": 1,
@@ -275,13 +275,13 @@
       "name": "MMLU",
       "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
       "categories": [
-        "finance",
-        "general",
-        "healthcare",
+        "math",
+        "reasoning",
         "language",
         "legal",
-        "math",
-        "reasoning"
+        "finance",
+        "general",
+        "healthcare"
       ],
       "modality": "text",
       "max_score": 1,
@@ -299,9 +299,9 @@
       "name": "MT-Bench",
       "description": "MT-Bench is a challenging multi-turn benchmark that measures the ability of large language models to engage in coherent, informative, and engaging conversations. It uses strong LLMs as judges for scalable and explainable evaluation of multi-turn dialogue capabilities.",
       "categories": [
-        "general",
         "reasoning",
         "roleplay",
+        "general",
         "communication",
         "creativity"
       ],
@@ -321,8 +321,8 @@
       "name": "SWE-Bench Verified",
       "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
       "categories": [
-        "frontend_development",
         "reasoning",
+        "frontend_development",
         "code"
       ],
       "modality": "text",
@@ -821,15 +821,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "mistral-large-3-2509",
-          "model_name": "Mistral Large 3",
+          "model_id": "ministral-3-14b-instruct-2512",
+          "model_name": "MiniStral 3 (14B Instruct 2512)",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "ministral-3-14b-instruct-2512",
-          "model_name": "MiniStral 3 (14B Instruct 2512)",
+          "model_id": "mistral-large-3-2509",
+          "model_name": "Mistral Large 3",
           "score": 0.904,
           "rank": 3,
           "is_current_model": false
@@ -932,14 +932,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
           "rank": 7,
@@ -1091,15 +1091,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v4-pro-max",
-          "model_name": "DeepSeek-V4-Pro-Max",
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
           "score": 0.806,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.806,
           "rank": 7,
           "is_current_model": false
@@ -1122,7 +1122,7 @@
           "model_id": "deepseek-v2.5",
           "model_name": "DeepSeek-V2.5",
           "score": 0.168,
-          "rank": 98,
+          "rank": 101,
           "is_current_model": true
         }
       ]

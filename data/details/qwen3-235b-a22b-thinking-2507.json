@@ -65,10 +65,10 @@
       "name": "Arena-Hard v2",
       "description": "Arena-Hard-Auto v2 is a challenging benchmark consisting of 500 carefully curated prompts sourced from Chatbot Arena and WildChat-1M, designed to evaluate large language models on real-world user queries. The benchmark covers diverse domains including open-ended software engineering problems, mathematics, creative writing, and technical problem-solving. It uses LLM-as-a-Judge for automatic evaluation, achieving 98.6% correlation with human preference rankings while providing 3x higher separation of model performances compared to MT-Bench. The benchmark emphasizes prompt specificity, complexity, and domain knowledge to better distinguish between model capabilities.",
       "categories": [
-        "general",
         "reasoning",
-        "writing",
-        "creativity"
+        "general",
+        "creativity",
+        "writing"
       ],
       "modality": "text",
       "max_score": 1,
@@ -86,12 +86,12 @@
       "name": "BFCL-v3",
       "description": "Berkeley Function Calling Leaderboard v3 (BFCL-v3) is an advanced benchmark that evaluates large language models' function calling capabilities through multi-turn and multi-step interactions. It introduces extended conversational exchanges where models must retain contextual information across turns and execute multiple internal function calls for complex user requests. The benchmark includes 1000 test cases across domains like vehicle control, trading bots, travel booking, and file system management, using state-based evaluation to verify both system state changes and execution path correctness.",
       "categories": [
+        "reasoning",
         "structured_output",
-        "tool_calling",
         "finance",
         "general",
-        "reasoning",
-        "agents"
+        "agents",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -127,8 +127,8 @@
       "name": "Creative Writing v3",
       "description": "EQ-Bench Creative Writing v3 is an LLM-judged creative writing benchmark that evaluates models across 32 writing prompts with 3 iterations per prompt. Uses a hybrid scoring system combining rubric assessment and Elo ratings through pairwise comparisons. Challenges models in areas like humor, romance, spatial awareness, and unique perspectives to assess emotional intelligence and creative writing capabilities.",
       "categories": [
-        "writing",
-        "creativity"
+        "creativity",
+        "writing"
       ],
       "modality": "text",
       "max_score": 1,
@@ -146,9 +146,9 @@
       "name": "GPQA",
       "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
       "categories": [
-        "general",
         "physics",
         "reasoning",
+        "general",
         "biology",
         "chemistry"
       ],
@@ -207,8 +207,8 @@
       "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
       "categories": [
         "structured_output",
-        "general",
-        "instruction_following"
+        "instruction_following",
+        "general"
       ],
       "modality": "text",
       "max_score": 1,
@@ -244,9 +244,9 @@
       "name": "LiveBench 20241125",
       "description": "LiveBench is a challenging, contamination-limited LLM benchmark that addresses test set contamination by releasing new questions monthly based on recently-released datasets, arXiv papers, news articles, and IMDb movie synopses. It comprises tasks across math, coding, reasoning, language, instruction following, and data analysis with verifiable, objective ground-truth answers.",
       "categories": [
-        "general",
         "math",
-        "reasoning"
+        "reasoning",
+        "general"
       ],
       "modality": "text",
       "max_score": 1,
@@ -264,8 +264,8 @@
       "name": "LiveCodeBench v6",
       "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
       "categories": [
-        "general",
-        "reasoning"
+        "reasoning",
+        "general"
       ],
       "modality": "text",
       "max_score": 1,
@@ -283,13 +283,13 @@
       "name": "MMLU-Pro",
       "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
       "categories": [
-        "finance",
-        "general",
-        "healthcare",
+        "math",
+        "reasoning",
         "language",
         "legal",
-        "math",
-        "reasoning"
+        "finance",
+        "general",
+        "healthcare"
       ],
       "modality": "text",
       "max_score": 1,
@@ -307,13 +307,13 @@
       "name": "MMLU-ProX",
       "description": "Extended version of MMLU-Pro providing additional challenging multiple-choice questions for evaluating language models across diverse academic and professional domains. Built on the foundation of the Massive Multitask Language Understanding benchmark framework.",
       "categories": [
-        "finance",
-        "general",
-        "healthcare",
+        "math",
+        "reasoning",
         "language",
         "legal",
-        "math",
-        "reasoning"
+        "finance",
+        "general",
+        "healthcare"
       ],
       "modality": "text",
       "max_score": 1,
@@ -331,10 +331,10 @@
       "name": "MMLU-Redux",
       "description": "An improved version of the MMLU benchmark featuring manually re-annotated questions to identify and correct errors in the original dataset. Provides more reliable evaluation metrics for language models by addressing dataset quality issues found in the original MMLU.",
       "categories": [
-        "general",
-        "language",
         "math",
-        "reasoning"
+        "reasoning",
+        "language",
+        "general"
       ],
       "modality": "text",
       "max_score": 1,
@@ -352,10 +352,10 @@
       "name": "Multi-IF",
       "description": "Multi-IF benchmarks LLMs on multi-turn and multilingual instruction following. It expands upon IFEval by incorporating multi-turn sequences and translating English prompts into 7 other languages, resulting in 4,501 multilingual conversations with three turns each. The benchmark reveals that current leading LLMs struggle with maintaining accuracy in multi-turn instructions and shows higher error rates for non-Latin script languages.",
       "categories": [
+        "reasoning",
         "structured_output",
         "instruction_following",
         "language",
-        "reasoning",
         "communication"
       ],
       "modality": "text",
@@ -414,13 +414,13 @@
       "name": "SuperGPQA",
       "description": "SuperGPQA is a comprehensive benchmark that evaluates large language models across 285 graduate-level academic disciplines. The benchmark contains 25,957 questions covering 13 broad disciplinary areas including Engineering, Medicine, Science, and Law, with specialized fields in light industry, agriculture, and service-oriented domains. It employs a Human-LLM collaborative filtering mechanism with over 80 expert annotators to create challenging questions that assess graduate-level knowledge and reasoning capabilities.",
       "categories": [
-        "finance",
-        "general",
-        "healthcare",
-        "legal",
         "math",
         "physics",
         "reasoning",
+        "legal",
+        "finance",
+        "general",
+        "healthcare",
         "chemistry",
         "economics"
       ],
@@ -440,9 +440,9 @@
       "name": "Tau2 Airline",
       "description": "TAU2 airline domain benchmark for evaluating conversational agents in dual-control environments where both AI agents and users interact with tools in airline customer service scenarios. Tests agent coordination, communication, and ability to guide user actions in tasks like flight booking, modifications, cancellations, and refunds.",
       "categories": [
-        "tool_calling",
         "reasoning",
-        "communication"
+        "communication",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -460,9 +460,9 @@
       "name": "Tau2 Retail",
       "description": "τ²-bench retail domain evaluates conversational AI agents in customer service scenarios within a dual-control environment where both agent and user can interact with tools. Tests tool-agent-user interaction, rule adherence, and task consistency in retail customer support contexts.",
       "categories": [
-        "tool_calling",
         "reasoning",
-        "communication"
+        "communication",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -480,9 +480,9 @@
       "name": "Tau2 Telecom",
       "description": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
       "categories": [
-        "tool_calling",
         "reasoning",
-        "communication"
+        "communication",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -500,9 +500,9 @@
       "name": "TAU-bench Airline",
       "description": "Part of τ-bench (TAU-bench), a benchmark for Tool-Agent-User interaction in real-world domains. The airline domain evaluates language agents' ability to interact with users through dynamic conversations while following domain-specific rules and using API tools. Agents must handle airline-related tasks and policies reliably.",
       "categories": [
-        "tool_calling",
         "reasoning",
-        "communication"
+        "communication",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -520,9 +520,9 @@
       "name": "TAU-bench Retail",
       "description": "A benchmark for evaluating tool-agent-user interaction in retail environments. Tests language agents' ability to handle dynamic conversations with users while using domain-specific API tools and following policy guidelines. Evaluates agents on tasks like order cancellations, address changes, and order status checks through multi-turn conversations.",
       "categories": [
-        "tool_calling",
         "reasoning",
-        "communication"
+        "communication",
+        "tool_calling"
       ],
       "modality": "text",
       "max_score": 1,
@@ -540,11 +540,11 @@
       "name": "WritingBench",
       "description": "A comprehensive benchmark for evaluating large language models' generative writing capabilities across 6 core writing domains (Academic & Engineering, Finance & Business, Politics & Law, Literature & Art, Education, Advertising & Marketing) and 100 subdomains. Contains 1,239 queries with a query-dependent evaluation framework that dynamically generates 5 instance-specific assessment criteria for each writing task, using a fine-tuned critic model to score responses on style, format, and length dimensions.",
       "categories": [
-        "finance",
         "legal",
-        "writing",
+        "finance",
         "communication",
-        "creativity"
+        "creativity",
+        "writing"
       ],
       "modality": "text",
       "max_score": 1,
@@ -662,6 +662,13 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.2-2025-12-11",
           "model_name": "GPT-5.2",
           "score": 1,
@@ -676,13 +683,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-thinking-0905",
-          "model_name": "Kimi K2-Thinking-0905",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
           "score": 1,
@@ -690,8 +690,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-4-heavy",
-          "model_name": "Grok-4 Heavy",
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -711,15 +711,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -842,6 +842,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.72,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3-next-80b-a3b-thinking",
           "model_name": "Qwen3-Next-80B-A3B-Thinking",
           "score": 0.72,
@@ -849,10 +856,10 @@
           "is_current_model": false
         },
         {
-          "model_id": "mai-thinking-1",
-          "model_name": "MAI-Thinking-1",
-          "score": 0.72,
-          "rank": 4,
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.719,
+          "rank": 6,
           "is_current_model": false
         },
         {
@@ -861,13 +868,6 @@
           "score": 0.719,
           "rank": 6,
           "is_current_model": true
-        },
-        {
-          "model_id": "qwen3-vl-235b-a22b-thinking",
-          "model_name": "Qwen3 VL 235B A22B Thinking",
-          "score": 0.719,
-          "rank": 6,
-          "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-32b-thinking",
@@ -994,15 +994,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
           "score": 0.936,
           "rank": 4,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-8",
-          "model_name": "Claude Opus 4.8",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.936,
           "rank": 4,
           "is_current_model": false
@@ -1046,7 +1046,7 @@
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.811,
-          "rank": 69,
+          "rank": 72,
           "is_current_model": true
         }
       ]
@@ -1181,30 +1181,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.547,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.531,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "glm-5.1",
           "model_name": "GLM-5.1",
           "score": 0.523,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.5",
           "model_name": "GPT-5.5",
           "score": 0.522,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
-          "score": 0.514,
           "rank": 10,
           "is_current_model": false
         },
@@ -1212,7 +1212,7 @@
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.182,
-          "rank": 50,
+          "rank": 53,
           "is_current_model": true
         }
       ]
@@ -1229,9 +1229,9 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
-          "score": 0.943,
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.946,
           "rank": 2,
           "is_current_model": false
         },
@@ -1239,41 +1239,41 @@
           "model_id": "qwen3.7-max",
           "model_name": "Qwen3.7 Max",
           "score": 0.943,
-          "rank": 2,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.943,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "o3-mini",
           "model_name": "o3-mini",
           "score": 0.939,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.934,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-7-sonnet-20250219",
           "model_name": "Claude 3.7 Sonnet",
           "score": 0.932,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.926,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
-          "model_id": "nova-pro",
-          "model_name": "Nova Pro",
-          "score": 0.921,
           "rank": 8,
           "is_current_model": false
         },
@@ -1281,21 +1281,21 @@
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.921,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
-          "score": 0.919,
-          "rank": 10,
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.921,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.878,
-          "rank": 27,
+          "rank": 28,
           "is_current_model": true
         }
       ]
@@ -1333,45 +1333,45 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.83,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.828,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.816,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.81,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": true
         },
         {
           "model_id": "qwen3-vl-235b-a22b-instruct",
           "model_name": "Qwen3 VL 235B A22B Instruct",
           "score": 0.8,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.8,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
-          "score": 0.797,
-          "rank": 10,
+          "rank": 9,
           "is_current_model": false
         }
       ]
@@ -1471,58 +1471,58 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.896,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.89,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "seed-2.0-pro",
           "model_name": "Seed 2.0 Pro",
           "score": 0.878,
-          "rank": 3,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "mai-thinking-1",
           "model_name": "MAI-Thinking-1",
           "score": 0.877,
-          "rank": 4,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.871,
-          "rank": 5,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "step-3.5-flash",
           "model_name": "Step-3.5-Flash",
           "score": 0.864,
-          "rank": 6,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.85,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "glm-4.7",
           "model_name": "GLM-4.7",
           "score": 0.849,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.6-27b",
-          "model_name": "Qwen3.6-27B",
-          "score": 0.839,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-397b-a17b",
-          "model_name": "Qwen3.5-397B-A17B",
-          "score": 0.836,
           "rank": 10,
           "is_current_model": false
         },
@@ -1530,7 +1530,7 @@
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.741,
-          "rank": 23,
+          "rank": 25,
           "is_current_model": true
         }
       ]
@@ -1547,6 +1547,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.885,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.885,
@@ -1557,63 +1564,56 @@
           "model_id": "minimax-m2.1",
           "model_name": "MiniMax M2.1",
           "score": 0.88,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.878,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v4-pro-max",
           "model_name": "DeepSeek-V4-Pro-Max",
           "score": 0.875,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.871,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "ernie-5.0",
           "model_name": "ERNIE 5.0",
           "score": 0.87,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.868,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.867,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.6-27b",
-          "model_name": "Qwen3.6-27B",
-          "score": 0.862,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-flash-max",
-          "model_name": "DeepSeek-V4-Flash-Max",
-          "score": 0.862,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.844,
-          "rank": 23,
+          "rank": 25,
           "is_current_model": true
         }
       ]
@@ -1630,9 +1630,9 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-397b-a17b",
-          "model_name": "Qwen3.5-397B-A17B",
-          "score": 0.847,
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.854,
           "rank": 2,
           "is_current_model": false
         },
@@ -1640,27 +1640,34 @@
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.847,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-122b-a10b",
-          "model_name": "Qwen3.5-122B-A10B",
-          "score": 0.822,
-          "rank": 4,
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.847,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.83,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.822,
-          "rank": 4,
+          "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
-          "score": 0.81,
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.822,
           "rank": 6,
           "is_current_model": false
         },
@@ -1668,27 +1675,20 @@
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.81,
-          "rank": 6,
+          "rank": 8,
           "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.81,
+          "rank": 8,
+          "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.806,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3-235b-a22b-instruct-2507",
-          "model_name": "Qwen3-235B-A22B-Instruct-2507",
-          "score": 0.794,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "nemotron-3-super-120b-a12b",
-          "model_name": "Nemotron 3 Super (120B A12B)",
-          "score": 0.7936,
           "rank": 10,
           "is_current_model": false
         }
@@ -1720,58 +1720,51 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.945,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "kimi-k2-thinking-0905",
           "model_name": "Kimi K2-Thinking-0905",
           "score": 0.944,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.94,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.938,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": true
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.937,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-27b",
           "model_name": "Qwen3.6-27B",
           "score": 0.935,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-r1-0528",
           "model_name": "DeepSeek-R1-0528",
           "score": 0.934,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.6-35b-a3b",
-          "model_name": "Qwen3.6-35B-A3B",
-          "score": 0.933,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
-          "score": 0.933,
           "rank": 10,
           "is_current_model": false
         }
@@ -1838,15 +1831,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-8b-thinking",
-          "model_name": "Qwen3 VL 8B Thinking",
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
           "score": 0.751,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-8b-instruct",
-          "model_name": "Qwen3 VL 8B Instruct",
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
           "score": 0.751,
           "rank": 9,
           "is_current_model": false
@@ -1865,65 +1858,65 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.84,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.774,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.733,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.712,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.689,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.644,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.601,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": true
         },
         {
           "model_id": "qwen3.5-9b",
           "model_name": "Qwen3.5-9B",
           "score": 0.573,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-next-80b-a3b-thinking",
           "model_name": "Qwen3-Next-80B-A3B-Thinking",
           "score": 0.563,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3-vl-32b-thinking",
-          "model_name": "Qwen3 VL 32B Thinking",
-          "score": 0.52,
           "rank": 10,
           "is_current_model": false
         }
@@ -1948,58 +1941,58 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.714,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.704,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.671,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-27b",
           "model_name": "Qwen3.6-27B",
           "score": 0.66,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.656,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-max",
           "model_name": "Qwen3 Max",
           "score": 0.651,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.649,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": true
         },
         {
           "model_id": "qwen3.6-35b-a3b",
           "model_name": "Qwen3.6-35B-A3B",
           "score": 0.647,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3-vl-235b-a22b-thinking",
-          "model_name": "Qwen3 VL 235B A22B Thinking",
-          "score": 0.643,
           "rank": 10,
           "is_current_model": false
         }
@@ -2031,8 +2024,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.67,
           "rank": 4,
           "is_current_model": false
@@ -2045,8 +2038,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.67,
           "rank": 4,
           "is_current_model": false
@@ -2163,15 +2156,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.779,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.779,
           "rank": 10,
           "is_current_model": false
@@ -2190,15 +2183,15 @@
       "benchmark_name": "Tau2 Telecom",
       "models": [
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
           "score": 0.993,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.993,
           "rank": 1,
           "is_current_model": false
@@ -2253,8 +2246,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
@@ -2267,8 +2260,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.956,
           "rank": 10,
           "is_current_model": false
@@ -2277,7 +2270,7 @@
           "model_id": "qwen3-235b-a22b-thinking-2507",
           "model_name": "Qwen3-235B-A22B-Thinking-2507",
           "score": 0.456,
-          "rank": 30,
+          "rank": 31,
           "is_current_model": true
         }
       ]
@@ -2322,15 +2315,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m1-40k",
-          "model_name": "MiniMax M1 40K",
+          "model_id": "claude-sonnet-4-20250514",
+          "model_name": "Claude Sonnet 4",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "claude-sonnet-4-20250514",
-          "model_name": "Claude Sonnet 4",
+          "model_id": "minimax-m1-40k",
+          "model_name": "MiniMax M1 40K",
           "score": 0.6,
           "rank": 5,
           "is_current_model": false
@@ -2481,13 +2474,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-235b-a22b-instruct",
-          "model_name": "Qwen3 VL 235B A22B Instruct",
-          "score": 0.855,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
           "model_id": "qwen3-vl-8b-thinking",
           "model_name": "Qwen3 VL 8B Thinking",
           "score": 0.855,
@@ -2495,15 +2481,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3-vl-30b-a3b-thinking",
-          "model_name": "Qwen3 VL 30B A3B Thinking",
-          "score": 0.852,
-          "rank": 7,
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.855,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-235b-a22b-instruct-2507",
           "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.852,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
           "score": 0.852,
           "rank": 7,
           "is_current_model": false
