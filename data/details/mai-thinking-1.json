@@ -43,8 +43,8 @@
       "name": "AdvancedIF",
       "description": "AdvancedIF is a rubric-based benchmark measuring complex, multi-turn, and system-prompted instruction following ability, scored with a calibrated LLM judge against per-instruction rubrics.",
       "categories": [
-        "reasoning",
         "instruction_following",
+        "reasoning",
         "general"
       ],
       "modality": "text",
@@ -142,8 +142,8 @@
       "name": "CorpusQA",
       "description": "CorpusQA is a multi-document, free-form long-context question answering benchmark in which a model must retrieve and reason over information distributed across a large corpus to produce open-ended answers that are scored by an LLM judge.",
       "categories": [
-        "reasoning",
         "long_context",
+        "reasoning",
         "general"
       ],
       "modality": "text",
@@ -203,8 +203,8 @@
       "name": "GraphWalks",
       "description": "GraphWalks is a synthetic multi-hop long-context reasoning benchmark in which a model is given an edge-list representation of a graph and must traverse it to find neighboring nodes (via breadth-first search) or parent nodes for a given start node. Performance is reported as F1 of the model-predicted answer set versus the ground truth.",
       "categories": [
-        "reasoning",
-        "long_context"
+        "long_context",
+        "reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -297,9 +297,9 @@
       "name": "LongBench v2",
       "description": "LongBench v2 is a benchmark designed to assess the ability of LLMs to handle long-context problems requiring deep understanding and reasoning across real-world multitasks. It consists of 503 challenging multiple-choice questions with contexts ranging from 8k to 2M words across six major task categories: single-document QA, multi-document QA, long in-context learning, long-dialogue history understanding, code repository understanding, and long structured data understanding.",
       "categories": [
+        "long_context",
         "reasoning",
         "structured_output",
-        "long_context",
         "general"
       ],
       "modality": "text",
@@ -358,10 +358,10 @@
       "name": "MMLU-Pro",
       "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
       "categories": [
-        "math",
-        "reasoning",
         "language",
         "legal",
+        "math",
+        "reasoning",
         "finance",
         "general",
         "healthcare"
@@ -482,8 +482,8 @@
       "name": "TruthfulQA",
       "description": "TruthfulQA is a benchmark to measure whether language models are truthful in generating answers to questions. It comprises 817 questions that span 38 categories, including health, law, finance and politics. The questions are crafted such that some humans would answer falsely due to a false belief or misconception, testing models' ability to avoid generating false answers learned from human texts.",
       "categories": [
-        "reasoning",
         "legal",
+        "reasoning",
         "finance",
         "general",
         "healthcare"
@@ -507,22 +507,8 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "grok-4-heavy",
           "model_name": "Grok-4 Heavy",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -542,6 +528,20 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
           "score": 0.9979,
@@ -556,15 +556,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -791,15 +791,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-max",
-          "model_name": "Qwen3.7 Max",
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
           "score": 0.924,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
           "score": 0.924,
           "rank": 8,
           "is_current_model": false
@@ -922,13 +922,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-plus",
-          "model_name": "Qwen3.7-Plus",
-          "score": 0.791,
-          "rank": 4,
-          "is_current_model": false
-        },
-        {
           "model_id": "qwen3.7-max",
           "model_name": "Qwen3.7 Max",
           "score": 0.791,
@@ -936,15 +929,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.5-27b",
-          "model_name": "Qwen3.5-27B",
-          "score": 0.765,
-          "rank": 6,
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.791,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.765,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
           "score": 0.765,
           "rank": 6,
           "is_current_model": false
@@ -991,15 +991,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-plus",
-          "model_name": "Qwen3.7-Plus",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.896,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
           "score": 0.896,
           "rank": 2,
           "is_current_model": false
@@ -1088,11 +1088,11 @@
           "is_current_model": false
         },
         {
-          "model_id": "minimax-m1-40k",
-          "model_name": "MiniMax M1 40K",
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
           "score": 0.61,
           "rank": 5,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "kimi-k2.5",
@@ -1102,22 +1102,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "mai-thinking-1",
-          "model_name": "MAI-Thinking-1",
+          "model_id": "minimax-m1-40k",
+          "model_name": "MiniMax M1 40K",
           "score": 0.61,
           "rank": 5,
-          "is_current_model": true
-        },
-        {
-          "model_id": "mimo-v2-flash",
-          "model_name": "MiMo-V2-Flash",
-          "score": 0.606,
-          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
+          "score": 0.606,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-flash",
+          "model_name": "MiMo-V2-Flash",
           "score": 0.606,
           "rank": 8,
           "is_current_model": false
@@ -1219,15 +1219,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-plus",
-          "model_name": "Qwen3.7-Plus",
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
           "score": 0.885,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
           "score": 0.885,
           "rank": 2,
           "is_current_model": false
@@ -1427,15 +1427,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.586,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.586,
           "rank": 8,
           "is_current_model": false
@@ -1451,7 +1451,7 @@
           "model_id": "mai-thinking-1",
           "model_name": "MAI-Thinking-1",
           "score": 0.528,
-          "rank": 25,
+          "rank": 27,
           "is_current_model": true
         }
       ]
