@@ -1,20 +1,20 @@
 {
-  "model_id": "claude-mythos-preview",
-  "name": "Claude Mythos Preview",
+  "model_id": "claude-sonnet-5",
+  "name": "Claude Sonnet 5",
   "model_type": "llm",
   "organization": {
     "id": "anthropic",
     "name": "Anthropic",
     "website": "https://anthropic.com"
   },
-  "description": "Claude Mythos Preview is an unreleased general-purpose frontier model from Anthropic, a new tier above Opus (internal codename 'Capybara'). It identified thousands of zero-day vulnerabilities across every major operating system and web browser as part of Project Glasswing, a cross-industry cybersecurity initiative with 12 partners including AWS, Apple, Microsoft, and Google. State-of-the-art on SWE-bench Verified (93.9%), GPQA Diamond (94.6%), USAMO (97.6%), Terminal-Bench 2.0 (82.0%), CyberGym (83.1%), and Cybench (100% pass@1, saturated). Represents a 4.3x increase over the previous trendline for model performance. Deployed under ASL-3 Standard. Best-aligned Claude model to date per Anthropic's risk report, with the first-ever 24-hour internal alignment review before deployment. Not planned for general availability. Pricing for participants: $25/$125 per million tokens (input/output). 244-page system card.",
-  "release_date": null,
-  "announcement_date": "2026-04-07",
+  "description": "Claude Sonnet 5 is Anthropic's most agentic Sonnet-class model, an upgrade to Sonnet 4.6 that narrows the gap to Opus 4.8 on reasoning, tool use, coding, computer use, and knowledge work while staying lower priced. It plans, uses tools like browsers and terminals, and runs autonomously for long-horizon tasks. Capability gains include SWE-Bench Verified (85.2%), SWE-Bench Pro (63.2%), SWE-Bench Multilingual (78.3%), Terminal-Bench 2.1 (80.4%), OSWorld-Verified (81.2%), BrowseComp (84.7% single-agent, 86.6% multi-agent), Humanity's Last Exam with tools (57.4%), USAMO 2026 (79.5%), GDPval-AA v2 (1618 Elo), HealthBench Professional (57.8%), and FrontierCode v1 (38.8%). It supports adaptive thinking with selectable effort levels up to 'extra high' (xhigh) and a 1M-token context window with context compaction. The safety assessment found lower rates of misaligned behavior, hallucination, and sycophancy than Sonnet 4.6, with improved prompt-injection robustness; it ships with cyber safeguards enabled by default and uses an updated tokenizer (input maps to roughly 1.0-1.35x more tokens than Sonnet 4.6). Default model on Free and Pro plans and available to Max, Team, and Enterprise users, in Claude Code, and on the Claude Platform. Launches with introductory pricing of $2/$10 per million input/output tokens through August 31, 2026, then $3/$15. Available via the Claude API as `claude-sonnet-5`.",
+  "release_date": "2026-06-30",
+  "announcement_date": "2026-06-30",
   "multimodal": true,
   "knowledge_cutoff": null,
   "param_count": null,
   "training_tokens": null,
-  "available_in_zeroeval": false,
+  "available_in_zeroeval": true,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -25,18 +25,76 @@
   },
   "model_family": null,
   "fine_tuned_from": null,
-  "tags": {
-    "thinking": "true"
-  },
+  "tags": null,
   "sources": {
-    "api_ref": null,
-    "playground": null,
-    "paper": "https://www.anthropic.com/claude-mythos-preview-system-card",
-    "scorecard_blog": "https://www.anthropic.com/glasswing",
+    "api_ref": "https://docs.anthropic.com/en/docs/about-claude/models/all-models",
+    "playground": "https://claude.ai",
+    "paper": "https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf",
+    "scorecard_blog": "https://www.anthropic.com/news/claude-sonnet-5",
     "repo": null,
     "weights": null
   },
   "benchmarks": [
+    {
+      "benchmark_id": "arxivmath",
+      "name": "ArXivMath",
+      "description": "ArXivMath is a final-answer benchmark of research-level mathematics maintained by MathArena. Problems are extracted monthly from recent arXiv paper abstracts, then filtered through automated and manual checks to ensure they are self-contained, non-trivial, and verifiable. Because problems are drawn from active research, the benchmark is more realistic and more closely connected to mathematical research than contest or olympiad benchmarks.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.722,
+      "normalized_score": 0.722,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Research-level final-answer math (MathArena, April + May 2026 releases, 81 problems). With tools: 72.2%. Without tools: 65.7%. Extended thinking, averaged over 4 attempts per problem.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.135,
+      "normalized_score": 0.135,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Zapier end-to-end business-workflow benchmark, private held-out leaderboard set. Max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "benchcad",
+      "name": "BenchCAD",
+      "description": "BenchCAD is a benchmark for programmatic CAD reasoning built from 17,900 execution-verified CadQuery programs spanning 106 industrial part families, roughly half anchored to real ISO, DIN, EN, ASME, and IEC specification tables. It decomposes CAD capability into matched tasks; the Vision2Code task requires models to generate CadQuery code from multi-view renders, scored by voxel IoU against the reference geometry.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "code",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.373,
+      "normalized_score": 0.373,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "BenchCAD Vision2Code voxel IoU. With Python tools: 0.373. Without tools: 0.266. Random 1,000-file subset averaged over 5 runs.",
+      "verification_date": null,
+      "verification_notes": null
+    },
     {
       "benchmark_id": "browsecomp",
       "name": "BrowseComp",
@@ -48,12 +106,32 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.869,
-      "normalized_score": 0.869,
+      "score": 0.847,
+      "normalized_score": 0.847,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "Scores higher than Opus 4.6 while using 4.9× fewer tokens.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Agentic search. Single-agent with web search, web fetch, code execution, adaptive thinking at max effort, 10M-token limit, context compaction at 200k tokens. Multi-agent reaches 86.6%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartmuseum",
+      "name": "ChartMuseum",
+      "description": "ChartMuseum is a chart question-answering benchmark of 1,162 expert-annotated questions over real-world chart images drawn from 184 sources, including academic figures, infographics, and unconventional chart designs. It specifically targets questions that require visual reasoning, such as comparing unlabeled visual elements, tracking trajectories, and judging spatial relationships.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.867,
+      "normalized_score": 0.867,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Chart QA requiring visual reasoning (1,162 questions). With Python tools: 86.7%. Without tools: 70.1%. Test split averaged over 5 runs, Claude Sonnet 4.6 grader.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -68,114 +146,93 @@
       ],
       "modality": "multimodal",
       "max_score": 1,
-      "score": 0.932,
-      "normalized_score": 0.932,
+      "score": 0.883,
+      "normalized_score": 0.883,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/claude-mythos-preview-system-card",
-      "analysis_method": "CharXiv Reasoning with tools. Without tools: 86.1%. Opus 4.6: 78.9% (with tools), 61.5% (without tools).",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "CharXiv Reasoning (1,000 validation questions). With Python tools: 88.3%. Without tools: 77.0%. Averaged over 5 runs, Claude Sonnet 4.6 grader.",
       "verification_date": null,
       "verification_notes": null
     },
     {
-      "benchmark_id": "cybench",
-      "name": "CyBench",
-      "description": "CyBench is a suite of Capture-the-Flag (CTF) challenges measuring agentic cyber attack capabilities. It evaluates dual-use cybersecurity knowledge and measures the 'unguided success rate', where agents complete tasks end-to-end without guidance on appropriate subtasks.",
+      "benchmark_id": "frontiercode",
+      "name": "FrontierCode",
+      "description": "FrontierCode is Cognition's coding evaluation that tests whether models can pass difficult coding tasks while meeting the standards of high-quality production codebases. The Diamond subset contains the hardest problems.",
       "categories": [
-        "safety",
+        "reasoning",
         "agents",
         "code"
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 1,
-      "normalized_score": 1,
+      "score": 0.388,
+      "normalized_score": 0.388,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/claude-mythos-preview-system-card",
-      "analysis_method": "100% pass@1. Benchmark saturated.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "FrontierCode v1, Cognition's production-quality coding evaluation, at max effort.",
       "verification_date": null,
       "verification_notes": null
     },
     {
-      "benchmark_id": "cybergym",
-      "name": "CyberGym",
-      "description": "CyberGym is a benchmark for evaluating AI agents on cybersecurity tasks, testing their ability to identify vulnerabilities, perform security analysis, and complete security-related challenges in a controlled environment.",
+      "benchmark_id": "gdp-pdf",
+      "name": "GDP.pdf",
+      "description": "GDP.pdf is a knowledge-work vision benchmark that evaluates models on economically valuable professional tasks presented as visual documents (PDFs), testing document-based reasoning, chart and table interpretation, and problem solving without tools.",
       "categories": [
-        "safety",
-        "agents",
-        "code"
-      ],
-      "modality": "text",
-      "max_score": 1,
-      "score": 0.831,
-      "normalized_score": 0.831,
-      "verified": false,
-      "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "Cybersecurity vulnerability reproduction.",
-      "verification_date": null,
-      "verification_notes": null
-    },
-    {
-      "benchmark_id": "figqa",
-      "name": "FigQA",
-      "description": "FigQA is a multiple-choice benchmark on interpreting scientific figures from biology papers. It evaluates dual-use biological knowledge and multimodal reasoning relevant to bioweapons development.",
-      "categories": [
-        "safety",
-        "healthcare",
+        "multimodal",
+        "reasoning",
+        "general",
         "vision"
       ],
       "modality": "multimodal",
       "max_score": 1,
-      "score": 0.89,
-      "normalized_score": 0.89,
+      "score": 0.816,
+      "normalized_score": 0.816,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/claude-mythos-preview-system-card",
-      "analysis_method": "LAB-Bench FigQA with tools. Opus 4.6: 75.1% (with tools).",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Expert multimodal document QA (Surge AI, 100 prompts/PDFs). Mean criteria pass rate with Python tools: 81.6%. Without tools: 67.5%. Internal harness, averaged over 5 runs.",
       "verification_date": null,
       "verification_notes": null
     },
     {
-      "benchmark_id": "gpqa",
-      "name": "GPQA",
-      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
       "categories": [
-        "physics",
         "reasoning",
+        "legal",
+        "finance",
         "general",
-        "biology",
-        "chemistry"
+        "agents"
       ],
       "modality": "text",
-      "max_score": 1,
-      "score": 0.946,
-      "normalized_score": 0.946,
+      "max_score": 3000,
+      "score": 1618,
+      "normalized_score": 0.5393,
       "verified": false,
-      "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "GPQA Diamond.",
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+      "analysis_method": "GDPval-AA v2 Elo (Artificial Analysis), as of June 6, 2026. Adaptive reasoning, max effort.",
       "verification_date": null,
       "verification_notes": null
     },
     {
-      "benchmark_id": "graphwalks-bfs->128k",
-      "name": "Graphwalks BFS >128k",
-      "description": "A graph reasoning benchmark that evaluates language models' ability to perform breadth-first search (BFS) operations on graphs with context length over 128k tokens, testing long-context reasoning capabilities.",
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
       "categories": [
-        "reasoning",
-        "spatial_reasoning",
-        "long_context"
+        "healthcare"
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.8,
-      "normalized_score": 0.8,
+      "score": 0.578,
+      "normalized_score": 0.578,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/claude-mythos-preview-system-card",
-      "analysis_method": "GraphWalks BFS 256K–1M. Opus 4.6: 38.7%, GPT-5.4: 21.4%.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Length-adjusted score with adaptive thinking at max effort. Claude Opus 4.8 grader, averaged over 5 trials.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -190,33 +247,52 @@
       ],
       "modality": "multimodal",
       "max_score": 1,
-      "score": 0.647,
-      "normalized_score": 0.647,
+      "score": 0.574,
+      "normalized_score": 0.574,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "With tools. Without tools: 56.8%. Anthropic notes Mythos may show some level of memorization at low effort.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Multidisciplinary reasoning (2,500 questions). With tools (web search, web fetch, code execution): 57.4%. Without tools: 43.2%. Auto thinking, 1M total-token cap, Claude Opus 4.6 grader.",
       "verification_date": null,
       "verification_notes": null
     },
     {
-      "benchmark_id": "mmmlu",
-      "name": "MMMLU",
-      "description": "Multilingual Massive Multitask Language Understanding dataset released by OpenAI, featuring professionally translated MMLU test questions across 14 languages including Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Swahili, Yoruba, and Chinese. Contains approximately 15,908 multiple-choice questions per language covering 57 subjects.",
+      "benchmark_id": "legal-agent-benchmark",
+      "name": "Legal Agent Benchmark",
+      "description": "The Legal Agent Benchmark (LAB) is Harvey's open-source benchmark for evaluating AI agents on complex, long-horizon legal work. Tasks are scored under an all-pass standard against expert-curated rubrics, where a task passes only if every required rubric criterion (facts, conclusions, citations, structure, and analytical moves) passes.",
       "categories": [
-        "math",
         "reasoning",
-        "language",
-        "general"
+        "legal",
+        "agents"
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.927,
-      "normalized_score": 0.927,
+      "score": 0.058,
+      "normalized_score": 0.058,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/claude-mythos-preview-system-card",
-      "analysis_method": "Multilingual Q&A. Opus 4.6: 91.1%, Gemini 3.1 Pro: 92.6–93.6%.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "All-pass rate on Harvey's held-out set (mean criterion-pass rate 91.2%). Full public set all-pass rate: 8.9% (88.26% mean criterion-pass). Adaptive thinking at max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "officeqa-pro",
+      "name": "OfficeQA Pro",
+      "description": "OfficeQA Pro evaluates AI models on professional knowledge-work questions and tasks drawn from real office workflows, including document analysis, spreadsheet reasoning, and information synthesis across business domains.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.594,
+      "normalized_score": 0.594,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Grounded reasoning over U.S. Treasury Bulletin documents (133-question subset). Internal agentic harness with extracted-text documents and code-execution tools. Exact-match, mean of 5 trials. OfficeQA full set: 73.3%.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -232,12 +308,12 @@
       ],
       "modality": "multimodal",
       "max_score": 1,
-      "score": 0.796,
-      "normalized_score": 0.796,
+      "score": 0.812,
+      "normalized_score": 0.812,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": null,
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Agentic computer use. 361 tasks at 100 steps, 1080p resolution, adaptive thinking at max effort. First-attempt success rate averaged over 5 runs. Updated harness (zoom-tool bug fix, 128K max tokens per turn).",
       "verification_date": null,
       "verification_notes": null
     },
@@ -251,12 +327,12 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.873,
-      "normalized_score": 0.873,
+      "score": 0.783,
+      "normalized_score": 0.783,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "Memorization screens flag a subset of problems. Excluding flagged problems, Mythos Preview's margin over Opus 4.6 holds.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "300 problems across 9 programming languages. Averaged over 5 trials at max effort.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -273,12 +349,12 @@
       ],
       "modality": "multimodal",
       "max_score": 1,
-      "score": 0.59,
-      "normalized_score": 0.59,
+      "score": 0.281,
+      "normalized_score": 0.281,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "Internal implementation. Scores not directly comparable to public leaderboard scores. Opus 4.6: 27.1% on same implementation.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Visual context (screenshots, design mockups) added to issue descriptions. Internal harness, averaged over 5 trials.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -293,12 +369,12 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.778,
-      "normalized_score": 0.778,
+      "score": 0.632,
+      "normalized_score": 0.632,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "Memorization screens flag a subset of problems. Excluding flagged problems, Mythos Preview's margin over Opus 4.6 holds.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Harder SWE-bench variant: actively-maintained repos with larger multi-file diffs and reduced public ground-truth leakage. Averaged over 5 trials at max effort.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -313,12 +389,12 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.939,
-      "normalized_score": 0.939,
+      "score": 0.852,
+      "normalized_score": 0.852,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "Memorization screens flag a subset of problems. Excluding flagged problems, Mythos Preview's margin over Opus 4.6 holds.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Agentic coding (SWE-bench Verified, 500-problem subset). Standard configuration, adaptive thinking at max effort, thinking blocks included in sampling, averaged over 5 trials.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -334,31 +410,51 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.82,
-      "normalized_score": 0.82,
+      "score": 0.804,
+      "normalized_score": 0.804,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/project-glasswing",
-      "analysis_method": "Terminus-2 harness with adaptive thinking at maximum effort, 1M token total task budget. 1× guaranteed / 3× ceiling resource allocation, averaged over 5 attempts per task. 92.1% with 4-hour timeout limits and Terminal-Bench 2.1 updates.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Agentic terminal coding (Terminal-Bench 2.1) with the mini-SWE-agent harness at xhigh effort. Mean reward over 5 attempts across 89 unique tasks (445 trials).",
       "verification_date": null,
       "verification_notes": null
     },
     {
-      "benchmark_id": "usamo25",
-      "name": "USAMO25",
-      "description": "The 2025 United States of America Mathematical Olympiad (USAMO) benchmark consists of six challenging mathematical problems requiring rigorous proof-based reasoning. USAMO is the most prestigious high school mathematics competition in the United States, serving as the final round of the American Mathematics Competitions series. This benchmark evaluates models on mathematical problem-solving capabilities beyond simple numerical computation, focusing on formal mathematical reasoning and proof generation.",
+      "benchmark_id": "toolathlon",
+      "name": "Toolathlon",
+      "description": "Tool Decathlon is a comprehensive benchmark for evaluating AI agents' ability to use multiple tools across diverse task categories. It measures proficiency in tool selection, sequencing, and execution across ten different tool-use scenarios.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.543,
+      "normalized_score": 0.543,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Pass@1 averaged over 3 trials across all 108 tasks. Internal harness with adaptive thinking at max effort. Pass@3: 63.0%, Pass^3: 40.7%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "usamo-2026",
+      "name": "USAMO 2026",
+      "description": "USAMO 2026 evaluates models on the six problems from the 2026 United States of America Mathematical Olympiad, requiring rigorous proof-based reasoning. Following the MathArena methodology, proofs are graded against human expert rubrics by dual strong judge models, with the minimum of the two scores taken as final. Maximum score is 42 points.",
       "categories": [
         "math",
         "reasoning"
       ],
       "modality": "text",
-      "max_score": 1,
-      "score": 0.976,
-      "normalized_score": 0.976,
+      "max_score": 42,
+      "score": 33.39,
+      "normalized_score": 0.795,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/claude-mythos-preview-system-card",
-      "analysis_method": "USAMO 2026 math proofs. Opus 4.6: 42.3%, GPT-5.4: 95.2%, Gemini 3.1 Pro: 74.4%.",
+      "self_reported_source": "https://www.anthropic.com/news/claude-sonnet-5",
+      "analysis_method": "Proof-based math (USAMO 2026, held March 21-22 2026). MathArena grading methodology (proofs rewritten by a neutral model and judged by a 3-model panel; minimum score taken). High effort, 300k token limit, averaged over 10 attempts. 79.5%.",
       "verification_date": null,
       "verification_notes": null
     }
@@ -368,11 +464,11 @@
       "provider_id": "anthropic",
       "name": "Anthropic",
       "website": "https://anthropic.com",
-      "deprecated": true,
-      "deprecated_at": "2026-05-06T00:00:00+00:00",
+      "deprecated": false,
+      "deprecated_at": null,
       "pricing": {
-        "input_per_million": 25,
-        "output_per_million": 125,
+        "input_per_million": 3,
+        "output_per_million": 15,
         "per_image": null,
         "per_second_video_720p": null,
         "per_second_video_1080p": null,
@@ -382,12 +478,12 @@
       },
       "quantization": null,
       "limits": {
-        "max_input_tokens": null,
-        "max_output_tokens": null
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 64000
       },
       "performance": {
-        "throughput": null,
-        "latency": null
+        "throughput": 42,
+        "latency": 214.02789999999993
       },
       "features": {
         "web_search": null,
@@ -430,7 +526,7 @@
           "model_name": "Claude Mythos Preview",
           "score": 0.869,
           "rank": 2,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "kimi-k2.6",
@@ -465,7 +561,7 @@
           "model_name": "Claude Sonnet 5",
           "score": 0.847,
           "rank": 7,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "gpt-5.5",
@@ -499,7 +595,7 @@
           "model_name": "Claude Mythos Preview",
           "score": 0.932,
           "rank": 1,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-7",
@@ -520,7 +616,7 @@
           "model_name": "Claude Sonnet 5",
           "score": 0.883,
           "rank": 4,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "kimi-k2.6",
@@ -567,76 +663,76 @@
       ]
     },
     {
-      "benchmark_id": "gpqa",
-      "benchmark_name": "GPQA",
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
       "models": [
         {
-          "model_id": "claude-mythos-preview",
-          "model_name": "Claude Mythos Preview",
-          "score": 0.946,
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 1815,
           "rank": 1,
-          "is_current_model": true
-        },
-        {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
-          "score": 0.943,
-          "rank": 2,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
-          "score": 0.942,
-          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-8",
           "model_name": "Claude Opus 4.8",
-          "score": 0.936,
+          "score": 1638,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 1618,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 1606,
           "rank": 4,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
-          "score": 0.936,
-          "rank": 4,
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 1542,
+          "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 0.932,
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 1431,
           "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4",
           "model_name": "GPT-5.4",
-          "score": 0.928,
+          "score": 1429,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
-          "score": 0.924,
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 1426,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-max",
-          "model_name": "Qwen3.7 Max",
-          "score": 0.924,
-          "rank": 8,
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 1417,
+          "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
-          "score": 0.919,
+          "model_id": "mimo-v2-omni",
+          "model_name": "MiMo-V2-Omni",
+          "score": 1410,
           "rank": 10,
           "is_current_model": false
         }
@@ -651,7 +747,7 @@
           "model_name": "Claude Mythos Preview",
           "score": 0.647,
           "rank": 1,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "claude-fable-5",
@@ -679,7 +775,7 @@
           "model_name": "Claude Sonnet 5",
           "score": 0.574,
           "rank": 5,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "gpt-5.5-pro",
@@ -719,84 +815,91 @@
       ]
     },
     {
-      "benchmark_id": "mmmlu",
-      "benchmark_name": "MMMLU",
+      "benchmark_id": "legal-agent-benchmark",
+      "benchmark_name": "Legal Agent Benchmark",
       "models": [
         {
-          "model_id": "claude-mythos-preview",
-          "model_name": "Claude Mythos Preview",
-          "score": 0.927,
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.133,
           "rank": 1,
-          "is_current_model": true
-        },
-        {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
-          "score": 0.926,
-          "rank": 2,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
-          "score": 0.918,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
-          "score": 0.918,
-          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-7",
           "model_name": "Claude Opus 4.7",
-          "score": 0.915,
-          "rank": 5,
+          "score": 0.071,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.058,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.054,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-6",
           "model_name": "Claude Opus 4.6",
-          "score": 0.911,
+          "score": 0.042,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.021,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-5-20251101",
-          "model_name": "Claude Opus 4.5",
-          "score": 0.908,
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.008,
           "rank": 7,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-max",
-          "model_name": "Qwen3.7 Max",
-          "score": 0.903,
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.004,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.2-2025-12-11",
-          "model_name": "GPT-5.2",
-          "score": 0.896,
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_name": "Gemini 3.1 Flash-Lite",
+          "score": 0,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.6-plus",
-          "model_name": "Qwen3.6 Plus",
-          "score": 0.895,
-          "rank": 10,
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0,
+          "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-1-20250805",
-          "model_name": "Claude Opus 4.1",
-          "score": 0.895,
-          "rank": 10,
+          "model_id": "gpt-5.4-mini",
+          "model_name": "GPT-5.4 mini",
+          "score": 0,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0,
+          "rank": 9,
           "is_current_model": false
         }
       ]
@@ -824,14 +927,14 @@
           "model_name": "Claude Sonnet 5",
           "score": 0.812,
           "rank": 3,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "claude-mythos-preview",
           "model_name": "Claude Mythos Preview",
           "score": 0.796,
           "rank": 4,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "gpt-5.5",
@@ -886,7 +989,7 @@
           "model_name": "Claude Mythos Preview",
           "score": 0.873,
           "rank": 1,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-8",
@@ -900,7 +1003,7 @@
           "model_name": "Claude Sonnet 5",
           "score": 0.783,
           "rank": 3,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "qwen3.7-max",
@@ -969,7 +1072,7 @@
           "model_name": "Claude Mythos Preview",
           "score": 0.778,
           "rank": 2,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-8",
@@ -990,7 +1093,7 @@
           "model_name": "Claude Sonnet 5",
           "score": 0.632,
           "rank": 5,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "glm-5.2",
@@ -1014,15 +1117,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.586,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.586,
           "rank": 9,
           "is_current_model": false
@@ -1045,7 +1148,7 @@
           "model_name": "Claude Mythos Preview",
           "score": 0.939,
           "rank": 2,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-8",
@@ -1066,7 +1169,7 @@
           "model_name": "Claude Sonnet 5",
           "score": 0.852,
           "rank": 5,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "claude-opus-4-5-20251101",
@@ -1121,14 +1224,14 @@
           "model_name": "Claude Mythos Preview",
           "score": 0.82,
           "rank": 2,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "claude-sonnet-5",
           "model_name": "Claude Sonnet 5",
           "score": 0.804,
           "rank": 3,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "gpt-5.3-codex",
@@ -1180,63 +1283,84 @@
           "is_current_model": false
         }
       ]
+    },
+    {
+      "benchmark_id": "toolathlon",
+      "benchmark_name": "Toolathlon",
+      "models": [
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.599,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.565,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.556,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.546,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.543,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.518,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.506,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.5,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.494,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.491,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
     }
   ],
-  "comparison_model": {
-    "model_id": "gemini-3.1-pro-preview",
-    "name": "Gemini 3.1 Pro",
-    "organization_name": "Google",
-    "release_date": "2026-02-19",
-    "announcement_date": "2026-02-19",
-    "knowledge_cutoff": "2025-01-31",
-    "param_count": null,
-    "multimodal": true,
-    "license": {
-      "name": "Proprietary",
-      "allow_commercial": false
-    },
-    "benchmarks": {
-      "apex-agents": 0.335,
-      "arc-agi-v2": 0.771,
-      "browsecomp": 0.859,
-      "finance-agent-v2": 0.4298,
-      "frontierswe": 0.4,
-      "gdpval-aa": 976,
-      "gpqa": 0.943,
-      "humanity's-last-exam": 0.514,
-      "legal-agent-benchmark": 0,
-      "livebench": 0.7993,
-      "livecodebench-pro": 2887,
-      "mcp-atlas": 0.692,
-      "mmmlu": 0.926,
-      "mmmu-pro": 0.805,
-      "mrcr-v2-(8-needle)": 0.263,
-      "scicode": 0.59,
-      "swe-bench-pro": 0.542,
-      "swe-bench-verified": 0.806,
-      "t2-bench": 0.993,
-      "terminal-bench-2": 0.685
-    },
-    "provider": {
-      "name": "Google",
-      "input_cost": 2.5,
-      "output_cost": 15,
-      "max_input_tokens": 1048576,
-      "max_output_tokens": 65536,
-      "modalities": {
-        "input": {
-          "text": false,
-          "image": true,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    }
-  }
+  "comparison_model": null,
+  "openrouter_id": "anthropic/claude-sonnet-5"
 }
