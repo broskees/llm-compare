@@ -1,0 +1,595 @@
+{
+  "model_id": "grok-4.5",
+  "name": "Grok 4.5",
+  "model_type": "llm",
+  "organization": {
+    "id": "xai",
+    "name": "xAI",
+    "website": "https://x.ai"
+  },
+  "description": "Grok 4.5 is xAI's frontier model built for coding, agentic tasks, and knowledge work. Trained alongside Cursor across tens of thousands of NVIDIA GB300 GPUs with large-scale reinforcement learning focused on per-token intelligence, it features a 500K-token context window, configurable reasoning effort, native tool use, and strong token efficiency, and is served at fast-model speeds.",
+  "release_date": "2026-07-08",
+  "announcement_date": "2026-07-08",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://docs.x.ai/developers/models/grok-4.5",
+    "playground": "https://grok.com",
+    "paper": null,
+    "scorecard_blog": "https://x.ai/news/grok-4-5",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-omniscience-index",
+      "name": "AA-Omniscience Index",
+      "description": "AA-Omniscience Index is Artificial Analysis's knowledge-reliability metric. It rewards correct answers, penalizes hallucinations, and does not penalize abstention. Scores range from -100 to 100, where 0 means as many correct as incorrect answers.",
+      "categories": [
+        "reasoning",
+        "science",
+        "knowledge"
+      ],
+      "modality": "text",
+      "max_score": 200,
+      "score": 126,
+      "normalized_score": 0.63,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/models/grok-4-5",
+      "analysis_method": "AA-Omniscience Index (raw index 26, range -100 to 100; shifted +100 for 0-based normalization).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "artificial-analysis",
+      "name": "Artificial Analysis",
+      "description": "Artificial Analysis benchmark evaluates AI models across quality, speed, and pricing dimensions, providing a composite assessment of model capabilities for real-world usage.",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.54,
+      "normalized_score": 0.54,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/models/grok-4-5",
+      "analysis_method": "Artificial Analysis Intelligence Index v4.1 (high). Score 54.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "artificial-analysis-coding-agent-index-v1.1",
+      "name": "Artificial Analysis Coding Agent Index v1.1",
+      "description": "The Artificial Analysis Coding Agent Index is an independent composite score for coding-agent performance that pairs models with agentic harnesses. Version 1.1 is a simple average of pass@1 across three components: DeepSWE, Terminal-Bench v2, and SWE-Atlas-QnA.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 76,
+      "normalized_score": 0.76,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/grok-4-5-brings-spacexai-to-the-the-intelligence-frontier",
+      "analysis_method": "Artificial Analysis Coding Agent Index v1.1, Grok Build harness.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "description": "AutomationBench-AA is Artificial Analysis's independently run version of AutomationBench, covering 657 real-world SaaS workflow tasks across 40 simulated applications (e.g. Gmail, Slack, Salesforce, HubSpot). It scores the share of objectives an agent completes without violating business guardrails, using a private held-out task set.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.514,
+      "normalized_score": 0.514,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/models/grok-4-5",
+      "analysis_method": "AutomationBench-AA, 657 tasks across 40 simulated apps, private held-out set. Clean objective completion rate.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe",
+      "name": "DeepSWE",
+      "description": "DeepSWE is a software engineering agent benchmark evaluated with the mini-swe-agent harness, where each task is solved in an isolated container with no internet access. It measures an agent's ability to autonomously resolve real-world coding issues end to end.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.53,
+      "normalized_score": 0.53,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-5",
+      "analysis_method": "DeepSWE 1.1 (pass@1), mini-swe-agent harness run by Datacurve.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
+      "categories": [
+        "reasoning",
+        "legal",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1543,
+      "normalized_score": 0.5143,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/grok-4-5-brings-spacexai-to-the-the-intelligence-frontier",
+      "analysis_method": "GDPval-AA v2 Elo, run independently by Artificial Analysis.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.93,
+      "normalized_score": 0.93,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/models/grok-4-5",
+      "analysis_method": "GPQA Diamond, measured by Artificial Analysis (high).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "omniscience",
+      "name": "OmniScience",
+      "description": "OmniScience is a broad scientific knowledge and reasoning benchmark that measures both answer accuracy and non-hallucination (calibrated abstention) across science domains.",
+      "categories": [
+        "reasoning",
+        "science",
+        "knowledge"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.46,
+      "normalized_score": 0.46,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/models/grok-4-5",
+      "analysis_method": "AA-Omniscience non-hallucination rate (1 - hallucination rate of 54%).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "description": "SWE-Bench Pro is an advanced version of SWE-Bench that evaluates language models on complex, real-world software engineering tasks requiring extended reasoning and multi-step problem solving.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.647,
+      "normalized_score": 0.647,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-5",
+      "analysis_method": "SWE Bench Pro (resolve rate).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-marathon",
+      "name": "SWE-Marathon",
+      "description": "SWE-Marathon is an ultra-long-horizon software engineering benchmark covering tasks such as building compilers, optimizing kernels, and developing production-grade services. It measures whether agents can sustain quality across extremely long engineering trajectories.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.29,
+      "normalized_score": 0.29,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-5",
+      "analysis_method": "SWE Marathon (pass@1). Long-horizon agentic task resolution.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "name": "Tau3 Banking",
+      "description": "τ³-Bench banking domain evaluates agentic models on multi-turn, tool-using customer-support scenarios in a simulated retail banking environment.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.33,
+      "normalized_score": 0.33,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/models/grok-4-5",
+      "analysis_method": "Tau3-Banking agentic tool use, measured by Artificial Analysis.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.833,
+      "normalized_score": 0.833,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-5",
+      "analysis_method": "Terminal Bench 2.1.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "xai",
+      "name": "xAI",
+      "website": "https://docs.x.ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 2,
+        "output_per_million": 6,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 500000,
+        "max_output_tokens": null
+      },
+      "performance": {
+        "throughput": 175.56919714211233,
+        "latency": 0.7754
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 1815,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 1747.8,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 1638,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 1618,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 1606,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 1593,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 1591.8,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 1543,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 1542,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 1431,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.946,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.93,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.929,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.928,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "benchmark_name": "SWE-Bench Pro",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.8,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.778,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.692,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.647,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.646,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.643,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.634,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.632,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.627,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.621,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "claude-mythos-preview",
+    "name": "Claude Mythos Preview",
+    "organization_name": "Anthropic",
+    "release_date": null,
+    "announcement_date": "2026-04-07",
+    "knowledge_cutoff": null,
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "browsecomp": 0.869,
+      "charxiv-r": 0.932,
+      "cybench": 1,
+      "cybergym": 0.831,
+      "figqa": 0.89,
+      "gpqa": 0.946,
+      "graphwalks-bfs->128k": 0.8,
+      "humanity's-last-exam": 0.647,
+      "mmmlu": 0.927,
+      "osworld-verified": 0.796,
+      "swe-bench-multilingual": 0.873,
+      "swe-bench-multimodal": 0.59,
+      "swe-bench-pro": 0.778,
+      "swe-bench-verified": 0.939,
+      "terminal-bench-2": 0.82,
+      "usamo25": 0.976
+    },
+    "provider": null
+  },
+  "openrouter_id": "x-ai/grok-4.5"
+}
