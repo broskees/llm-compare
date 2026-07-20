@@ -63,8 +63,8 @@
       "name": "BIG-Bench Extra Hard",
       "description": "BIG-Bench Extra Hard (BBEH) is a challenging benchmark that replaces each task in BIG-Bench Hard with a novel task that probes similar reasoning capabilities but exhibits significantly increased difficulty. The benchmark contains 23 tasks testing diverse reasoning skills including many-hop reasoning, causal understanding, spatial reasoning, temporal arithmetic, geometric reasoning, linguistic reasoning, logic puzzles, and humor understanding. Designed to address saturation on existing benchmarks where state-of-the-art models achieve near-perfect scores, BBEH shows substantial room for improvement with best models achieving only 9.8-44.8% average accuracy.",
       "categories": [
-        "reasoning",
         "language",
+        "reasoning",
         "general"
       ],
       "modality": "text",
@@ -185,10 +185,10 @@
       "name": "MMLU-Pro",
       "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
       "categories": [
-        "math",
-        "reasoning",
         "language",
         "legal",
+        "math",
+        "reasoning",
         "finance",
         "general",
         "healthcare"
@@ -209,9 +209,9 @@
       "name": "MMMLU",
       "description": "Multilingual Massive Multitask Language Understanding dataset released by OpenAI, featuring professionally translated MMLU test questions across 14 languages including Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Swahili, Yoruba, and Chinese. Contains approximately 15,908 multiple-choice questions per language covering 57 subjects.",
       "categories": [
+        "language",
         "math",
         "reasoning",
-        "language",
         "general"
       ],
       "modality": "text",
@@ -247,12 +247,12 @@
       "verification_notes": null
     },
     {
-      "benchmark_id": "mrcr-v2",
-      "name": "MRCR v2",
-      "description": "MRCR v2 (Multi-Round Coreference Resolution version 2) is an enhanced version of the synthetic long-context reasoning task. It extends the original MRCR framework with improved evaluation criteria and additional complexity for testing models' ability to maintain attention and reasoning across extended contexts.",
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "name": "MRCR v2 (8-needle)",
+      "description": "MRCR v2 (8-needle) is a variant of the Multi-Round Coreference Resolution benchmark that includes 8 needle items to retrieve from long contexts. This tests models' ability to simultaneously track and reason about multiple pieces of information across extended conversations.",
       "categories": [
-        "reasoning",
         "long_context",
+        "reasoning",
         "general"
       ],
       "modality": "text",
@@ -261,8 +261,8 @@
       "normalized_score": 0.441,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/blog/gemma4",
-      "analysis_method": "8 needle 128k",
+      "self_reported_source": "https://arxiv.org/abs/2607.02770",
+      "analysis_method": "128k",
       "verification_date": null,
       "verification_notes": null
     },
@@ -296,6 +296,7 @@
       "deprecated_at": null,
       "pricing": {
         "input_per_million": 0.13,
+        "cached_input_per_million": null,
         "output_per_million": 0.4,
         "per_image": null,
         "per_second_video_720p": null,
@@ -310,8 +311,8 @@
         "max_output_tokens": 131072
       },
       "performance": {
-        "throughput": null,
-        "latency": 5.469949999999999
+        "throughput": 33.46843626288636,
+        "latency": 2.53325
       },
       "features": {
         "web_search": null,
@@ -530,13 +531,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
-          "score": 0.936,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
           "model_id": "claude-opus-4-8",
           "model_name": "Claude Opus 4.8",
           "score": 0.936,
@@ -544,30 +538,37 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.935,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "gpt-5.2-pro-2025-12-11",
           "model_name": "GPT-5.2 Pro",
           "score": 0.932,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "grok-4.5",
           "model_name": "Grok 4.5",
           "score": 0.93,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.6-terra",
           "model_name": "GPT-5.6 Terra",
           "score": 0.929,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.4",
-          "model_name": "GPT-5.4",
-          "score": 0.928,
           "rank": 10,
           "is_current_model": false
         },
@@ -575,7 +576,7 @@
           "model_id": "gemma-4-26b-a4b-it",
           "model_name": "Gemma 4 26B-A4B",
           "score": 0.823,
-          "rank": 70,
+          "rank": 72,
           "is_current_model": true
         }
       ]
@@ -599,58 +600,65 @@
           "is_current_model": false
         },
         {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.621,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "muse-spark",
           "model_name": "Muse Spark",
           "score": 0.584,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-8",
           "model_name": "Claude Opus 4.8",
           "score": 0.579,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "claude-sonnet-5",
           "model_name": "Claude Sonnet 5",
           "score": 0.574,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.5-pro",
           "model_name": "GPT-5.5 Pro",
           "score": 0.572,
-          "rank": 6,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.56,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.1-pro",
           "model_name": "Seed 2.1 Pro",
           "score": 0.557,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "glm-5.2",
           "model_name": "GLM-5.2",
           "score": 0.547,
-          "rank": 8,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-4-7",
           "model_name": "Claude Opus 4.7",
           "score": 0.547,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "seed-2.1-turbo",
-          "model_name": "Seed 2.1 Turbo",
-          "score": 0.546,
           "rank": 10,
           "is_current_model": false
         },
@@ -658,7 +666,7 @@
           "model_id": "gemma-4-26b-a4b-it",
           "model_name": "Gemma 4 26B-A4B",
           "score": 0.172,
-          "rank": 60,
+          "rank": 62,
           "is_current_model": true
         }
       ]
@@ -675,15 +683,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "qwen3.7-plus",
-          "model_name": "Qwen3.7-Plus",
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
           "score": 0.896,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.6",
-          "model_name": "Kimi K2.6",
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
           "score": 0.896,
           "rank": 2,
           "is_current_model": false
@@ -751,72 +759,72 @@
       "benchmark_name": "MathVision",
       "models": [
         {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.978,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "seed-2.1-pro",
           "model_name": "Seed 2.1 Pro",
           "score": 0.945,
-          "rank": 1,
+          "rank": 2,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.6",
           "model_name": "Kimi K2.6",
           "score": 0.932,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.1-turbo",
           "model_name": "Seed 2.1 Turbo",
           "score": 0.927,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.7-plus",
           "model_name": "Qwen3.7-Plus",
           "score": 0.903,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.6-plus",
           "model_name": "Qwen3.6 Plus",
           "score": 0.88,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.862,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.86,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemma-4-31b-it",
           "model_name": "Gemma 4 31B",
           "score": 0.856,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2.5",
           "model_name": "Kimi K2.5",
           "score": 0.842,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.5-35b-a3b",
-          "model_name": "Qwen3.5-35B-A3B",
-          "score": 0.839,
           "rank": 10,
           "is_current_model": false
         },
@@ -824,7 +832,7 @@
           "model_id": "gemma-4-26b-a4b-it",
           "model_name": "Gemma 4 26B-A4B",
           "score": 0.824,
-          "rank": 11,
+          "rank": 12,
           "is_current_model": true
         }
       ]
@@ -1007,15 +1015,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
           "score": 0.918,
           "rank": 3,
           "is_current_model": false
@@ -1083,23 +1091,23 @@
       "benchmark_name": "MMMU-Pro",
       "models": [
         {
-          "model_id": "gpt-5.6-sol",
-          "model_name": "GPT-5.6 Sol",
-          "score": 0.846,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "gemini-3.5-flash",
           "model_name": "Gemini 3.5 Flash",
           "score": 0.836,
-          "rank": 2,
+          "rank": 1,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.5",
           "model_name": "GPT-5.5",
           "score": 0.832,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.83,
           "rank": 3,
           "is_current_model": false
         },
@@ -1118,9 +1126,9 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.6-terra",
-          "model_name": "GPT-5.6 Terra",
-          "score": 0.82,
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.816,
           "rank": 6,
           "is_current_model": false
         },
@@ -1146,9 +1154,9 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
-          "score": 0.805,
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.807,
           "rank": 10,
           "is_current_model": false
         },
@@ -1156,8 +1164,84 @@
           "model_id": "gemma-4-26b-a4b-it",
           "model_name": "Gemma 4 26B-A4B",
           "score": 0.738,
-          "rank": 33,
+          "rank": 34,
           "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "benchmark_name": "MRCR v2 (8-needle)",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.915,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.896,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.76,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.74,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.664,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_name": "Gemini 3.1 Flash-Lite",
+          "score": 0.601,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-26b-a4b-it",
+          "model_name": "Gemma 4 26B-A4B",
+          "score": 0.441,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemma-4-12b-it",
+          "model_name": "Gemma 4 12B",
+          "score": 0.434,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.413,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4-mini",
+          "model_name": "GPT-5.4 mini",
+          "score": 0.336,
+          "rank": 10,
+          "is_current_model": false
         }
       ]
     },
@@ -1222,15 +1306,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v3.2",
-          "model_name": "DeepSeek-V3.2",
+          "model_id": "deepseek-v3.2-speciale",
+          "model_name": "DeepSeek-V3.2-Speciale",
           "score": 0.803,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v3.2-speciale",
-          "model_name": "DeepSeek-V3.2-Speciale",
+          "model_id": "deepseek-v3.2",
+          "model_name": "DeepSeek-V3.2",
           "score": 0.803,
           "rank": 9,
           "is_current_model": false
@@ -1239,12 +1323,12 @@
     }
   ],
   "comparison_model": {
-    "model_id": "claude-mythos-preview",
-    "name": "Claude Mythos Preview",
-    "organization_name": "Anthropic",
-    "release_date": null,
-    "announcement_date": "2026-04-07",
-    "knowledge_cutoff": null,
+    "model_id": "gpt-5.6-sol",
+    "name": "GPT-5.6 Sol",
+    "organization_name": "OpenAI",
+    "release_date": "2026-07-09",
+    "announcement_date": "2026-07-09",
+    "knowledge_cutoff": "2026-02-16",
     "param_count": null,
     "multimodal": true,
     "license": {
@@ -1252,23 +1336,71 @@
       "allow_commercial": false
     },
     "benchmarks": {
-      "browsecomp": 0.869,
-      "charxiv-r": 0.932,
-      "cybench": 1,
-      "cybergym": 0.831,
-      "figqa": 0.89,
+      "agents-last-exam": 0.527,
+      "arc-agi-3": 0.0778,
+      "artificial-analysis": 0.59,
+      "artificial-analysis-coding-agent-index-v1.1": 80,
+      "automationbench": 0.181,
+      "benchcad": 0.706,
+      "benchcad-with-python-tool": 0.834,
+      "big-finance-bench": 0.53,
+      "browsecomp": 0.904,
+      "capture-the-flag-challenges": 0.967,
+      "openai-connectors": 1,
+      "deepswe": 0.727,
+      "exploitbench": 0.735,
+      "exploitgym": 0.337,
+      "frontiermath": 0.89,
+      "frontiermath-tier-4-v2": 0.83,
+      "gdp-pdf": 0.307,
+      "gdpval-aa": 1747.8,
+      "genebench-pro": 0.287,
       "gpqa": 0.946,
-      "graphwalks-bfs->128k": 0.8,
-      "humanity's-last-exam": 0.647,
-      "mmmlu": 0.927,
-      "osworld-verified": 0.796,
-      "swe-bench-multilingual": 0.873,
-      "swe-bench-multimodal": 0.59,
-      "swe-bench-pro": 0.778,
-      "swe-bench-verified": 0.939,
-      "terminal-bench-2": 0.82,
-      "usamo25": 0.976
+      "graphwalks-bfs->128k": 0.907,
+      "graphwalks-bfs-1m": 0.771,
+      "healthbench": 0.57,
+      "healthbench-consensus": 0.955,
+      "healthbench-hard": 0.331,
+      "healthbench-professional": 0.605,
+      "internal-research-debugging-evaluation": 0.683,
+      "kernelgen-1p": 0.611,
+      "lifescibench": 0.599,
+      "management-consulting-tasks": 0.432,
+      "medchembench": 0.483,
+      "mmmu-pro": 0.83,
+      "mmmu-pro-with-tools": 0.846,
+      "mrcr-v2-(8-needle)": 0.915,
+      "mrcr-v2-8-needle-512k-1m": 0.738,
+      "nanogpt": 0.0969,
+      "osworld-2.0": 0.626,
+      "posttrainbench-lite": 0.503,
+      "rsi-index": 0.579,
+      "openai-search-function-calling": 0.91,
+      "sec-bench-pro": 0.712,
+      "swe-bench-pro": 0.646,
+      "terminal-bench-2.1": 0.888,
+      "toolathlon": 0.58
     },
-    "provider": null
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 5,
+      "output_cost": 30,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
   }
 }

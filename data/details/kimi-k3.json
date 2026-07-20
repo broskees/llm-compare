@@ -1,0 +1,1644 @@
+{
+  "model_id": "kimi-k3",
+  "name": "Kimi K3",
+  "model_type": "llm",
+  "organization": {
+    "id": "moonshotai",
+    "name": "Moonshot AI",
+    "website": "https://moonshot.cn"
+  },
+  "description": "Kimi K3 is Moonshot AI's flagship open Mixture-of-Experts model for long-horizon coding, knowledge work, and reasoning. It has 2.8 trillion total parameters, activates 16 of 896 experts, and combines Kimi Delta Attention, Attention Residuals, and Stable LatentMoE. The model supports a 1M-token context window, native image and video understanding, tool calling, structured output, and always-on reasoning with max thinking effort at launch.",
+  "release_date": "2026-07-16",
+  "announcement_date": "2026-07-16",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 2800000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "unknown",
+    "name": "Unknown",
+    "allow_commercial": false,
+    "description": "Unknown license"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "tuning": "instruct",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://platform.kimi.ai/docs/guide/kimi-k3-quickstart",
+    "playground": "https://platform.kimi.ai/playground",
+    "paper": null,
+    "scorecard_blog": "https://www.kimi.com/blog/kimi-k3",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-briefcase",
+      "name": "AA-Briefcase",
+      "description": "AA-Briefcase is an Artificial Analysis evaluation of AI systems on professional knowledge-work tasks, reported as an Elo score.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1548,
+      "normalized_score": 0.516,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Elo score; Artificial Analysis",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "apex-agents",
+      "name": "APEX-Agents",
+      "description": "APEX-Agents is a benchmark evaluating AI agents on long horizon professional tasks that require sustained reasoning, planning, and execution across complex multi-step workflows.",
+      "categories": [
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.376,
+      "normalized_score": 0.376,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.308,
+      "normalized_score": 0.308,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "600-task public subset; official setup",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "babyvision",
+      "name": "BabyVision",
+      "description": "A benchmark for early-stage visual reasoning and perception on child-like vision tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.857,
+      "normalized_score": 0.857,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "With Python; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "name": "BrowseComp",
+      "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.912,
+      "normalized_score": 0.912,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Context compaction at 300K tokens; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "charxiv-r",
+      "name": "CharXiv-R",
+      "description": "CharXiv-R is the reasoning component of the CharXiv benchmark, focusing on complex reasoning questions that require synthesizing information across visual chart elements. It evaluates multimodal large language models on their ability to understand and reason about scientific charts from arXiv papers through various reasoning tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.913,
+      "normalized_score": 0.913,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Reasoning questions with Python; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deck-bench",
+      "name": "DECK-Bench",
+      "description": "DECK-Bench is Moonshot AI's internal evaluation of agents on creating and reasoning over presentation-style knowledge-work artifacts.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.735,
+      "normalized_score": 0.735,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Internal benchmark; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "name": "DeepSearchQA",
+      "description": "DeepSearchQA is a benchmark for evaluating deep search and question-answering capabilities, testing models' ability to perform multi-hop reasoning and information retrieval across complex knowledge domains.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.95,
+      "normalized_score": 0.95,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "F1 score; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe",
+      "name": "DeepSWE",
+      "description": "DeepSWE is a software engineering agent benchmark evaluated with the mini-swe-agent harness, where each task is solved in an isolated container with no internet access. It measures an agent's ability to autonomously resolve real-world coding issues end to end.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.675,
+      "normalized_score": 0.675,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "KimiCode harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontierswe",
+      "name": "FrontierSWE",
+      "description": "FrontierSWE measures whether an agent can complete open-ended technical projects at the scale of hours to tens of hours, spanning systems optimization, large-scale code construction, and applied ML research. Performance is reported as a dominance score, where higher is better.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.812,
+      "normalized_score": 0.812,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Dominance score; KimiCode harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1668,
+      "normalized_score": 0.556,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "GDPval-AA v2 Elo; Artificial Analysis",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.935,
+      "normalized_score": 0.935,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "GPQA-Diamond; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.56,
+      "normalized_score": 0.56,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "HLE-Full with tools; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "job-bench",
+      "name": "Job Bench",
+      "description": "Job Bench evaluates AI agents on realistic professional tasks that require multi-step planning, research, and production of work artifacts.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.529,
+      "normalized_score": 0.529,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "kimi-code-bench-v2",
+      "name": "Kimi Code Bench v2",
+      "description": "Kimi Code Bench v2 is Moonshot AI's in-house benchmark for evaluating coding agents on realistic software engineering tasks across 10+ mainstream programming languages and a production tech stack spanning backend services, infrastructure, performance engineering, systems programming, security, frontend development, and ML/data engineering.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.729,
+      "normalized_score": 0.729,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Internal benchmark; KimiCode and Claude Code harnesses; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mathvision",
+      "name": "MathVision",
+      "description": "MATH-Vision is a dataset designed to measure multimodal mathematical reasoning capabilities. It focuses on evaluating how well models can solve mathematical problems that require both visual understanding and mathematical reasoning, bridging the gap between visual and mathematical domains.",
+      "categories": [
+        "math",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.978,
+      "normalized_score": 0.978,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "With Python; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mcp-atlas",
+      "name": "MCP Atlas",
+      "description": "MCP Atlas is a benchmark for evaluating AI models on scaled tool use capabilities, measuring how well models can coordinate and utilize multiple tools across complex multi-step tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.842,
+      "normalized_score": 0.842,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "500-task public subset; 100-turn limit; Gemini 3.1 Pro judge",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mls-bench-lite",
+      "name": "MLS-Bench Lite",
+      "description": "MLS-Bench Lite is the official 30-task subset of MLS-Bench for evaluating whether AI systems can invent generalizable and scalable machine learning methods across LLM pretraining and post-training, robotics, world models, computer vision, reinforcement learning, optimization, ML systems, and AI for Science.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.483,
+      "normalized_score": 0.483,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "KimiCode harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "name": "MMMU-Pro",
+      "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.816,
+      "normalized_score": 0.816,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Official protocol; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu-pro-with-tools",
+      "name": "MMMU-Pro (with tools)",
+      "description": "MMMU-Pro variant evaluated with tool access enabled.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.834,
+      "normalized_score": 0.834,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Python tools; official protocol; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "officeqa-pro",
+      "name": "OfficeQA Pro",
+      "description": "OfficeQA Pro evaluates AI models on professional knowledge-work questions and tasks drawn from real office workflows, including document analysis, spreadsheet reasoning, and information synthesis across business domains.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.633,
+      "normalized_score": 0.633,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Claude Code harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "omnidocbench",
+      "name": "OmniDocBench",
+      "description": "OmniDocBench evaluates multimodal models on document understanding tasks such as OCR, layout parsing, and structured document comprehension.",
+      "categories": [
+        "multimodal",
+        "document_understanding",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.911,
+      "normalized_score": 0.911,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "perceptionbench",
+      "name": "PerceptionBench",
+      "description": "PerceptionBench is Moonshot AI's internal benchmark for evaluating atomic visual perception capabilities.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.585,
+      "normalized_score": 0.585,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Internal benchmark; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "posttrainbench",
+      "name": "PostTrainBench",
+      "description": "PostTrainBench evaluates a model's ability to autonomously post-train base models. Given pretrain-only base models, the agent must complete the full pipeline of data synthesis, training, evaluation, and iteration within a time budget, scored across downstream benchmarks such as AIME2025, BFCL, GPQA Main, GSM8K, and HumanEval.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "systems"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.366,
+      "normalized_score": 0.366,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Official Harbor implementation; Claude Code harness; max reasoning effort; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "program-bench",
+      "name": "Program Bench",
+      "description": "Program Bench evaluates code-generation agents by asking them to recreate a program's behavior from only a compiled binary and documentation. It spans 200 tasks from small CLI tools to large systems such as FFmpeg and SQLite, with submissions judged against more than 248,000 fuzz-generated behavioral tests.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.778,
+      "normalized_score": 0.778,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "KimiCode harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "spreadsheetbench-2",
+      "name": "SpreadsheetBench 2",
+      "description": "SpreadsheetBench 2 evaluates office automation agents on spreadsheet analysis, reasoning, and manipulation tasks.",
+      "categories": [
+        "productivity",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.348,
+      "normalized_score": 0.348,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Claude Code harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-marathon",
+      "name": "SWE-Marathon",
+      "description": "SWE-Marathon is an ultra-long-horizon software engineering benchmark covering tasks such as building compilers, optimizing kernels, and developing production-grade services. It measures whether agents can sustain quality across extremely long engineering trajectories.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.42,
+      "normalized_score": 0.42,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Claude Code harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.883,
+      "normalized_score": 0.883,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "KimiCode harness; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "toolathlon",
+      "name": "Toolathlon",
+      "description": "Tool Decathlon is a comprehensive benchmark for evaluating AI agents' ability to use multiple tools across diverse task categories. It measures proficiency in tool selection, sequencing, and execution across ten different tool-use scenarios.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.732,
+      "normalized_score": 0.732,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Toolathlon-Verified; max reasoning effort",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "worldvqa",
+      "name": "WorldVQA",
+      "description": "WorldVQA is a benchmark designed to evaluate atomic vision-centric world knowledge. It assesses models' ability to understand and reason about visual elements representing real-world knowledge.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.51,
+      "normalized_score": 0.51,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "ForceAnswer; average of 3 runs",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "zerobench",
+      "name": "ZEROBench",
+      "description": "ZEROBench is a challenging vision benchmark designed to test models on zero-shot visual understanding tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 100,
+      "score": 0.41,
+      "normalized_score": 0.41,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.kimi.com/blog/kimi-k3",
+      "analysis_method": "Main split with Python; pass@5; 5 runs",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "moonshot",
+      "name": "Moonshot AI",
+      "website": "https://www.moonshot.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 3,
+        "cached_input_per_million": 0.3,
+        "output_per_million": 15,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 1048576
+      },
+      "performance": {
+        "throughput": 2.2513766283189107,
+        "latency": 23.511299999999995
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark_name": "BrowseComp",
+      "models": [
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.912,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.904,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.901,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.875,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.869,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.863,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.862,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.859,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.849,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.847,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "charxiv-r",
+      "benchmark_name": "CharXiv-R",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.932,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.913,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.91,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.899,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.884,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.883,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.867,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.864,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.864,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.859,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "frontierswe",
+      "benchmark_name": "FrontierSWE",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.9,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.812,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.75,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.74,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.73,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.63,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.56,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.54,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.4,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.31,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 1815,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 1747.8,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 1668,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 1638,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 1618,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 1606,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 1593,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 1591.8,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 1543,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 1542,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.946,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.935,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.93,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.929,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.647,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.645,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.621,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.584,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.579,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.574,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.572,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.56,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.557,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.547,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.547,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mathvision",
+      "benchmark_name": "MathVision",
+      "models": [
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.978,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.945,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.932,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.927,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.903,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.88,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.862,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.86,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.856,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.842,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mcp-atlas",
+      "benchmark_name": "MCP Atlas",
+      "models": [
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.881,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.842,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.838,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.822,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.803,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.791,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.773,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.768,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.764,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "benchmark_name": "MMMU-Pro",
+      "models": [
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.832,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.83,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.827,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.822,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.816,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.812,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.812,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.81,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.807,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.847,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.843,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.833,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.827,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.8,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.717,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.71,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "toolathlon",
+      "benchmark_name": "Toolathlon",
+      "models": [
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.756,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.732,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.599,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.58,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.565,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.556,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.546,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.543,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.534,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.531,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gpt-5.6-sol",
+    "name": "GPT-5.6 Sol",
+    "organization_name": "OpenAI",
+    "release_date": "2026-07-09",
+    "announcement_date": "2026-07-09",
+    "knowledge_cutoff": "2026-02-16",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "agents-last-exam": 0.527,
+      "arc-agi-3": 0.0778,
+      "artificial-analysis": 0.59,
+      "artificial-analysis-coding-agent-index-v1.1": 80,
+      "automationbench": 0.181,
+      "benchcad": 0.706,
+      "benchcad-with-python-tool": 0.834,
+      "big-finance-bench": 0.53,
+      "browsecomp": 0.904,
+      "capture-the-flag-challenges": 0.967,
+      "openai-connectors": 1,
+      "deepswe": 0.727,
+      "exploitbench": 0.735,
+      "exploitgym": 0.337,
+      "frontiermath": 0.89,
+      "frontiermath-tier-4-v2": 0.83,
+      "gdp-pdf": 0.307,
+      "gdpval-aa": 1747.8,
+      "genebench-pro": 0.287,
+      "gpqa": 0.946,
+      "graphwalks-bfs->128k": 0.907,
+      "graphwalks-bfs-1m": 0.771,
+      "healthbench": 0.57,
+      "healthbench-consensus": 0.955,
+      "healthbench-hard": 0.331,
+      "healthbench-professional": 0.605,
+      "internal-research-debugging-evaluation": 0.683,
+      "kernelgen-1p": 0.611,
+      "lifescibench": 0.599,
+      "management-consulting-tasks": 0.432,
+      "medchembench": 0.483,
+      "mmmu-pro": 0.83,
+      "mmmu-pro-with-tools": 0.846,
+      "mrcr-v2-(8-needle)": 0.915,
+      "mrcr-v2-8-needle-512k-1m": 0.738,
+      "nanogpt": 0.0969,
+      "osworld-2.0": 0.626,
+      "posttrainbench-lite": 0.503,
+      "rsi-index": 0.579,
+      "openai-search-function-calling": 0.91,
+      "sec-bench-pro": 0.712,
+      "swe-bench-pro": 0.646,
+      "terminal-bench-2.1": 0.888,
+      "toolathlon": 0.58
+    },
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 5,
+      "output_cost": 30,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  },
+  "openrouter_id": "moonshotai/kimi-k3"
+}
