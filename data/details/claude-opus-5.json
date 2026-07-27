@@ -1,0 +1,831 @@
+{
+  "model_id": "claude-opus-5",
+  "name": "Claude Opus 5",
+  "model_type": "llm",
+  "organization": {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "website": "https://anthropic.com"
+  },
+  "description": "Claude Opus 5 is Anthropic's flagship general-access model, built for efficient agentic coding, knowledge work, scientific research, computer use, and problem-solving. Anthropic reports state-of-the-art results on Frontier-Bench v0.1 and GDPval-AA, substantial gains over Opus 4.8 across life-sciences evaluations, and support for configurable effort levels. It is available through the Claude API at the same $5/$25 per million input/output token price as Claude Opus 4.8.",
+  "release_date": "2026-07-24",
+  "announcement_date": "2026-07-24",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://docs.anthropic.com/en/docs/about-claude/models/all-models",
+    "playground": "https://claude.ai",
+    "paper": "https://www.anthropic.com/claude-opus-5-system-card",
+    "scorecard_blog": "https://www.anthropic.com/news/claude-opus-5",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "arc-agi-3",
+      "name": "ARC-AGI-3",
+      "description": "ARC-AGI-3 is the third-generation Abstraction and Reasoning Corpus benchmark, an interactive-reasoning evaluation designed to measure fluid, novel problem-solving ability that remains far from saturated for frontier models.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.302,
+      "normalized_score": 0.302,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Novel problem-solving.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.26,
+      "normalized_score": 0.26,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Business workflows.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "biomysterybench",
+      "name": "BioMysteryBench",
+      "description": "BioMysteryBench evaluates a model's ability to reason through challenging molecular biology problems, reporting performance on a hard subset and on the subset of problems solved by human experts.",
+      "categories": [
+        "reasoning",
+        "science",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.901,
+      "normalized_score": 0.901,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Human-solved subset.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "name": "BrowseComp",
+      "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.908,
+      "normalized_score": 0.908,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Agentic search.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.688,
+      "normalized_score": 0.688,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Agentic coding.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontier-bench-v0.1",
+      "name": "Frontier-Bench v0.1",
+      "description": "Frontier-Bench v0.1 evaluates agentic terminal coding. Anthropic reports results using the mini-SWE-agent harness and a GKE backend, measured as mean reward across five attempts per task.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.433,
+      "normalized_score": 0.433,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Agentic terminal coding. Anthropic's internal run on the mini-SWE-agent harness and a GKE backend; mean reward over five attempts per task. Opus 4.8 was the fallback for safety-classifier refusals.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode",
+      "name": "FrontierCode",
+      "description": "FrontierCode is Cognition's coding evaluation that tests whether models can pass difficult coding tasks while meeting the standards of high-quality production codebases. The Diamond subset contains the hardest problems.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.534,
+      "normalized_score": 0.534,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "FrontierCode v1.1 Main subset.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "name": "FrontierCode 1.1",
+      "description": "FrontierCode 1.1 evaluates whether coding-agent changes are mergeable, using unit tests, maintainer-defined rubrics, and verifiers. Runs flagged for unfair internet use receive a zero score.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.534,
+      "normalized_score": 0.534,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://cognition.com/frontiercode",
+      "analysis_method": "FrontierCode 1.1 current leaderboard; mergeability score at medium effort: 53.4%.",
+      "verification_date": null,
+      "verification_notes": "Pass rate: 58.9%; average cost per rollout: $4.30; average output tokens: 33.6k."
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
+      "categories": [
+        "reasoning",
+        "legal",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1861,
+      "normalized_score": 0.6203,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "GDPval-AA v2 Elo.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.598,
+      "normalized_score": 0.598,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "HealthBench Professional.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.647,
+      "normalized_score": 0.647,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Multidisciplinary reasoning with tools.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "legal-agent-benchmark",
+      "name": "Legal Agent Benchmark",
+      "description": "The Legal Agent Benchmark (LAB) is Harvey's open-source benchmark for evaluating AI agents on complex, long-horizon legal work. Tasks are scored under an all-pass standard against expert-curated rubrics, where a task passes only if every required rubric criterion (facts, conclusions, citations, structure, and analytical moves) passes.",
+      "categories": [
+        "reasoning",
+        "legal",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.117,
+      "normalized_score": 0.117,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Legal Agent Benchmark held-out set.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "name": "OSWorld 2.0",
+      "description": "OSWorld 2.0 is a benchmark of 108 long-horizon, real-world computer-use workflows spanning everyday and professional tasks. Each task is an end-to-end workflow that takes human users a median of about 1.6 hours, scored with a binary-completion metric, and targets challenges such as dynamic environments, cross-source reasoning, and implicit-state inference.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.706,
+      "normalized_score": 0.706,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
+      "analysis_method": "Computer use.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "anthropic",
+      "name": "Anthropic",
+      "website": "https://anthropic.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 5,
+        "cached_input_per_million": null,
+        "output_per_million": 25,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": 54.80051628672557,
+        "latency": 149.299
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark_name": "BrowseComp",
+      "models": [
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.912,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.908,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.904,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.901,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.875,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.869,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.863,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.862,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.859,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.849,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.7,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.69,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.688,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.67,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.67,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.59,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.54,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.54,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "benchmark_name": "FrontierCode 1.1",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.535,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.534,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.475,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.465,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.43,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.427,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.424,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.413,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.398,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.385,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 1861,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 1815,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 1747.8,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 1668,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 1638,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 1618,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 1606,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 1593,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 1591.8,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 1543,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.647,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.647,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.645,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.621,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.584,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.579,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.574,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.572,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.56,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.557,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "legal-agent-benchmark",
+      "benchmark_name": "Legal Agent Benchmark",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.133,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.117,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.071,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.058,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.054,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.042,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.021,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.008,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.004,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_name": "Gemini 3.1 Flash-Lite",
+          "score": 0,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4-mini",
+          "model_name": "GPT-5.4 mini",
+          "score": 0,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "anthropic/claude-opus-5"
+}

@@ -44,12 +44,51 @@
   },
   "benchmarks": [
     {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.31,
+      "normalized_score": 0.31,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://deepswe.datacurve.ai/",
+      "analysis_method": "DeepSWE v1.1 leaderboard, mini-swe-agent harness; Pass@1 31% ± 1%.",
+      "verification_date": null,
+      "verification_notes": "113 tasks. Average cost per task: $2.82; average output tokens: 59k; average agent steps: 149."
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "name": "FrontierCode 1.1",
+      "description": "FrontierCode 1.1 evaluates whether coding-agent changes are mergeable, using unit tests, maintainer-defined rubrics, and verifiers. Runs flagged for unfair internet use receive a zero score.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.301,
+      "normalized_score": 0.301,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://cognition.com/frontiercode",
+      "analysis_method": "FrontierCode 1.1 current leaderboard; mergeability score: 30.1%.",
+      "verification_date": null,
+      "verification_notes": "Pass rate: 33.6%; average cost per rollout: $3.01; average output tokens: 43.9k."
+    },
+    {
       "benchmark_id": "kimi-claw-24-7-bench",
       "name": "Kimi Claw 24/7 Bench",
       "description": "Kimi Claw 24/7 Bench is Moonshot AI's in-house benchmark for evaluating long-horizon agentic performance in persistent, multi-day coworking tasks. It spans 17 professional scenarios across 610 evaluation points, covering software engineering, ML research, recruiting, trading, and marketing tasks executed through the OpenClaw harness.",
       "categories": [
         "agents",
-        "coding"
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -68,7 +107,7 @@
       "description": "Kimi Code Bench v2 is Moonshot AI's in-house benchmark for evaluating coding agents on realistic software engineering tasks across 10+ mainstream programming languages and a production tech stack spanning backend services, infrastructure, performance engineering, systems programming, security, frontend development, and ML/data engineering.",
       "categories": [
         "agents",
-        "coding"
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -148,7 +187,7 @@
       "categories": [
         "reasoning",
         "agents",
-        "coding"
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -167,7 +206,7 @@
       "description": "Program Bench evaluates code-generation agents by asking them to recreate a program's behavior from only a compiled binary and documentation. It spans 200 tasks from small CLI tools to large systems such as FFmpeg and SQLite, with submissions judged against more than 248,000 fuzz-generated behavioral tests.",
       "categories": [
         "agents",
-        "coding"
+        "code"
       ],
       "modality": "text",
       "max_score": 1,
@@ -205,8 +244,8 @@
         "max_output_tokens": 131072
       },
       "performance": {
-        "throughput": 15.697136346323541,
-        "latency": 0.98475
+        "throughput": 81.90551987306888,
+        "latency": 82.73695
       },
       "features": {
         "web_search": null,
@@ -254,8 +293,8 @@
         "max_output_tokens": 131072
       },
       "performance": {
-        "throughput": 105.39870896140071,
-        "latency": 16.854199999999985
+        "throughput": 22.79954019239655,
+        "latency": null
       },
       "features": {
         "web_search": null,
@@ -303,8 +342,8 @@
         "max_output_tokens": 262144
       },
       "performance": {
-        "throughput": 13.3504751312687,
-        "latency": 2.9328
+        "throughput": null,
+        "latency": null
       },
       "features": {
         "web_search": null,
@@ -352,8 +391,8 @@
         "max_output_tokens": 262144
       },
       "performance": {
-        "throughput": 171.45359505525684,
-        "latency": 1.4923
+        "throughput": 160.23608918351465,
+        "latency": 1.9456999999999998
       },
       "features": {
         "web_search": null,
@@ -401,8 +440,8 @@
         "max_output_tokens": 131072
       },
       "performance": {
-        "throughput": 416.2355492642629,
-        "latency": 0.42484999999999995
+        "throughput": 119.1900458315976,
+        "latency": 0.38075
       },
       "features": {
         "web_search": null,
@@ -429,6 +468,172 @@
     }
   ],
   "benchmark_rankings": [
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.7,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.69,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.688,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.67,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.67,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.59,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.54,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.54,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.7-code",
+          "model_name": "Kimi K2.7 Code",
+          "score": 0.31,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "benchmark_name": "FrontierCode 1.1",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.535,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.534,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.475,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.465,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.43,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.427,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.424,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.413,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.398,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.385,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.7-code",
+          "model_name": "Kimi K2.7 Code",
+          "score": 0.301,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
     {
       "benchmark_id": "livebench",
       "benchmark_name": "LiveBench",
@@ -490,15 +695,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-instruct-0905",
-          "model_name": "Kimi K2-Instruct-0905",
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
           "score": 0.764,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-instruct",
-          "model_name": "Kimi K2 Instruct",
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
           "score": 0.764,
           "rank": 9,
           "is_current_model": false
