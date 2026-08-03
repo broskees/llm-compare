@@ -416,8 +416,8 @@
       "name": "GDPval-AA",
       "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
       "categories": [
-        "reasoning",
         "legal",
+        "reasoning",
         "finance",
         "general",
         "agents"
@@ -480,9 +480,9 @@
       "name": "Graphwalks BFS >128k",
       "description": "A graph reasoning benchmark that evaluates language models' ability to perform breadth-first search (BFS) operations on graphs with context length over 128k tokens, testing long-context reasoning capabilities.",
       "categories": [
+        "long_context",
         "reasoning",
-        "spatial_reasoning",
-        "long_context"
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -500,9 +500,9 @@
       "name": "Graphwalks BFS 1M",
       "description": "GraphWalks BFS variant evaluated on 1M-token contexts.",
       "categories": [
+        "long_context",
         "reasoning",
-        "spatial_reasoning",
-        "long_context"
+        "spatial_reasoning"
       ],
       "modality": "text",
       "max_score": 1,
@@ -737,8 +737,8 @@
       "name": "MRCR v2 (8-needle)",
       "description": "MRCR v2 (8-needle) is a variant of the Multi-Round Coreference Resolution benchmark that includes 8 needle items to retrieve from long contexts. This tests models' ability to simultaneously track and reason about multiple pieces of information across extended conversations.",
       "categories": [
-        "reasoning",
         "long_context",
+        "reasoning",
         "general"
       ],
       "modality": "text",
@@ -757,8 +757,8 @@
       "name": "MRCR v2 (8-needle, 512K-1M)",
       "description": "MRCR v2 8-needle variant evaluated on contexts from 512K to 1M tokens.",
       "categories": [
-        "reasoning",
         "long_context",
+        "reasoning",
         "general"
       ],
       "modality": "text",
@@ -965,7 +965,7 @@
       "deprecated_at": null,
       "pricing": {
         "input_per_million": 2.5,
-        "cached_input_per_million": null,
+        "cached_input_per_million": 0.25,
         "output_per_million": 15,
         "per_image": null,
         "per_second_video_720p": null,
@@ -980,8 +980,8 @@
         "max_output_tokens": 128000
       },
       "performance": {
-        "throughput": 93.87777745587813,
-        "latency": 2.7614499999999995
+        "throughput": 27.67000461505682,
+        "latency": 3.3554999999999993
       },
       "features": {
         "web_search": null,
@@ -1124,15 +1124,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.6-luna",
-          "model_name": "GPT-5.6 Luna",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.67,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
           "score": 0.67,
           "rank": 6,
           "is_current_model": false
@@ -1290,13 +1290,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
-          "score": 0.267,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
           "model_id": "gpt-5.1-2025-11-13",
           "model_name": "GPT-5.1",
           "score": 0.267,
@@ -1306,6 +1299,13 @@
         {
           "model_id": "gpt-5.1-thinking-2025-11-12",
           "model_name": "GPT-5.1 Thinking",
+          "score": 0.267,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.267,
           "rank": 8,
           "is_current_model": false
@@ -1393,15 +1393,15 @@
       "benchmark_name": "GPQA",
       "models": [
         {
-          "model_id": "gpt-5.6-sol",
-          "model_name": "GPT-5.6 Sol",
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
           "score": 0.946,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "claude-mythos-preview",
-          "model_name": "Claude Mythos Preview",
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
           "score": 0.946,
           "rank": 1,
           "is_current_model": false
@@ -1421,15 +1421,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-8",
-          "model_name": "Claude Opus 4.8",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.936,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
           "score": 0.936,
           "rank": 5,
           "is_current_model": false
@@ -1822,23 +1822,23 @@
           "is_current_model": false
         },
         {
+          "model_id": "deepseek-v4-flash-0731",
+          "model_name": "DeepSeek-V4-Flash-0731",
+          "score": 0.827,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "muse-spark-1.1",
           "model_name": "Muse Spark 1.1",
           "score": 0.8,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3.6-flash",
           "model_name": "Gemini 3.6 Flash",
           "score": 0.78,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "hy3",
-          "model_name": "Hy3",
-          "score": 0.717,
           "rank": 10,
           "is_current_model": false
         }
@@ -1863,59 +1863,66 @@
           "is_current_model": false
         },
         {
+          "model_id": "deepseek-v4-flash-0731",
+          "model_name": "DeepSeek-V4-Flash-0731",
+          "score": 0.703,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-opus-4-8",
           "model_name": "Claude Opus 4.8",
           "score": 0.599,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.6-sol",
           "model_name": "GPT-5.6 Sol",
           "score": 0.58,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "gemini-3.5-flash",
           "model_name": "Gemini 3.5 Flash",
           "score": 0.565,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.5",
           "model_name": "GPT-5.5",
           "score": 0.556,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.4",
           "model_name": "GPT-5.4",
           "score": 0.546,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "claude-sonnet-5",
           "model_name": "Claude Sonnet 5",
           "score": 0.543,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.6-luna",
           "model_name": "GPT-5.6 Luna",
           "score": 0.534,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.6-terra",
           "model_name": "GPT-5.6 Terra",
           "score": 0.531,
-          "rank": 10,
+          "rank": 11,
           "is_current_model": true
         }
       ]
