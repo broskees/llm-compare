@@ -195,28 +195,6 @@
       "verification_notes": "Pass rate: 58.9%; average cost per rollout: $4.30; average output tokens: 33.6k."
     },
     {
-      "benchmark_id": "gdpval-aa",
-      "name": "GDPval-AA",
-      "description": "GDPval-AA is an evaluation of AI model performance on economically valuable knowledge work tasks across professional domains including finance, legal, and other sectors. Run independently by Artificial Analysis, it uses Elo scoring to rank models on real-world work task performance.",
-      "categories": [
-        "legal",
-        "reasoning",
-        "finance",
-        "general",
-        "agents"
-      ],
-      "modality": "text",
-      "max_score": 3000,
-      "score": 1861,
-      "normalized_score": 0.6203,
-      "verified": false,
-      "self_reported": true,
-      "self_reported_source": "https://www.anthropic.com/news/claude-opus-5",
-      "analysis_method": "GDPval-AA v2 Elo.",
-      "verification_date": null,
-      "verification_notes": null
-    },
-    {
       "benchmark_id": "healthbench-professional",
       "name": "HealthBench Professional",
       "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
@@ -305,7 +283,8 @@
       "deprecated_at": null,
       "pricing": {
         "input_per_million": 5,
-        "cached_input_per_million": null,
+        "cached_input_per_million": 0.5,
+        "cache_write_per_million": 10,
         "output_per_million": 25,
         "per_image": null,
         "per_second_video_720p": null,
@@ -320,8 +299,8 @@
         "max_output_tokens": 128000
       },
       "performance": {
-        "throughput": 0.6598454834048209,
-        "latency": 107.2690999999999
+        "throughput": 0.6315122224289332,
+        "latency": 54.285499999999836
       },
       "features": {
         "web_search": null,
@@ -436,15 +415,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-fable-5",
-          "model_name": "Claude Fable 5",
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
           "score": 0.7,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.6-terra",
-          "model_name": "GPT-5.6 Terra",
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
           "score": 0.7,
           "rank": 2,
           "is_current_model": false
@@ -464,15 +443,15 @@
           "is_current_model": true
         },
         {
-          "model_id": "gpt-5.6-luna",
-          "model_name": "GPT-5.6 Luna",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.67,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
           "score": 0.67,
           "rank": 6,
           "is_current_model": false
@@ -485,17 +464,24 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.566,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-sonnet-5",
           "model_name": "Claude Sonnet 5",
           "score": 0.54,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "grok-4.5",
           "model_name": "Grok 4.5",
           "score": 0.54,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         }
       ]
@@ -577,98 +563,22 @@
       ]
     },
     {
-      "benchmark_id": "gdpval-aa",
-      "benchmark_name": "GDPval-AA",
-      "models": [
-        {
-          "model_id": "claude-opus-5",
-          "model_name": "Claude Opus 5",
-          "score": 1861,
-          "rank": 1,
-          "is_current_model": true
-        },
-        {
-          "model_id": "claude-fable-5",
-          "model_name": "Claude Fable 5",
-          "score": 1815,
-          "rank": 2,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.6-sol",
-          "model_name": "GPT-5.6 Sol",
-          "score": 1747.8,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k3",
-          "model_name": "Kimi K3",
-          "score": 1668,
-          "rank": 4,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-8",
-          "model_name": "Claude Opus 4.8",
-          "score": 1638,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-sonnet-5",
-          "model_name": "Claude Sonnet 5",
-          "score": 1618,
-          "rank": 6,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
-          "score": 1606,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.6-terra",
-          "model_name": "GPT-5.6 Terra",
-          "score": 1593,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.6-luna",
-          "model_name": "GPT-5.6 Luna",
-          "score": 1591.8,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "grok-4.5",
-          "model_name": "Grok 4.5",
-          "score": 1543,
-          "rank": 10,
-          "is_current_model": false
-        }
-      ]
-    },
-    {
       "benchmark_id": "humanity's-last-exam",
       "benchmark_name": "Humanity's Last Exam",
       "models": [
-        {
-          "model_id": "claude-opus-5",
-          "model_name": "Claude Opus 5",
-          "score": 0.647,
-          "rank": 1,
-          "is_current_model": true
-        },
         {
           "model_id": "claude-mythos-preview",
           "model_name": "Claude Mythos Preview",
           "score": 0.647,
           "rank": 1,
           "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.647,
+          "rank": 1,
+          "is_current_model": true
         },
         {
           "model_id": "claude-fable-5",
@@ -803,8 +713,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3-flash-preview",
-          "model_name": "Gemini 3 Flash",
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
           "score": 0,
           "rank": 10,
           "is_current_model": false
@@ -817,8 +727,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.1-pro-preview",
-          "model_name": "Gemini 3.1 Pro",
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
           "score": 0,
           "rank": 10,
           "is_current_model": false
