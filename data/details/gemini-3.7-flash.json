@@ -1,0 +1,989 @@
+{
+  "model_id": "gemini-3.7-flash",
+  "name": "Gemini 3.7 Flash",
+  "model_type": "llm",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "Google's most intelligent Flash workhorse yet for coding and agents. Ships ~3 weeks after Gemini 3.6 Flash with gains on debugging/issue resolution, first-pass code accuracy, FrontierCode 1.1 Main (43.6% vs 3.6's 34.4%), and DeepSWE v1.1 (65.3% vs 48.6%). WebDev Arena Elo 1588 vs 1538; GDP.pdf 34.0% vs 22.0%; AutomationBench 30.4% vs 17.0%. Text/image/video/audio/PDF in, text out; 1M context / 65,536 max output. Powers Gemini Spark for Pro/Ultra. Intro pricing is half of original 3.6 Flash ($0.75/$3.75 per 1M input/output tokens) through 2026-12-31; list price $1.50/$7.50 applies starting 2027-01-01.",
+  "release_date": "2026-08-13",
+  "announcement_date": "2026-08-13",
+  "multimodal": true,
+  "knowledge_cutoff": "2026-03-31",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": null,
+  "sources": {
+    "api_ref": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash",
+    "playground": "https://aistudio.google.com/",
+    "paper": null,
+    "scorecard_blog": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.263,
+      "normalized_score": 0.263,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "Pass rate",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "artificial-analysis",
+      "name": "Artificial Analysis",
+      "description": "Artificial Analysis benchmark evaluates AI models across quality, speed, and pricing dimensions, providing a composite assessment of model capabilities for real-world usage.",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.56,
+      "normalized_score": 0.56,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "Artificial Analysis Intelligence Index. Score 56.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.304,
+      "normalized_score": 0.304,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "analysis_method": "Private set",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "biomysterybench",
+      "name": "BioMysteryBench",
+      "description": "BioMysteryBench evaluates a model's ability to reason through challenging molecular biology problems, reporting performance on a hard subset and on the subset of problems solved by human experts.",
+      "categories": [
+        "reasoning",
+        "science",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.435,
+      "normalized_score": 0.435,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "Human difficult",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "charxiv-r",
+      "name": "CharXiv-R",
+      "description": "CharXiv-R is the reasoning component of the CharXiv benchmark, focusing on complex reasoning questions that require synthesizing information across visual chart elements. It evaluates multimodal large language models on their ability to understand and reason about scientific charts from arXiv papers through various reasoning tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.887,
+      "normalized_score": 0.887,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "With tools",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.653,
+      "normalized_score": 0.653,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "analysis_method": "DeepSWE v1.1",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "name": "FrontierCode 1.1",
+      "description": "FrontierCode 1.1 evaluates whether coding-agent changes are mergeable, using unit tests, maintainer-defined rubrics, and verifiers. Runs flagged for unfair internet use receive a zero score.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.436,
+      "normalized_score": 0.436,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "analysis_method": "FrontierCode 1.1 Main",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdp-pdf",
+      "name": "GDP.pdf",
+      "description": "GDP.pdf is a knowledge-work vision benchmark that evaluates models on economically valuable professional tasks presented as visual documents (PDFs), testing document-based reasoning, chart and table interpretation, and problem solving without tools.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.34,
+      "normalized_score": 0.34,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "analysis_method": "Expert PDF document comprehension",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA evaluates AI agents on economically valuable professional knowledge-work tasks and reports performance as an Elo score.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1525,
+      "normalized_score": 0.508,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "GDPval-AA v2 Elo (max_score 3000).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "harvey-lab-aa",
+      "name": "Harvey LAB-AA",
+      "description": "Harvey LAB-AA evaluates model performance on complex legal workflows.",
+      "categories": [
+        "knowledge",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.907,
+      "normalized_score": 0.907,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "Harvey LAB-AA; complex legal workflows.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hle-verified",
+      "name": "HLE-Verified",
+      "description": "HLE-Verified evaluates multidisciplinary expert reasoning on a verified subset of Humanity's Last Exam.",
+      "categories": [
+        "reasoning",
+        "knowledge"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.536,
+      "normalized_score": 0.536,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "HLE-Verified; multidisciplinary expert reasoning.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "labbench2",
+      "name": "LABBench2",
+      "description": "LABBench2 evaluates models on real-world biology research tasks.",
+      "categories": [
+        "reasoning",
+        "science",
+        "agents",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.821,
+      "normalized_score": 0.821,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "LABBench2; biology real-world research tasks.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lvbench",
+      "name": "LVBench",
+      "description": "LVBench is an extreme long video understanding benchmark designed to evaluate multimodal models on videos up to two hours in duration. It contains 6 major categories and 21 subcategories, with videos averaging five times longer than existing datasets. The benchmark addresses applications requiring comprehension of extremely long videos.",
+      "categories": [
+        "long_context",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.854,
+      "normalized_score": 0.854,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "Long video understanding",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "name": "MRCR v2 (8-needle)",
+      "description": "MRCR v2 (8-needle) is a variant of the Multi-Round Coreference Resolution benchmark that includes 8 needle items to retrieve from long contexts. This tests models' ability to simultaneously track and reason about multiple pieces of information across extended conversations.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.97,
+      "normalized_score": 0.97,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "128k cumulative average",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "name": "OSWorld 2.0",
+      "description": "OSWorld 2.0 is a benchmark of 108 long-horizon, real-world computer-use workflows spanning everyday and professional tasks. Each task is an end-to-end workflow that takes human users a median of about 1.6 hours, scored with a binary-completion metric, and targets challenges such as dynamic environments, cross-source reasoning, and implicit-state inference.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.479,
+      "normalized_score": 0.479,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "Agentic computer use",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.858,
+      "normalized_score": 0.858,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "Agentic terminal coding",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-3.0",
+      "name": "Terminal-Bench 3.0",
+      "description": "Terminal-Bench 3.0 is a release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal on real-world, end-to-end tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.149,
+      "normalized_score": 0.149,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-3-7-flash/",
+      "analysis_method": "General agent capabilities",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "webdev-arena",
+      "name": "WebDev Arena",
+      "description": "WebDev Arena is a leaderboard for evaluating AI models on web development tasks, including zero-shot generation, complex prompts, and interactive web UI creation. Models are ranked using Elo ratings based on their performance in coding and web development challenges.",
+      "categories": [
+        "reasoning",
+        "frontend_development",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 2000,
+      "score": 1588,
+      "normalized_score": 0.794,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "analysis_method": "Arena.ai WebDev Arena Elo (blog); model card lists the same Elo under Code Arena.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "google",
+      "name": "Google",
+      "website": "https://ai.google.dev",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.75,
+        "cached_input_per_million": null,
+        "cache_write_per_million": null,
+        "output_per_million": 3.75,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 65536
+      },
+      "performance": {
+        "throughput": 12.65240051066044,
+        "latency": 8.9554
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.482,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.318,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.308,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.304,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.273,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.26,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0731",
+          "model_name": "DeepSeek-V4-Flash-0731",
+          "score": 0.251,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.181,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.174,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.152,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "charxiv-r",
+      "benchmark_name": "CharXiv-R",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.932,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.913,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.91,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.902,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.899,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.6-flash",
+          "model_name": "Gemini 3.6 Flash",
+          "score": 0.894,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.887,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.884,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.883,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.867,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.7,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.69,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.688,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.67,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.67,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.669,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.6",
+          "model_name": "Grok 4.6",
+          "score": 0.659,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.653,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "benchmark_name": "FrontierCode 1.1",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.535,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.534,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.475,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.465,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.436,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.43,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.427,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.424,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.413,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.398,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "lvbench",
+      "benchmark_name": "LVBench",
+      "models": [
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.854,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.818,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.78,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.768,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.762,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.759,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.744,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.736,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.714,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-35b-a3b",
+          "model_name": "Qwen3.6-35B-A3B",
+          "score": 0.714,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "benchmark_name": "MRCR v2 (8-needle)",
+      "models": [
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.97,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.929,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.915,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.896,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.76,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.74,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.664,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_name": "Gemini 3.1 Flash-Lite",
+          "score": 0.601,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.6-flash",
+          "model_name": "Gemini 3.6 Flash",
+          "score": 0.54,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-26b-a4b-it",
+          "model_name": "Gemma 4 26B-A4B",
+          "score": 0.441,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.866,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.858,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.847,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.843,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.833,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "google/gemini-3.7-flash"
+}

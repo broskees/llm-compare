@@ -1,0 +1,66 @@
+{
+  "model_id": "shieldstral-1.0-3b",
+  "name": "Shieldstral 1.0 (3B)",
+  "model_type": "llm",
+  "organization": {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai"
+  },
+  "description": "Shieldstral is a 3B open-weight multimodal safety classifier from Mistral. It frames content moderation as policy-adaptive yes/no question answering: plain-language policies are supplied at inference time, and the model returns a calibrated safety score from a single forward pass for text, image, or text+image content. Released under Apache 2.0. Aggregate self-reported average F1: text-safety 0.849, multimodal 0.838 (HF mistralai/Shieldstral-1.0-3B / arXiv 2607.25857); per-bench WildGuard/HarmBench/ToxicChat/BeaverTails/Aegis/VLGuard ids are not in the catalog.",
+  "release_date": "2026-08-04",
+  "announcement_date": "2026-08-04",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 3000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "apache_2_0",
+    "name": "Apache 2.0",
+    "allow_commercial": true,
+    "description": "Apache License 2.0 - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": {
+    "id": "ministral-3-3b-base-2512",
+    "name": "Ministral 3 (3B Base 2512)"
+  },
+  "tags": {
+    "moe": "false",
+    "thinking": "false"
+  },
+  "sources": {
+    "api_ref": null,
+    "playground": null,
+    "paper": "https://arxiv.org/abs/2607.25857",
+    "scorecard_blog": "https://mistral.ai/news/shieldstral/",
+    "repo": null,
+    "weights": "https://huggingface.co/mistralai/Shieldstral-1.0-3B"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "xstest",
+      "name": "XSTest",
+      "description": "XSTest is a test suite designed to identify exaggerated safety behaviours in large language models. It comprises 450 prompts: 250 safe prompts across ten prompt types that well-calibrated models should not refuse to comply with, and 200 unsafe prompts as contrasts that models should refuse. The benchmark systematically evaluates whether models refuse to respond to clearly safe prompts due to overly cautious safety mechanisms.",
+      "categories": [
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.946,
+      "normalized_score": 0.946,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/mistralai/Shieldstral-1.0-3B",
+      "analysis_method": "Refusal detection F1 on XSTest (HF table); threshold 0.5. Not XSTest Harm response-classification (93.5).",
+      "verification_date": null,
+      "verification_notes": "From HF model card Refusal detection table: XSTest 94.6 for Shieldstral-3B (distinct from XSTest Harm 93.5 under Response classification, and from GPT-OSS RTP-LX Completion 94.6). Catalog lacks wildguard/harmbench/toxicchat/beavertails/aegis/vlguard ids; only xstest matched."
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [],
+  "comparison_model": null
+}

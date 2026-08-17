@@ -1,0 +1,756 @@
+{
+  "model_id": "lfm-2.5-2.6b",
+  "name": "LFM2.5-2.6B",
+  "model_type": "llm",
+  "organization": {
+    "id": "liquid",
+    "name": "Liquid AI",
+    "website": "https://www.liquid.ai"
+  },
+  "description": "LFM2.5-2.6B is Liquid AI's open-weight 2.6B dense hybrid text→text model (LFM2 architecture) post-trained for on-device agentic workloads: planning, native tool calling, and multi-step tasks. ~2.69B parameters, trained on ~34T tokens, 128K context (131,072 tokens), 128K vocabulary. Always thinks before answering. Day-one support for Transformers, vLLM, SGLang, llama.cpp, MLX, and ONNX. Hugging Face: LiquidAI/LFM2.5-2.6B (+ Base). License: LFM Open License v1.0 (lfm1.0). Catalog benches include AIME25, LiveCodeBench v6, IFBench, Multi-IF, BFCL-v4, PinchBench, Claw-Eval, τ³-Banking 0.0567 (Liquid harness; scale differs from some AA τ³ rows), and aa-omniscience-index −29.50 (signed). No catalog id for ToolSandbox 77.83, BrowseComp+ (OpenClaw) 26.89, or IFStruct 85.49 — recorded here only. Sources: https://www.liquid.ai/blog/lfm2-5-2-6b · https://huggingface.co/LiquidAI/LFM2.5-2.6B. No official hosted provider row in this catalog (no sibling Liquid/OpenRouter provider pattern present); OpenRouter free route liquid/lfm-2.5-2.6b:free exists externally but was not added.",
+  "release_date": "2026-08-04",
+  "announcement_date": "2026-08-04",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 2690000000,
+  "training_tokens": 34000000000000,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "lfm1_0",
+    "name": "LFM Open License v1.0",
+    "allow_commercial": true,
+    "description": "Liquid AI LFM Open License v1.0 — open weights with a commercial-use threshold (annual revenue $10M+ requires a separate commercial license; qualified non-profits exempt for non-commercial/research use)."
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": null,
+    "playground": null,
+    "paper": "https://arxiv.org/abs/2511.23404",
+    "scorecard_blog": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+    "repo": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+    "weights": "https://huggingface.co/LiquidAI/LFM2.5-2.6B"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-omniscience-index",
+      "name": "AA-Omniscience Index",
+      "description": "AA-Omniscience Index is Artificial Analysis's knowledge-reliability metric. It rewards correct answers, penalizes hallucinations, and does not penalize abstention. Scores range from -100 to 100, where 0 means as many correct as incorrect answers.",
+      "categories": [
+        "reasoning",
+        "science",
+        "knowledge"
+      ],
+      "modality": "text",
+      "max_score": 200,
+      "score": -29.5,
+      "normalized_score": null,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table (AA-Omniscience-Public); catalog id aa-omniscience-index (signed index −100..100)",
+      "verification_date": null,
+      "verification_notes": "Self-reported −29.50. No prior sibling model rows for this id; encoding follows catalog description (signed index). Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "name": "AIME 2025",
+      "description": "All 30 problems from the 2025 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5187,
+      "normalized_score": 0.5187,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table (AIME25)",
+      "verification_date": null,
+      "verification_notes": "Self-reported 51.87. Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "bfcl-v4",
+      "name": "BFCL-V4",
+      "description": "Berkeley Function Calling Leaderboard V4 (BFCL-V4) evaluates LLMs on their ability to accurately call functions and APIs, including simple, multiple, parallel, and nested function calls across diverse programming scenarios.",
+      "categories": [
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5688,
+      "normalized_score": 0.5688,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table (BFCLv4); temperature=0.001, max output 4096",
+      "verification_date": null,
+      "verification_notes": "Self-reported 56.88. Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "claw-eval",
+      "name": "Claw-Eval",
+      "description": "Claw-Eval tests real-world agentic task completion across complex multi-step scenarios, evaluating a model's ability to use tools, navigate environments, and complete end-to-end tasks autonomously.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6285,
+      "normalized_score": 0.6285,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table; Claw-Eval average (EN)",
+      "verification_date": null,
+      "verification_notes": "Self-reported 62.85. Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "ifbench",
+      "name": "IFBench",
+      "description": "Instruction Following Benchmark evaluating model's ability to follow complex instructions",
+      "categories": [
+        "instruction_following",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5917,
+      "normalized_score": 0.5917,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table",
+      "verification_date": null,
+      "verification_notes": "Self-reported 59.17. Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "name": "LiveCodeBench v6",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5941,
+      "normalized_score": 0.5941,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table (LiveCodeBenchv6)",
+      "verification_date": null,
+      "verification_notes": "Self-reported 59.41. Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "multi-if",
+      "name": "Multi-IF",
+      "description": "Multi-IF benchmarks LLMs on multi-turn and multilingual instruction following. It expands upon IFEval by incorporating multi-turn sequences and translating English prompts into 7 other languages, resulting in 4,501 multilingual conversations with three turns each. The benchmark reveals that current leading LLMs struggle with maintaining accuracy in multi-turn instructions and shows higher error rates for non-Latin script languages.",
+      "categories": [
+        "reasoning",
+        "structured_output",
+        "instruction_following",
+        "language",
+        "communication"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8007,
+      "normalized_score": 0.8007,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table",
+      "verification_date": null,
+      "verification_notes": "Self-reported 80.07. Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "pinchbench",
+      "name": "PinchBench",
+      "description": "PinchBench evaluates coding agents on real-world agentic coding tasks, measuring both best-case and average performance across complex software engineering scenarios.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6822,
+      "normalized_score": 0.6822,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Vendor table; temperature=0.6, max output 8192",
+      "verification_date": null,
+      "verification_notes": "Self-reported 68.22. Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "name": "Tau3 Banking",
+      "description": "τ³-Bench banking domain evaluates agentic models on multi-turn, tool-using customer-support scenarios in a simulated retail banking environment.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.0567,
+      "normalized_score": 0.0567,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "analysis_method": "Liquid harness (vendor table τ³-Bench Banking); temperature=0, no output limit. Scale differs from some AA-reported τ³-Banking rows.",
+      "verification_date": null,
+      "verification_notes": "Self-reported 5.67 on Liquid blog table → stored as 0.0567 (0–1). Also listed on https://huggingface.co/LiquidAI/LFM2.5-2.6B."
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2025",
+      "benchmark_name": "AIME 2025",
+      "models": [
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.9979,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.997,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-nano-30b-a3b",
+          "model_name": "Nemotron 3 Nano (30B A3B)",
+          "score": 0.992,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.5187,
+          "rank": 100,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "bfcl-v4",
+      "benchmark_name": "BFCL-V4",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.75,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.729,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.729,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.722,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.685,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.673,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-9b",
+          "model_name": "Qwen3.5-9B",
+          "score": 0.661,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.616,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-lite",
+          "model_name": "Nova 2 Lite",
+          "score": 0.603,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-omni",
+          "model_name": "Nova 2 Omni",
+          "score": 0.583,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.5688,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "claw-eval",
+      "benchmark_name": "Claw-Eval",
+      "models": [
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.809,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5v-turbo",
+          "model_name": "GLM-5V-Turbo",
+          "score": 0.75,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m3",
+          "model_name": "MiniMax M3",
+          "score": 0.745,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.685,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.652,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.64,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5",
+          "model_name": "MiMo-V2.5",
+          "score": 0.632,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.6285,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.627,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.615,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifbench",
+      "benchmark_name": "IFBench",
+      "models": [
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.828,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.822,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.817,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8121,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.802,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.795,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.791,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.791,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.77,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.765,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.765,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.5917,
+          "rank": 29,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "benchmark_name": "LiveCodeBench v6",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.916,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sakana-namazu",
+          "model_name": "Sakana Namazu",
+          "score": 0.9033,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.903,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.896,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.896,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.89,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.878,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.877,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.871,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step-3.5-flash",
+          "model_name": "Step-3.5-Flash",
+          "score": 0.864,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.5941,
+          "rank": 40,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "multi-if",
+      "benchmark_name": "Multi-IF",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.806,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.8007,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.795,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.791,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.78,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.778,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.775,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.763,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.758,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-instruct",
+          "model_name": "Qwen3 VL 8B Instruct",
+          "score": 0.751,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.751,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3-pro-preview",
+    "name": "Gemini 3 Pro",
+    "organization_name": "Google",
+    "release_date": "2025-11-18",
+    "announcement_date": "2025-11-18",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "aime-2025": 1,
+      "arc-agi-v2": 0.311,
+      "charxiv-r": 0.814,
+      "facts-grounding": 0.705,
+      "global-piqa": 0.934,
+      "gpqa": 0.919,
+      "humanity's-last-exam": 0.458,
+      "livebench": 0.7339,
+      "livecodebench-pro": 2439,
+      "matharena-apex": 0.234,
+      "mmmlu": 0.918,
+      "mmmu-pro": 0.81,
+      "mrcr-v2-(8-needle)": 0.263,
+      "omnidocbench-1.5": 0.115,
+      "screenspot-pro": 0.727,
+      "simpleqa": 0.721,
+      "swe-bench-verified": 0.762,
+      "t2-bench": 0.854,
+      "terminal-bench-2": 0.542,
+      "vending-bench-2": 5478.16,
+      "videommmu": 0.876
+    },
+    "provider": null
+  }
+}

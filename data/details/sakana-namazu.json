@@ -1,0 +1,388 @@
+{
+  "model_id": "sakana-namazu",
+  "name": "Sakana Namazu",
+  "model_type": "llm",
+  "organization": {
+    "id": "sakana",
+    "name": "Sakana AI",
+    "website": "https://sakana.ai"
+  },
+  "description": "Sakana Namazu is Sakana AI's proprietary closed API model specialized for Japanese language and Japanese business contexts. It is a post-trained derivative of Moonshot's open Kimi K2.6 with in-house data for Japanese/business adaptation and reduced refusals/bias. Modalities: text, image, and file inputs → text output. Built-in tools include web_search and code_interpreter (code execution). Context window 256K. OpenAI-compatible API (model id sakana-namazu; pricing SKU sakana-namazu-v1.0). List pricing: $0.95 input / $0.15 cached input / $4.00 output per 1M tokens; thinking tokens billed as output. Tool fees (description only besides web_search field): web search $7.00 per 1,000 calls; code execution $0.12 per hour (session retained). Not yet available in the EU/EEA, UK, or Switzerland pending GDPR and region-specific compliance. Chart scores with catalog ids: AIME 2026 0.9667, MMLU-Pro 0.9033, LiveCodeBench v6 0.9033. No catalog id for JFBench 0.374, FairPoliticsQA 0.563, or in-house Translation 0.522 — recorded here only. Source: https://sakana.ai/namazu/",
+  "release_date": "2026-08-03",
+  "announcement_date": "2026-08-03",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": {
+    "id": "kimi-k2.6",
+    "name": "Kimi K2.6"
+  },
+  "tags": null,
+  "sources": {
+    "api_ref": "https://sakana.ai/namazu-api/",
+    "playground": "https://console.sakana.ai",
+    "paper": null,
+    "scorecard_blog": "https://sakana.ai/namazu-api/",
+    "repo": "https://sakana.ai/namazu/",
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aime-2026",
+      "name": "AIME 2026",
+      "description": "All 30 problems from the 2026 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9667,
+      "normalized_score": 0.9667,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://sakana.ai/namazu/",
+      "analysis_method": "Official Sakana Namazu performance chart vs Kimi K2.6 base",
+      "verification_date": null,
+      "verification_notes": "Self-reported 96.67 from sakana.ai/namazu chart."
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "name": "LiveCodeBench v6",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9033,
+      "normalized_score": 0.9033,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://sakana.ai/namazu/",
+      "analysis_method": "Official Sakana Namazu performance chart vs Kimi K2.6 base",
+      "verification_date": null,
+      "verification_notes": "Self-reported 90.33 from sakana.ai/namazu chart (LiveCodeBench v6)."
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "legal",
+        "math",
+        "reasoning",
+        "language",
+        "finance",
+        "general",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9033,
+      "normalized_score": 0.9033,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://sakana.ai/namazu/",
+      "analysis_method": "Official Sakana Namazu performance chart vs Kimi K2.6 base",
+      "verification_date": null,
+      "verification_notes": "Self-reported 90.33 from sakana.ai/namazu chart."
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "sakana",
+      "name": "Sakana AI",
+      "website": "https://console.sakana.ai/pricing",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.95,
+        "cached_input_per_million": 0.15,
+        "cache_write_per_million": null,
+        "output_per_million": 4,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2026",
+      "benchmark_name": "AIME 2026",
+      "models": [
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.992,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sakana-namazu",
+          "model_name": "Sakana Namazu",
+          "score": 0.9667,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.964,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.955,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-pro4",
+          "model_name": "Solar Pro 4",
+          "score": 0.953,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.953,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.953,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.947,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.945,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.942,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "benchmark_name": "LiveCodeBench v6",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.916,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sakana-namazu",
+          "model_name": "Sakana Namazu",
+          "score": 0.9033,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.903,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.896,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.896,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.89,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.878,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.877,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.871,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step-3.5-flash",
+          "model_name": "Step-3.5-Flash",
+          "score": 0.864,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "sakana-namazu",
+          "model_name": "Sakana Namazu",
+          "score": 0.9033,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.896,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.885,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.885,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.875,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.868,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "sakana/sakana-namazu"
+}
