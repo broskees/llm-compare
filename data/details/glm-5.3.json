@@ -7,14 +7,14 @@
     "name": "Zhipu AI",
     "website": "https://z.ai"
   },
-  "description": "GLM-5.3 is Z.AI's flagship post-trained model for complex coding, long-horizon agentic work, and cybersecurity tasks. It uses the same 753B-parameter base model as GLM-5.2, with its capability gains coming from post-training. The model supports a 1M-token context window and always-on thinking with low, high, and max reasoning-effort levels. Z.AI launched GLM-5.3 through ZCode and the GLM Coding Plan on August 14, 2026, and announced that open weights would follow after a two-week safety evaluation and hardening period.",
+  "description": "GLM-5.3 is Z.AI's flagship post-trained model for complex coding, long-horizon agentic work, and cybersecurity tasks. It uses the same 753B-parameter base model as GLM-5.2, with its capability gains coming from post-training. The text-only model supports a 1M-token context window, 128K maximum output, function calling, structured output, context caching, and always-on thinking with low, high, and max reasoning-effort levels. Z.AI launched GLM-5.3 through ZCode and the GLM Coding Plan on August 14, 2026, then published first-party API access and per-token pricing on August 18, while announcing that open weights would follow after a two-week safety evaluation and hardening period.",
   "release_date": "2026-08-14",
   "announcement_date": "2026-08-14",
   "multimodal": false,
   "knowledge_cutoff": null,
   "param_count": 753000000000,
   "training_tokens": null,
-  "available_in_zeroeval": false,
+  "available_in_zeroeval": true,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -362,8 +362,135 @@
       "verification_notes": null
     }
   ],
-  "providers": [],
+  "providers": [
+    {
+      "provider_id": "z",
+      "name": "ZAI",
+      "website": "https://zai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1.4,
+        "cached_input_per_million": 0.26,
+        "cache_write_per_million": null,
+        "output_per_million": 4.4,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
   "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.504,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.503,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.429,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.414,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.285,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.273,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.263,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.257,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
     {
       "benchmark_id": "automationbench",
       "benchmark_name": "AutomationBench",
@@ -411,30 +538,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.257,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "deepseek-v4-flash-0731",
           "model_name": "DeepSeek-V4-Flash-0731",
           "score": 0.251,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.6-sol",
           "model_name": "GPT-5.6 Sol",
           "score": 0.181,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "claude-fable-5",
           "model_name": "Claude Fable 5",
           "score": 0.174,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.6-terra",
-          "model_name": "GPT-5.6 Terra",
-          "score": 0.152,
           "rank": 10,
           "is_current_model": false
         }
@@ -528,15 +655,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.6-terra",
-          "model_name": "GPT-5.6 Terra",
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
           "score": 0.7,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "claude-fable-5",
-          "model_name": "Claude Fable 5",
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
           "score": 0.7,
           "rank": 2,
           "is_current_model": false
@@ -556,15 +683,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.6-luna",
-          "model_name": "GPT-5.6 Luna",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.67,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
           "score": 0.67,
           "rank": 6,
           "is_current_model": false
@@ -763,58 +890,58 @@
           "is_current_model": true
         },
         {
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.577,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.8-max",
           "model_name": "Qwen3.8 Max",
           "score": 0.559,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v4-flash-0731",
           "model_name": "DeepSeek-V4-Flash-0731",
           "score": 0.542,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "glm-5.2",
           "model_name": "GLM-5.2",
           "score": 0.489,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.7-max",
           "model_name": "Qwen3.7 Max",
           "score": 0.472,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.1-pro",
           "model_name": "Seed 2.1 Pro",
           "score": 0.47,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "hy3",
           "model_name": "Hy3",
           "score": 0.456,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.1-turbo",
           "model_name": "Seed 2.1 Turbo",
           "score": 0.437,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "glm-5.1",
-          "model_name": "GLM-5.1",
-          "score": 0.427,
           "rank": 10,
           "is_current_model": false
         }
@@ -888,9 +1015,9 @@
           "is_current_model": false
         },
         {
-          "model_id": "grok-4.5",
-          "model_name": "Grok 4.5",
-          "score": 0.833,
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.839,
           "rank": 10,
           "is_current_model": false
         }

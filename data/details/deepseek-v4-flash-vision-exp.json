@@ -1,42 +1,43 @@
 {
-  "model_id": "deepseek-v4-flash-0731",
-  "name": "DeepSeek-V4-Flash-0731",
+  "model_id": "deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek-V4-Flash-Vision-Exp",
   "model_type": "llm",
   "organization": {
     "id": "deepseek",
     "name": "DeepSeek",
     "website": "https://deepseek.com"
   },
-  "description": "DeepSeek-V4-Flash-0731 is the official release of DeepSeek-V4-Flash, superseding the preview version with substantially stronger agentic capabilities. It retains the V4-Flash architecture and adds an attached DSpark speculative-decoding module for faster inference. The open-weight model supports a 1M-token context window and low, high, and max reasoning-effort levels, and DeepSeek reports that it outperforms the much larger DeepSeek-V4-Pro Preview across its published agent benchmark suite.",
-  "release_date": "2026-07-31",
-  "announcement_date": "2026-07-31",
-  "multimodal": false,
+  "description": "DeepSeek-V4-Flash-Vision-Exp is an experimental multimodal vision-understanding model on the DeepSeek API (`model='deepseek-v4-flash-vision-exp'`). It accepts text and image inputs and produces text. DeepSeek reports pure-text agent, reasoning, and world-knowledge performance on par with official DeepSeek-V4-Flash, with a large jump on agent benchmarks that require visual understanding. Thinking mode is default and supports low / high / max effort; the model supports JSON output, tool calls, the Responses API, and the Anthropic API. FIM completion is not supported. Context length is 1M tokens with up to 384K max output. Same peak/off-peak token pricing as V4-Flash; images are converted to input tokens (upper bound 384 tokens per image after resize).",
+  "release_date": "2026-08-21",
+  "announcement_date": "2026-08-21",
+  "multimodal": true,
   "knowledge_cutoff": null,
-  "param_count": 304000000000,
+  "param_count": null,
   "training_tokens": null,
-  "available_in_zeroeval": true,
+  "available_in_zeroeval": false,
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
-    "id": "mit",
-    "name": "MIT",
-    "allow_commercial": true,
-    "description": "MIT License - allows commercial use"
+    "id": "unknown",
+    "name": "Unknown",
+    "allow_commercial": false,
+    "description": "Unknown license"
   },
   "model_family": null,
   "fine_tuned_from": null,
   "tags": {
-    "moe": "true",
+    "vision": "true",
     "thinking": "true",
-    "speculative_decoding": "true"
+    "experimental": "true",
+    "responses_api": "true"
   },
   "sources": {
-    "api_ref": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Flash-0731/api",
-    "playground": "https://deepinfra.com/deepseek-ai/DeepSeek-V4-Flash-0731",
-    "paper": "https://arxiv.org/abs/2606.19348",
-    "scorecard_blog": null,
-    "repo": "https://github.com/deepseek-ai/DeepSeek-V4",
-    "weights": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+    "api_ref": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "playground": null,
+    "paper": null,
+    "scorecard_blog": "https://api-docs.deepseek.com/updates/",
+    "repo": null,
+    "weights": null
   },
   "benchmarks": [
     {
@@ -50,12 +51,12 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.252,
-      "normalized_score": 0.252,
+      "score": 0.273,
+      "normalized_score": 0.273,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
-      "analysis_method": "DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
+      "self_reported_source": "https://api-docs.deepseek.com/updates/",
+      "analysis_method": "DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95. Changelog notes that the text model DeepSeek-V4-Flash ignores multimodal elements on ApexBench and Agents' Last Exam; vision-exp score is reported separately.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -70,32 +71,12 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.251,
-      "normalized_score": 0.251,
+      "score": 0.257,
+      "normalized_score": 0.257,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "self_reported_source": "https://api-docs.deepseek.com/updates/",
       "analysis_method": "Public set; DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
-      "verification_date": null,
-      "verification_notes": null
-    },
-    {
-      "benchmark_id": "cybergym",
-      "name": "CyberGym",
-      "description": "CyberGym is a benchmark for evaluating AI agents on cybersecurity tasks, testing their ability to identify vulnerabilities, perform security analysis, and complete security-related challenges in a controlled environment.",
-      "categories": [
-        "safety",
-        "agents",
-        "code"
-      ],
-      "modality": "text",
-      "max_score": 1,
-      "score": 0.767,
-      "normalized_score": 0.767,
-      "verified": false,
-      "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
-      "analysis_method": "DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -109,33 +90,14 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.544,
-      "normalized_score": 0.544,
+      "score": 0.593,
+      "normalized_score": 0.593,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "self_reported_source": "https://api-docs.deepseek.com/updates/",
       "analysis_method": "DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
       "verification_date": null,
       "verification_notes": null
-    },
-    {
-      "benchmark_id": "dsbench-fullstack",
-      "name": "DSBench-FullStack",
-      "description": "DSBench-FullStack is DeepSeek's internal full-stack development test set for evaluating coding agents on end-to-end software engineering tasks.",
-      "categories": [
-        "agents",
-        "code"
-      ],
-      "modality": "text",
-      "max_score": 1,
-      "score": 0.687,
-      "normalized_score": 0.687,
-      "verified": false,
-      "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
-      "analysis_method": "Internal full-stack development test set; DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
-      "verification_date": null,
-      "verification_notes": "Internal benchmark; no public implementation or test set is available."
     },
     {
       "benchmark_id": "dsbench-hard",
@@ -147,11 +109,11 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.596,
-      "normalized_score": 0.596,
+      "score": 0.636,
+      "normalized_score": 0.636,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "self_reported_source": "https://api-docs.deepseek.com/updates/",
       "analysis_method": "Internal difficult coding-agent test set; DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
       "verification_date": null,
       "verification_notes": "Internal benchmark; no public implementation or test set is available."
@@ -166,11 +128,11 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.542,
-      "normalized_score": 0.542,
+      "score": 0.577,
+      "normalized_score": 0.577,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "self_reported_source": "https://api-docs.deepseek.com/updates/",
       "analysis_method": "DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
       "verification_date": null,
       "verification_notes": null
@@ -187,148 +149,48 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.827,
-      "normalized_score": 0.827,
+      "score": 0.839,
+      "normalized_score": 0.839,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "self_reported_source": "https://api-docs.deepseek.com/updates/",
       "analysis_method": "DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
       "verification_date": null,
       "verification_notes": null
     },
     {
-      "benchmark_id": "toolathlon",
-      "name": "Toolathlon",
-      "description": "Tool Decathlon is a comprehensive benchmark for evaluating AI agents' ability to use multiple tools across diverse task categories. It measures proficiency in tool selection, sequencing, and execution across ten different tool-use scenarios.",
+      "benchmark_id": "zerobench",
+      "name": "ZEROBench",
+      "description": "ZEROBench is a challenging vision benchmark designed to test models on zero-shot visual understanding tasks.",
       "categories": [
+        "multimodal",
         "reasoning",
-        "agents",
-        "tool_calling"
+        "vision"
       ],
-      "modality": "text",
-      "max_score": 1,
-      "score": 0.703,
-      "normalized_score": 0.703,
+      "modality": "image",
+      "max_score": 100,
+      "score": 0.35,
+      "normalized_score": 0.35,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
-      "analysis_method": "Verified split; DeepSeek Harness minimal mode; max reasoning effort; temperature 1.0; top_p 0.95.",
+      "self_reported_source": "https://api-docs.deepseek.com/updates/",
+      "analysis_method": "Pass@5; self-reported on DeepSeek API changelog 2026-08-21.",
       "verification_date": null,
       "verification_notes": null
     }
   ],
   "providers": [
     {
-      "provider_id": "deepinfra",
-      "name": "DeepInfra",
-      "website": "https://deepinfra.com/",
+      "provider_id": "deepseek",
+      "name": "DeepSeek",
+      "website": "https://deepseek.com/",
       "deprecated": false,
       "deprecated_at": null,
       "pricing": {
-        "input_per_million": 0.09,
-        "cached_input_per_million": 0.018,
+        "input_per_million": 0.22,
+        "cached_input_per_million": 0.007,
         "cache_write_per_million": null,
-        "output_per_million": 0.18,
-        "per_image": null,
-        "per_second_video_720p": null,
-        "per_second_video_1080p": null,
-        "per_second_video_high": null,
-        "per_minute_audio": null,
-        "per_million_chars": null
-      },
-      "quantization": "fp4",
-      "limits": {
-        "max_input_tokens": 1048576,
-        "max_output_tokens": 65536
-      },
-      "performance": {
-        "throughput": 14.364814418098963,
-        "latency": 11.437749999999987
-      },
-      "features": {
-        "web_search": null,
-        "function_calling": null,
-        "structured_output": null,
-        "code_execution": null,
-        "batch_inference": null,
-        "finetuning": null
-      },
-      "modalities": {
-        "input": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    },
-    {
-      "provider_id": "novita",
-      "name": "Novita",
-      "website": "https://novita.ai/",
-      "deprecated": false,
-      "deprecated_at": null,
-      "pricing": {
-        "input_per_million": 0.14,
-        "cached_input_per_million": 0.028,
-        "cache_write_per_million": null,
-        "output_per_million": 0.28,
-        "per_image": null,
-        "per_second_video_720p": null,
-        "per_second_video_1080p": null,
-        "per_second_video_high": null,
-        "per_minute_audio": null,
-        "per_million_chars": null
-      },
-      "quantization": "fp8",
-      "limits": {
-        "max_input_tokens": 1048576,
-        "max_output_tokens": 393216
-      },
-      "performance": {
-        "throughput": 21.427560233543545,
-        "latency": 4.345999999999999
-      },
-      "features": {
-        "web_search": null,
-        "function_calling": null,
-        "structured_output": null,
-        "code_execution": null,
-        "batch_inference": null,
-        "finetuning": null
-      },
-      "modalities": {
-        "input": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        },
-        "output": {
-          "text": true,
-          "image": false,
-          "audio": false,
-          "video": false
-        }
-      }
-    },
-    {
-      "provider_id": "fireworks",
-      "name": "Fireworks",
-      "website": "https://fireworks.ai/",
-      "deprecated": false,
-      "deprecated_at": null,
-      "pricing": {
-        "input_per_million": 0.44,
-        "cached_input_per_million": 0.014,
-        "cache_write_per_million": null,
-        "output_per_million": 1.32,
+        "output_per_million": 0.66,
         "per_image": null,
         "per_second_video_720p": null,
         "per_second_video_1080p": null,
@@ -339,7 +201,7 @@
       "quantization": null,
       "limits": {
         "max_input_tokens": 1048576,
-        "max_output_tokens": 65536
+        "max_output_tokens": 393216
       },
       "performance": {
         "throughput": null,
@@ -356,7 +218,7 @@
       "modalities": {
         "input": {
           "text": true,
-          "image": false,
+          "image": true,
           "audio": false,
           "video": false
         },
@@ -428,7 +290,7 @@
           "model_name": "DeepSeek-V4-Flash-Vision-Exp",
           "score": 0.273,
           "rank": 8,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "gemini-3.7-flash",
@@ -443,13 +305,6 @@
           "score": 0.257,
           "rank": 10,
           "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-flash-0731",
-          "model_name": "DeepSeek-V4-Flash-0731",
-          "score": 0.252,
-          "rank": 11,
-          "is_current_model": true
         }
       ]
     },
@@ -504,14 +359,14 @@
           "model_name": "DeepSeek-V4-Flash-Vision-Exp",
           "score": 0.257,
           "rank": 7,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "deepseek-v4-flash-0731",
           "model_name": "DeepSeek-V4-Flash-0731",
           "score": 0.251,
           "rank": 8,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "gpt-5.6-sol",
@@ -524,82 +379,6 @@
           "model_id": "claude-fable-5",
           "model_name": "Claude Fable 5",
           "score": 0.174,
-          "rank": 10,
-          "is_current_model": false
-        }
-      ]
-    },
-    {
-      "benchmark_id": "cybergym",
-      "benchmark_name": "CyberGym",
-      "models": [
-        {
-          "model_id": "glm-5.3",
-          "model_name": "GLM-5.3",
-          "score": 0.845,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-pro-0813",
-          "model_name": "DeepSeek-V4-Pro-0813",
-          "score": 0.833,
-          "rank": 2,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3.5-flash-cyber",
-          "model_name": "Gemini 3.5 Flash Cyber",
-          "score": 0.832,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-mythos-preview",
-          "model_name": "Claude Mythos Preview",
-          "score": 0.831,
-          "rank": 4,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
-          "score": 0.818,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-8",
-          "model_name": "Claude Opus 4.8",
-          "score": 0.788,
-          "rank": 6,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-flash-0731",
-          "model_name": "DeepSeek-V4-Flash-0731",
-          "score": 0.767,
-          "rank": 7,
-          "is_current_model": true
-        },
-        {
-          "model_id": "claude-opus-4-6",
-          "model_name": "Claude Opus 4.6",
-          "score": 0.738,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-opus-4-7",
-          "model_name": "Claude Opus 4.7",
-          "score": 0.731,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "seed-2.1-pro",
-          "model_name": "Seed 2.1 Pro",
-          "score": 0.702,
           "rank": 10,
           "is_current_model": false
         }
@@ -649,14 +428,14 @@
           "model_name": "DeepSeek-V4-Flash-Vision-Exp",
           "score": 0.593,
           "rank": 6,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "deepseek-v4-flash-0731",
           "model_name": "DeepSeek-V4-Flash-0731",
           "score": 0.544,
           "rank": 7,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "grok-4.5",
@@ -704,7 +483,7 @@
           "model_name": "DeepSeek-V4-Flash-Vision-Exp",
           "score": 0.577,
           "rank": 3,
-          "is_current_model": false
+          "is_current_model": true
         },
         {
           "model_id": "qwen3.8-max",
@@ -718,7 +497,7 @@
           "model_name": "DeepSeek-V4-Flash-0731",
           "score": 0.542,
           "rank": 5,
-          "is_current_model": true
+          "is_current_model": false
         },
         {
           "model_id": "glm-5.2",
@@ -829,90 +608,7 @@
           "model_name": "DeepSeek-V4-Flash-Vision-Exp",
           "score": 0.839,
           "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-flash-0731",
-          "model_name": "DeepSeek-V4-Flash-0731",
-          "score": 0.827,
-          "rank": 13,
           "is_current_model": true
-        }
-      ]
-    },
-    {
-      "benchmark_id": "toolathlon",
-      "benchmark_name": "Toolathlon",
-      "models": [
-        {
-          "model_id": "muse-spark-1.1",
-          "model_name": "Muse Spark 1.1",
-          "score": 0.756,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-pro-0813",
-          "model_name": "DeepSeek-V4-Pro-0813",
-          "score": 0.741,
-          "rank": 2,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k3",
-          "model_name": "Kimi K3",
-          "score": 0.732,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
-          "model_id": "glm-5.3",
-          "model_name": "GLM-5.3",
-          "score": 0.73,
-          "rank": 4,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.8-max",
-          "model_name": "Qwen3.8 Max",
-          "score": 0.725,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v4-flash-0731",
-          "model_name": "DeepSeek-V4-Flash-0731",
-          "score": 0.703,
-          "rank": 6,
-          "is_current_model": true
-        },
-        {
-          "model_id": "claude-opus-4-8",
-          "model_name": "Claude Opus 4.8",
-          "score": 0.599,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.6-sol",
-          "model_name": "GPT-5.6 Sol",
-          "score": 0.58,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3.5-flash",
-          "model_name": "Gemini 3.5 Flash",
-          "score": 0.565,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
-          "score": 0.556,
-          "rank": 10,
-          "is_current_model": false
         }
       ]
     }
