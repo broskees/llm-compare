@@ -40,8 +40,8 @@
       "name": "DocVQA",
       "description": "A dataset for Visual Question Answering on document images containing 50,000 questions defined on 12,000+ document images. The benchmark tests AI's ability to understand document structure and content, requiring models to comprehend document layout and perform information retrieval to answer questions about document images.",
       "categories": [
-        "multimodal",
         "image_to_text",
+        "multimodal",
         "vision"
       ],
       "modality": "multimodal",
@@ -140,10 +140,10 @@
       "name": "MMLU",
       "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
       "categories": [
+        "language",
         "legal",
         "math",
         "reasoning",
-        "language",
         "finance",
         "general",
         "healthcare"
@@ -164,10 +164,10 @@
       "name": "MMLU-Pro",
       "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
       "categories": [
+        "language",
         "legal",
         "math",
         "reasoning",
-        "language",
         "finance",
         "general",
         "healthcare"
@@ -413,7 +413,7 @@
           "model_id": "grok-2",
           "model_name": "Grok-2",
           "score": 0.56,
-          "rank": 171,
+          "rank": 177,
           "is_current_model": true
         }
       ]
@@ -714,13 +714,6 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
-          "score": 0.904,
-          "rank": 7,
-          "is_current_model": false
-        },
-        {
           "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
@@ -728,15 +721,22 @@
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-0905",
-          "model_name": "Kimi K2 0905",
-          "score": 0.902,
-          "rank": 9,
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.1-2025-04-14",
           "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
           "score": 0.902,
           "rank": 9,
           "is_current_model": false
@@ -828,7 +828,7 @@
           "model_id": "grok-2",
           "model_name": "Grok-2",
           "score": 0.755,
-          "rank": 75,
+          "rank": 77,
           "is_current_model": true
         }
       ]
@@ -845,8 +845,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
@@ -859,8 +859,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-thinking-2025-11-12",
-          "model_name": "GPT-5.1 Thinking",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
@@ -911,19 +911,19 @@
           "model_id": "grok-2",
           "model_name": "Grok-2",
           "score": 0.661,
-          "rank": 37,
+          "rank": 38,
           "is_current_model": true
         }
       ]
     }
   ],
   "comparison_model": {
-    "model_id": "claude-mythos-preview",
-    "name": "Claude Mythos Preview",
-    "organization_name": "Anthropic",
-    "release_date": null,
-    "announcement_date": "2026-04-07",
-    "knowledge_cutoff": null,
+    "model_id": "gpt-5.6-sol",
+    "name": "GPT-5.6 Sol",
+    "organization_name": "OpenAI",
+    "release_date": "2026-07-09",
+    "announcement_date": "2026-07-09",
+    "knowledge_cutoff": "2026-02-16",
     "param_count": null,
     "multimodal": true,
     "license": {
@@ -931,23 +931,71 @@
       "allow_commercial": false
     },
     "benchmarks": {
-      "browsecomp": 0.869,
-      "charxiv-r": 0.932,
-      "cybench": 1,
-      "cybergym": 0.831,
-      "figqa": 0.89,
+      "agents-last-exam": 0.527,
+      "arc-agi-3": 0.0778,
+      "artificial-analysis": 0.59,
+      "automationbench": 0.181,
+      "benchcad": 0.706,
+      "benchcad-with-python-tool": 0.834,
+      "big-finance-bench": 0.53,
+      "browsecomp": 0.904,
+      "capture-the-flag-challenges": 0.967,
+      "openai-connectors": 1,
+      "deepswe": 0.727,
+      "deepswe-1.1": 0.73,
+      "exploitbench": 0.735,
+      "exploitgym": 0.337,
+      "frontiercode-1.1": 0.475,
+      "frontiermath": 0.89,
+      "frontiermath-tier-4-v2": 0.83,
+      "gdp-pdf": 0.307,
+      "genebench-pro": 0.287,
       "gpqa": 0.946,
-      "graphwalks-bfs->128k": 0.8,
-      "humanity's-last-exam": 0.647,
-      "mmmlu": 0.927,
-      "osworld-verified": 0.796,
-      "swe-bench-multilingual": 0.873,
-      "swe-bench-multimodal": 0.59,
-      "swe-bench-pro": 0.778,
-      "swe-bench-verified": 0.939,
-      "terminal-bench-2": 0.82,
-      "usamo25": 0.976
+      "graphwalks-bfs->128k": 0.907,
+      "graphwalks-bfs-1m": 0.771,
+      "healthbench": 0.57,
+      "healthbench-consensus": 0.955,
+      "healthbench-hard": 0.331,
+      "healthbench-professional": 0.605,
+      "internal-research-debugging-evaluation": 0.683,
+      "kernelgen-1p": 0.611,
+      "lifescibench": 0.599,
+      "management-consulting-tasks": 0.432,
+      "medchembench": 0.483,
+      "mmmu-pro": 0.83,
+      "mmmu-pro-with-tools": 0.846,
+      "mrcr-v2-(8-needle)": 0.915,
+      "mrcr-v2-8-needle-512k-1m": 0.738,
+      "nanogpt": 0.0969,
+      "osworld-2.0": 0.626,
+      "posttrainbench-lite": 0.503,
+      "rsi-index": 0.579,
+      "openai-search-function-calling": 0.91,
+      "sec-bench-pro": 0.712,
+      "swe-bench-pro": 0.646,
+      "terminal-bench-2.1": 0.888,
+      "toolathlon": 0.58
     },
-    "provider": null
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 5,
+      "output_cost": 30,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
   }
 }
