@@ -1,0 +1,1395 @@
+{
+  "model_id": "gpt-6-astra",
+  "name": "GPT-6 Astra",
+  "model_type": "llm",
+  "organization": {
+    "id": "openai",
+    "name": "OpenAI",
+    "website": "https://openai.com"
+  },
+  "description": "GPT-6 Astra is OpenAI's released flagship for the hardest end-to-end work across complex reasoning, coding, computer use, research, and document creation. The API model id is gpt-6-astra. It accepts text and image input with text output, supports low, medium, high, xhigh, and max reasoning effort (but not none), and provides a 1,050,000-token context window with up to 128,000 output tokens. Responses API tools include web and file search, image generation, code interpreter, hosted shell, apply patch, skills, computer use, MCP, and tool search; it also supports streaming, function calling, structured outputs, async tool calling, mid-turn steering, and configuration updates during a conversation. Standard pricing is $10 input, $1 cached input, $12.50 cache writes, and $50 output per million tokens. Requests above 272K input tokens cost 2x for input and cache and 1.5x for output across the full request; Batch and Flex are 50% of Standard, while Fast is 2x.",
+  "release_date": "2026-09-04",
+  "announcement_date": "2026-09-03",
+  "multimodal": true,
+  "knowledge_cutoff": "2026-04-30",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true",
+    "mid_turn_steering": "true",
+    "reasoning_efforts": "low,medium,high,xhigh,max",
+    "always_on_thinking": "true",
+    "async_tool_calling": "true",
+    "long_context_pricing_threshold": "272000"
+  },
+  "sources": {
+    "api_ref": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "playground": "https://platform.openai.com/playground?model=gpt-6-astra",
+    "paper": null,
+    "scorecard_blog": "https://openai.com/index/gpt-6-astra/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.593,
+      "normalized_score": 0.593,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "Agents' Last Exam. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arc-agi",
+      "name": "ARC-AGI",
+      "description": "The Abstraction and Reasoning Corpus for Artificial General Intelligence (ARC-AGI) is a benchmark designed to test general intelligence and abstract reasoning capabilities through visual grid-based transformation tasks. Each task consists of 2-5 demonstration pairs showing input grids transformed into output grids according to underlying rules, with test-takers required to infer these rules and apply them to novel test inputs. The benchmark uses colored grids (up to 30x30) with 10 discrete colors/symbols, designed to measure human-like general fluid intelligence and skill-acquisition efficiency with minimal prior knowledge.",
+      "categories": [
+        "reasoning",
+        "spatial_reasoning",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 1,
+      "score": 0.985,
+      "normalized_score": 0.985,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "ARC-AGI-1. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arc-agi-3",
+      "name": "ARC-AGI-3",
+      "description": "ARC-AGI-3 is the third-generation Abstraction and Reasoning Corpus benchmark, an interactive-reasoning evaluation designed to measure fluid, novel problem-solving ability that remains far from saturated for frontier models.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.999,
+      "normalized_score": 0.999,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "ARC-AGI-3. Responses API harness with retained reasoning / compaction. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": "Footnote from official launch table: Responses API harness with retained reasoning / compaction."
+    },
+    {
+      "benchmark_id": "arc-agi-v2",
+      "name": "ARC-AGI v2",
+      "description": "ARC-AGI-2 is an upgraded benchmark for measuring abstract reasoning and problem-solving abilities in AI systems through visual grid transformation tasks. It evaluates fluid intelligence via input-output grid pairs (1x1 to 30x30) using colored cells (0-9), requiring models to identify underlying transformation rules from demonstration examples and apply them to test cases. Designed to be easy for humans but challenging for AI, focusing on core cognitive abilities like spatial reasoning, pattern recognition, and compositional generalization.",
+      "categories": [
+        "reasoning",
+        "spatial_reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.95,
+      "normalized_score": 0.95,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "ARC-AGI-2. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.414,
+      "normalized_score": 0.414,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "AutomationBench. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "benchcad-with-python-tool",
+      "name": "BenchCAD (with Python tool)",
+      "description": "BenchCAD variant evaluated with access to a Python tool for programmatic CAD reasoning.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "code",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.959,
+      "normalized_score": 0.959,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "BenchCAD with Python tool. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "name": "BrowseComp",
+      "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.915,
+      "normalized_score": 0.915,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "BrowseComp. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.741,
+      "normalized_score": 0.741,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "DeepSWE v1.1. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "exploitbench",
+      "name": "ExploitBench",
+      "description": "ExploitBench is a cybersecurity benchmark that evaluates a model's ability to discover and exploit software vulnerabilities, reported as the fraction of challenges where the model captures the target (Cap%).",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 1,
+      "normalized_score": 1,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "ExploitBench. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "exploitgym",
+      "name": "ExploitGym",
+      "description": "ExploitGym is a large-scale, realistic benchmark built from real-world vulnerabilities across userspace programs, Google's V8 engine, and the Linux kernel. Given a vulnerability and a proof-of-vulnerability input, agents must craft a working end-to-end exploit that achieves unauthorized code execution.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.424,
+      "normalized_score": 0.424,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "ExploitGym. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "name": "FrontierCode 1.1",
+      "description": "FrontierCode 1.1 evaluates whether coding-agent changes are mergeable, using unit tests, maintainer-defined rubrics, and verifiers. Runs flagged for unfair internet use receive a zero score.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.533,
+      "normalized_score": 0.533,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "FrontierCode 1.1 Main. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiermath-tier-4-v2",
+      "name": "FrontierMath Tier 4 (v2)",
+      "description": "FrontierMath Tier 4 subset from the v2 evaluation release.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.976,
+      "normalized_score": 0.976,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "FrontierMath Tier 4 (v2). Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "genebench-pro",
+      "name": "GeneBench-Pro",
+      "description": "GeneBench-Pro is a research-level benchmark of 129 multi-stage computational-biology problems spanning genomics, quantitative biology, and translational biomedicine. Each problem gives the agent a messy dataset, brief context, and a target estimand, and requires navigating dependent inferential decision points to reach a verifiable answer.",
+      "categories": [
+        "reasoning",
+        "science",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.378,
+      "normalized_score": 0.378,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "GeneBench Pro. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.96,
+      "normalized_score": 0.96,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "GPQA Diamond. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.634,
+      "normalized_score": 0.634,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "HealthBench Professional, length-adjusted score. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam-(with-tools,-text-only)",
+      "name": "Humanity's Last Exam (with tools, text-only)",
+      "description": "Text-only Humanity's Last Exam variant evaluated with tool use enabled.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.572,
+      "normalized_score": 0.572,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "Humanity's Last Exam with tools, text-only (HLE w/ tools). Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lifescibench",
+      "name": "LifeSciBench",
+      "description": "LifeSciBench is an expert-authored, expert-reviewed benchmark of 750 open-ended life-science research tasks spanning seven workflows and seven biological domains. Responses are graded against 19,020 physician- and scientist-written rubric criteria rather than multiple-choice answers, and most tasks require interpreting attached artifacts such as figures, PDFs, and sequence files.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "science",
+        "healthcare",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.603,
+      "normalized_score": 0.603,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "LifeSciBench. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "name": "OSWorld 2.0",
+      "description": "OSWorld 2.0 is a benchmark of 108 long-horizon, real-world computer-use workflows spanning everyday and professional tasks. Each task is an end-to-end workflow that takes human users a median of about 1.6 hours, scored with a binary-completion metric, and targets challenges such as dynamic environments, cross-source reasoning, and implicit-state inference.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.726,
+      "normalized_score": 0.726,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "OSWorld 2.0 v2026.08.08 offline set, PARTIAL score. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "screenspot-pro",
+      "name": "ScreenSpot Pro",
+      "description": "ScreenSpot-Pro is a novel GUI grounding benchmark designed to rigorously evaluate the grounding capabilities of multimodal large language models (MLLMs) in professional high-resolution computing environments. The benchmark comprises 1,581 instructions across 23 applications spanning 5 industries and 3 operating systems, featuring authentic high-resolution images from professional domains with expert annotations. Unlike previous benchmarks that focus on cropped screenshots in consumer applications, ScreenSpot-Pro addresses the complexity and diversity of real-world professional software scenarios, revealing significant performance gaps in current MLLM GUI perception capabilities.",
+      "categories": [
+        "multimodal",
+        "spatial_reasoning",
+        "grounding",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.927,
+      "normalized_score": 0.927,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "ScreenSpot Pro (no tools). Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "sec-bench-pro",
+      "name": "SEC-bench Pro",
+      "description": "SEC-bench Pro is a self-evolving software-security benchmark that measures agent bug hunting on critical, high-complexity systems. It instantiates validated vulnerabilities across the V8 and SpiderMonkey JavaScript engines as reproducible vulnerability-discovery and proof-of-concept-generation tasks with oracle-based validation.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.854,
+      "normalized_score": 0.854,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "SEC-Bench Pro. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.577,
+      "normalized_score": 0.577,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "Terminal-Bench 4.0. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.646,
+      "normalized_score": 0.646,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/gpt-6-astra/",
+      "analysis_method": "Terminal-Bench-Science 0.1. Official GPT-6 Astra launch table.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "openai",
+      "name": "OpenAI",
+      "website": "https://openai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 10,
+        "cached_input_per_million": 1,
+        "cache_write_per_million": 12.5,
+        "output_per_million": 50,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": 30.656637290042028,
+        "latency": 14.000199999999998
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.512,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.512,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.504,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.503,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.429,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.414,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.285,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "arc-agi-v2",
+      "benchmark_name": "ARC-AGI v2",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.85,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.771,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.733,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.721,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.688,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.583,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.542,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.529,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.425,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.494,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.488,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.482,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.414,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.321,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.318,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.314,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.308,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.304,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.273,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark_name": "BrowseComp",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.915,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.912,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.904,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.901,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.875,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.869,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.863,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.862,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.859,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.7,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.69,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.688,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.67,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.67,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "frontiercode-1.1",
+      "benchmark_name": "FrontierCode 1.1",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.535,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.534,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.533,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.475,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.465,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.436,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.43,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.427,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.424,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.413,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.96,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.935,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.93,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "benchmark_name": "OSWorld 2.0",
+      "models": [
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.779,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.726,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.706,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.669,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.626,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.59,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.502,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.479,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.456,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.194,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.194,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "screenspot-pro",
+      "benchmark_name": "ScreenSpot Pro",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.927,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.879,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.863,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.845,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.841,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.79,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.754,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.727,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.704,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.703,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.518,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.445,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.418,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.373,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.236,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.215,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.6",
+          "model_name": "Grok 4.6",
+          "score": 0.203,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.191,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gpt-5.6-sol",
+    "name": "GPT-5.6 Sol",
+    "organization_name": "OpenAI",
+    "release_date": "2026-07-09",
+    "announcement_date": "2026-07-09",
+    "knowledge_cutoff": "2026-02-16",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "agents-last-exam": 0.527,
+      "arc-agi-3": 0.0778,
+      "artificial-analysis": 0.59,
+      "automationbench": 0.181,
+      "benchcad": 0.706,
+      "benchcad-with-python-tool": 0.834,
+      "big-finance-bench": 0.53,
+      "browsecomp": 0.904,
+      "capture-the-flag-challenges": 0.967,
+      "openai-connectors": 1,
+      "deepswe": 0.727,
+      "deepswe-1.1": 0.73,
+      "exploitbench": 0.735,
+      "exploitgym": 0.337,
+      "frontiercode-1.1": 0.475,
+      "frontiermath": 0.89,
+      "frontiermath-tier-4-v2": 0.83,
+      "gdp-pdf": 0.307,
+      "genebench-pro": 0.287,
+      "gpqa": 0.946,
+      "graphwalks-bfs->128k": 0.907,
+      "graphwalks-bfs-1m": 0.771,
+      "healthbench": 0.57,
+      "healthbench-consensus": 0.955,
+      "healthbench-hard": 0.331,
+      "healthbench-professional": 0.605,
+      "internal-research-debugging-evaluation": 0.683,
+      "kernelgen-1p": 0.611,
+      "lifescibench": 0.599,
+      "management-consulting-tasks": 0.432,
+      "medchembench": 0.483,
+      "mmmu-pro": 0.83,
+      "mmmu-pro-with-tools": 0.846,
+      "mrcr-v2-(8-needle)": 0.915,
+      "mrcr-v2-8-needle-512k-1m": 0.738,
+      "nanogpt": 0.0969,
+      "osworld-2.0": 0.626,
+      "posttrainbench-lite": 0.503,
+      "rsi-index": 0.579,
+      "openai-search-function-calling": 0.91,
+      "sec-bench-pro": 0.712,
+      "swe-bench-pro": 0.646,
+      "terminal-bench-2.1": 0.888,
+      "terminal-bench-4.0": 0.373,
+      "toolathlon": 0.58
+    },
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 5,
+      "output_cost": 30,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  },
+  "openrouter_id": "openai/gpt-6-astra"
+}

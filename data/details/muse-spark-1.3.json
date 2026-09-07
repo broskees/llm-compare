@@ -1,0 +1,706 @@
+{
+  "model_id": "muse-spark-1.3",
+  "name": "Muse Spark 1.3",
+  "model_type": "llm",
+  "organization": {
+    "id": "meta",
+    "name": "Meta",
+    "website": "https://meta.com"
+  },
+  "description": "Muse Spark 1.3 is Meta Superintelligence Labs' proprietary multimodal reasoning model for long-running agentic, multi-agent, and coding workflows. It improves on Muse Spark 1.2 in long-horizon collaboration, multitasking, instruction following, tool use, failure recovery, and concise coding execution. It supports a 1,048,576-token context window and is available through Muse Code and the Meta Model API. ZeroEval routes to the lower-cost contributor endpoint, where prompts and outputs may be used to improve Meta's products.",
+  "release_date": "2026-09-02",
+  "announcement_date": "2026-09-02",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://developer.meta.com/ai/models/muse-spark/",
+    "playground": "https://meta.ai",
+    "paper": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+    "scorecard_blog": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agentic-if-index",
+      "name": "Agentic IF Index (Internal)",
+      "description": "Meta's internal Agentic Instruction-Following Index aggregates evaluations of compliance with tool-use constraints, fine-grained rubrics, compound constraints, long policies, and instructions embedded in structured workflows.",
+      "categories": [
+        "instruction_following",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.578,
+      "normalized_score": 0.578,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "Meta internal composite instruction-following evaluation for agentic workflows.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.494,
+      "normalized_score": 0.494,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "AutomationBench public v3 task set; deterministic end-state grading; pass@1.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "name": "DeepSearchQA",
+      "description": "DeepSearchQA is a benchmark for evaluating deep search and question-answering capabilities, testing models' ability to perform multi-hop reasoning and information retrieval across complex knowledge domains.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.894,
+      "normalized_score": 0.894,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "Official 900-question dataset with a common browser harness; F1 score.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.754,
+      "normalized_score": 0.754,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "DeepSWE v1.1 official 113-task set with mini-swe-agent; max reasoning; task pass rate.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA evaluates AI agents on economically valuable professional knowledge-work tasks and reports performance as an Elo score.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1754,
+      "normalized_score": 0.585,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "GDPval-AA v2 Elo in the Artificial Analysis Stirrup agentic harness; human baseline 1,000 (max_score 3000).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "job-bench",
+      "name": "Job Bench",
+      "description": "Job Bench evaluates AI agents on realistic professional tasks that require multi-step planning, research, and production of work artifacts.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.649,
+      "normalized_score": 0.649,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "Official 65-task set with a file-aware rubric grader; mean rubric score.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "name": "MRCR v2 (8-needle)",
+      "description": "MRCR v2 (8-needle) is a variant of the Multi-Round Coreference Resolution benchmark that includes 8 needle items to retrieve from long contexts. This tests models' ability to simultaneously track and reason about multiple pieces of information across extended conversations.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.985,
+      "normalized_score": 0.985,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "OpenAI MRCR v2 8-needle, 256K-512K context range; 100 examples; mean sequence-matcher ratio.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-v2-8-needle-512k-1m",
+      "name": "MRCR v2 (8-needle, 512K-1M)",
+      "description": "MRCR v2 8-needle variant evaluated on contexts from 512K to 1M tokens.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.981,
+      "normalized_score": 0.981,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "OpenAI MRCR v2 8-needle, 512K-1M context range; 100 examples; mean sequence-matcher ratio.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "name": "OSWorld 2.0",
+      "description": "OSWorld 2.0 is a benchmark of 108 long-horizon, real-world computer-use workflows spanning everyday and professional tasks. Each task is an end-to-end workflow that takes human users a median of about 1.6 hours, scored with a binary-completion metric, and targets challenges such as dynamic environments, cross-source reasoning, and implicit-state inference.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.669,
+      "normalized_score": 0.669,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "OSWorld 2.0 version 08.08 in Meta's common internal computer-use evaluation framework; mean per-task partial score.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-atlas-codebase-qna",
+      "name": "SWE Atlas - Codebase QnA",
+      "description": "SWE Atlas - Codebase QnA evaluates a model's ability to answer questions about real codebases, measuring repository-level comprehension and the ability to reason about code structure, behavior, and intent across an entire project.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.594,
+      "normalized_score": 0.594,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "SWE-Atlas public Codebase QnA split with mini-swe-agent and task-specific rubric grading; mean pass@1.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.888,
+      "normalized_score": 0.888,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+      "analysis_method": "Terminal-Bench 2.1 official 89-task set in an isolated cloud sandbox; mean pass@1.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "meta",
+      "name": "Meta Model API",
+      "website": "https://ai.meta.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.1,
+        "cached_input_per_million": 0.002,
+        "cache_write_per_million": null,
+        "output_per_million": 0.2,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 943718
+      },
+      "performance": {
+        "throughput": 7.883434557638417,
+        "latency": 8.16419999999999
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.494,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.488,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.482,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.414,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.321,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.318,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.314,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.308,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.304,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.273,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.7,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.69,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.688,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.67,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.67,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "benchmark_name": "MRCR v2 (8-needle)",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.985,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.97,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.929,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.915,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.896,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.76,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.74,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.664,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_name": "Gemini 3.1 Flash-Lite",
+          "score": 0.601,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.6-flash",
+          "model_name": "Gemini 3.6 Flash",
+          "score": 0.54,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "benchmark_name": "OSWorld 2.0",
+      "models": [
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.779,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.726,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.706,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.669,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.626,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.59,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.502,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.479,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.456,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.194,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.194,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.866,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.858,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.854,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "meta/muse-spark-1.3"
+}
