@@ -1,0 +1,1545 @@
+{
+  "model_id": "qwen3-14b",
+  "name": "Qwen3 14B",
+  "model_type": "llm",
+  "organization": {
+    "id": "qwen",
+    "name": "Alibaba Cloud / Qwen Team",
+    "website": "https://qwenlm.github.io"
+  },
+  "description": "Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models. Built upon extensive training, Qwen3 delivers groundbreaking advancements in reasoning, instruction-following, agent capabilities, and multilingual support.",
+  "release_date": "2025-04-28",
+  "announcement_date": "2025-04-28",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 14000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "apache_2_0",
+    "name": "Apache 2.0",
+    "allow_commercial": true,
+    "description": "Apache License 2.0 - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "false",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://qwenlm.github.io/blog/qwen3/",
+    "playground": "https://deepinfra.com/Qwen/Qwen3-14B",
+    "paper": null,
+    "scorecard_blog": null,
+    "repo": "https://github.com/QwenLM/Qwen3",
+    "weights": "https://huggingface.co/Qwen/Qwen3-14B"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aime-2024",
+      "name": "AIME 2024",
+      "description": "American Invitational Mathematics Examination 2024, consisting of 30 challenging mathematical reasoning problems from AIME I and AIME II competitions. Each problem requires an integer answer between 0-999 and tests advanced mathematical reasoning across algebra, geometry, combinatorics, and number theory. Used as a benchmark for evaluating mathematical reasoning capabilities in large language models at Olympiad-level difficulty.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.793,
+      "normalized_score": 0.793,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy; temperature 0.6, top-p 0.95, top-k 20; max output 38,912 tokens",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "name": "AIME 2025",
+      "description": "All 30 problems from the 2025 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.704,
+      "normalized_score": 0.704,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy; temperature 0.6, top-p 0.95, top-k 20; max output 38,912 tokens",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "alignbench",
+      "name": "AlignBench",
+      "description": "AlignBench is a comprehensive multi-dimensional benchmark for evaluating Chinese alignment of Large Language Models. It contains 8 main categories: Fundamental Language Ability, Advanced Chinese Understanding, Open-ended Questions, Writing Ability, Logical Reasoning, Mathematics, Task-oriented Role Play, and Professional Knowledge. The benchmark includes 683 real-scenario rooted queries with human-verified references and uses a rule-calibrated multi-dimensional LLM-as-Judge approach with Chain-of-Thought for evaluation.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning",
+        "roleplay",
+        "general",
+        "creativity",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.856,
+      "normalized_score": 0.856,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; AlignBench v1.1; source score 8.56/10 rescaled to the definition's 0-1 scale",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "arena-hard",
+      "name": "Arena Hard",
+      "description": "Arena-Hard-Auto is an automatic evaluation benchmark for instruction-tuned LLMs consisting of 500 challenging real-world prompts curated by BenchBuilder. It includes open-ended software engineering problems, mathematical questions, and creative writing tasks. The benchmark uses LLM-as-a-Judge methodology with GPT-4.1 and Gemini-2.5 as automatic judges to approximate human preference. Arena-Hard achieves 98.6% correlation with human preference rankings and provides 3x higher separation of model performances compared to MT-Bench, making it highly effective for distinguishing between models of similar quality.",
+      "categories": [
+        "chat",
+        "reasoning",
+        "general",
+        "creativity",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.917,
+      "normalized_score": 0.917,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; Arena-Hard win rate; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "autologi",
+      "name": "AutoLogi",
+      "description": "AutoLogi is an automated method for synthesizing open-ended logic puzzles to evaluate reasoning abilities of Large Language Models. The benchmark addresses limitations of existing multiple-choice reasoning evaluations by featuring program-based verification and controllable difficulty levels. It includes 1,575 English and 883 Chinese puzzles, enabling more reliable evaluation that better distinguishes models' reasoning capabilities across languages.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.892,
+      "normalized_score": 0.892,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "bfcl-v3",
+      "name": "BFCL-v3",
+      "description": "Berkeley Function Calling Leaderboard v3 (BFCL-v3) is an advanced benchmark that evaluates large language models' function calling capabilities through multi-turn and multi-step interactions. It introduces extended conversational exchanges where models must retain contextual information across turns and execute multiple internal function calls for complex user requests. The benchmark includes 1000 test cases across domains like vehicle control, trading bots, travel booking, and file system management, using state-based evaluation to verify both system state changes and execution path correctness.",
+      "categories": [
+        "reasoning",
+        "structured_output",
+        "finance",
+        "general",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.704,
+      "normalized_score": 0.704,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; BFCL v3 FC format; YaRN 64K context for Multi-Turn",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "c-eval",
+      "name": "C-Eval",
+      "description": "C-Eval is a comprehensive Chinese evaluation suite designed to assess advanced knowledge and reasoning abilities of foundation models in a Chinese context. It comprises 13,948 multiple-choice questions across 52 diverse disciplines spanning humanities, science, and engineering, with four difficulty levels: middle school, high school, college, and professional. The benchmark includes C-Eval Hard, a subset of very challenging subjects requiring advanced reasoning abilities.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.862,
+      "normalized_score": 0.862,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "codeforces",
+      "name": "CodeForces",
+      "description": "A competitive programming benchmark using problems from the CodeForces platform. The benchmark evaluates code generation capabilities of LLMs on algorithmic problems with difficulty ratings ranging from 800 to 2400. Problems cover diverse algorithmic categories including dynamic programming, graph algorithms, data structures, and mathematical problems with standardized evaluation through direct platform submission.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1766,
+      "normalized_score": 0.5886666666666667,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; CodeElo rating; raw rating normalized against max_score 3000",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "creative-writing-v3",
+      "name": "Creative Writing v3",
+      "description": "EQ-Bench Creative Writing v3 is an LLM-judged creative writing benchmark that evaluates models across 32 writing prompts with 3 iterations per prompt. Uses a hybrid scoring system combining rubric assessment and Elo ratings through pairwise comparisons. Challenges models in areas like humor, romance, spatial awareness, and unique perspectives to assess emotional intelligence and creative writing capabilities.",
+      "categories": [
+        "creativity",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.803,
+      "normalized_score": 0.803,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; Creative Writing v3 score; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "ifeval",
+      "name": "IFEval",
+      "description": "Instruction-Following Evaluation (IFEval) benchmark for large language models, focusing on verifiable instructions with 25 types of instructions and around 500 prompts containing one or more verifiable constraints",
+      "categories": [
+        "chat",
+        "structured_output",
+        "instruction_following",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.854,
+      "normalized_score": 0.854,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; strict-prompt accuracy; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "livebench-20241125",
+      "name": "LiveBench 20241125",
+      "description": "LiveBench is a challenging, contamination-limited LLM benchmark that addresses test set contamination by releasing new questions monthly based on recently-released datasets, arXiv papers, news articles, and IMDb movie synopses. It comprises tasks across math, coding, reasoning, language, instruction following, and data analysis with verifiable, objective ground-truth answers.",
+      "categories": [
+        "math",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.713,
+      "normalized_score": 0.713,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; LiveBench 2024-11-25 score; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "math-500",
+      "name": "MATH-500",
+      "description": "MATH-500 is a subset of the MATH dataset containing 500 challenging competition mathematics problems from AMC 10, AMC 12, AIME, and other mathematics competitions. Each problem includes full step-by-step solutions and spans multiple difficulty levels across seven mathematical subjects including Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, and Precalculus.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.968,
+      "normalized_score": 0.968,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "mmlu-redux",
+      "name": "MMLU-Redux",
+      "description": "An improved version of the MMLU benchmark featuring manually re-annotated questions to identify and correct errors in the original dataset. Provides more reliable evaluation metrics for language models by addressing dataset quality issues found in the original MMLU.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.886,
+      "normalized_score": 0.886,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "multi-if",
+      "name": "Multi-IF",
+      "description": "Multi-IF benchmarks LLMs on multi-turn and multilingual instruction following. It expands upon IFEval by incorporating multi-turn sequences and translating English prompts into 7 other languages, resulting in 4,501 multilingual conversations with three turns each. The benchmark reveals that current leading LLMs struggle with maintaining accuracy in multi-turn instructions and shows higher error rates for non-Latin script languages.",
+      "categories": [
+        "chat",
+        "language",
+        "reasoning",
+        "structured_output",
+        "instruction_following",
+        "communication"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.748,
+      "normalized_score": 0.748,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy over the 8-language Multi-IF benchmark",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "ruler",
+      "name": "RULER",
+      "description": "RULER v1 is a synthetic long-context benchmark for measuring how model quality degrades as input length increases. This packaging follows the public standalone NVIDIA RULER implementation with 13 official tasks spanning retrieval, multi-hop tracing, aggregation, and QA.",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.901,
+      "normalized_score": 0.901,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; aggregate over RULER context lengths from 4K through 128K",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 23 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "writingbench",
+      "name": "WritingBench",
+      "description": "A comprehensive benchmark for evaluating large language models' generative writing capabilities across 6 core writing domains (Academic & Engineering, Finance & Business, Politics & Law, Literature & Art, Education, Advertising & Marketing) and 100 subdomains. Contains 1,239 queries with a query-dependent evaluation framework that dynamically generates 5 instance-specific assessment criteria for each writing task, using a fine-tuned critic model to score responses on style, format, and length dimensions.",
+      "categories": [
+        "legal",
+        "finance",
+        "communication",
+        "creativity",
+        "writing"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.78,
+      "normalized_score": 0.78,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; source score 7.8/10 rescaled to the definition's 0-1 scale",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    },
+    {
+      "benchmark_id": "zebralogic",
+      "name": "ZebraLogic",
+      "description": "ZebraLogic is an evaluation framework for assessing large language models' logical reasoning capabilities through logic grid puzzles derived from constraint satisfaction problems (CSPs). The benchmark consists of 1,000 programmatically generated puzzles with controllable and quantifiable complexity, revealing a 'curse of complexity' where model accuracy declines significantly as problem complexity grows.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.885,
+      "normalized_score": 0.885,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2505.09388",
+      "analysis_method": "Thinking mode; accuracy; temperature 0.6, top-p 0.95, top-k 20",
+      "verification_date": null,
+      "verification_notes": "Official Qwen/Qwen3-14B checkpoint; Table 15 thinking-mode result, selected because thinking is the model-card default."
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.12,
+        "cached_input_per_million": null,
+        "cache_write_per_million": null,
+        "output_per_million": 0.24,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": "fp8",
+      "limits": {
+        "max_input_tokens": 40960,
+        "max_output_tokens": 40960
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aime-2024",
+      "benchmark_name": "AIME 2024",
+      "models": [
+        {
+          "model_id": "grok-3-mini",
+          "model_name": "Grok-3 Mini",
+          "score": 0.958,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o4-mini",
+          "model_name": "o4-mini",
+          "score": 0.934,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-3",
+          "model_name": "Grok-3",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-2.5-pro",
+          "model_name": "Gemini 2.5 Pro",
+          "score": 0.92,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.916,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.914,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.91,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-14b-latest",
+          "model_name": "Ministral 3 (14B Reasoning 2512)",
+          "score": 0.898,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.894,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.793,
+          "rank": 32,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "aime-2025",
+      "benchmark_name": "AIME 2025",
+      "models": [
+        {
+          "model_id": "grok-4-heavy",
+          "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.9979,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-flash-preview",
+          "model_name": "Gemini 3 Flash",
+          "score": 0.997,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
+          "score": 0.996,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-nano-30b-a3b",
+          "model_name": "Nemotron 3 Nano (30B A3B)",
+          "score": 0.992,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.704,
+          "rank": 95,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "arena-hard",
+      "benchmark_name": "Arena Hard",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.956,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-32b",
+          "model_name": "Qwen3 32B",
+          "score": 0.938,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.917,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-30b-a3b",
+          "model_name": "Qwen3 30B A3B",
+          "score": 0.91,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.883,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-instruct-2501",
+          "model_name": "Mistral Small 3 24B Instruct",
+          "score": 0.876,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.812,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-reasoning-plus",
+          "model_name": "Phi 4 Reasoning Plus",
+          "score": 0.79,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.762,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4",
+          "model_name": "Phi 4",
+          "score": 0.754,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "bfcl-v3",
+      "benchmark_name": "BFCL-v3",
+      "models": [
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.778,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.764,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.744,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.72,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.72,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.719,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.719,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.717,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.709,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.704,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "c-eval",
+      "benchmark_name": "C-Eval",
+      "models": [
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.937,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.933,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.93,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-base",
+          "model_name": "Kimi K2 Base",
+          "score": 0.925,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.919,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.915,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
+          "score": 0.914,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.905,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.902,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-35b-a3b",
+          "model_name": "Qwen3.6-35B-A3B",
+          "score": 0.9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.862,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "codeforces",
+      "benchmark_name": "CodeForces",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 3471,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 1766,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "seed-2.0-mini",
+          "model_name": "Seed 2.0 Mini",
+          "score": 1644,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 1,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 1,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0423",
+          "model_name": "DeepSeek-V4-Flash-0423",
+          "score": 0.9387,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-speciale",
+          "model_name": "DeepSeek-V3.2-Speciale",
+          "score": 0.9,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.851,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.822,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.821,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "creative-writing-v3",
+      "benchmark_name": "Creative Writing v3",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.875,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.865,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.861,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.1-thinking-2025-11-17",
+          "model_name": "Grok-4.1 Thinking",
+          "score": 0.86095,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.857,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.856,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.1-2025-11-17",
+          "model_name": "Grok-4.1",
+          "score": 0.8543,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.853,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-instruct",
+          "model_name": "Qwen3 VL 30B A3B Instruct",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.833,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.803,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifeval",
+      "benchmark_name": "IFEval",
+      "models": [
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.943,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.943,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.939,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.934,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.934,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-7-sonnet-20250219",
+          "model_name": "Claude 3.7 Sonnet",
+          "score": 0.932,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.926,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.921,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-70b-instruct",
+          "model_name": "Llama 3.3 70B Instruct",
+          "score": 0.921,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.854,
+          "rank": 40,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livebench-20241125",
+      "benchmark_name": "LiveBench 20241125",
+      "models": [
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.796,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.784,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.766,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.758,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.754,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.748,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.747,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.722,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.721,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.713,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "math-500",
+      "benchmark_name": "MATH-500",
+      "models": [
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.992,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
+          "score": 0.986,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5",
+          "model_name": "GLM-4.5",
+          "score": 0.982,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-4.5-air",
+          "model_name": "GLM-4.5-Air",
+          "score": 0.981,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nvidia-nemotron-nano-9b-v2",
+          "model_name": "Nemotron Nano 9B v2",
+          "score": 0.978,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct",
+          "model_name": "Kimi K2 Instruct",
+          "score": 0.974,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-instruct-0905",
+          "model_name": "Kimi K2-Instruct-0905",
+          "score": 0.974,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sarvam-30b",
+          "model_name": "Sarvam-30B",
+          "score": 0.97,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-ultra-253b-v1",
+          "model_name": "Llama 3.1 Nemotron Ultra 253B v1",
+          "score": 0.97,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-lite",
+          "model_name": "LongCat-Flash-Lite",
+          "score": 0.968,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.968,
+          "rank": 10,
+          "is_current_model": true
+        },
+        {
+          "model_id": "minimax-m1-80k",
+          "model_name": "MiniMax M1 80K",
+          "score": 0.968,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-redux",
+      "benchmark_name": "MMLU-Redux",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.949,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.945,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.945,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.944,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.94,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.938,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.937,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
+          "score": 0.935,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-r1-0528",
+          "model_name": "DeepSeek-R1-0528",
+          "score": 0.934,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.886,
+          "rank": 31,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "multi-if",
+      "benchmark_name": "Multi-IF",
+      "models": [
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.877,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.806,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.8007,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.795,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.791,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.78,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.778,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.775,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.763,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.758,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.748,
+          "rank": 13,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "writingbench",
+      "benchmark_name": "WritingBench",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.883,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.873,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.867,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.862,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.855,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.855,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.852,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.852,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.846,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 0.84,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 0.78,
+          "rank": 15,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gemini-3-pro-preview",
+    "name": "Gemini 3 Pro",
+    "organization_name": "Google",
+    "release_date": "2025-11-18",
+    "announcement_date": "2025-11-18",
+    "knowledge_cutoff": "2025-01-31",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "aime-2025": 1,
+      "arc-agi-v2": 0.311,
+      "charxiv-r": 0.814,
+      "facts-grounding": 0.705,
+      "global-piqa": 0.934,
+      "gpqa": 0.919,
+      "humanity's-last-exam": 0.458,
+      "livebench": 0.7339,
+      "livecodebench-pro": 2439,
+      "matharena-apex": 0.234,
+      "mmmlu": 0.918,
+      "mmmu-pro": 0.81,
+      "mrcr-v2-(8-needle)": 0.263,
+      "omnidocbench-1.5": 0.115,
+      "screenspot-pro": 0.727,
+      "simpleqa": 0.721,
+      "swe-bench-verified": 0.762,
+      "t2-bench": 0.854,
+      "terminal-bench-2": 0.542,
+      "vending-bench-2": 5478.16,
+      "videommmu": 0.876
+    },
+    "provider": null
+  },
+  "openrouter_id": "qwen/qwen3-14b"
+}

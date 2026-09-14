@@ -1,0 +1,1165 @@
+{
+  "model_id": "hermes-3-405b",
+  "name": "Hermes 3 405B",
+  "model_type": "llm",
+  "organization": {
+    "id": "nous-research",
+    "name": "Nous Research",
+    "website": "https://nousresearch.com/"
+  },
+  "description": "Hermes 3 is a cutting-edge language model that offers advanced capabilities in roleplaying, reasoning, and conversation. It's a fine-tuned version of the Llama-3.1 405B foundation model, designed to align with user needs and provide powerful control. Key features include reliable function calling, structured output, generalist assistant capabilities, and improved code generation. Hermes 3 is competitive with Llama-3.1 Instruct models, with its own strengths and weaknesses.",
+  "release_date": "2024-10-09",
+  "announcement_date": "2024-10-09",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 405000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "apache_2_0",
+    "name": "Apache 2.0",
+    "allow_commercial": true,
+    "description": "Apache License 2.0 - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": {
+    "id": "llama-3.1-405b-instruct",
+    "name": "Llama 3.1 405B Instruct"
+  },
+  "tags": {
+    "moe": "false",
+    "thinking": "false"
+  },
+  "sources": {
+    "api_ref": "https://deepinfra.com/NousResearch/Hermes-3-Llama-3.1-405B",
+    "playground": "https://deepinfra.com/NousResearch/Hermes-3-Llama-3.1-405B",
+    "paper": null,
+    "scorecard_blog": null,
+    "repo": "https://github.com/NousResearch/Hermes-Function-Calling",
+    "weights": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agieval",
+      "name": "AGIEval",
+      "description": "A human-centric benchmark for evaluating foundation models on standardized exams including college entrance exams (Gaokao, SAT), law school admission tests (LSAT), math competitions, lawyer qualification tests, and civil service exams. Contains 20 tasks (18 multiple-choice, 2 cloze) designed to assess understanding, knowledge, reasoning, and calculation abilities in real-world academic and professional contexts.",
+      "categories": [
+        "legal",
+        "math",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6184,
+      "normalized_score": 0.6184,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "0-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "arc-c",
+      "name": "ARC-C",
+      "description": "The AI2 Reasoning Challenge (ARC) Challenge Set is a multiple-choice question-answering benchmark containing grade-school level science questions that require advanced reasoning capabilities. ARC-C specifically contains questions that were answered incorrectly by both retrieval-based and word co-occurrence algorithms, making it a particularly challenging subset designed to test commonsense reasoning abilities in AI systems.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6945,
+      "normalized_score": 0.6945,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "0-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "arc-e",
+      "name": "ARC-E",
+      "description": "ARC-E (AI2 Reasoning Challenge - Easy Set) is a subset of grade-school level, multiple-choice science questions that requires knowledge and reasoning capabilities. Part of the AI2 Reasoning Challenge dataset containing 5,197 questions that test scientific reasoning and factual knowledge. The Easy Set contains questions that are answerable by retrieval-based and word co-occurrence algorithms, making them more accessible than the Challenge Set.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8624,
+      "normalized_score": 0.8624,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "0-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "bbh",
+      "name": "BBH",
+      "description": "Big-Bench Hard (BBH) is a suite of 23 challenging tasks selected from BIG-Bench for which prior language model evaluations did not outperform the average human-rater. These tasks require multi-step reasoning across diverse domains including arithmetic, logical reasoning, reading comprehension, and commonsense reasoning. The benchmark was designed to test capabilities believed to be beyond current language models and focuses on evaluating complex reasoning skills including temporal understanding, spatial reasoning, causal understanding, and deductive logical reasoning.",
+      "categories": [
+        "language",
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7537,
+      "normalized_score": 0.7537,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "3-shot; Open LLM Leaderboard lm-evaluation-harness task group",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The repository definition matches the 23-task BBH suite; 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "boolq",
+      "name": "BoolQ",
+      "description": "BoolQ is a reading comprehension dataset for yes/no questions containing 15,942 naturally occurring examples. Each example consists of a question, passage, and boolean answer, where questions are generated in unprompted and unconstrained settings. The dataset challenges models with complex, non-factoid information requiring entailment-like inference to solve.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8893,
+      "normalized_score": 0.8893,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "0-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "name": "HellaSwag",
+      "description": "A challenging commonsense natural language inference dataset that uses Adversarial Filtering to create questions trivial for humans (>95% accuracy) but difficult for state-of-the-art models, requiring completion of sentence endings based on physical situations and everyday activities",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9019,
+      "normalized_score": 0.9019,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "10-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "mmlu",
+      "name": "MMLU",
+      "description": "Massive Multitask Language Understanding benchmark testing knowledge across 57 diverse subjects including STEM, humanities, social sciences, and professional domains",
+      "categories": [
+        "language",
+        "legal",
+        "math",
+        "reasoning",
+        "finance",
+        "general",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8502,
+      "normalized_score": 0.8502,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "5-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "description": "A more robust and challenging multi-task language understanding benchmark that extends MMLU by expanding multiple-choice options from 4 to 10, eliminating trivial questions, and focusing on reasoning-intensive tasks. Features over 12,000 curated questions across 14 domains and causes a 16-33% accuracy drop compared to original MMLU.",
+      "categories": [
+        "language",
+        "legal",
+        "math",
+        "reasoning",
+        "finance",
+        "general",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5414,
+      "normalized_score": 0.5414,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "5-shot; Open LLM Leaderboard lm-evaluation-harness task",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "mt-bench",
+      "name": "MT-Bench",
+      "description": "MT-Bench is a challenging multi-turn benchmark that measures the ability of large language models to engage in coherent, informative, and engaging conversations. It uses strong LLMs as judges for scalable and explainable evaluation of multi-turn dialogue capabilities.",
+      "categories": [
+        "chat",
+        "reasoning",
+        "roleplay",
+        "general",
+        "communication",
+        "creativity"
+      ],
+      "modality": "text",
+      "max_score": 100,
+      "score": 8.93,
+      "normalized_score": 0.893,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "Average of Turn 1 and Turn 2 scores; GPT-4 judge; 1-10 scale",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. Raw 1-10 score is preserved and normalized by 10, matching the sibling model convention; 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "musr",
+      "name": "MuSR",
+      "description": "MuSR (Multistep Soft Reasoning) is a benchmark for evaluating language models on multistep soft reasoning tasks specified in natural language narratives. Created through a neurosymbolic synthetic-to-natural generation algorithm, it generates complex reasoning scenarios like murder mysteries roughly 1000 words in length that challenge current LLMs including GPT-4. The benchmark tests chain-of-thought reasoning capabilities across domains involving commonsense reasoning about physical and social situations.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.4826,
+      "normalized_score": 0.4826,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "0-shot; Open LLM Leaderboard lm-evaluation-harness task group",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The repository definition matches the MuSR benchmark family evaluated by the leaderboard group; 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "openbookqa",
+      "name": "OpenBookQA",
+      "description": "OpenBookQA is a question-answering dataset modeled after open book exams for assessing human understanding. It contains 5,957 multiple-choice elementary-level science questions that probe understanding of 1,326 core science facts and their application to novel situations, requiring combination of open book facts with broad common knowledge through multi-hop reasoning.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.488,
+      "normalized_score": 0.488,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "0-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "piqa",
+      "name": "PIQA",
+      "description": "PIQA (Physical Interaction: Question Answering) is a benchmark dataset for physical commonsense reasoning in natural language. It tests AI systems' ability to answer questions requiring physical world knowledge through multiple choice questions with everyday situations, focusing on atypical solutions inspired by instructables.com. The dataset contains 21,000 multiple choice questions where models must choose the most appropriate solution for physical interactions.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8596,
+      "normalized_score": 0.8596,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "0-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    },
+    {
+      "benchmark_id": "winogrande",
+      "name": "Winogrande",
+      "description": "WinoGrande: An Adversarial Winograd Schema Challenge at Scale. A large-scale dataset of 44,000 pronoun resolution problems designed to test machine commonsense reasoning. Uses adversarial filtering to reduce spurious biases and provides a more robust evaluation of whether AI systems truly understand commonsense or exploit statistical shortcuts. Current best AI methods achieve 59.4-79.1% accuracy, significantly below human performance of 94.0%.",
+      "categories": [
+        "language",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8627,
+      "normalized_score": 0.8627,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2408.11857",
+      "analysis_method": "5-shot; lm-evaluation-harness",
+      "verification_date": null,
+      "verification_notes": "Table 5, Hermes 3 405B column. The report states 405B evaluations used FP8 quantization."
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1,
+        "cached_input_per_million": null,
+        "cache_write_per_million": null,
+        "output_per_million": 1,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": "fp8",
+      "limits": {
+        "max_input_tokens": 131072,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agieval",
+      "benchmark_name": "AGIEval",
+      "models": [
+        {
+          "model_id": "mistral-small-24b-base-2501",
+          "model_name": "Mistral Small 3 24B Base",
+          "score": 0.658,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-14b-base-2512",
+          "model_name": "Ministral 3 (14B Base 2512)",
+          "score": 0.648,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.6184,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "ministral-3-8b-base-2512",
+          "model_name": "Ministral 3 (8B Base 2512)",
+          "score": 0.591,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.5618,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.551,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-9b-it",
+          "model_name": "Gemma 2 9B",
+          "score": 0.528,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-3-3b-base-2512",
+          "model_name": "Ministral 3 (3B Base 2512)",
+          "score": 0.511,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "granite-3.3-8b-base",
+          "model_name": "Granite 3.3 8B Base",
+          "score": 0.493,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-8b-instruct-2410",
+          "model_name": "Ministral 8B Instruct",
+          "score": 0.483,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "arc-c",
+      "benchmark_name": "ARC-C",
+      "models": [
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.972,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-405b-instruct",
+          "model_name": "Llama 3.1 405B Instruct",
+          "score": 0.969,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.964,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.948,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-70b-instruct",
+          "model_name": "Llama 3.1 70B Instruct",
+          "score": 0.948,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.932,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "jamba-1.5-large",
+          "model_name": "Jamba 1.5 Large",
+          "score": 0.93,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.924,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-base-2501",
+          "model_name": "Mistral Small 3 24B Base",
+          "score": 0.9129,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.91,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.6945,
+          "rank": 23,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "bbh",
+      "benchmark_name": "BBH",
+      "models": [
+        {
+          "model_id": "qwen3-235b-a22b",
+          "model_name": "Qwen3 235B A22B",
+          "score": 0.8887,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.884,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.869,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.845,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.843,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.824,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-lite",
+          "model_name": "Nova Lite",
+          "score": 0.824,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minicpm-sala",
+          "model_name": "MiniCPM-SALA",
+          "score": 0.8155,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-micro",
+          "model_name": "Nova Micro",
+          "score": 0.795,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-14b-instruct",
+          "model_name": "Qwen2.5 14B Instruct",
+          "score": 0.782,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.7537,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "boolq",
+      "benchmark_name": "BoolQ",
+      "models": [
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.8893,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8804,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.848,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.846,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-9b-it",
+          "model_name": "Gemma 2 9B",
+          "score": 0.842,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.816,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b",
+          "model_name": "Gemma 3n E4B",
+          "score": 0.816,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-4-mini",
+          "model_name": "Phi 4 Mini",
+          "score": 0.812,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-mini-instruct",
+          "model_name": "Phi-3.5-mini-instruct",
+          "score": 0.78,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e2b-it-litert-preview",
+          "model_name": "Gemma 3n E2B Instructed LiteRT (Preview)",
+          "score": 0.764,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e2b",
+          "model_name": "Gemma 3n E2B",
+          "score": 0.764,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hellaswag",
+      "benchmark_name": "HellaSwag",
+      "models": [
+        {
+          "model_id": "claude-3-opus-20240229",
+          "model_name": "Claude 3 Opus",
+          "score": 0.954,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.953,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-pro",
+          "model_name": "Gemini 1.5 Pro",
+          "score": 0.933,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.9019,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.898,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-sonnet-20240229",
+          "model_name": "Claude 3 Sonnet",
+          "score": 0.89,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "command-r-plus-04-2024",
+          "model_name": "Command R+",
+          "score": 0.886,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8819,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.876,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-1.5-flash",
+          "model_name": "Gemini 1.5 Flash",
+          "score": 0.865,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu",
+      "benchmark_name": "MMLU",
+      "models": [
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.923,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-2024-12-17",
+          "model_name": "o1",
+          "score": 0.918,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o1-preview",
+          "model_name": "o1-preview",
+          "score": 0.908,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.5",
+          "model_name": "GPT-4.5",
+          "score": 0.908,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.906,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
+          "score": 0.906,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-4.1-2025-04-14",
+          "model_name": "GPT-4.1",
+          "score": 0.902,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.8502,
+          "rank": 45,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmlu-pro",
+      "benchmark_name": "MMLU-Pro",
+      "models": [
+        {
+          "model_id": "sakana-namazu",
+          "model_name": "Sakana Namazu",
+          "score": 0.9033,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.896,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.885,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.885,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m2.1",
+          "model_name": "MiniMax M2.1",
+          "score": 0.88,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.878,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.875,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.871,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.0",
+          "model_name": "ERNIE 5.0",
+          "score": 0.87,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.868,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.5414,
+          "rank": 121,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mt-bench",
+      "benchmark_name": "MT-Bench",
+      "models": [
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 8.99,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 8.93,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen-2.5-72b-instruct",
+          "model_name": "Qwen2.5 72B Instruct",
+          "score": 0.935,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.3-nemotron-super-49b-v1",
+          "model_name": "Llama-3.3 Nemotron Super 49B v1",
+          "score": 0.917,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v2.5",
+          "model_name": "DeepSeek-V2.5",
+          "score": 0.902,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-7b-instruct",
+          "model_name": "Qwen2.5 7B Instruct",
+          "score": 0.875,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-2-2407",
+          "model_name": "Mistral Large 2",
+          "score": 0.863,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-7b-instruct",
+          "model_name": "Qwen2 7B Instruct",
+          "score": 0.841,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-24b-instruct-2501",
+          "model_name": "Mistral Small 3 24B Instruct",
+          "score": 0.835,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ministral-8b-instruct-2410",
+          "model_name": "Ministral 8B Instruct",
+          "score": 0.83,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "piqa",
+      "benchmark_name": "PIQA",
+      "models": [
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.886,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.8596,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8444,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.832,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-9b-it",
+          "model_name": "Gemma 2 9B",
+          "score": 0.817,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b-it-litert-preview",
+          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
+          "score": 0.81,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e4b",
+          "model_name": "Gemma 3n E4B",
+          "score": 0.81,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-mini-instruct",
+          "model_name": "Phi-3.5-mini-instruct",
+          "score": 0.81,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e2b-it-litert-preview",
+          "model_name": "Gemma 3n E2B Instructed LiteRT (Preview)",
+          "score": 0.789,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-3n-e2b",
+          "model_name": "Gemma 3n E2B",
+          "score": 0.789,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "winogrande",
+      "benchmark_name": "Winogrande",
+      "models": [
+        {
+          "model_id": "gpt-4-0613",
+          "model_name": "GPT-4",
+          "score": 0.875,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-405b",
+          "model_name": "Hermes 3 405B",
+          "score": 0.8627,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "mimo-v2.5-pro",
+          "model_name": "MiMo-V2.5-Pro",
+          "score": 0.856,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "command-r-plus-04-2024",
+          "model_name": "Command R+",
+          "score": 0.854,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen2-72b-instruct",
+          "model_name": "Qwen2 72B Instruct",
+          "score": 0.851,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "llama-3.1-nemotron-70b-instruct",
+          "model_name": "Llama 3.1 Nemotron 70B Instruct",
+          "score": 0.8453,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-2-27b-it",
+          "model_name": "Gemma 2 27B",
+          "score": 0.837,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8319,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen-2.5-32b-instruct",
+          "model_name": "Qwen2.5 32B Instruct",
+          "score": 0.82,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "phi-3.5-moe-instruct",
+          "model_name": "Phi-3.5-MoE-instruct",
+          "score": 0.813,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

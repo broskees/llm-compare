@@ -183,13 +183,13 @@
       "provider_id": "deepinfra",
       "name": "DeepInfra",
       "website": "https://deepinfra.com/",
-      "deprecated": true,
-      "deprecated_at": "2026-07-06T00:00:00+00:00",
+      "deprecated": false,
+      "deprecated_at": null,
       "pricing": {
-        "input_per_million": 0.09,
+        "input_per_million": 0.037,
         "cached_input_per_million": null,
         "cache_write_per_million": null,
-        "output_per_million": 0.45,
+        "output_per_million": 0.17,
         "per_image": null,
         "per_second_video_720p": null,
         "per_second_video_1080p": null,
@@ -197,13 +197,13 @@
         "per_minute_audio": null,
         "per_million_chars": null
       },
-      "quantization": "int4",
+      "quantization": "bfloat16",
       "limits": {
         "max_input_tokens": 131072,
         "max_output_tokens": 131072
       },
       "performance": {
-        "throughput": null,
+        "throughput": 1.0483051441583782,
         "latency": null
       },
       "features": {
@@ -353,7 +353,7 @@
         "max_output_tokens": 30000
       },
       "performance": {
-        "throughput": null,
+        "throughput": 3.703189787868503,
         "latency": null
       },
       "features": {
@@ -436,74 +436,74 @@
       "benchmark_name": "CodeForces",
       "models": [
         {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 3471,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 1766,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-mini",
+          "model_name": "Seed 2.0 Mini",
+          "score": 1644,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "deepseek-v4-flash-max",
           "model_name": "DeepSeek-V4-Flash-Max",
           "score": 1,
-          "rank": 1,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v4-pro-max",
           "model_name": "DeepSeek-V4-Pro-Max",
           "score": 1,
-          "rank": 1,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v4-flash-0423",
           "model_name": "DeepSeek-V4-Flash-0423",
           "score": 0.9387,
-          "rank": 3,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "deepseek-v3.2-speciale",
           "model_name": "DeepSeek-V3.2-Speciale",
           "score": 0.9,
-          "rank": 4,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.851,
-          "rank": 5,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-35b-a3b",
           "model_name": "Qwen3.5-35B-A3B",
           "score": 0.822,
-          "rank": 6,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-oss-120b",
           "model_name": "GPT OSS 120B",
           "score": 0.821,
-          "rank": 7,
+          "rank": 10,
           "is_current_model": true
-        },
-        {
-          "model_id": "qwen3.5-27b",
-          "model_name": "Qwen3.5-27B",
-          "score": 0.807,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-reasoner",
-          "model_name": "DeepSeek-V3.2 (Thinking)",
-          "score": 0.795,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "deepseek-v3.2",
-          "model_name": "DeepSeek-V3.2",
-          "score": 0.795,
-          "rank": 9,
-          "is_current_model": false
         }
       ]
     },
@@ -519,15 +519,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.6-sol",
-          "model_name": "GPT-5.6 Sol",
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
           "score": 0.946,
           "rank": 2,
           "is_current_model": false
         },
         {
-          "model_id": "claude-mythos-preview",
-          "model_name": "Claude Mythos Preview",
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
           "score": 0.946,
           "rank": 2,
           "is_current_model": false
@@ -585,7 +585,7 @@
           "model_id": "gpt-oss-120b",
           "model_name": "GPT OSS 120B",
           "score": 0.801,
-          "rank": 96,
+          "rank": 98,
           "is_current_model": true
         }
       ]
@@ -668,7 +668,7 @@
           "model_id": "gpt-oss-120b",
           "model_name": "GPT OSS 120B",
           "score": 0.149,
-          "rank": 80,
+          "rank": 81,
           "is_current_model": true
         }
       ]
@@ -685,73 +685,80 @@
           "is_current_model": false
         },
         {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.923,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "o1-2024-12-17",
           "model_name": "o1",
           "score": 0.918,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.908,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "o1-preview",
           "model_name": "o1-preview",
           "score": 0.908,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "sarvam-105b",
           "model_name": "Sarvam-105B",
           "score": 0.906,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.906,
-          "rank": 5,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-3-5-sonnet-20240620",
-          "model_name": "Claude 3.5 Sonnet",
-          "score": 0.904,
-          "rank": 7,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-3-5-sonnet-20240620",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.1-2025-04-14",
           "model_name": "GPT-4.1",
           "score": 0.902,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "kimi-k2-0905",
           "model_name": "Kimi K2 0905",
           "score": 0.902,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "gpt-oss-120b",
           "model_name": "GPT OSS 120B",
           "score": 0.9,
-          "rank": 11,
+          "rank": 12,
           "is_current_model": true
         }
       ]

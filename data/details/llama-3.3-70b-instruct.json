@@ -227,16 +227,16 @@
   ],
   "providers": [
     {
-      "provider_id": "lambda",
-      "name": "Lambda",
-      "website": "https://lambdalabs.com",
-      "deprecated": true,
-      "deprecated_at": "2026-05-06T00:00:00+00:00",
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
       "pricing": {
-        "input_per_million": 0.2,
+        "input_per_million": 0.1,
         "cached_input_per_million": null,
         "cache_write_per_million": null,
-        "output_per_million": 0.2,
+        "output_per_million": 0.32,
         "per_image": null,
         "per_second_video_720p": null,
         "per_second_video_1080p": null,
@@ -244,14 +244,14 @@
         "per_minute_audio": null,
         "per_million_chars": null
       },
-      "quantization": null,
+      "quantization": "fp8",
       "limits": {
-        "max_input_tokens": 128000,
-        "max_output_tokens": 128000
+        "max_input_tokens": 131072,
+        "max_output_tokens": 131072
       },
       "performance": {
-        "throughput": 42,
-        "latency": 0.65
+        "throughput": null,
+        "latency": null
       },
       "features": {
         "web_search": null,
@@ -277,16 +277,16 @@
       }
     },
     {
-      "provider_id": "deepinfra",
-      "name": "DeepInfra",
-      "website": "https://deepinfra.com/",
+      "provider_id": "lambda",
+      "name": "Lambda",
+      "website": "https://lambdalabs.com",
       "deprecated": true,
       "deprecated_at": "2026-05-06T00:00:00+00:00",
       "pricing": {
-        "input_per_million": 0.23,
+        "input_per_million": 0.2,
         "cached_input_per_million": null,
         "cache_write_per_million": null,
-        "output_per_million": 0.4,
+        "output_per_million": 0.2,
         "per_image": null,
         "per_second_video_720p": null,
         "per_second_video_1080p": null,
@@ -300,7 +300,7 @@
         "max_output_tokens": 128000
       },
       "performance": {
-        "throughput": 37,
+        "throughput": 42,
         "latency": 0.65
       },
       "features": {
@@ -756,7 +756,7 @@
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.505,
-          "rank": 189,
+          "rank": 192,
           "is_current_model": true
         }
       ]
@@ -884,6 +884,13 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.934,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
           "model_id": "qwen3.5-122b-a10b",
           "model_name": "Qwen3.5-122B-A10B",
           "score": 0.934,
@@ -894,20 +901,13 @@
           "model_id": "claude-3-7-sonnet-20250219",
           "model_name": "Claude 3.7 Sonnet",
           "score": 0.932,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-397b-a17b",
           "model_name": "Qwen3.5-397B-A17B",
           "score": 0.926,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "nova-pro",
-          "model_name": "Nova Pro",
-          "score": 0.921,
           "rank": 9,
           "is_current_model": false
         },
@@ -915,8 +915,15 @@
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.921,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": true
+        },
+        {
+          "model_id": "nova-pro",
+          "model_name": "Nova Pro",
+          "score": 0.921,
+          "rank": 10,
+          "is_current_model": false
         }
       ]
     },
@@ -1022,14 +1029,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
+          "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.916,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20240620",
+          "model_id": "claude-3-5-sonnet-20241022",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.916,
           "rank": 3,
@@ -1091,73 +1098,80 @@
           "is_current_model": false
         },
         {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.923,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "o1-2024-12-17",
           "model_name": "o1",
           "score": 0.918,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.5",
           "model_name": "GPT-4.5",
           "score": 0.908,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "o1-preview",
           "model_name": "o1-preview",
           "score": 0.908,
-          "rank": 3,
-          "is_current_model": false
-        },
-        {
-          "model_id": "sarvam-105b",
-          "model_name": "Sarvam-105B",
-          "score": 0.906,
-          "rank": 5,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3-vl-235b-a22b-thinking",
           "model_name": "Qwen3 VL 235B A22B Thinking",
           "score": 0.906,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "claude-3-5-sonnet-20241022",
-          "model_name": "Claude 3.5 Sonnet",
-          "score": 0.904,
-          "rank": 7,
+          "model_id": "sarvam-105b",
+          "model_name": "Sarvam-105B",
+          "score": 0.906,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "claude-3-5-sonnet-20240620",
           "model_name": "Claude 3.5 Sonnet",
           "score": 0.904,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2-0905",
-          "model_name": "Kimi K2 0905",
-          "score": 0.902,
-          "rank": 9,
+          "model_id": "claude-3-5-sonnet-20241022",
+          "model_name": "Claude 3.5 Sonnet",
+          "score": 0.904,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-4.1-2025-04-14",
           "model_name": "GPT-4.1",
           "score": 0.902,
-          "rank": 9,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-0905",
+          "model_name": "Kimi K2 0905",
+          "score": 0.902,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.86,
-          "rank": 33,
+          "rank": 34,
           "is_current_model": true
         }
       ]
@@ -1240,7 +1254,7 @@
           "model_id": "llama-3.3-70b-instruct",
           "model_name": "Llama 3.3 70B Instruct",
           "score": 0.689,
-          "rank": 94,
+          "rank": 97,
           "is_current_model": true
         }
       ]

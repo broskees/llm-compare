@@ -1,0 +1,346 @@
+{
+  "model_id": "step-3.7-flash",
+  "name": "Step 3.7 Flash",
+  "model_type": "llm",
+  "organization": {
+    "id": "stepfun",
+    "name": "StepFun",
+    "website": "https://stepfun.com"
+  },
+  "description": "Step 3.7 Flash is an open-source multimodal reasoning model by StepFun with 198B total parameters (11B active) using Mixture of Experts. It accepts   text and image inputs and features a 256K context window, selectable reasoning effort, tool calling, and agentic capabilities for coding and search workflows, scoring   80.9% on GPQA Diamond and 56.3% on SWE-bench Pro.",
+  "release_date": "2026-06-10",
+  "announcement_date": "2026-06-10",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 198000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "apache_2_0",
+    "name": "Apache 2.0",
+    "allow_commercial": true,
+    "description": "Apache License 2.0 - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://deepinfra.com/stepfun-ai/Step-3.7-Flash",
+    "playground": "https://deepinfra.com/stepfun-ai/Step-3.7-Flash",
+    "paper": null,
+    "scorecard_blog": null,
+    "repo": "https://github.com/stepfun-ai",
+    "weights": "https://huggingface.co/stepfun-ai/Step-3.7-Flash"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "gdpval",
+      "name": "GDPval",
+      "description": "GDPval is an OpenAI benchmark evaluating AI models on economically valuable, real-world knowledge-work tasks spanning many professional occupations and industries.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.458,
+      "normalized_score": 0.458,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://static.stepfun.com/blog/step-3.7-flash/",
+      "analysis_method": "StepFun internal pairwise evaluation across GDPval's 44 occupations; no further sampling details are disclosed.",
+      "verification_date": null,
+      "verification_notes": "The official page attributes 45.8% to Step 3.7 Flash and labels the metric GDPval, not the separate GDPval-AA Elo benchmark."
+    },
+    {
+      "benchmark_id": "humanity's-last-exam-(with-tools,-text-only)",
+      "name": "Humanity's Last Exam (with tools, text-only)",
+      "description": "Text-only Humanity's Last Exam variant evaluated with tool use enabled.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.472,
+      "normalized_score": 0.472,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://static.stepfun.com/blog/step-3.7-flash/",
+      "analysis_method": "Humanity's Last Exam with tool use; the page classifies this among non-multimodal evaluations and provides no tool-set, harness, or sampling details.",
+      "verification_date": null,
+      "verification_notes": "The official page labels the exact model at 47.2 on HLE with Tools; its non-multimodal classification matches the repository's with-tools, text-only definition."
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "description": "SWE-Bench Pro is an advanced version of SWE-Bench that evaluates language models on complex, real-world software engineering tasks requiring extended reasoning and multi-step problem solving.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.563,
+      "normalized_score": 0.563,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://static.stepfun.com/blog/step-3.7-flash/",
+      "analysis_method": "Publisher-reported Agentic Coding comparison result; no harness, sampling count, or pass@k details are disclosed.",
+      "verification_date": null,
+      "verification_notes": "The official StepFun page explicitly labels Step 3.7 Flash (196B) at 56.3 on SWE-Bench Pro."
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.595,
+      "normalized_score": 0.595,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://static.stepfun.com/blog/step-3.7-flash/",
+      "analysis_method": "StepFun internal evaluation on Terminal-Bench 2.1; no harness or sampling details are disclosed.",
+      "verification_date": null,
+      "verification_notes": "The official page labels the exact model at 59.5 and explicitly confirms Step 3.7 Flash was benchmarked on version 2.1."
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.2,
+        "cached_input_per_million": 0.04,
+        "cache_write_per_million": null,
+        "output_per_million": 1.15,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": "modelopt",
+      "limits": {
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "swe-bench-pro",
+      "benchmark_name": "SWE-Bench Pro",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.8,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.778,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.692,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.677,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.647,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.646,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.643,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.632,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step-3.7-flash",
+          "model_name": "Step 3.7 Flash",
+          "score": 0.563,
+          "rank": 34,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.9059999999999999,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.866,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.858,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step-3.7-flash",
+          "model_name": "Step 3.7 Flash",
+          "score": 0.595,
+          "rank": 31,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "stepfun/step-3.7-flash"
+}

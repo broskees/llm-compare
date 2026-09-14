@@ -357,6 +357,56 @@
   ],
   "providers": [
     {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1.25,
+        "cached_input_per_million": null,
+        "cache_write_per_million": null,
+        "output_per_million": 10,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 1000000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
       "provider_id": "google",
       "name": "Google",
       "website": "https://ai.google.dev",
@@ -380,8 +430,8 @@
         "max_output_tokens": 65536
       },
       "performance": {
-        "throughput": 18.974302766309545,
-        "latency": 8.848600000000001
+        "throughput": 85,
+        "latency": 0.7
       },
       "features": {
         "web_search": null,
@@ -565,20 +615,6 @@
       "benchmark_name": "AIME 2025",
       "models": [
         {
-          "model_id": "gpt-5.2-pro-2025-12-11",
-          "model_name": "GPT-5.2 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-3-pro-preview",
-          "model_name": "Gemini 3 Pro",
-          "score": 1,
-          "rank": 1,
-          "is_current_model": false
-        },
-        {
           "model_id": "kimi-k2-thinking-0905",
           "model_name": "Kimi K2-Thinking-0905",
           "score": 1,
@@ -586,8 +622,22 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
           "model_id": "grok-4-heavy",
           "model_name": "Grok-4 Heavy",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
           "score": 1,
           "rank": 1,
           "is_current_model": false
@@ -614,15 +664,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-high-2025-11-12",
-          "model_name": "GPT-5.1 High",
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
         },
         {
-          "model_id": "longcat-flash-thinking-2601",
-          "model_name": "LongCat-Flash-Thinking-2601",
+          "model_id": "gpt-5.1-high-2025-11-12",
+          "model_name": "GPT-5.1 High",
           "score": 0.996,
           "rank": 8,
           "is_current_model": false
@@ -638,7 +688,7 @@
           "model_id": "gemini-2.5-pro",
           "model_name": "Gemini 2.5 Pro",
           "score": 0.83,
-          "rank": 68,
+          "rank": 70,
           "is_current_model": true
         }
       ]
@@ -738,72 +788,65 @@
           "is_current_model": false
         },
         {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 0.887,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-2.5-pro",
           "model_name": "Gemini 2.5 Pro",
           "score": 0.886,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": true
         },
         {
           "model_id": "gemini-2.5-flash",
           "model_name": "Gemini 2.5 Flash",
           "score": 0.884,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "inkling-small",
           "model_name": "Inkling-Small",
           "score": 0.867,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "gemini-2.5-flash-lite",
           "model_name": "Gemini 2.5 Flash-Lite",
           "score": 0.811,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "gemini-2.0-flash-lite",
           "model_name": "Gemini 2.0 Flash-Lite",
           "score": 0.782,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gemma-3-27b-it",
           "model_name": "Gemma 3 27B",
           "score": 0.751,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gemma-3-12b-it",
           "model_name": "Gemma 3 12B",
           "score": 0.695,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gemini-diffusion",
           "model_name": "Gemini Diffusion",
           "score": 0.691,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemma-3n-e4b-it",
-          "model_name": "Gemma 3n E4B Instructed",
-          "score": 0.645,
-          "rank": 10,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemma-3n-e4b-it-litert-preview",
-          "model_name": "Gemma 3n E4B Instructed LiteRT Preview",
-          "score": 0.645,
           "rank": 10,
           "is_current_model": false
         }
@@ -849,15 +892,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.5",
-          "model_name": "GPT-5.5",
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
           "score": 0.936,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-4-8",
-          "model_name": "Claude Opus 4.8",
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
           "score": 0.936,
           "rank": 6,
           "is_current_model": false
@@ -887,7 +930,7 @@
           "model_id": "gemini-2.5-pro",
           "model_name": "Gemini 2.5 Pro",
           "score": 0.83,
-          "rank": 76,
+          "rank": 78,
           "is_current_model": true
         }
       ]
@@ -970,7 +1013,7 @@
           "model_id": "gemini-2.5-pro",
           "model_name": "Gemini 2.5 Pro",
           "score": 0.178,
-          "rank": 72,
+          "rank": 73,
           "is_current_model": true
         }
       ]
@@ -987,8 +1030,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-2025-11-13",
-          "model_name": "GPT-5.1",
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
@@ -1001,8 +1044,8 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.1-instant-2025-11-12",
-          "model_name": "GPT-5.1 Instant",
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
           "score": 0.854,
           "rank": 2,
           "is_current_model": false
@@ -1022,9 +1065,9 @@
           "is_current_model": false
         },
         {
-          "model_id": "o3-2025-04-16",
-          "model_name": "o3",
-          "score": 0.829,
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.834,
           "rank": 7,
           "is_current_model": false
         },
@@ -1032,20 +1075,20 @@
           "model_id": "qwen3.6-27b",
           "model_name": "Qwen3.6-27B",
           "score": 0.829,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.829,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.5-27b",
           "model_name": "Qwen3.5-27B",
           "score": 0.823,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "gemini-2.5-pro-preview-06-05",
-          "model_name": "Gemini 2.5 Pro Preview 06-05",
-          "score": 0.82,
           "rank": 10,
           "is_current_model": false
         },
@@ -1053,7 +1096,7 @@
           "model_id": "gemini-2.5-pro",
           "model_name": "Gemini 2.5 Pro",
           "score": 0.796,
-          "rank": 15,
+          "rank": 17,
           "is_current_model": true
         }
       ]
@@ -1219,7 +1262,7 @@
           "model_id": "gemini-2.5-pro",
           "model_name": "Gemini 2.5 Pro",
           "score": 0.632,
-          "rank": 81,
+          "rank": 84,
           "is_current_model": true
         }
       ]

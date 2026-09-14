@@ -1,0 +1,1692 @@
+{
+  "model_id": "ling-3.0-flash",
+  "name": "Ling 3.0 Flash",
+  "model_type": "llm",
+  "organization": {
+    "id": "inclusionai",
+    "name": "InclusionAI",
+    "website": "https://github.com/inclusionAI"
+  },
+  "description": "The model prioritizes token efficiency and agentic inference at production scale, stretching what developers can achieve within limited token, latency, and serving-cost budgets.",
+  "release_date": "2026-08-04",
+  "announcement_date": "2026-08-04",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 124000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "unknown",
+    "name": "Unknown",
+    "allow_commercial": false,
+    "description": "Unknown license"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://deepinfra.com/inclusionAI/Ling-3.0-flash",
+    "playground": "https://deepinfra.com/inclusionAI/Ling-3.0-flash",
+    "paper": null,
+    "scorecard_blog": null,
+    "repo": null,
+    "weights": "https://huggingface.co/inclusionAI/Ling-3.0-flash"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-lcr",
+      "name": "AA-LCR",
+      "description": "Agent Arena Long Context Reasoning benchmark",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.651,
+      "normalized_score": 0.651,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; exact AA-LCR row under Ling-3.0-flash."
+    },
+    {
+      "benchmark_id": "aime-2026",
+      "name": "AIME 2026",
+      "description": "All 30 problems from the 2026 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.932,
+      "normalized_score": 0.932,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Source label AIME26 maps to the repository’s full AIME 2026 definition; exact-model metadata also reports MathArena/aime_2026 = 93.2."
+    },
+    {
+      "benchmark_id": "artifacts-bench",
+      "name": "Artifacts Bench",
+      "description": "Artifacts Bench evaluates a model's ability to generate visual code artifacts, measuring the quality of generated interactive and visual front-end outputs from natural-language requests.",
+      "categories": [
+        "frontend_development",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.77,
+      "normalized_score": 0.77,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Source label “ArtifactsBench” maps to the repository’s exact Artifacts Bench definition; score scale is not explicitly labeled."
+    },
+    {
+      "benchmark_id": "bfcl-v4",
+      "name": "BFCL-V4",
+      "description": "Berkeley Function Calling Leaderboard V4 (BFCL-V4) evaluates LLMs on their ability to accurately call functions and APIs, including simple, multiple, parallel, and nested function calls across diverse programming scenarios.",
+      "categories": [
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.73,
+      "normalized_score": 0.73,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; exact BFCL-v4 row under Ling-3.0-flash; scale is not explicitly labeled."
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "name": "BrowseComp",
+      "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.722,
+      "normalized_score": 0.722,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Internal single-agent search harness; context resume at 64K via trajectory summarization and history discard; average pass@1.",
+      "verification_date": null,
+      "verification_notes": "Kept the standard single-agent with-context result; the separate 82.0 multi-agent setup was excluded during deduplication."
+    },
+    {
+      "benchmark_id": "draco",
+      "name": "DRACO",
+      "description": "DRACO is a deep research benchmark that evaluates an agent's ability to gather, synthesize, and reason over information to answer complex research questions. Scores are based on official rubrics per question, with the final score being the average across all questions.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.704,
+      "normalized_score": 0.704,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Internal search-agent harness; official per-question rubrics averaged across questions; Claude Opus 4.6 scoring model.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; task and rubric-average metric match DRACO."
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA evaluates AI agents on economically valuable professional knowledge-work tasks and reports performance as an Elo score.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1107,
+      "normalized_score": 0.369,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "GDPval v2-AA Elo on the public 220-task set using the official Stirrup harness; 250-turn limit; 5-hour timeout.",
+      "verification_date": null,
+      "verification_notes": "Repository definition uses raw Elo with max_score 3000; normalized_score is 1107/3000."
+    },
+    {
+      "benchmark_id": "hmmt-feb-26",
+      "name": "HMMT Feb 26",
+      "description": "HMMT February 2026 is a math competition benchmark based on problems from the Harvard-MIT Mathematics Tournament, testing advanced mathematical problem-solving and reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.87,
+      "normalized_score": 0.87,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Source label HMMT-Feb26 maps exactly to the repository’s February 2026 HMMT definition."
+    },
+    {
+      "benchmark_id": "ifbench",
+      "name": "IFBench",
+      "description": "Instruction Following Benchmark evaluating model's ability to follow complex instructions",
+      "categories": [
+        "instruction_following",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.745,
+      "normalized_score": 0.745,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; exact IFBench row under Ling-3.0-flash."
+    },
+    {
+      "benchmark_id": "imo-answerbench",
+      "name": "IMO-AnswerBench",
+      "description": "IMO-AnswerBench is a benchmark for evaluating mathematical reasoning capabilities on International Mathematical Olympiad (IMO) problems, focusing on answer generation and verification.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.837,
+      "normalized_score": 0.837,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; exact IMO-AnswerBench row under Ling-3.0-flash."
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "name": "LiveCodeBench v6",
+      "description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+      "categories": [
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.828,
+      "normalized_score": 0.828,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Source range 2408-2505 is the exact LiveCodeBench v6 release represented by the repository definition."
+    },
+    {
+      "benchmark_id": "mcp-atlas",
+      "name": "MCP Atlas",
+      "description": "MCP Atlas is a benchmark for evaluating AI models on scaled tool use capabilities, measuring how well models can coordinate and utilize multiple tools across complex multi-step tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.655,
+      "normalized_score": 0.655,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "500-task public set; official v1 harness; 20-turn limit; Gemini-2.5-Pro claim-coverage judge.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; public-set task and claim-coverage metric match MCP Atlas."
+    },
+    {
+      "benchmark_id": "multi-if",
+      "name": "Multi-IF",
+      "description": "Multi-IF benchmarks LLMs on multi-turn and multilingual instruction following. It expands upon IFEval by incorporating multi-turn sequences and translating English prompts into 7 other languages, resulting in 4,501 multilingual conversations with three turns each. The benchmark reveals that current leading LLMs struggle with maintaining accuracy in multi-turn instructions and shows higher error rates for non-Latin script languages.",
+      "categories": [
+        "chat",
+        "language",
+        "reasoning",
+        "structured_output",
+        "instruction_following",
+        "communication"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.877,
+      "normalized_score": 0.877,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Official model-card evaluation table; detailed setup not specified.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; exact Multi-IF row under Ling-3.0-flash."
+    },
+    {
+      "benchmark_id": "skillsbench",
+      "name": "SkillsBench",
+      "description": "SkillsBench evaluates coding agents on self-contained programming tasks, measuring practical engineering skills across diverse software development scenarios.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.448,
+      "normalized_score": 0.448,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Kilo Code harness on 87 default runnable tasks, excluding external-API-dependent tasks; average of 3 runs.",
+      "verification_date": null,
+      "verification_notes": "The 87-task default roster is the standard self-contained SkillsBench set represented by the repository definition."
+    },
+    {
+      "benchmark_id": "swe-bench-multilingual",
+      "name": "SWE-bench Multilingual",
+      "description": "A multilingual benchmark for issue resolving in software engineering that covers Java, TypeScript, JavaScript, Go, Rust, C, and C++. Contains 1,632 high-quality instances carefully annotated from 2,456 candidates by 68 expert annotators, designed to evaluate Large Language Models across diverse software ecosystems beyond Python.",
+      "categories": [
+        "reasoning",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.724,
+      "normalized_score": 0.724,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "OpenHands agent harness with tailored prompts; temperature=0.6, top_p=0.95, max_new_tokens=32K; 256K context.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; exact model and benchmark name match the repository definition."
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "description": "SWE-Bench Pro is an advanced version of SWE-Bench that evaluates language models on complex, real-world software engineering tasks requiring extended reasoning and multi-step problem solving.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.566,
+      "normalized_score": 0.566,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "OpenHands agent harness with tailored prompts; temperature=0.6, top_p=0.95, max_new_tokens=32K; 256K context.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; score is in the exact Ling-3.0-flash column."
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "name": "Tau3 Banking",
+      "description": "τ³-Bench banking domain evaluates agentic models on multi-turn, tool-using customer-support scenarios in a simulated retail banking environment.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.28,
+      "normalized_score": 0.28,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Artificial Analysis-aligned protocol; GPT-5.4-mini with medium reasoning used for user simulation and natural-language assertion judging.",
+      "verification_date": null,
+      "verification_notes": "Source suffix “-AA” identifies the evaluation protocol; the underlying task is the repository’s Tau3 Banking benchmark."
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.57,
+      "normalized_score": 0.57,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Artificial Analysis protocol; default Terminus 2 harness; 2-hour timeout; preserve-thinking JSON parser; 3-run task mean; temperature=0.6, top_p=1.0, max_new_tokens=32K; 256K context.",
+      "verification_date": null,
+      "verification_notes": "Official inclusionAI model card; exact Terminal-Bench 2.1 row under Ling-3.0-flash."
+    },
+    {
+      "benchmark_id": "widesearch",
+      "name": "WideSearch",
+      "description": "WideSearch is an agentic search benchmark that evaluates models' ability to perform broad, parallel search operations across multiple sources. It tests wide-coverage information retrieval and synthesis capabilities.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.736,
+      "normalized_score": 0.736,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+      "analysis_method": "Internal basic-ReAct single-agent search harness; official prompt and GPT-4.1 judge on the corrected dataset; average pass@1.",
+      "verification_date": null,
+      "verification_notes": "Benchmark task and pass@1 metric match WideSearch; the harness is publisher-internal."
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.06,
+        "cached_input_per_million": 0.012,
+        "cache_write_per_million": null,
+        "output_per_million": 0.18,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 131072,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aa-lcr",
+      "benchmark_name": "AA-LCR",
+      "models": [
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.8,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.734,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-latest",
+          "model_name": "Mistral Small 4",
+          "score": 0.712,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-pro4",
+          "model_name": "Solar Pro 4",
+          "score": 0.71,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.7,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.687,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.687,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.683,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.669,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.661,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.651,
+          "rank": 12,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "aime-2026",
+      "benchmark_name": "AIME 2026",
+      "models": [
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.992,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 0.971,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sakana-namazu",
+          "model_name": "Sakana Namazu",
+          "score": 0.9667,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.964,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.955,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-pro4",
+          "model_name": "Solar Pro 4",
+          "score": 0.953,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.953,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.1",
+          "model_name": "GLM-5.1",
+          "score": 0.953,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.947,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.945,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.932,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "bfcl-v4",
+      "benchmark_name": "BFCL-V4",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.75,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.73,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.729,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.729,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.722,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.685,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.677,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.673,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-9b",
+          "model_name": "Qwen3.5-9B",
+          "score": 0.661,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.616,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark_name": "BrowseComp",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.915,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.912,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.908,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.904,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.901,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.875,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.869,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.863,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.862,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.859,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.722,
+          "rank": 31,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 1853,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 1773,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 1769,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 1754,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.6",
+          "model_name": "Grok 4.6",
+          "score": 1753,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 1678,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 1545,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 1525,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 1269,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 1238,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 1107,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hmmt-feb-26",
+      "benchmark_name": "HMMT Feb 26",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.971,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.952,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.929,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.925,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0423",
+          "model_name": "DeepSeek-V4-Flash-0423",
+          "score": 0.919,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.878,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.87,
+          "rank": 9,
+          "is_current_model": true
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.849,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifbench",
+      "benchmark_name": "IFBench",
+      "models": [
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.828,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.822,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.817,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.813,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.813,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8121,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.802,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 0.798,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.795,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "granite-4.2-8b",
+          "model_name": "IBM Granite 4.2 8B",
+          "score": 0.7933,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.745,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "imo-answerbench",
+      "benchmark_name": "IMO-AnswerBench",
+      "models": [
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.923,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.91,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.9,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.9,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.898,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 0.884,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.86,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.86,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step-3.5-flash",
+          "model_name": "Step-3.5-Flash",
+          "score": 0.854,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0423",
+          "model_name": "DeepSeek-V4-Flash-0423",
+          "score": 0.851,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.837,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "livecodebench-v6",
+      "benchmark_name": "LiveCodeBench v6",
+      "models": [
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.919,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.919,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.916,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "sakana-namazu",
+          "model_name": "Sakana Namazu",
+          "score": 0.9033,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.903,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.896,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.896,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.89,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-pro",
+          "model_name": "Seed 2.0 Pro",
+          "score": 0.878,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.877,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.828,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mcp-atlas",
+      "benchmark_name": "MCP Atlas",
+      "models": [
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.881,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.842,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.838,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.837,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.822,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.803,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.796,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.791,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.773,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.655,
+          "rank": 27,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "multi-if",
+      "benchmark_name": "Multi-IF",
+      "models": [
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.877,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-235b-a22b-thinking-2507",
+          "model_name": "Qwen3-235B-A22B-Thinking-2507",
+          "score": 0.806,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "lfm-2.5-2.6b",
+          "model_name": "LFM2.5-2.6B",
+          "score": 0.8007,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-mini",
+          "model_name": "o3-mini",
+          "score": 0.795,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.791,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.78,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-thinking",
+          "model_name": "Qwen3-Next-80B-A3B-Thinking",
+          "score": 0.778,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-235b-a22b-instruct-2507",
+          "model_name": "Qwen3-235B-A22B-Instruct-2507",
+          "score": 0.775,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.763,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-next-80b-a3b-instruct",
+          "model_name": "Qwen3-Next-80B-A3B-Instruct",
+          "score": 0.758,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-multilingual",
+      "benchmark_name": "SWE-bench Multilingual",
+      "models": [
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.873,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.844,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.829,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.81,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.81,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "laguna-s-2.1",
+          "model_name": "Laguna S 2.1",
+          "score": 0.785,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.783,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.783,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.7783,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.767,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.724,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "benchmark_name": "SWE-Bench Pro",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.8,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.778,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.692,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.677,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.647,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.646,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.643,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.632,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.566,
+          "rank": 31,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.9059999999999999,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.866,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.858,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.57,
+          "rank": 32,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "widesearch",
+      "benchmark_name": "WideSearch",
+      "models": [
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.839,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.819,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.808,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.79,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.764,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.743,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.74,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.736,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.638,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.611,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "inclusionai/ling-3.0-flash"
+}

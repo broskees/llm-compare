@@ -1,0 +1,1723 @@
+{
+  "model_id": "deepseek-v4.1-flash",
+  "name": "DeepSeek-V4.1-Flash",
+  "model_type": "llm",
+  "organization": {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "website": "https://deepseek.com"
+  },
+  "description": "DeepSeek-V4.1-Flash is an MIT-licensed multimodal Mixture-of-Experts model accepting images and text and generating text. It has 552B backbone parameters, 196B Engram conditional-memory parameters, and approximately 763B parameters in the released checkpoint. Its causal encoder-decoder architecture activates 8B parameters per token during prefill and 16B during decode. Trained on 45T multimodal tokens, it supports a 1M-token context, up to 384K output tokens on the DeepSeek API, and continuously adjustable reasoning effort from 1 to 100. CSA2 attention and FP4 KV caching reduce global KV cache storage to 890 bytes per token. The API model name is deepseek-flash. Catalog prices are peak rates per million tokens: $0.30 input, $0.006 cached input, and $1.20 output. Off-peak rates are $0.15, $0.003, and $0.60 respectively, effective September 10, 2026 at 04:00 UTC. Peak hours are 01:00–04:00 and 06:00–10:00 UTC on weekdays; all other times are off-peak (the launch pricing announcement also lists public holidays as off-peak).",
+  "release_date": "2026-09-10",
+  "announcement_date": "2026-09-10",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 763205315794,
+  "training_tokens": 45000000000000,
+  "available_in_zeroeval": false,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "mit",
+    "name": "MIT",
+    "allow_commercial": true,
+    "description": "MIT License - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "vision": "true",
+    "thinking": "true",
+    "responses_api": "true",
+    "speculative_decoding": "true"
+  },
+  "sources": {
+    "api_ref": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "playground": "https://chat.deepseek.com/",
+    "paper": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf",
+    "scorecard_blog": "https://x.com/deepseek_ai/status/2097930608790167907",
+    "repo": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/tree/main",
+    "weights": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.318,
+      "normalized_score": 0.318,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; official scaffold. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5479999999999999,
+      "normalized_score": 0.5479999999999999,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; official scaffold. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "babyvision",
+      "name": "BabyVision",
+      "description": "A benchmark for early-stage visual reasoning and perception on child-like vision tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.8959999999999999,
+      "normalized_score": 0.8959999999999999,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; with tools; Claude Code harness; 512K-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartography",
+      "name": "Chartography",
+      "description": "Chartography evaluates professional chart understanding with 100 expert-written tasks drawn from real charts across science, engineering, finance, manufacturing, supply chain, and healthcare.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.789,
+      "normalized_score": 0.789,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; with tools; Claude Code harness; 512K-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "codeforces",
+      "name": "CodeForces",
+      "description": "A competitive programming benchmark using problems from the CodeForces platform. The benchmark evaluates code generation capabilities of LLMs on algorithmic problems with difficulty ratings ranging from 800 to 2400. Problems cover diverse algorithmic categories including dynamic programming, graph algorithms, data structures, and mathematical problems with standardized evaluation through direct platform submission.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 3471,
+      "normalized_score": 1,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Rating. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": "Raw rating 3471 exceeds the catalog benchmark normalization scale of 3000; normalized score is capped at 1.0."
+    },
+    {
+      "benchmark_id": "cybergym",
+      "name": "CyberGym",
+      "description": "CyberGym is a benchmark for evaluating AI agents on cybersecurity tasks, testing their ability to identify vulnerabilities, perform security analysis, and complete security-related challenges in a controlled environment.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8809999999999999,
+      "normalized_score": 0.8809999999999999,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.742,
+      "normalized_score": 0.742,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Resolved; mini-SWE harness; 1M-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "exploitgym",
+      "name": "ExploitGym",
+      "description": "ExploitGym is a large-scale, realistic benchmark built from real-world vulnerabilities across userspace programs, Google's V8 engine, and the Linux kernel. Given a vulnerability and a proof-of-vulnerability input, agents must craft a working end-to-end exploit that achieves unauthorized code execution.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.153,
+      "normalized_score": 0.153,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.909,
+      "normalized_score": 0.909,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; GPQA Diamond. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.368,
+      "normalized_score": 0.368,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; full multimodal evaluation, no tools. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam-(no-tools,-text-only)",
+      "name": "Humanity's Last Exam (no tools, text-only)",
+      "description": "Text-only Humanity's Last Exam variant evaluated without tool use.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.391,
+      "normalized_score": 0.391,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; text-only subset, no tools. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam-(with-tools)",
+      "name": "Humanity's Last Exam (with tools)",
+      "description": "Full multimodal Humanity's Last Exam evaluated with tool use enabled, distinct from its text-only subset.",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.639,
+      "normalized_score": 0.639,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; with tools; full multimodal evaluation. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "matharena-apex",
+      "name": "MathArena Apex",
+      "description": "MathArena Apex is a challenging math contest benchmark featuring the most difficult mathematical problems designed to test advanced reasoning and problem-solving abilities of AI models. It focuses on olympiad-level mathematics and complex multi-step mathematical reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6559999999999999,
+      "normalized_score": 0.6559999999999999,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "nl2repo",
+      "name": "NL2Repo",
+      "description": "NL2Repo evaluates long-horizon coding capabilities including repository-level understanding, where models must generate or modify code across entire repositories from natural language specifications.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.64,
+      "normalized_score": 0.64,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Score; DeepSeek Harness Minimal; 1M-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": "The current Hugging Face model card reports 64.0; the supplied launch comparison image reports 65.4. This entry uses the model card."
+    },
+    {
+      "benchmark_id": "program-bench",
+      "name": "Program Bench",
+      "description": "Program Bench evaluates code-generation agents by asking them to recreate a program's behavior from only a compiled binary and documentation. It spans 200 tasks from small CLI tools to large systems such as FFmpeg and SQLite, with submissions judged against more than 248,000 fuzz-generated behavioral tests.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.203,
+      "normalized_score": 0.203,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Almost@1; DeepSeek Harness Minimal; 1M-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "sec-bench-pro",
+      "name": "SEC-bench Pro",
+      "description": "SEC-bench Pro is a self-evolving software-security benchmark that measures agent bug hunting on critical, high-complexity systems. It instantiates validated vulnerabilities across the V8 and SpiderMonkey JavaScript engines as reproducible vulnerability-discovery and proof-of-concept-generation tasks with oracle-based validation.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.628,
+      "normalized_score": 0.628,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; Claude Code harness. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.9059999999999999,
+      "normalized_score": 0.9059999999999999,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; DeepSeek Harness Minimal; 1M-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-3.0",
+      "name": "Terminal-Bench 3.0",
+      "description": "Terminal-Bench 3.0 is a release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal on real-world, end-to-end tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.3,
+      "normalized_score": 0.3,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; DeepSeek Harness Minimal; 1M-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.312,
+      "normalized_score": 0.312,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@1; DeepSeek Harness Minimal; 1M-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "zerobench",
+      "name": "ZEROBench",
+      "description": "ZEROBench is a challenging vision benchmark designed to test models on zero-shot visual understanding tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 100,
+      "score": 0.49,
+      "normalized_score": 0.49,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "analysis_method": "Pass@5; main split with tools; Claude Code harness; 512K-token context. Maximum reasoning effort (reasoning_effort=100); temperature=1.0; top_p=0.95.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "fireworks",
+      "name": "Fireworks",
+      "website": "https://fireworks.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.22,
+        "cached_input_per_million": 0.007,
+        "cache_write_per_million": null,
+        "output_per_million": 0.66,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1040000,
+        "max_output_tokens": 393216
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "deepinfra",
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.3,
+        "cached_input_per_million": 0.006,
+        "cache_write_per_million": null,
+        "output_per_million": 1.2,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": "fp8",
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "deepseek",
+      "name": "DeepSeek",
+      "website": "https://deepseek.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.3,
+        "cached_input_per_million": 0.006,
+        "cache_write_per_million": null,
+        "output_per_million": 1.2,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 393216
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "novita",
+      "name": "Novita",
+      "website": "https://novita.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.3,
+        "cached_input_per_million": 0.006,
+        "cache_write_per_million": null,
+        "output_per_million": 1.2,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 393216
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.512,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.512,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.504,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.503,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.429,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.414,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.318,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.5479999999999999,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.494,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.488,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.482,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.414,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.321,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.318,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.314,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.308,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.304,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "babyvision",
+      "benchmark_name": "BabyVision",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.8959999999999999,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.857,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.856,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.763,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.737,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.704,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.685,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.629,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.534,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.446,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "codeforces",
+      "benchmark_name": "CodeForces",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 3471,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-14b",
+          "model_name": "Qwen3 14B",
+          "score": 1766,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-mini",
+          "model_name": "Seed 2.0 Mini",
+          "score": 1644,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 1,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 1,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0423",
+          "model_name": "DeepSeek-V4-Flash-0423",
+          "score": 0.9387,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v3.2-speciale",
+          "model_name": "DeepSeek-V3.2-Speciale",
+          "score": 0.9,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.851,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.822,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.821,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "cybergym",
+      "benchmark_name": "CyberGym",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.8809999999999999,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3.8-flash-cyber",
+          "model_name": "Gemini 3.8 Flash Cyber",
+          "score": 0.862,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.845,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.833,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash-cyber",
+          "model_name": "Gemini 3.5 Flash Cyber",
+          "score": 0.832,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.831,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.818,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.788,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.784,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0731",
+          "model_name": "DeepSeek-V4-Flash-0731",
+          "score": 0.767,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.742,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.7,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.69,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.688,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.67,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.67,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.96,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.935,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.93,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.909,
+          "rank": 23,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.65,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.647,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.647,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.645,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.625,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.621,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.6,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.584,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.579,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.574,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.368,
+          "rank": 43,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "matharena-apex",
+      "benchmark_name": "MathArena Apex",
+      "models": [
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.902,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 0.857,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.742,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0423",
+          "model_name": "DeepSeek-V4-Flash-0423",
+          "score": 0.721,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.6559999999999999,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.445,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.387,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.354,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.313,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.234,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "nl2repo",
+      "benchmark_name": "NL2Repo",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.64,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.615,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.589,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.58,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.577,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.563,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.559,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0731",
+          "model_name": "DeepSeek-V4-Flash-0731",
+          "score": 0.542,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.489,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.481,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.481,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.9059999999999999,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.866,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.858,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.518,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.445,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.418,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.373,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.312,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.236,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.215,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "zerobench",
+      "benchmark_name": "ZEROBench",
+      "models": [
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 11,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.49,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.41,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.35,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.33,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.18,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.11,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.11,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.1,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.09,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gpt-6-astra",
+    "name": "GPT-6 Astra",
+    "organization_name": "OpenAI",
+    "release_date": "2026-09-04",
+    "announcement_date": "2026-09-03",
+    "knowledge_cutoff": "2026-04-30",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "agents-last-exam": 0.593,
+      "arc-agi": 0.985,
+      "arc-agi-3": 0.999,
+      "arc-agi-v2": 0.95,
+      "automationbench": 0.414,
+      "benchcad-with-python-tool": 0.959,
+      "browsecomp": 0.915,
+      "deepswe-1.1": 0.741,
+      "exploitbench": 1,
+      "exploitgym": 0.424,
+      "frontiercode-1.1": 0.533,
+      "frontiermath-tier-4-v2": 0.976,
+      "genebench-pro": 0.378,
+      "gpqa": 0.96,
+      "healthbench-professional": 0.634,
+      "humanity's-last-exam-(with-tools,-text-only)": 0.572,
+      "lifescibench": 0.603,
+      "osworld-2.0": 0.726,
+      "screenspot-pro": 0.927,
+      "sec-bench-pro": 0.854,
+      "terminal-bench-4.0": 0.577,
+      "terminal-bench-science-0.1": 0.646
+    },
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 10,
+      "output_cost": 50,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}
