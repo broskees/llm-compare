@@ -1,0 +1,1141 @@
+{
+  "model_id": "atria-dawn-preview",
+  "name": "Atria Dawn Preview",
+  "model_type": "llm",
+  "organization": {
+    "id": "shanghai-ai-lab",
+    "name": "Shanghai AI Laboratory",
+    "website": "https://huggingface.co/internlm"
+  },
+  "description": "Atria Dawn Preview is a preview-stage agentic model from Shanghai AI Laboratory (published under the internlm Hugging Face org), built on a 744B-parameter MoE foundation (the model card states it is trained on the GLM-5.2 base). It targets research and engineering workflows requiring sustained environment understanding, tool use, and multi-step task completion across four capability areas the vendor calls Discovery, Creation, Delivery, and Cybersecurity. The Instruct model accepts text-only input (image/PDF input returns an API error) with a 256K-token context window. Weights are released under the MIT license on Hugging Face and ModelScope in BF16 and FP8 formats. It is served via an international API at api.atria-asi.ai (Chat Completions, Messages, and Responses wire formats) and a China-region endpoint; no per-token pricing has been published on either endpoint as of this writing.",
+  "release_date": "2026-09-11",
+  "announcement_date": "2026-09-11",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 744000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "mit",
+    "name": "MIT",
+    "allow_commercial": true,
+    "description": "MIT License - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "instruct",
+    "agentic": "true",
+    "preview": "true",
+    "thinking": "unknown",
+    "modality_input": "text-only",
+    "pricing_unpublished": "true"
+  },
+  "sources": {
+    "api_ref": "https://api.atria-asi.ai/docs",
+    "playground": "https://api.atria-asi.ai/",
+    "paper": null,
+    "scorecard_blog": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+    "repo": "https://github.com/atria-asi/Atria-Dawn-Preview",
+    "weights": "https://huggingface.co/internlm/Atria-Dawn-Preview"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.538,
+      "normalized_score": 0.538,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "AutomationBench. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bfcl-v4",
+      "name": "BFCL-V4",
+      "description": "Berkeley Function Calling Leaderboard V4 (BFCL-V4) evaluates LLMs on their ability to accurately call functions and APIs, including simple, multiple, parallel, and nested function calls across diverse programming scenarios.",
+      "categories": [
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.77,
+      "normalized_score": 0.77,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "BFCL v4. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "name": "BrowseComp",
+      "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.925,
+      "normalized_score": 0.925,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "BrowseComp. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cybergym",
+      "name": "CyberGym",
+      "description": "CyberGym is a benchmark for evaluating AI agents on cybersecurity tasks, testing their ability to identify vulnerabilities, perform security analysis, and complete security-related challenges in a controlled environment.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.865,
+      "normalized_score": 0.865,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "CyberGym. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "name": "DeepSearchQA",
+      "description": "DeepSearchQA is a benchmark for evaluating deep search and question-answering capabilities, testing models' ability to perform multi-hop reasoning and information retrieval across complex knowledge domains.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.96,
+      "normalized_score": 0.96,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "DeepSearchQA. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA evaluates AI agents on economically valuable professional knowledge-work tasks and reports performance as an Elo score.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1583,
+      "normalized_score": 0.5277,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "GDPval row (Elo-style scale, e.g. Fable 5.1 reports 1853 on the same scale). Mapped to gdpval-aa (max_score 3000) rather than the fractional gdpval benchmark because the reported value is on the Elo index scale, not a 0-1 win rate. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mle-bench-lite",
+      "name": "MLE-Bench Lite",
+      "description": "MLE-Bench Lite evaluates AI agents on machine learning engineering tasks, testing their ability to build, train, and optimize ML models for Kaggle-style competitions in a lightweight evaluation format.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.862,
+      "normalized_score": 0.862,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "MLE-bench Lite. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "skillsbench",
+      "name": "SkillsBench",
+      "description": "SkillsBench evaluates coding agents on self-contained programming tasks, measuring practical engineering skills across diverse software development scenarios.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.664,
+      "normalized_score": 0.664,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "SkillsBench. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "description": "SWE-Bench Pro is an advanced version of SWE-Bench that evaluates language models on complex, real-world software engineering tasks requiring extended reasoning and multi-step problem solving.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.596,
+      "normalized_score": 0.596,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "SWE-bench Pro. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "name": "Tau3 Banking",
+      "description": "τ³-Bench banking domain evaluates agentic models on multi-turn, tool-using customer-support scenarios in a simulated retail banking environment.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.412,
+      "normalized_score": 0.412,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "τ³-Bench Banking. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.783,
+      "normalized_score": 0.783,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "Terminal-Bench 2.1. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "widesearch",
+      "name": "WideSearch",
+      "description": "WideSearch is an agentic search benchmark that evaluates models' ability to perform broad, parallel search operations across multiple sources. It tests wide-coverage information retrieval and synthesis capabilities.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.819,
+      "normalized_score": 0.819,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/internlm/Atria-Dawn-Preview",
+      "analysis_method": "WideSearch. Official Atria Dawn Preview Hugging Face model card evaluation table.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.5479999999999999,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.538,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.494,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.488,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.482,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.414,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.321,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.318,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.314,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.308,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "bfcl-v4",
+      "benchmark_name": "BFCL-V4",
+      "models": [
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.77,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.75,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.73,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.729,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.729,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.722,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.685,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.677,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.673,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-9b",
+          "model_name": "Qwen3.5-9B",
+          "score": 0.661,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark_name": "BrowseComp",
+      "models": [
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.925,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.915,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.912,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.908,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.904,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.901,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.875,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.869,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.863,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.862,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "cybergym",
+      "benchmark_name": "CyberGym",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.8809999999999999,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.865,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3.8-flash-cyber",
+          "model_name": "Gemini 3.8 Flash Cyber",
+          "score": 0.862,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.845,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.833,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash-cyber",
+          "model_name": "Gemini 3.5 Flash Cyber",
+          "score": 0.832,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.831,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.818,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.788,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.784,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "benchmark_name": "DeepSearchQA",
+      "models": [
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.96,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.95,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.931,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.91,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.894,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.867,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.83,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.771,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.748,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 1853,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 1773,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 1769,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 1754,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.6",
+          "model_name": "Grok 4.6",
+          "score": 1753,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 1678,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 1583,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 1545,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 1525,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 1269,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "skillsbench",
+      "benchmark_name": "SkillsBench",
+      "models": [
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.702,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.664,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.629,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.592,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.553,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.549,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-27b",
+          "model_name": "Qwen3.6-27B",
+          "score": 0.482,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.457,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.448,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.443,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-pro",
+      "benchmark_name": "SWE-Bench Pro",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.8,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.778,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.692,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.677,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.647,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.646,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.643,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.632,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.596,
+          "rank": 18,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "benchmark_name": "Tau3 Banking",
+      "models": [
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.412,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "ling-3.0-flash-fin",
+          "model_name": "Ling 3.0 Flash Fin",
+          "score": 0.41,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.33,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-live-1",
+          "model_name": "GPT-Live-1",
+          "score": 0.32,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.28,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 0.237,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.235,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-pro4",
+          "model_name": "Solar Pro 4",
+          "score": 0.23,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.155,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-medium-3-5",
+          "model_name": "Mistral Medium 3.5",
+          "score": 0.134,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.9059999999999999,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.866,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.858,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.783,
+          "rank": 21,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "widesearch",
+      "benchmark_name": "WideSearch",
+      "models": [
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.839,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.819,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.819,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.808,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.79,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.764,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.743,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.74,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.736,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.638,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

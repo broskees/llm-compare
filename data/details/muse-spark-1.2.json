@@ -7,7 +7,7 @@
     "name": "Meta",
     "website": "https://meta.com"
   },
-  "description": "Muse Spark 1.2 is Meta Superintelligence Labs' proprietary multimodal reasoning model for long-horizon coding and whole-repository agentic work. It supports a 1,048,576-token context window and is available through the Meta Model API in standard and contributor tiers. The contributor endpoint offers discounted inference in exchange for allowing prompts and completions to be used to improve Meta's products; ZeroEval routes to that endpoint while displaying the standard tier's data-private pricing.",
+  "description": "Muse Spark 1.2 is Meta Superintelligence Labs' proprietary multimodal reasoning model for long-horizon coding and whole-repository agentic work. It supports a 1,048,576-token context window and is available through the Meta Model API in standard and contributor tiers. The contributor endpoint offers discounted inference in exchange for allowing prompts and completions to be used to improve Meta's products; ZeroEval routes to that endpoint while distinguishing its conditional pricing from the standard tier.",
   "release_date": "2026-08-05",
   "announcement_date": "2026-08-05",
   "multimodal": true,
@@ -15,6 +15,7 @@
   "param_count": null,
   "training_tokens": null,
   "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": "contributor",
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
@@ -105,10 +106,10 @@
       "deprecated": false,
       "deprecated_at": null,
       "pricing": {
-        "input_per_million": 0.1,
-        "cached_input_per_million": 0.002,
+        "input_per_million": 1.25,
+        "cached_input_per_million": 0.15,
         "cache_write_per_million": null,
-        "output_per_million": 0.2,
+        "output_per_million": 4.25,
         "per_image": null,
         "per_second_video_720p": null,
         "per_second_video_1080p": null,
@@ -116,14 +117,34 @@
         "per_minute_audio": null,
         "per_million_chars": null
       },
+      "pricing_options": [
+        {
+          "tier": "contributor",
+          "data_use_policy": "provider_improvement_allowed",
+          "comparison_eligible": false,
+          "terms_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_per_million": 0.1,
+          "cached_input_per_million": 0.002,
+          "output_per_million": 0.2
+        },
+        {
+          "tier": "standard",
+          "data_use_policy": "private",
+          "comparison_eligible": true,
+          "terms_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_per_million": 1.25,
+          "cached_input_per_million": 0.15,
+          "output_per_million": 4.25
+        }
+      ],
       "quantization": null,
       "limits": {
         "max_input_tokens": 1048576,
         "max_output_tokens": 131072
       },
       "performance": {
-        "throughput": 7.351504967415012,
-        "latency": 2.6266
+        "throughput": 4.010176203553277,
+        "latency": 2.3112
       },
       "features": {
         "web_search": null,
