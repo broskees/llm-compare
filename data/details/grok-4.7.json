@@ -1,0 +1,861 @@
+{
+  "model_id": "grok-4.7",
+  "name": "Grok 4.7",
+  "model_type": "llm",
+  "organization": {
+    "id": "xai",
+    "name": "xAI",
+    "website": "https://x.ai"
+  },
+  "description": "Grok 4.7 is SpaceXAI's frontier model for coding, agentic tasks, and knowledge work. It uses a larger base model than Grok 4.6, with longer RL on harder multi-hour tasks, stronger self-verification, and native Grok Bot harness understanding. Reasoning efforts: low, medium, high, xhigh (default high). 500K context; same price and speed class as Grok 4.6 ($2/$0.50 cached/$6 per 1M tokens under 200k prompts; ≥200k prompts bill at $4/$1/$12). Grok 4.7 Fast uses the same model on faster infrastructure at twice the token rates and twice the output speed, and is available only in Cursor and Grok Build — not as a separate public API model id (docs expose only `grok-4.7`). Pretraining knowledge cutoff June 2026, with supplemental training data through August 2026. Multimodal: text and image in, text out.",
+  "release_date": "2026-09-21",
+  "announcement_date": "2026-09-21",
+  "multimodal": true,
+  "knowledge_cutoff": "2026-06-01",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://docs.x.ai/docs/models/grok-4.7",
+    "playground": "https://grok.com",
+    "paper": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+    "scorecard_blog": "https://x.ai/news/grok-4-7",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-briefcase-1.1",
+      "name": "AA-Briefcase v1.1",
+      "description": "AA-Briefcase v1.1 evaluates multi-hour professional office work and reports Elo scores. Kept separate from unversioned AA-Briefcase results.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1657,
+      "normalized_score": 0.552333,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "AA Briefcase v1.1 Elo; Grok 4.7 xhigh (1657; max_score 3000). Aligned to aa-briefcase-1.1. Sources: announcement + model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "bixbench-mcq",
+      "name": "BixBench MCQ",
+      "description": "BixBench zero-shot multiple-choice accuracy on bioinformatics questions. Kept separate from the agentic BixBench workflow evaluation that requires code execution.",
+      "categories": [
+        "reasoning",
+        "science"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.884,
+      "normalized_score": 0.884,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "BixBench zero-shot MCQ accuracy; Grok 4.7 high (88.4%). Distinct from agentic BixBench. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cadgenbench",
+      "name": "CADGenBench",
+      "description": "CADGenBench evaluates agents on CAD model construction from design prompts. The generation split requires producing CAD geometry graded for executability and geometric correctness. Distinct from BenchCAD.",
+      "categories": [
+        "engineering",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.444,
+      "normalized_score": 0.444,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "CADGenBench generation split; Grok 4.7 high (44.4%) with Grok Build harness. Not BenchCAD. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cathedralbench",
+      "name": "CathedralBench",
+      "description": "CathedralBench is a third-party red-team cyber evaluation on highly difficult, multiple-exploit-chain tasks in egress-secure sandboxes. Accuracy is commonly reported on the hard subset of tasks in an unrestricted configuration.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.29,
+      "normalized_score": 0.29,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "CathedralBench hard-subset accuracy; Grok 4.7 xhigh (29%). Unrestricted third-party red-team cyber eval. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cursorbench-4.0",
+      "name": "CursorBench 4.0",
+      "description": "CursorBench 4.0 evaluates coding agents on long-horizon coding tasks from real Cursor sessions. Version 4.0 adds longer-horizon tasks; scores are not comparable with CursorBench 3.2.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.463,
+      "normalized_score": 0.463,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "CursorBench 4.0; Grok 4.7 xhigh (46.3%). Model card also reports 43.9% at high. Scores not comparable to CursorBench 3.2. Sources: announcement + model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cve-bench",
+      "name": "CVE-Bench",
+      "description": "CVE-Bench evaluates agents on exploiting real-world web-application CVEs in sandboxed environments that mimic production services, typically in unrestricted / egress-controlled settings as a cyber capability probe.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.366,
+      "normalized_score": 0.366,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "CVE-Bench Reward; Grok 4.7 xhigh primary (36.6%); model card also reports 37.7% at high — not blended. Grok Build harness, unrestricted. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cybergym",
+      "name": "CyberGym",
+      "description": "CyberGym is a benchmark for evaluating AI agents on cybersecurity tasks, testing their ability to identify vulnerabilities, perform security analysis, and complete security-related challenges in a controlled environment.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.803,
+      "normalized_score": 0.803,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "CyberGym Mean Reproduced %; Grok 4.7 high (80.3%), unrestricted / without standard safeguards; Grok Build harness. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.71,
+      "normalized_score": 0.71,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "DeepSWE v1.1; Grok 4.7 high (71.0%; launch comparison table marks high effort with asterisk). Sources: announcement + model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "eebench",
+      "name": "EEBench",
+      "description": "EEBench is an electrical engineering and chip design benchmark: models design circuits and other hardware that are graded for physical correctness and functionality.",
+      "categories": [
+        "engineering",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.66,
+      "normalized_score": 0.66,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "EEBench; Grok 4.7 xhigh (66.0% from model card, Grok Build harness). News comparison table lists 64.0%; catalog stores the model-card figure, not a blend. Sources: model card PDF + announcement.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontierswe-v2",
+      "name": "FrontierSWE V2",
+      "description": "FrontierSWE V2 evaluates agents on open-ended technical projects and reports mean@5. Kept separate from FrontierSWE V1 dominance-score results, which are not comparable.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.29,
+      "normalized_score": 0.29,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "FrontierSWE V2 mean@5 (29.0%) at xhigh; Proximal Labs / Proximus harness. Not comparable to V1 dominance scores. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-elo",
+      "name": "GDPval (Elo)",
+      "description": "GDPval professional knowledge-work results reported as Elo in xAI's Grok 4.7 announcement. The source does not identify this as GDPval-AA v2; kept separate from that evaluation and percentage-based GDPval scores.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1695,
+      "normalized_score": 0.565,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "GDPval Elo; Grok 4.7 xhigh 1695 (max_score 3000). Aligned to gdpval-elo. Sources: announcement + model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "harvey-lab",
+      "name": "Harvey LAB (Vals)",
+      "description": "Harvey LAB (Vals) is a professional legal-work evaluation of AI systems on complex law-firm style tasks, reported by Vals.",
+      "categories": [
+        "knowledge",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.196,
+      "normalized_score": 0.196,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "Harvey LAB (Vals); Grok 4.7 xhigh (19.6%). Same id family as Grok 4.6. Sources: announcement + model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "harveys-legal-agent-benchmark",
+      "name": "Harvey's Legal Agent Benchmark",
+      "description": "Harvey's Legal Agent Benchmark evaluates AI agents on complex legal workflows and reports the all-pass rate.",
+      "categories": [
+        "knowledge",
+        "legal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.196,
+      "normalized_score": 0.196,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "Harvey's Legal Agent Benchmark; Grok 4.7 xhigh. Score reported by xAI.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.567,
+      "normalized_score": 0.567,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "HealthBench Professional; Grok 4.7 xhigh (56.7%). Sources: announcement + model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lab-bench-practical",
+      "name": "LAB-Bench Practical",
+      "description": "LAB-Bench practical is a public multiple-choice evaluation of everyday wet-lab and research skills, covering protocol troubleshooting, sequence reasoning, and cloning scenarios. Distinct from labbench2.",
+      "categories": [
+        "science",
+        "healthcare",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.768,
+      "normalized_score": 0.768,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "LAB-Bench practical MCQ accuracy; Grok 4.7 high (76.8%). Distinct from labbench2. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "latchbio-capabilities",
+      "name": "LatchBio Capabilities v1.0",
+      "description": "LatchBio Capabilities v1.0 is a cross-benchmark evaluation of agentic biological data analysis. The overall score is the equally weighted mean of observed scores across 11 capability benchmarks.",
+      "categories": [
+        "science",
+        "agents",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.445,
+      "normalized_score": 0.445,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "LatchBio Capabilities v1.0 overall; Grok 4.7 xhigh (44.5%), equal-weight mean of 11 capability benches. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "protocolqa-open-ended",
+      "name": "ProtocolQA Open-Ended",
+      "description": "ProtocolQA Open-Ended evaluates free-form answers on troubleshooting failed experimental outcomes from common biological laboratory protocols. Kept separate from the multiple-choice ProtocolQA split.",
+      "categories": [
+        "safety",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.704,
+      "normalized_score": 0.704,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "ProtocolQA Open-Ended accuracy; Grok 4.7 high (70.4%). Distinct from MCQ ProtocolQA. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-marathon",
+      "name": "SWE-Marathon",
+      "description": "SWE-Marathon is an ultra-long-horizon software engineering benchmark covering tasks such as building compilers, optimizing kernels, and developing production-grade services. It measures whether agents can sustain quality across extremely long engineering trajectories.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.46,
+      "normalized_score": 0.46,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "SWE-Marathon v1.1; Grok 4.7 high (46.0%). Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.38,
+      "normalized_score": 0.38,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://x.ai/news/grok-4-7",
+      "analysis_method": "Terminal-Bench 4.0; Grok 4.7 xhigh (38.0%) with Grok Build harness. Sources: announcement + model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vct",
+      "name": "Virology Capabilities Test",
+      "description": "Virology Capabilities Test (VCT) is an expert-level multiple-choice benchmark measuring the capability to troubleshoot complex virology laboratory protocols. It evaluates dual-use biological knowledge relevant to bioweapons development.",
+      "categories": [
+        "safety",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.63,
+      "normalized_score": 0.63,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "Virology Capabilities Test (VCT) accuracy; Grok 4.7 high (63.0%). Capability signal, not refusal. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "wmdp-bio",
+      "name": "WMDP-Bio",
+      "description": "Biology subset of WMDP (Weapons of Mass Destruction Proxy). Multiple-choice questions measuring dual-use biology knowledge relevant to enabling malicious actors to design, synthesize, acquire, or use biological weapons.",
+      "categories": [
+        "safety",
+        "healthcare",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.881,
+      "normalized_score": 0.881,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "WMDP-Bio accuracy; Grok 4.7 high (88.1%). Dual-use biology MCQ capability signal. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "wmdp-chem",
+      "name": "WMDP-Chem",
+      "description": "Chemistry subset of WMDP (Weapons of Mass Destruction Proxy). Multiple-choice questions measuring dual-use chemistry knowledge relevant to enabling malicious actors to design, synthesize, acquire, or use chemical weapons.",
+      "categories": [
+        "safety",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.849,
+      "normalized_score": 0.849,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "WMDP-Chem accuracy; Grok 4.7 high (84.9%). Dual-use chemistry MCQ capability signal. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "wmdp-cyber",
+      "name": "WMDP-Cyber",
+      "description": "Cybersecurity subset of WMDP (Weapons of Mass Destruction Proxy). Multiple-choice questions measuring dual-use cyber knowledge relevant to enabling malicious actors to engage in offensive cyber operations.",
+      "categories": [
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.881,
+      "normalized_score": 0.881,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://media.x.ai/v1/website/4p7card-5eccc980.pdf",
+      "analysis_method": "WMDP-Cyber accuracy; Grok 4.7 high (88.1%). Dual-use cyber MCQ capability signal. Sources: model card PDF.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "xai",
+      "name": "xAI",
+      "website": "https://docs.x.ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 2,
+        "cached_input_per_million": 0.5,
+        "cache_write_per_million": null,
+        "output_per_million": 6,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 500000,
+        "max_output_tokens": null
+      },
+      "performance": {
+        "throughput": 10.722465574240907,
+        "latency": 30.590899999999987
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "cybergym",
+      "benchmark_name": "CyberGym",
+      "models": [
+        {
+          "model_id": "mimo-v2.6-flash",
+          "model_name": "MiMo-V2.6-Flash",
+          "score": 0.951,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.94,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.8809999999999999,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.865,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash-cyber",
+          "model_name": "Gemini 3.8 Flash Cyber",
+          "score": 0.862,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.845,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.833,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash-cyber",
+          "model_name": "Gemini 3.5 Flash Cyber",
+          "score": 0.832,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.831,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.818,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.803,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.742,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.742,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.719,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.71,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.7,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.7,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "benchmark_name": "HealthBench Professional",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.66,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.656,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.605,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.598,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.578,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.577,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.567,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.558,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.557,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.518,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.445,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.418,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.38,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.373,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.349,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "x-ai/grok-4.7"
+}
