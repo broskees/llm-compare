@@ -1,0 +1,675 @@
+{
+  "model_id": "gpt-6.1-sol",
+  "name": "GPT-6.1 Sol",
+  "model_type": "llm",
+  "organization": {
+    "id": "openai",
+    "name": "OpenAI",
+    "website": "https://openai.com"
+  },
+  "description": "GPT-6.1 Sol is OpenAI's GPT-6.1 model delivering near-Astra performance for complex coding, computer use, and professional work at a lower cost. The API model id is gpt-6.1-sol. It accepts text and image input with text output, supports low, medium (API default), high, xhigh, and max reasoning effort (but not none or minimal), and provides a 1,050,000-token context window with up to 128,000 output tokens. Use the Responses API for tool calling; Chat Completions is supported without tool calling. Responses API tools include web and file search, image generation, code interpreter, hosted shell, apply patch, skills, computer use, MCP, and tool search; it also supports streaming, function calling, and structured outputs. Standard per-million-token pricing is $2 input, $0.10 cached input, $2.50 cache writes, and $10 output. Prompts above 272K input tokens cost 2x input/cache and 1.5x output across the full request. Batch and Flex cost 50% of Standard; Fast costs 2x. Regional processing adds 10% where available. Launch benchmarks are OpenAI-reported; effort and evaluation variants are recorded with each score.",
+  "release_date": "2026-09-29",
+  "announcement_date": "2026-09-29",
+  "multimodal": true,
+  "knowledge_cutoff": "2026-04-30",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true",
+    "reasoning_efforts": "low,medium,high,xhigh,max",
+    "always_on_thinking": "true",
+    "long_context_pricing_threshold": "272000"
+  },
+  "sources": {
+    "api_ref": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+    "playground": "https://platform.openai.com/playground?model=gpt-6.1-sol",
+    "paper": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+    "scorecard_blog": "https://openai.com/index/introducing-gpt-6-1-sol/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "automationbench-1.0.6",
+      "name": "AutomationBench v1.0.6",
+      "description": "AutomationBench v1.0.6 evaluates agent performance on multi-step workflow automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.361,
+      "normalized_score": 0.361,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "analysis_method": "AutomationBench 1.0.6. OpenAI GPT-6.1 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.361). Other efforts: low 0.247, medium 0.317, high 0.332, xhigh 0.355. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7522,
+      "normalized_score": 0.7522,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "analysis_method": "DeepSWE v1.1. OpenAI GPT-6.1 Sol launch interactive chart. Highest published score across the reported effort sweep: high effort (0.7522). Other efforts: low 0.6438, medium 0.7301, xhigh 0.719, max 0.719. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdp-pdf",
+      "name": "GDP.pdf",
+      "description": "GDP.pdf is a knowledge-work vision benchmark that evaluates models on economically valuable professional tasks presented as visual documents (PDFs), testing document-based reasoning, chart and table interpretation, and problem solving without tools.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.32,
+      "normalized_score": 0.32,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "analysis_method": "gdp.pdf. OpenAI GPT-6.1 Sol launch interactive chart. Highest published score across the reported effort sweep: high effort (0.32). Other efforts: low 0.27, medium 0.30, xhigh 0.318, max 0.31. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench",
+      "name": "HealthBench",
+      "description": "An open-source benchmark for measuring performance and safety of large language models in healthcare, consisting of 5,000 multi-turn conversations evaluated by 262 physicians using 48,562 unique rubric criteria across health contexts and behavioral dimensions",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.585,
+      "normalized_score": 0.585,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "analysis_method": "HealthBench, length-adjusted score (unadjusted 0.567). GPT-6.1 Sol system card addendum Table 7.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-consensus",
+      "name": "HealthBench Consensus",
+      "description": "HealthBench Consensus is a HealthBench subset focused on questions where physician-created rubric criteria have especially high agreement, measuring healthcare performance and safety on consensus-evaluable conversations.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.96,
+      "normalized_score": 0.96,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "analysis_method": "HealthBench Consensus, length-adjusted score (unadjusted 0.959). GPT-6.1 Sol system card addendum Table 7.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-hard",
+      "name": "HealthBench Hard",
+      "description": "A challenging variation of HealthBench that evaluates large language models' performance and safety in healthcare through 5,000 multi-turn conversations with particularly rigorous evaluation criteria validated by 262 physicians from 60 countries",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.362,
+      "normalized_score": 0.362,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "analysis_method": "HealthBench Hard, length-adjusted score (unadjusted 0.334). GPT-6.1 Sol system card addendum Table 7.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.642,
+      "normalized_score": 0.642,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "analysis_method": "HealthBench Professional, length-adjusted score (unadjusted 0.672). GPT-6.1 Sol system card addendum Table 7.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mentalhealthbench",
+      "name": "MentalHealthBench",
+      "description": "MentalHealthBench is an open benchmark developed with mental health experts for measuring how AI systems respond in realistic mental health conversations. It consists of 1,215 synthetic conversations covering diverse scenarios ranging from daily well-being topics to urgent mental health emergencies, scored with clinician-authored rubric criteria.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.579,
+      "normalized_score": 0.579,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "analysis_method": "MentalHealthBench overall at max reasoning effort (0.579). Acuity splits at max effort: non-acute 0.573, high acuity 0.591, emergent 0.580. GPT-6.1 Sol system card addendum Table 9.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "name": "OSWorld 2.0",
+      "description": "OSWorld 2.0 is a benchmark of 108 long-horizon, real-world computer-use workflows spanning everyday and professional tasks. Each task is an end-to-end workflow that takes human users a median of about 1.6 hours, scored with a binary-completion metric, and targets challenges such as dynamic environments, cross-source reasoning, and implicit-state inference.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.7142,
+      "normalized_score": 0.7142,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "analysis_method": "OSWorld 2.0 offline set, partial reward (v2026.08.08), not strict completion or the full task set. OpenAI GPT-6.1 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.7142). Other efforts: low 0.5896, medium 0.6684, high 0.6956, xhigh 0.6938. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5702,
+      "normalized_score": 0.5702,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "analysis_method": "Terminal-Bench Science 0.1. OpenAI GPT-6.1 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.5702). Other efforts: low 0.4371, medium 0.4756, high 0.5114, xhigh 0.5371. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "openai",
+      "name": "OpenAI",
+      "website": "https://openai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 2,
+        "cached_input_per_million": 0.1,
+        "cache_write_per_million": 2.5,
+        "output_per_million": 10,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7522,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.742,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.742,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.719,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.71,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.71,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench",
+      "benchmark_name": "HealthBench",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.654,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.606,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.602,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.585,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.58,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.576,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.57,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.57,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.558,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.3-chat-latest",
+          "model_name": "GPT-5.3 Chat",
+          "score": 0.541,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-hard",
+      "benchmark_name": "HealthBench Hard",
+      "models": [
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.428,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.362,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.331,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.327,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.32,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.3,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.3-chat-latest",
+          "model_name": "GPT-5.3 Chat",
+          "score": 0.259,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-instant",
+          "model_name": "GPT-5.5 Instant",
+          "score": 0.229,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-mini",
+          "model_name": "Seed 2.0 Mini",
+          "score": 0.153,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-20b",
+          "model_name": "GPT OSS 20B",
+          "score": 0.108,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "benchmark_name": "HealthBench Professional",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.692,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.66,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.656,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.642,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.605,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.598,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.578,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.577,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.567,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "osworld-2.0",
+      "benchmark_name": "OSWorld 2.0",
+      "models": [
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.818,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.779,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.726,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7142,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.706,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.669,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-sol",
+          "model_name": "GPT-6 Sol",
+          "score": 0.644,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.626,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.59,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-luna",
+          "model_name": "GPT-6 Luna",
+          "score": 0.527,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "openai/gpt-6.1-sol"
+}
