@@ -1,0 +1,306 @@
+{
+  "model_id": "gpt-rosalind-research",
+  "name": "GPT-Rosalind",
+  "model_type": "llm",
+  "organization": {
+    "id": "openai",
+    "name": "OpenAI",
+    "website": "https://openai.com"
+  },
+  "description": "GPT-Rosalind is OpenAI's specialized life-sciences reasoning model for approved internal research. OpenAI introduced GPT-Rosalind in research preview on April 16, 2026 and updated the same launch materials on September 11, 2026 to mark general availability through the trusted-access program for eligible Enterprise and Business organizations. Official OpenAI docs describe it as the company's most capable model for life sciences research, combining deep scientific reasoning with scientific tool and database use for multi-step workflows across target research, genomics and sequencing analysis, protein and sequence analysis, medicinal chemistry, literature synthesis, wet-lab troubleshooting, and experiment planning. OpenAI publicly lists API pricing for the `gpt-rosalind-research` model id at $5 input, $0.50 cached input, and $25 output per million tokens, with no cache-write pricing. Benchmarks below are taken from OpenAI's official GPT-Rosalind-5.5 system card and LifeSciBench preprint, the latest first-party benchmark sources published for the GPT-Rosalind series. OpenAI does not publish a dedicated model-reference page with context-window or maximum-output limits for GPT-Rosalind, so those fields remain null.",
+  "release_date": "2026-09-11",
+  "announcement_date": "2026-04-16",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true",
+    "trusted_access": "true"
+  },
+  "sources": {
+    "api_ref": "https://developers.openai.com/api/docs/models",
+    "playground": null,
+    "paper": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+    "scorecard_blog": "https://openai.com/index/introducing-gpt-rosalind/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "biorisk-knowledge",
+      "name": "Biorisk knowledge",
+      "description": "Biorisk knowledge is an OpenAI and Gryphon Scientific evaluation of tacit biosecurity-relevant biology and laboratory knowledge, spanning the stages of the biothreat-creation process.",
+      "categories": [
+        "reasoning",
+        "safety",
+        "science",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.811,
+      "normalized_score": 0.811,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "Biorisk knowledge cons@32 from GPT-Rosalind-5.5 System Card Table 8.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "dna-sequence-design-for-transcription-factor-binding",
+      "name": "DNA sequence design for transcription factor binding",
+      "description": "DNA sequence design for transcription factor binding is an OpenAI evaluation of whether models can design sequences with high transcription-factor affinity relative to a Ledidi baseline on Nucleobench-derived prompts.",
+      "categories": [
+        "reasoning",
+        "science",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.1364,
+      "normalized_score": 0.1364,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "DNA sequence design for transcription factor binding pass@1 from GPT-Rosalind-5.5 System Card Table 11; the system card frames the task as outperforming the Ledidi baseline on Nucleobench-derived prompts.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "genebench",
+      "name": "GeneBench",
+      "description": "GeneBench is an evaluation focused on multi-stage scientific data analysis in genetics and quantitative biology. Tasks require reasoning about ambiguous or noisy data with minimal supervisory guidance, addressing realistic obstacles such as hidden confounders or QC failures, and correctly implementing and interpreting modern statistical methods.",
+      "categories": [
+        "reasoning",
+        "science",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.216,
+      "normalized_score": 0.216,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "GeneBench pass@1 from GPT-Rosalind-5.5 System Card Table 2; the June 3 capabilities post repeats the same 21.6% figure and notes 31% fewer tokens than GPT-5.5.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hard-negative-protein-binding-prediction",
+      "name": "Hard negative protein binding prediction",
+      "description": "Hard negative protein binding prediction is an OpenAI evaluation of whether a model can identify true binders among structurally plausible non-binders using 3D complex structures plus tool access.",
+      "categories": [
+        "multimodal",
+        "science",
+        "healthcare",
+        "agents"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.0313,
+      "normalized_score": 0.0313,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "Hard negative protein binding prediction pass@4 from GPT-Rosalind-5.5 System Card Table 10. Official setup gives the model PDB structures plus computer and browser access in a long-horizon agentic setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "labworkbench",
+      "name": "Labwork Bench",
+      "description": "Labwork Bench is an OpenAI evaluation of whether models can connect perturbations to outcomes in real wet-lab protocols for troubleshooting and optimization tasks.",
+      "categories": [
+        "reasoning",
+        "science",
+        "healthcare",
+        "agents",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.632,
+      "normalized_score": 0.632,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "Labwork Bench pass@1 from GPT-Rosalind-5.5 System Card Table 4; the June 3 capabilities post repeats the same 63.2% figure and compares it to 55.8% for GPT-5.5.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lifescibench",
+      "name": "LifeSciBench",
+      "description": "LifeSciBench is an expert-authored, expert-reviewed benchmark of 750 open-ended life-science research tasks spanning seven workflows and seven biological domains. Responses are graded against 19,020 physician- and scientist-written rubric criteria rather than multiple-choice answers, and most tasks require interpreting attached artifacts such as figures, PDFs, and sequence files.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "science",
+        "healthcare",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.576,
+      "normalized_score": 0.576,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://cdn.openai.com/pdf/b4299379-0a97-4ffa-8b9b-c3fbb299caa9/lifescibench_preprint.pdf",
+      "analysis_method": "LifeSciBench problem-weighted mean normalized score from the official OpenAI/Tacit Labs preprint. The same paper reports a 36.1% task pass rate; the GPT-Rosalind-5.5 system card separately reports a later pass@1 table, but the existing repo benchmark id tracks normalized score.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "medchembench",
+      "name": "MedChemBench (Internal)",
+      "description": "MedChemBench is an internal OpenAI evaluation of medicinal-chemistry reasoning, testing whether models can support drug-discovery-relevant chemistry analysis and decision-making.",
+      "categories": [
+        "reasoning",
+        "science",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.275,
+      "normalized_score": 0.275,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "MedChemBench (Internal) pass@1 from GPT-Rosalind-5.5 System Card Table 1; the June 3 capabilities post repeats the same 27.5% figure and notes 7.2% fewer tokens than GPT-5.5.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "multi-select-virology-troubleshooting",
+      "name": "Multi-select Virology Troubleshooting",
+      "description": "Multi-select Virology Troubleshooting is an OpenAI evaluation on held-out SecureBio virology troubleshooting questions in a multimodal, multi-select setting.",
+      "categories": [
+        "multimodal",
+        "safety",
+        "science",
+        "healthcare"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.512,
+      "normalized_score": 0.512,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "Multi-select Virology Troubleshooting pass@1 from GPT-Rosalind-5.5 System Card Table 9; multimodal, multi-select setting using SecureBio-held-out virology troubleshooting questions.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "protocolqa-open-ended",
+      "name": "ProtocolQA Open-Ended",
+      "description": "ProtocolQA Open-Ended evaluates free-form answers on troubleshooting failed experimental outcomes from common biological laboratory protocols. Kept separate from the multiple-choice ProtocolQA split.",
+      "categories": [
+        "safety",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.364,
+      "normalized_score": 0.364,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "ProtocolQA Open-Ended pass@1 from GPT-Rosalind-5.5 System Card Table 6.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "troubleshootingbench",
+      "name": "TroubleshootingBench",
+      "description": "TroubleshootingBench is an OpenAI internal short-answer benchmark built from expert-written wet-lab procedures and realistic execution errors to test tacit biological troubleshooting knowledge.",
+      "categories": [
+        "reasoning",
+        "safety",
+        "science",
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5331,
+      "normalized_score": 0.5331,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-rosalind-5-5",
+      "analysis_method": "TroubleshootingBench pass@1 from GPT-Rosalind-5.5 System Card Table 7.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "openai",
+      "name": "OpenAI",
+      "website": "https://openai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 5,
+        "cached_input_per_million": 0.5,
+        "cache_write_per_million": null,
+        "output_per_million": 25,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": null,
+        "max_output_tokens": null
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [],
+  "comparison_model": null
+}

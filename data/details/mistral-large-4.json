@@ -1,0 +1,934 @@
+{
+  "model_id": "mistral-large-4",
+  "name": "Mistral Large 4",
+  "model_type": "llm",
+  "organization": {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "website": "https://mistral.ai"
+  },
+  "description": "Mistral Large 4 (Public Preview; aka ML4 / le Chonk) is Mistral AI's flagship general-purpose multimodal Mixture-of-Experts model. Mistral's docs describe it as 1.05T total parameters with 52B active parameters and a 1.6B vision encoder, while Mistral's Hugging Face upcoming-release page describes it as a 1T model with 49B active parameters per token (52B including embeddings and output layers). It supports a 1M-token context window with text+image input and text output, plus structured outputs, function calling, document QnA, batching, agents/conversations, and built-in tools. Launch API pricing is 50% off for two weeks versus list ($0.68/$0.07/$2.09 sale vs $1.36/$0.14/$4.18 list per million input/cached/output tokens). Weights are planned for the end of October 2026 and are not yet released, so the catalog keeps the model proprietary until a public weights license is published.",
+  "release_date": "2026-10-06",
+  "announcement_date": "2026-10-06",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 1050000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "thinking": "false"
+  },
+  "sources": {
+    "api_ref": "https://docs.mistral.ai/models/mistral-large-4",
+    "playground": "https://console.mistral.ai/build/playground",
+    "paper": null,
+    "scorecard_blog": "https://mistral.ai/news/mistral-large-4/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-briefcase",
+      "name": "AA-Briefcase",
+      "description": "AA-Briefcase is an Artificial Analysis evaluation of AI systems on professional knowledge-work tasks, reported as an Elo score.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1393,
+      "normalized_score": 0.464,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Elo 1,393 from announcement prose only (no separate briefcase chart); max_score 3000.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.599,
+      "normalized_score": 0.599,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Announcement prose + chart 59.9% on AutomationBench (657 business workflows).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "b3-ai-security-benchmark",
+      "name": "B3 AI Security Benchmark",
+      "description": "B3 AI Security Benchmark evaluates agent-backbone robustness against contextual prompt-injection attacks collected in Lakera's Agent Breaker Challenge.",
+      "categories": [
+        "safety",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.933,
+      "normalized_score": 0.933,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Attack resistance; announcement cites Lakera's public benchmark for indirect prompt-injection robustness.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartqapro",
+      "name": "ChartQAPro",
+      "description": "ChartQAPro is a challenging benchmark for question answering over diverse, real-world charts and infographics.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.631,
+      "normalized_score": 0.631,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Chart ChartQA Pro 63.1%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "coding-agent-index",
+      "name": "Coding Agent Index",
+      "description": "Coding Agent Index is a combined coding-agent score (as reported by Mistral / Artificial Analysis) summarizing performance across software-engineering agent evaluations such as DeepSWE, SWE-Atlas QnA, and Terminal-Bench.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.498,
+      "normalized_score": 0.498,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Combined Coding Agent Index; announcement prose 49.8%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cybench",
+      "name": "CyBench",
+      "description": "CyBench is a suite of Capture-the-Flag (CTF) challenges measuring agentic cyber attack capabilities. It evaluates dual-use cybersecurity knowledge and measures the 'unguided success rate', where agents complete tasks end-to-end without guidance on appropriate subtasks.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.93,
+      "normalized_score": 0.93,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Announcement prose 93% (chart 93).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cybergym",
+      "name": "CyberGym",
+      "description": "CyberGym is a benchmark for evaluating AI agents on cybersecurity tasks, testing their ability to identify vulnerabilities, perform security analysis, and complete security-related challenges in a controlled environment.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.82,
+      "normalized_score": 0.82,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Announcement prose 82% vulnerability reproduce+patch; chart CyberGym-E2E (AA) 82.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.617,
+      "normalized_score": 0.617,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Announcement prose 61.7% (chart ~62). Artificial Analysis private pre-harness launch footnote on chart.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "dense200",
+      "name": "Dense200",
+      "description": "Dense200 is a visual grounding / bounding-box benchmark that evaluates how accurately models localize objects in dense natural scenes.",
+      "categories": [
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.42,
+      "normalized_score": 0.42,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Dense200 bbox; announcement prose 42% (chart 42.0 vs GPT-6 Astra 41.5).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "finance-agent-v2",
+      "name": "Finance Agent v2",
+      "description": "Finance Agent v2 is an agentic financial-analysis benchmark from Vals that evaluates models on real-world finance workflows, measuring their ability to retrieve and reason over financial documents, perform multi-step calculations, and produce accurate analyses.",
+      "categories": [
+        "reasoning",
+        "finance",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.547,
+      "normalized_score": 0.547,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Chart Vals.ai Finance Agent v2: 54.7%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "finch",
+      "name": "Finch (FinWorkBench)",
+      "description": "Finch (FinWorkBench) evaluates model capabilities at creating and editing spreadsheets on real-life finance and accounting use cases.",
+      "categories": [
+        "reasoning",
+        "finance",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.674,
+      "normalized_score": 0.674,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Chart Finch (FinWorkBench) 67.4%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdp-pdf",
+      "name": "GDP.pdf",
+      "description": "GDP.pdf is a knowledge-work vision benchmark that evaluates models on economically valuable professional tasks presented as visual documents (PDFs), testing document-based reasoning, chart and table interpretation, and problem solving without tools.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.186,
+      "normalized_score": 0.186,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Chart \"GDP.pdf - AA\" 18.6%. Artificial Analysis labeling; not OpenAI's different gdp.pdf figures.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "harveys-legal-agent-benchmark",
+      "name": "Harvey's Legal Agent Benchmark",
+      "description": "Harvey's Legal Agent Benchmark evaluates AI agents on complex legal workflows and reports the all-pass rate.",
+      "categories": [
+        "knowledge",
+        "legal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.158,
+      "normalized_score": 0.158,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Chart \"Vals.ai Harvey LAB\" 15.8% (Astra 5.4). Stored as 0.158 all-pass rate to match sibling cards (max_score 1.0).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "korabench",
+      "name": "KORABench",
+      "description": "KORABench is a nonprofit, independent, open-source benchmark for child-safety behavior in AI systems, measuring model behavior against 26 child-specific risks.",
+      "categories": [
+        "safety"
+      ],
+      "modality": "text",
+      "max_score": 2,
+      "score": 1.691,
+      "normalized_score": 0.8455,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Overall score; announcement notes that 2.0 is the maximum and denotes \"Exemplary\".",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "scicode",
+      "name": "SciCode",
+      "description": "SciCode is a research coding benchmark curated by scientists that challenges language models to code solutions for scientific problems. It contains 338 subproblems decomposed from 80 challenging main problems across 16 natural science sub-fields including mathematics, physics, chemistry, biology, and materials science. Problems require knowledge recall, reasoning, and code synthesis skills.",
+      "categories": [
+        "math",
+        "physics",
+        "reasoning",
+        "biology",
+        "chemistry",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.918,
+      "normalized_score": 0.918,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "SciCode-Verified pass@1 n=6; chart 91.8%. No scicode-verified catalog id; stored under scicode.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "surge-ai-coding-quality",
+      "name": "Surge AI Coding Quality",
+      "description": "Surge AI Coding Quality is a blinded human evaluation where professional annotators rate model coding outputs on a 1-5 scale with model identities hidden.",
+      "categories": [
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 5,
+      "score": 3.74,
+      "normalized_score": 0.748,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Blind human evaluation on coding quality; professional annotators rated outputs on a 1-5 scale with model identities hidden.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-atlas-codebase-qna",
+      "name": "SWE Atlas - Codebase QnA",
+      "description": "SWE Atlas - Codebase QnA evaluates a model's ability to answer questions about real codebases, measuring repository-level comprehension and the ability to reason about code structure, behavior, and intent across an entire project.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.594,
+      "normalized_score": 0.594,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "SWE-Atlas-QnA; announcement prose 59.4% (chart ~59).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.283,
+      "normalized_score": 0.283,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
+      "analysis_method": "Announcement prose 28.3% (chart ~28). Chart footer: AA Coding Agent Index harness.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "mistral",
+      "name": "Mistral AI",
+      "website": "https://mistral.ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.68,
+        "cached_input_per_million": 0.07,
+        "cache_write_per_million": null,
+        "output_per_million": 2.09,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": null
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.599,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.5479999999999999,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.538,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.1-flash",
+          "model_name": "Ling 3.1 Flash",
+          "score": 0.525,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.513,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.494,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.488,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.482,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.447,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.414,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "cybergym",
+      "benchmark_name": "CyberGym",
+      "models": [
+        {
+          "model_id": "mimo-v2.6-flash",
+          "model_name": "MiMo-V2.6-Flash",
+          "score": 0.951,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.94,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.8809999999999999,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.1-flash",
+          "model_name": "Ling 3.1 Flash",
+          "score": 0.879,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "atria-dawn-preview",
+          "model_name": "Atria Dawn Preview",
+          "score": 0.865,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash-cyber",
+          "model_name": "Gemini 3.8 Flash Cyber",
+          "score": 0.862,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.845,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.833,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash-cyber",
+          "model_name": "Gemini 3.5 Flash Cyber",
+          "score": 0.832,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.831,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.82,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.779,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7522,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.752,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.742,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.742,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.719,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.617,
+          "rank": 26,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "finance-agent-v2",
+      "benchmark_name": "Finance Agent v2",
+      "models": [
+        {
+          "model_id": "ling-3.0-flash-fin",
+          "model_name": "Ling 3.0 Flash Fin",
+          "score": 0.5981,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.1-flash",
+          "model_name": "Ling 3.1 Flash",
+          "score": 0.5787,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.5786,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.572,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.5631,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.547,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.5392,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.5176,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.5151,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.5103,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "scicode",
+      "benchmark_name": "SciCode",
+      "models": [
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.918,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.598,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.59,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.578,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.535,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.522,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.513,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.487,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.487,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-mini4",
+          "model_name": "Solar Mini 4",
+          "score": 0.476,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.518,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.445,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.418,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.1-flash",
+          "model_name": "Ling 3.1 Flash",
+          "score": 0.404,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.283,
+          "rank": 17,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "mistralai/mistral-large-4-0"
+}

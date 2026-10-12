@@ -1,0 +1,545 @@
+{
+  "model_id": "solar-mini4",
+  "name": "Solar Mini 4",
+  "model_type": "llm",
+  "organization": {
+    "id": "upstage",
+    "name": "Upstage",
+    "website": "https://www.upstage.ai"
+  },
+  "description": "Solar Mini 4 is Upstage's cost-efficient proprietary MoE language model (35B total / 3B active) for agentic use where speed and cost matter. API id solar-mini4 (version solar-mini4-260922). Text→text with English, Korean, and Japanese; reasoning mode, tool calling, and structured outputs. Upstage Console docs: 512K context, up to 128K max output, February 2026 training cutoff. List pricing $0.10 input / $0.40 output / $0.01 cached per 1M tokens. Independent Artificial Analysis benches (not vendor self-report): AA-LCR 83.3, SciCode 47.6, HLE text-only 25.8, Terminal-Bench 4.0 1.0, GDPval-AA v2.1 1072 Elo, AA-Briefcase v1.1 872 Elo. No separate Upstage-published bench table found beyond console/product claims; AA rows stored as third-party.",
+  "release_date": "2026-09-22",
+  "announcement_date": "2026-09-22",
+  "multimodal": false,
+  "knowledge_cutoff": "2026-02-01",
+  "param_count": 35000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "thinking": "true",
+    "api_model_id": "solar-mini4",
+    "api_version_id": "solar-mini4-260922",
+    "active_parameters": "3000000000",
+    "max_output_tokens": "131072",
+    "native_context_length": "524288"
+  },
+  "sources": {
+    "api_ref": "https://console.upstage.ai/docs/models/solar-mini-4",
+    "playground": "https://console.upstage.ai",
+    "paper": null,
+    "scorecard_blog": "https://artificialanalysis.ai/articles/korean-ai-lab-upstage-releases-solar-mini-4",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-briefcase-1.1",
+      "name": "AA-Briefcase v1.1",
+      "description": "AA-Briefcase v1.1 evaluates multi-hour professional office work and reports Elo scores. Kept separate from unversioned AA-Briefcase results.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 872,
+      "normalized_score": 0.290667,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/korean-ai-lab-upstage-releases-solar-mini-4",
+      "analysis_method": "Artificial Analysis; AA-Briefcase v1.1 Elo (max_score 3000).",
+      "verification_date": null,
+      "verification_notes": "Third-party AA Elo 872; normalized_score 872/3000."
+    },
+    {
+      "benchmark_id": "aa-lcr",
+      "name": "AA-LCR",
+      "description": "Agent Arena Long Context Reasoning benchmark",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.833,
+      "normalized_score": 0.833,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/korean-ai-lab-upstage-releases-solar-mini-4",
+      "analysis_method": "Artificial Analysis independent evaluation; AA-LCR v1.1.",
+      "verification_date": null,
+      "verification_notes": "Third-party AA score 83.3% (AA article rounds to 83%; OpenRouter AA listing 83.3%). Stored as non-self-reported third-party AA result, matching how other models keep AA-sourced rows."
+    },
+    {
+      "benchmark_id": "gdpval-aa-2.1",
+      "name": "GDPval-AA 2.1",
+      "description": "Version 2.1 of the Artificial Analysis GDPval evaluation of professional knowledge work, reported as an Elo rating.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1072,
+      "normalized_score": 0.357333,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/korean-ai-lab-upstage-releases-solar-mini-4",
+      "analysis_method": "Artificial Analysis; GDPval-AA v2.1 Elo (max_score 3000).",
+      "verification_date": null,
+      "verification_notes": "Third-party AA Elo 1072; normalized_score 1072/3000."
+    },
+    {
+      "benchmark_id": "humanity's-last-exam-(no-tools,-text-only)",
+      "name": "Humanity's Last Exam (no tools, text-only)",
+      "description": "Text-only Humanity's Last Exam variant evaluated without tool use.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.258,
+      "normalized_score": 0.258,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/korean-ai-lab-upstage-releases-solar-mini-4",
+      "analysis_method": "Artificial Analysis; Humanity's Last Exam text-only.",
+      "verification_date": null,
+      "verification_notes": "Third-party AA HLE 25.8% mapped to humanity's-last-exam-(no-tools,-text-only)."
+    },
+    {
+      "benchmark_id": "scicode",
+      "name": "SciCode",
+      "description": "SciCode is a research coding benchmark curated by scientists that challenges language models to code solutions for scientific problems. It contains 338 subproblems decomposed from 80 challenging main problems across 16 natural science sub-fields including mathematics, physics, chemistry, biology, and materials science. Problems require knowledge recall, reasoning, and code synthesis skills.",
+      "categories": [
+        "math",
+        "physics",
+        "reasoning",
+        "biology",
+        "chemistry",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.476,
+      "normalized_score": 0.476,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/korean-ai-lab-upstage-releases-solar-mini-4",
+      "analysis_method": "Artificial Analysis independent evaluation; SciCode.",
+      "verification_date": null,
+      "verification_notes": "Third-party AA score 47.6% (AA article rounds to 48%)."
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.01,
+      "normalized_score": 0.01,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://artificialanalysis.ai/articles/korean-ai-lab-upstage-releases-solar-mini-4",
+      "analysis_method": "Artificial Analysis independent evaluation; Terminal-Bench 4.0.",
+      "verification_date": null,
+      "verification_notes": "Third-party AA score 1.0%."
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "upstage",
+      "name": "Upstage",
+      "website": "https://www.upstage.ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.1,
+        "cached_input_per_million": 0.01,
+        "cache_write_per_million": null,
+        "output_per_million": 0.4,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 524288,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aa-lcr",
+      "benchmark_name": "AA-LCR",
+      "models": [
+        {
+          "model_id": "solar-mini4",
+          "model_name": "Solar Mini 4",
+          "score": 0.833,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.8,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.734,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-latest",
+          "model_name": "Mistral Small 4",
+          "score": 0.712,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-pro4",
+          "model_name": "Solar Pro 4",
+          "score": 0.71,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.7,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.687,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.687,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.683,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.669,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam-(no-tools,-text-only)",
+      "benchmark_name": "Humanity's Last Exam (no tools, text-only)",
+      "models": [
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.644,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.569,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.529,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.47,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.459,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.434,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.427,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.391,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.302,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 0.297,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-mini4",
+          "model_name": "Solar Mini 4",
+          "score": 0.258,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "scicode",
+      "benchmark_name": "SciCode",
+      "models": [
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.918,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.598,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.59,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.578,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.535,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.522,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.513,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.487,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.487,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-mini4",
+          "model_name": "Solar Mini 4",
+          "score": 0.476,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.518,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.445,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.418,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.1-flash",
+          "model_name": "Ling 3.1 Flash",
+          "score": 0.404,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-mini4",
+          "model_name": "Solar Mini 4",
+          "score": 0.01,
+          "rank": 25,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "upstage/solar-mini4"
+}

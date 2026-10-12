@@ -1,0 +1,500 @@
+{
+  "model_id": "ember-1",
+  "name": "Ember-1",
+  "model_type": "llm",
+  "organization": {
+    "id": "fireworks",
+    "name": "Fireworks AI",
+    "website": "https://fireworks.ai"
+  },
+  "description": "Ember-1 is a Fireworks Research specialized model built on Moonshot Kimi K3 that shortens reasoning traces (~40% fewer tokens) while matching K3-max quality on Fireworks' evaluations. Research Preview on Fireworks Serverless (model path accounts/fireworks/models/ember-1). MoE with 2.78T parameters, 1040k context, function calling. List pricing $3.00 input / $0.30 cached input / $15.00 output per 1M tokens (same as public Kimi K3 API pricing cited in the launch blog). Self-reported benches from the Fireworks blog: Terminal-Bench 2.1 82.0%, SWE-bench Verified 92.2%, SWE-Interact 20.0% (no catalog id — noted only), DeepSWE 1.1 75.2%, tau2-bench Airline 66%. Model page verified live (Ready) as of catalog add.",
+  "release_date": "2026-09-23",
+  "announcement_date": "2026-09-23",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 2780000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": {
+    "id": "kimi-k3",
+    "name": "Kimi K3"
+  },
+  "tags": {
+    "moe": "true",
+    "tuning": "instruct",
+    "thinking": "true",
+    "api_model_id": "accounts/fireworks/models/ember-1",
+    "open_weights": "false",
+    "research_preview": "true",
+    "native_context_length": "1040000"
+  },
+  "sources": {
+    "api_ref": "https://fireworks.ai/models/fireworks/ember-1",
+    "playground": "https://fireworks.ai/models/fireworks/ember-1",
+    "paper": null,
+    "scorecard_blog": "https://fireworks.ai/blog/ember-1",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.752,
+      "normalized_score": 0.752,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://fireworks.ai/blog/ember-1",
+      "analysis_method": "Fireworks launch blog industry-benchmark table; Ember-1 column; N=113",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported DeepSWE 1.1 75.2%."
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "name": "SWE-Bench Verified",
+      "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
+      "categories": [
+        "reasoning",
+        "frontend_development",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.922,
+      "normalized_score": 0.922,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://fireworks.ai/blog/ember-1",
+      "analysis_method": "Fireworks launch blog industry-benchmark table; Ember-1 column; N=500",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported SWE-bench Verified 92.2%."
+    },
+    {
+      "benchmark_id": "tau2-airline",
+      "name": "Tau2 Airline",
+      "description": "TAU2 airline domain benchmark for evaluating conversational agents in dual-control environments where both AI agents and users interact with tools in airline customer service scenarios. Tests agent coordination, communication, and ability to guide user actions in tasks like flight booking, modifications, cancellations, and refunds.",
+      "categories": [
+        "chat",
+        "reasoning",
+        "communication",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.66,
+      "normalized_score": 0.66,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://fireworks.ai/blog/ember-1",
+      "analysis_method": "Fireworks launch blog industry-benchmark table; τ-2 Bench Airline; Ember-1 column; N=50",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported τ-2 Bench Airline 66% mapped to catalog id tau2-airline."
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.82,
+      "normalized_score": 0.82,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://fireworks.ai/blog/ember-1",
+      "analysis_method": "Fireworks launch blog industry-benchmark table; Ember-1 column; N=89",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported Terminal Bench 2.1 82.0%."
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "fireworks",
+      "name": "Fireworks",
+      "website": "https://fireworks.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 3,
+        "cached_input_per_million": 0.3,
+        "cache_write_per_million": null,
+        "output_per_million": 15,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1040000,
+        "max_output_tokens": null
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.779,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7522,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.752,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.742,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.742,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.73,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.719,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "benchmark_name": "SWE-Bench Verified",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.939,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.922,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.886,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.876,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.852,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.809,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.808,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.806,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.806,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "tau2-airline",
+      "benchmark_name": "Tau2 Airline",
+      "models": [
+        {
+          "model_id": "longcat-flash-thinking-2601",
+          "model_name": "LongCat-Flash-Thinking-2601",
+          "score": 0.765,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-omni",
+          "model_name": "Nova 2 Omni",
+          "score": 0.688,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-flash-thinking",
+          "model_name": "LongCat-Flash-Thinking",
+          "score": 0.675,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-2025-11-13",
+          "model_name": "GPT-5.1",
+          "score": 0.67,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-thinking-2025-11-12",
+          "model_name": "GPT-5.1 Thinking",
+          "score": 0.67,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.1-instant-2025-11-12",
+          "model_name": "GPT-5.1 Instant",
+          "score": 0.67,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.66,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.652,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-lite",
+          "model_name": "Nova 2 Lite",
+          "score": 0.648,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.648,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.9059999999999999,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.899,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-flash",
+          "model_name": "MiMo-V2.6-Flash",
+          "score": 0.876,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.874,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.82,
+          "rank": 22,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "fireworks/ember-1"
+}

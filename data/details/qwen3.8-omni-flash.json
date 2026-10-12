@@ -1,0 +1,155 @@
+{
+  "model_id": "qwen3.8-omni-flash",
+  "name": "Qwen3.8 Omni Flash",
+  "model_type": "llm",
+  "organization": {
+    "id": "qwen",
+    "name": "Alibaba Cloud / Qwen Team",
+    "website": "https://qwenlm.github.io"
+  },
+  "description": "Qwen3.8-Omni-Flash is Alibaba/Qwen's native omnimodal API model (id qwen3.8-omni-flash) for agentic audio-visual task execution. Inputs: text, image, audio, and video; output: text. Supports a 1M-token context window, reasoning_effort (xhigh/medium/low), and OpenAI-compatible Chat Completions / Responses APIs on QwenCloud (DashScope). Released 2026-09-18 as API-only (no open weights on this card). Vendor paper/blog highlights include WildClawBench-MM 71.0, UniClawBench 69.6, LongAudioSpan Accuracy 82.7, OmniVideoBench 63.4 static / 67.8 agentic (Qwen Code), MMAU 81.8, MMAR 79.8, MMSU 82.1, VoiceBench 91.6, OmniGAIA 74.0, DailyOmni 85.1. Catalog rows are limited to existing benchmark ids; UniClawBench, LongAudioSpan, OmniVideoBench, MMAR, and MMSU have no catalog ids yet and are noted here only. No first-party provider price row in this repo — available_in_zeroeval is false.",
+  "release_date": "2026-09-18",
+  "announcement_date": "2026-09-18",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "audio": "true",
+    "video": "true",
+    "tuning": "instruct",
+    "vision": "true",
+    "thinking": "true",
+    "api_model_id": "qwen3.8-omni-flash",
+    "open_weights": "false",
+    "native_context_length": "1000000"
+  },
+  "sources": {
+    "api_ref": "https://www.alibabacloud.com/blog/qwen3-8-omni-flash-omni-senses--agentic-delivery-_603580",
+    "playground": "https://chat.qwen.ai/",
+    "paper": "https://arxiv.org/abs/2609.25611",
+    "scorecard_blog": "https://qwen.ai/blog?id=qwen3.8-omni-flash",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "dailyomni",
+      "name": "DailyOmni",
+      "description": "DailyOmni evaluates multimodal models on daily-life video understanding tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "video"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.851,
+      "normalized_score": 0.851,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2609.25611",
+      "analysis_method": "Audio-visual understanding; Qwen3.8-Omni-Flash column in paper Table 5",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported DailyOmni 85.1 from arXiv:2609.25611."
+    },
+    {
+      "benchmark_id": "mmau",
+      "name": "MMAU",
+      "description": "A massive multi-task audio understanding and reasoning benchmark comprising 10,000 carefully curated audio clips paired with human-annotated natural language questions spanning speech, environmental sounds, and music. Requires expert-level knowledge and complex reasoning across 27 distinct skills.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "audio"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.818,
+      "normalized_score": 0.818,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2609.25611",
+      "analysis_method": "Audio understanding; Qwen3.8-Omni-Flash column in paper Table 3",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported MMAU 81.8 from arXiv:2609.25611."
+    },
+    {
+      "benchmark_id": "omnigaia",
+      "name": "OmniGAIA",
+      "description": "OmniGAIA evaluates multimodal perception and reasoning in agentic contexts, testing a model's ability to process diverse inputs and perform complex multi-step reasoning tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.74,
+      "normalized_score": 0.74,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2609.25611",
+      "analysis_method": "Evaluated without an external agent harness; Qwen3.8-Omni-Flash column in paper Table 6",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported OmniGAIA 74.0 from arXiv:2609.25611."
+    },
+    {
+      "benchmark_id": "voicebench-avg",
+      "name": "VoiceBench Avg",
+      "description": "VoiceBench is the first benchmark designed to provide a multi-faceted evaluation of LLM-based voice assistants, evaluating capabilities including general knowledge, instruction-following, reasoning, and safety using both synthetic and real spoken instruction data with diverse speaker characteristics and environmental conditions.",
+      "categories": [
+        "chat",
+        "reasoning",
+        "safety",
+        "speech_to_text",
+        "general",
+        "communication"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.916,
+      "normalized_score": 0.916,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2609.25611",
+      "analysis_method": "Audio interaction aggregate; Qwen3.8-Omni-Flash column in paper Table 3",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported VoiceBench 91.6 mapped to catalog id voicebench-avg."
+    },
+    {
+      "benchmark_id": "wildclawbench",
+      "name": "WildClawBench",
+      "description": "WildClawBench is an agentic coding benchmark from InternLM/Claw-Eval that reports overall model performance on real-world tool-using development tasks.",
+      "categories": [
+        "agents",
+        "coding"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.71,
+      "normalized_score": 0.71,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://arxiv.org/abs/2609.25611",
+      "analysis_method": "WildClawBench-MM subset (images/video/audio tasks); Claude Code harness; Qwen3.8-Omni-Flash column in paper Table 6",
+      "verification_date": null,
+      "verification_notes": "Vendor self-reported. WildClawBench-MM is the multimodal subset of WildClawBench; mapped to catalog id wildclawbench."
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [],
+  "comparison_model": null,
+  "openrouter_id": "qwen/qwen3.8-omni-flash"
+}
