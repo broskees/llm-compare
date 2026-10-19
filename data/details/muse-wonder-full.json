@@ -1,0 +1,663 @@
+{
+  "model_id": "muse-wonder-full",
+  "name": "Muse Wonder Full",
+  "model_type": "llm",
+  "organization": {
+    "id": "meta",
+    "name": "Meta",
+    "website": "https://meta.com"
+  },
+  "description": "Muse Wonder Full is a proprietary reasoning model from Meta Superintelligence Labs, released on October 12, 2026 for personal and professional agents and long-running coding tasks. Active Memory retains relevant context across interactions, and Active Focus supports sustained task execution and error recovery. Muse Wonder Full is the higher-capability variant, available to Muse Code Power Usage and Maximum Usage subscribers. It is not available through the Meta Model API. The model card specifies text, image, video, and audio inputs, text output, and a 1M-token inference context for both variants.",
+  "release_date": "2026-10-12",
+  "announcement_date": "2026-10-12",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://dev.meta.ai/docs/models",
+    "playground": "https://dev.meta.ai/docs/muse-code",
+    "paper": "https://research.meta.ai/static/muse-wonder-model-card",
+    "scorecard_blog": "https://research.meta.ai/blog/muse-wonder",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "artificial-analysis",
+      "name": "Artificial Analysis",
+      "description": "Artificial Analysis benchmark evaluates AI models across quality, speed, and pricing dimensions, providing a composite assessment of model capabilities for real-world usage.",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.56,
+      "normalized_score": 0.56,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Artificial Analysis Intelligence Index v4.3, independently evaluated by Artificial Analysis and reproduced in Meta's model card. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "description": "AutomationBench-AA is Artificial Analysis's independently run version of AutomationBench, covering 657 real-world SaaS workflow tasks across 40 simulated applications (e.g. Gmail, Slack, Salesforce, HubSpot). It scores the share of objectives an agent completes without violating business guardrails, using a private held-out task set.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.454,
+      "normalized_score": 0.454,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Artificial Analysis strict pass@1; every deterministic end-state assertion must pass. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.79,
+      "normalized_score": 0.79,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Datacurve third-party pass@1 results; 113 tasks across 91 repositories and five languages, graded with functional and regression tests. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "focusbench",
+      "name": "FocusBench",
+      "description": "Internal personal agent evaluation across housing, travel, IT, and finance; persistence through blockers and adaptation across interactions and changing environments.",
+      "categories": [
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.542,
+      "normalized_score": 0.542,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/blog/muse-wonder",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Internal personal agent evaluation across housing, travel, IT, and finance; persistence through blockers and adaptation across interactions and changing environments. Reported on a 0-100 scale, stored as a fraction. Score from the research blog chart; methodology: https://research.meta.ai/static/muse-wonder-model-card.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdp-pdf",
+      "name": "GDP.pdf",
+      "description": "GDP.pdf is a knowledge-work vision benchmark that evaluates models on economically valuable professional tasks presented as visual documents (PDFs), testing document-based reasoning, chart and table interpretation, and problem solving without tools.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.332,
+      "normalized_score": 0.332,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Professional tasks grounded in supplied PDF material; score reported by Surge. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "harvey-lab-aa",
+      "name": "Harvey LAB-AA",
+      "description": "Harvey LAB-AA evaluates model performance on complex legal workflows.",
+      "categories": [
+        "knowledge",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.131,
+      "normalized_score": 0.131,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Artificial Analysis result, version 1.1; share of legal deliverables meeting every criterion and passing hallucination checks. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.623,
+      "normalized_score": 0.623,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. 525 professional health questions, no tools, GPT-5.4 rubric grader; length-normalized weighted rubric score in a common internal framework. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "jobbench",
+      "name": "JobBench",
+      "description": "JobBench evaluates agents on work-related tasks, as reported in the MiMo-V2.6 release.",
+      "categories": [
+        "knowledge",
+        "productivity",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.753,
+      "normalized_score": 0.753,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. 65 professional tasks across 35 occupations; mean task-specific rubric reward. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "memorybench",
+      "name": "MemoryBench",
+      "description": "Internal recall evaluation over 64K-100K-token conversations containing distractors, conflicting facts, and later updates; LLM judge with weighted question-specific rubrics.",
+      "categories": [
+        "long_context",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.855,
+      "normalized_score": 0.855,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Internal recall evaluation over 64K-100K-token conversations containing distractors, conflicting facts, and later updates; LLM judge with weighted question-specific rubrics. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.1-partial",
+      "name": "OSWorld 2.1 (partial)",
+      "description": "Partial-credit computer-use score on OSWorld 2.1, as reported in the Claude Sonnet 5.5 release. Separate from OSWorld 2.0 and strict completion scores.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.784,
+      "normalized_score": 0.784,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. 108 desktop workflows in a common internal framework with official environments and graders; mean per-task partial reward. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.1-strict",
+      "name": "OSWorld 2.1 (strict)",
+      "description": "Strict pass rate on OSWorld 2.1: fraction of tasks where every graded checkpoint is satisfied. Separate from the OSWorld 2.1 partial-credit score and from OSWorld 2.0.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.394,
+      "normalized_score": 0.394,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. 108 desktop workflows in a common internal framework with official environments and graders; strict binary completion, separate from partial reward. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "personal-superintelligence-index",
+      "name": "Personal Superintelligence Index",
+      "description": "Internal composite of Agents' Last Exam, AutomationBench-AA, FocusBench, JobBench, GDP.pdf, VBT, and DRACO.",
+      "categories": [
+        "knowledge",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.591,
+      "normalized_score": 0.591,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Internal composite of Agents' Last Exam, AutomationBench-AA, FocusBench, JobBench, GDP.pdf, VBT, and DRACO. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "program-bench",
+      "name": "Program Bench",
+      "description": "Program Bench evaluates code-generation agents by asking them to recreate a program's behavior from only a compiled binary and documentation. It spans 200 tasks from small CLI tools to large systems such as FFmpeg and SQLite, with submissions judged against more than 248,000 fuzz-generated behavioral tests.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.59,
+      "normalized_score": 0.59,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. All models use mini-swe-agent; share of rollouts passing at least 95% of hidden behavioral tests; internet disabled after setup. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-marathon",
+      "name": "SWE-Marathon",
+      "description": "SWE-Marathon is an ultra-long-horizon software engineering benchmark covering tasks such as building compilers, optimizing kernels, and developing production-grade services. It measures whether agents can sustain quality across extremely long engineering trajectories.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.575,
+      "normalized_score": 0.575,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; xhigh reasoning effort. Abundant AI pass@1 results on long-running software projects. External results retain their reporting harnesses; not a controlled common-harness comparison. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0-aa",
+      "name": "Terminal-Bench 4.0-AA",
+      "description": "Artificial Analysis reported accuracy on terminal tasks with executable final-container-state verifiers.",
+      "categories": [
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.571,
+      "normalized_score": 0.571,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Artificial Analysis reported accuracy on terminal tasks with executable final-container-state verifiers. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vals-finance-agent-v2",
+      "name": "Vals Finance Agent v2",
+      "description": "Vals Finance Agent v2 evaluates AI agents on realistic financial analyst tasks.",
+      "categories": [
+        "knowledge",
+        "reasoning",
+        "finance",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.591,
+      "normalized_score": 0.591,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/static/muse-wonder-model-card",
+      "analysis_method": "Meta Muse Wonder model card, October 12, 2026; max reasoning effort. Vals AI private-test-set accuracy on financial analyst research tasks. Reported on a 0-100 scale, stored as a fraction.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.79,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.788,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.779,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7522,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.752,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.742,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.742,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.741,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.737,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gdp-pdf",
+      "benchmark_name": "GDP.pdf",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.816,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.35,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.34,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.332,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.32,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.308,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.307,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.298,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.247,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.227,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "benchmark_name": "HealthBench Professional",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.692,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.66,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.656,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.648,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.642,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.623,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.605,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.605,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.598,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "program-bench",
+      "benchmark_name": "Program Bench",
+      "models": [
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.912,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.82,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.797,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.778,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.637,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.59,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k2.7-code",
+          "model_name": "Kimi K2.7 Code",
+          "score": 0.536,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.503,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.5,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.494,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}
