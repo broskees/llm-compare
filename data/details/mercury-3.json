@@ -1,0 +1,979 @@
+{
+  "model_id": "mercury-3",
+  "name": "Mercury 3",
+  "model_type": "llm",
+  "organization": {
+    "id": "inceptionlabs",
+    "name": "Inception",
+    "website": "https://www.inceptionlabs.ai"
+  },
+  "description": "Mercury 3 is Inception's flagship diffusion-based LLM (dLLM), released 2026-10-19 and described as the most capable diffusion LLM released to date. Inception says it is more than 40x larger in total parameters than Mercury 1 and runs at about 1,068 output tokens per second on NVIDIA GPUs while matching or beating speed-optimized models such as GPT-6 Luna and Claude Haiku 5.5. It has a 1M-token context window, up to 131,072 output tokens, tunable reasoning effort (instant, low, medium, high), tool calling, and structured outputs. Text in, text out. Available on the Inception API, OpenRouter, Vercel AI Gateway, and Baseten.",
+  "release_date": "2026-10-19",
+  "announcement_date": "2026-10-19",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "tuning": "base",
+    "thinking": "true",
+    "predecessor": "mercury-2",
+    "api_model_id": "mercury-3",
+    "architecture": "diffusion",
+    "open_weights": "false",
+    "openrouter_slug": "inception/mercury-3",
+    "vercel_ai_gateway_id": "inception/mercury-3",
+    "openrouter_canonical_slug": "inception/mercury-3-20261019"
+  },
+  "sources": {
+    "api_ref": "https://docs.inceptionlabs.ai/get-started/models",
+    "playground": "https://chat.inceptionlabs.ai/",
+    "paper": null,
+    "scorecard_blog": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-lcr",
+      "name": "AA-LCR",
+      "description": "Agent Arena Long Context Reasoning benchmark",
+      "categories": [
+        "long_context",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7767,
+      "normalized_score": 0.7767,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); AA-LCR v1.1.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp-plus",
+      "name": "BrowseComp-Plus",
+      "description": "BrowseComp-Plus is a fixed-corpus version of BrowseComp for evaluating deep-research agents. It pairs BrowseComp questions with a curated, human-verified document collection so retrieval and agent results are reproducible and comparable across models and retrievers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5518,
+      "normalized_score": 0.5518,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); BrowseComp+.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "name": "DeepSearchQA",
+      "description": "DeepSearchQA is a benchmark for evaluating deep search and question-answering capabilities, testing models' ability to perform multi-hop reasoning and information retrieval across complex knowledge domains.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7133,
+      "normalized_score": 0.7133,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); DeepSearchQA.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.0",
+      "name": "DeepSWE 1.0",
+      "description": "DeepSWE 1.0 pass@1 benchmark as reported by Artificial Analysis using provider-specific harness runs.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.4631,
+      "normalized_score": 0.4631,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); DeepSWE v1.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "name": "GDPval-AA",
+      "description": "GDPval-AA evaluates AI agents on economically valuable professional knowledge-work tasks and reports performance as an Elo score.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1237.2,
+      "normalized_score": 0.412,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); GDPval-AA v2 Elo (max_score 3000).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8923,
+      "normalized_score": 0.8923,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); GPQA Diamond.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ifbench",
+      "name": "IFBench",
+      "description": "Instruction Following Benchmark evaluating model's ability to follow complex instructions",
+      "categories": [
+        "instruction_following",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7684,
+      "normalized_score": 0.7684,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); IFBench.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-v2",
+      "name": "MRCR v2",
+      "description": "MRCR v2 (Multi-Round Coreference Resolution version 2) is an enhanced version of the synthetic long-context reasoning task. It extends the original MRCR framework with improved evaluation criteria and additional complexity for testing models' ability to maintain attention and reasoning across extended contexts.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.755,
+      "normalized_score": 0.755,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); MRCR v2; needle count and context length not specified.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "multichallenge",
+      "name": "Multi-Challenge",
+      "description": "MultiChallenge is a realistic multi-turn conversation evaluation benchmark that challenges frontier LLMs across four key categories: instruction retention (maintaining instructions throughout conversations), inference memory (recalling and connecting details from previous turns), reliable versioned editing (adapting to evolving instructions during collaborative editing), and self-coherence (avoiding contradictions in responses). The benchmark evaluates models on sustained, contextually complex dialogues across diverse topics including travel planning, technical documentation, and professional communication.",
+      "categories": [
+        "chat",
+        "reasoning",
+        "communication"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6035,
+      "normalized_score": 0.6035,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); MultiChallenge.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "omniscience",
+      "name": "OmniScience",
+      "description": "OmniScience is a broad scientific knowledge and reasoning benchmark that measures both answer accuracy and non-hallucination (calibrated abstention) across science domains.",
+      "categories": [
+        "knowledge",
+        "reasoning",
+        "science"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.4644,
+      "normalized_score": 0.4644,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); AA-Omniscience (accuracy).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-atlas",
+      "name": "SWE-Atlas",
+      "description": "SWE-Atlas is a software engineering benchmark focused on debugging, evaluating a model's ability to localize and fix bugs in real-world codebases.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.5108,
+      "normalized_score": 0.5108,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); Labeled 'SWE-Bench Atlas' in vendor table; split and harness not specified.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "name": "Tau3 Banking",
+      "description": "τ³-Bench banking domain evaluates agentic models on multi-turn, tool-using customer-support scenarios in a simulated retail banking environment.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.3024,
+      "normalized_score": 0.3024,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+      "analysis_method": "Vendor benchmark table (Mercury 3, medium reasoning effort); τ³-bench Banking.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "inception",
+      "name": "Inception",
+      "website": "https://www.inceptionlabs.ai/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.1,
+        "cached_input_per_million": 0.01,
+        "cache_write_per_million": null,
+        "output_per_million": 0.35,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": 1068,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "aa-lcr",
+      "benchmark_name": "AA-LCR",
+      "models": [
+        {
+          "model_id": "solar-mini4",
+          "model_name": "Solar Mini 4",
+          "score": 0.833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.8,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.782,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 0.7767,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.734,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-small-latest",
+          "model_name": "Mistral Small 4",
+          "score": 0.712,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-pro4",
+          "model_name": "Solar Pro 4",
+          "score": 0.71,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-labs-dory-1.0-4b",
+          "model_name": "Nemotron Labs Dory 1.0 (4B)",
+          "score": 0.71,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.7,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.687,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.687,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "benchmark_name": "DeepSearchQA",
+      "models": [
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.931,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.91,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.894,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.867,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.83,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.805,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.771,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.748,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 0.7133,
+          "rank": 12,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gdpval-aa",
+      "benchmark_name": "GDPval-AA",
+      "models": [
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 1853,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 1773,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 1769,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 1754,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.6",
+          "model_name": "Grok 4.6",
+          "score": 1753,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 1678,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 1545,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 1525,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-open",
+          "model_name": "Muse Spark Open",
+          "score": 1401,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 1269,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 1237.2,
+          "rank": 12,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.96,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.935,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.93,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 0.8923,
+          "rank": 35,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ifbench",
+      "benchmark_name": "IFBench",
+      "models": [
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.828,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.822,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.817,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.813,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.813,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hermes-3-70b",
+          "model_name": "Hermes 3 70B",
+          "score": 0.8121,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.802,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 0.798,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.796,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-27b",
+          "model_name": "Qwen3.8-27B",
+          "score": 0.795,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 0.7684,
+          "rank": 17,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "multichallenge",
+      "benchmark_name": "Multi-Challenge",
+      "models": [
+        {
+          "model_id": "nova-2-pro",
+          "model_name": "Nova 2 Pro",
+          "score": 0.777,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-lite",
+          "model_name": "Nova 2 Lite",
+          "score": 0.766,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nova-2-omni",
+          "model_name": "Nova 2 Omni",
+          "score": 0.755,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5-2025-08-07",
+          "model_name": "GPT-5",
+          "score": 0.696,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.676,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.667,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.638,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.633,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "step3-vl-10b",
+          "model_name": "Step3-VL-10B",
+          "score": 0.626,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.615,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 0.6035,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "benchmark_name": "Tau3 Banking",
+      "models": [
+        {
+          "model_id": "ling-3.0-flash-fin",
+          "model_name": "Ling 3.0 Flash Fin",
+          "score": 0.41,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.361,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.33,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-live-1",
+          "model_name": "GPT-Live-1",
+          "score": 0.32,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 0.3024,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.28,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling",
+          "model_name": "Inkling",
+          "score": 0.237,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.235,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "solar-pro4",
+          "model_name": "Solar Pro 4",
+          "score": 0.23,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3.5-super-vl-120b-a12b",
+          "model_name": "Nemotron 3.5 Super VL (120B A12B)",
+          "score": 0.1888,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gpt-6-astra",
+    "name": "GPT-6 Astra",
+    "organization_name": "OpenAI",
+    "release_date": "2026-09-04",
+    "announcement_date": "2026-09-03",
+    "knowledge_cutoff": "2026-04-30",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "agents-last-exam": 0.593,
+      "arc-agi": 0.985,
+      "arc-agi-3": 0.999,
+      "arc-agi-v2": 0.95,
+      "automationbench": 0.414,
+      "benchcad-with-python-tool": 0.959,
+      "browsecomp": 0.915,
+      "deepswe-1.1": 0.741,
+      "exploitbench": 1,
+      "exploitgym": 0.424,
+      "frontiercode-1.1": 0.533,
+      "frontiermath-tier-4-v2": 0.976,
+      "genebench-pro": 0.378,
+      "gpqa": 0.96,
+      "healthbench-professional": 0.634,
+      "humanity's-last-exam-(with-tools,-text-only)": 0.572,
+      "lifescibench": 0.603,
+      "osworld-2.0": 0.726,
+      "screenspot-pro": 0.927,
+      "sec-bench-pro": 0.854,
+      "terminal-bench-4.0": 0.577,
+      "terminal-bench-science-0.1": 0.646
+    },
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 10,
+      "output_cost": 50,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  },
+  "openrouter_id": "inception/mercury-3"
+}
