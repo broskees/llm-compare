@@ -1,0 +1,519 @@
+{
+  "model_id": "gemini-4-carbon",
+  "name": "Gemini 4 Carbon",
+  "model_type": "llm",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "Gemini 4 Carbon is Google DeepMind's next frontier model, announced on 2026-10-28, which Google describes as \"our strongest model with state-of-the-art cybersecurity and long horizon capabilities.\" It builds on Gemini 4 Argon, with gains in vulnerability finding, exploit validation, patching, and long-horizon agentic coding. At announcement it is in a limited rollout: available only to a subset of cyber defenders and, in phases, to trusted partners through Google's Fairwind Program, with availability to developers, businesses, and consumers planned later. Google states it will launch at the same introductory price as Argon ($2.00 per million input tokens, $10.00 per million output tokens, cached input 95% off), moving to $4.00/$20.00 after the introductory period. There is no public API endpoint yet.",
+  "release_date": "2026-10-28",
+  "announcement_date": "2026-10-28",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "limited_availability": "true"
+  },
+  "sources": {
+    "api_ref": null,
+    "playground": null,
+    "paper": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+    "scorecard_blog": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.539,
+      "normalized_score": 0.539,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Private set; sourced from the official Zapier public leaderboard.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "blueprint-bench-2",
+      "name": "Blueprint-Bench 2",
+      "description": "Blueprint-Bench 2 is an agentic spatial reasoning benchmark that evaluates a model's ability to understand, plan, and reason over architectural blueprints and other structured spatial documents. Scores are reported as a normalized score.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.586,
+      "normalized_score": 0.586,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Similarity score; reported from the Andon Labs official public leaderboard.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartography-no-tools",
+      "name": "Chartography (no tools)",
+      "description": "Chartography visual chart recognition evaluated without tools, distinct from tool-assisted results.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.725,
+      "normalized_score": 0.725,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Without tools; follows the official Surge public leaderboard.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "cwe-bench",
+      "name": "CWE-Bench",
+      "description": "CWE-Bench evaluates autonomous agents on finding and patching real-world software vulnerabilities.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.71,
+      "normalized_score": 0.71,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "CWE-bench v1; programmatic pass@1 from the official public leaderboard evaluated by Collinear AI (ties broken by pass@4). Evaluated without guardrails.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "exploitgym",
+      "name": "ExploitGym",
+      "description": "ExploitGym is a large-scale, realistic benchmark built from real-world vulnerabilities across userspace programs, Google's V8 engine, and the Linux kernel. Given a vulnerability and a proof-of-vulnerability input, agents must craft a working end-to-end exploit that achieves unauthorized code execution.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.535,
+      "normalized_score": 0.535,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "analysis_method": "Default 6-hour timeout per task; single attempt per task; Antigravity harness; no internet; mitigations off; LLM judge verifies intended vulnerability; self-computed.",
+      "verification_date": null,
+      "verification_notes": "6-hour score (53.5%) from the launch blog's ExploitGym chart; methodology at https://deepmind.google/models/evals-methodology/gemini-4-carbon. The headline 54.8% in the blog text and evals table is the extended 10-hour timeout result. The stored score is the default 6-hour result, matching existing catalog convention."
+    },
+    {
+      "benchmark_id": "frontierswe-v2",
+      "name": "FrontierSWE V2",
+      "description": "FrontierSWE V2 evaluates agents on open-ended technical projects and reports mean@5. Kept separate from FrontierSWE V1 dominance-score results, which are not comparable.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.612,
+      "normalized_score": 0.612,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "FrontierSWE 2; reported from Proximal's official public leaderboard.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "graphwalks-bfs->128k",
+      "name": "Graphwalks BFS >128k",
+      "description": "A graph reasoning benchmark that evaluates language models' ability to perform breadth-first search (BFS) operations on graphs with context length over 128k tokens, testing long-context reasoning capabilities.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "spatial_reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.962,
+      "normalized_score": 0.962,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "256k to 1M subset (200 problems); BFS (F1); self-computed.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gray-swan-ipi",
+      "name": "Gray Swan IPI Benchmark",
+      "description": "The Gray Swan IPI Benchmark evaluates indirect prompt-injection robustness by measuring attack success within a fixed number of attempts; lower is better.",
+      "categories": [
+        "safety",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0,
+      "normalized_score": 1,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "analysis_method": "Attack success rate at k=15 attempts (ASR@15); lower is better. Gemini 4 Argon: 0.7% on the same chart.",
+      "verification_date": null,
+      "verification_notes": "0.0% attack success rate from the launch blog's Gray Swan IPI chart. Normalized score is inverted so higher remains better."
+    },
+    {
+      "benchmark_id": "osworld-2.1-partial",
+      "name": "OSWorld 2.1 (partial)",
+      "description": "Partial-credit computer-use score on OSWorld 2.1, as reported in the Claude Sonnet 5.5 release. Separate from OSWorld 2.0 and strict completion scores.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.815,
+      "normalized_score": 0.815,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "OSWorld 2.1 offline subset (82 tasks) partial score; maxed over 3 runs, single attempt per run; updated Gemini CUA harness with parallel batch tool calling; self-computed.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "riemannbench",
+      "name": "RiemannBench",
+      "description": "RiemannBench evaluates models on advanced mathematics and scientific reasoning tasks, as reported on the Surge public leaderboard.",
+      "categories": [
+        "math",
+        "reasoning",
+        "science"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8,
+      "normalized_score": 0.8,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Reported from the official Surge public leaderboard.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "sec-bench-pro",
+      "name": "SEC-bench Pro",
+      "description": "SEC-bench Pro is a self-evolving software-security benchmark that measures agent bug hunting on critical, high-complexity systems. It instantiates validated vulnerabilities across the V8 and SpiderMonkey JavaScript engines as reproducible vulnerability-discovery and proof-of-concept-generation tasks with oracle-based validation.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.882,
+      "normalized_score": 0.882,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Pass@1 on the 183-task May 2026 JavaScript engine split, averaged over 3 attempts; Antigravity harness; self-computed.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0-aa",
+      "name": "Terminal-Bench 4.0-AA",
+      "description": "Artificial Analysis reported accuracy on terminal tasks with executable final-container-state verifiers.",
+      "categories": [
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.652,
+      "normalized_score": 0.652,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Terminal-Bench 4.0 (AA); third-party-run result as reported in Google's evals table.",
+      "verification_date": null,
+      "verification_notes": "Third-party run; not self-computed by Google."
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.648,
+      "normalized_score": 0.648,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Terminal-Bench-Science 0.1; third-party-run result as reported in Google's evals table (not self-computed by Google).",
+      "verification_date": null,
+      "verification_notes": "Third-party run; not self-computed by Google. Gemini 4 Argon's row on this id (0.576) is Google self-computed with a 6x verifier timeout, so the two are not directly comparable; Google's Carbon table lists Argon at 52.9% under the same third-party setup."
+    },
+    {
+      "benchmark_id": "vals-index",
+      "name": "Vals Index",
+      "description": "Vals Index measures economic impact across finance, coding, legal, and tax work, with every sector weighted by its contribution to U.S. GDP.",
+      "categories": [
+        "knowledge",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.704,
+      "normalized_score": 0.704,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Vals Index v2.2; sourced from Vals AI. Highest thinking settings.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vending-bench-2",
+      "name": "Vending-Bench 2",
+      "description": "Vending-Bench 2 tests longer horizon planning capabilities by evaluating how well AI models can manage a simulated vending machine business over extended periods. The benchmark measures a model's ability to maintain consistent tool usage and decision-making for a full simulated year of operation, driving higher returns without drifting off task.",
+      "categories": [
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 16484,
+      "normalized_score": null,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-carbon",
+      "analysis_method": "Final bank balance (USD); reported from the Andon Labs official public leaderboard.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "webdev-arena",
+      "name": "WebDev Arena",
+      "description": "WebDev Arena is a leaderboard for evaluating AI models on web development tasks, including zero-shot generation, complex prompts, and interactive web UI creation. Models are ranked using Elo ratings based on their performance in coding and web development challenges.",
+      "categories": [
+        "reasoning",
+        "frontend_development",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 2000,
+      "score": 1768,
+      "normalized_score": 0.884,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "analysis_method": "Arena.ai WebDev Arena Elo 1768 for Gemini 4 Carbon (High); preliminary rating, CI ±15 (+15/-15) (2,230 votes); #4 (rank spread 2-6); +89 Elo over Gemini 4 Argon (High) at 1679.",
+      "verification_date": null,
+      "verification_notes": "Leaderboard: https://arena.ai/leaderboard/code/webdev (snapshot dated Oct 27, 2026). Preliminary rating, so it may shift as votes accrue."
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "deepseek-v4.1-flash-1017",
+          "model_name": "DeepSeek-V4.1-Flash-1017",
+          "score": 0.605,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.599,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.5479999999999999,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.539,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.513,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.494,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.488,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.482,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.447,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.414,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "graphwalks-bfs->128k",
+      "benchmark_name": "Graphwalks BFS >128k",
+      "models": [
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.962,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.907,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.842,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.813,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.8,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.769,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.681,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.615,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.454,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.214,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

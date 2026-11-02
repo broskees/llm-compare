@@ -1,0 +1,662 @@
+{
+  "model_id": "gpt-6.1-terra",
+  "name": "GPT-6.1 Terra",
+  "model_type": "llm",
+  "organization": {
+    "id": "openai",
+    "name": "OpenAI",
+    "website": "https://openai.com"
+  },
+  "description": "GPT-6.1 Terra is OpenAI's fast, efficient GPT-6.1 model for visual reasoning, precise computer use, and clear, natural writing, priced 50% below GPT-5.6 Terra and GPT-6.1 Sol. The API model id is gpt-6.1-terra. It accepts text and image input with text output, supports none, low, medium (API default), high, xhigh, and max reasoning effort, and provides a 1,050,000-token context window with up to 128,000 output tokens. Use the Responses API for tool calling; Chat Completions is supported without tool calling. Responses API tools include web and file search, image generation, code interpreter, hosted shell, apply patch, skills, computer use, MCP, and tool search; it also supports streaming, function calling, and structured outputs. Standard per-million-token pricing is $1 input, $0.05 cached input, $1.25 cache writes (30-minute retention rate; 12-hour retention is $2.50), and $5 output. Prompts above 272K input tokens cost 2x input/cache and 1.5x output across the full request. Batch and Flex cost 50% of Standard; Fast costs 2x. Regional processing adds 10% where available. Launch benchmarks are OpenAI-reported; effort and evaluation variants are recorded with each score.",
+  "release_date": "2026-10-26",
+  "announcement_date": "2026-10-26",
+  "multimodal": true,
+  "knowledge_cutoff": "2026-06-01",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true",
+    "reasoning_efforts": "none,low,medium,high,xhigh,max",
+    "long_context_pricing_threshold": "272000"
+  },
+  "sources": {
+    "api_ref": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "playground": "https://platform.openai.com/playground?model=gpt-6.1-terra",
+    "paper": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+    "scorecard_blog": "https://openai.com/index/introducing-gpt-6-1-terra/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6,
+      "normalized_score": 0.6,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "analysis_method": "Agents' Last Exam v1. Self-reported by OpenAI at max reasoning effort (0.600), GPT-6.1 Terra launch interactive chart. Other efforts: low 0.559, medium 0.576, high 0.572, xhigh 0.585. Cost per task at max effort: $1.01. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench",
+      "name": "HealthBench",
+      "description": "An open-source benchmark for measuring performance and safety of large language models in healthcare, consisting of 5,000 multi-turn conversations evaluated by 262 physicians using 48,562 unique rubric criteria across health contexts and behavioral dimensions",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.551,
+      "normalized_score": 0.551,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "analysis_method": "HealthBench, length-adjusted score (unadjusted 0.511, mean response length 1,331 chars). GPT-6.1 Terra system card addendum Table 5. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-consensus",
+      "name": "HealthBench Consensus",
+      "description": "HealthBench Consensus is a HealthBench subset focused on questions where physician-created rubric criteria have especially high agreement, measuring healthcare performance and safety on consensus-evaluable conversations.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.951,
+      "normalized_score": 0.951,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "analysis_method": "HealthBench Consensus, length-adjusted score (unadjusted 0.948, mean response length 1,312 chars). GPT-6.1 Terra system card addendum Table 5. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-hard",
+      "name": "HealthBench Hard",
+      "description": "A challenging variation of HealthBench that evaluates large language models' performance and safety in healthcare through 5,000 multi-turn conversations with particularly rigorous evaluation criteria validated by 262 physicians from 60 countries",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.314,
+      "normalized_score": 0.314,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "analysis_method": "HealthBench Hard, length-adjusted score (unadjusted 0.260, mean response length 1,306 chars). GPT-6.1 Terra system card addendum Table 5. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.627,
+      "normalized_score": 0.627,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "analysis_method": "HealthBench Professional, length-adjusted score (unadjusted 0.642, mean response length 2,531 chars). GPT-6.1 Terra system card addendum Table 5. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mentalhealthbench",
+      "name": "MentalHealthBench",
+      "description": "MentalHealthBench is an open benchmark developed with mental health experts for measuring how AI systems respond in realistic mental health conversations. It consists of 1,215 synthetic conversations covering diverse scenarios ranging from daily well-being topics to urgent mental health emergencies, scored with clinician-authored rubric criteria.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.555,
+      "normalized_score": 0.555,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "analysis_method": "MentalHealthBench overall at max reasoning effort (0.555 ± 0.010). Acuity splits at max effort: non-acute 0.565, high acuity 0.565, emergent 0.529. GPT-6.1 Terra system card addendum Table 7. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.503,
+      "normalized_score": 0.503,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "analysis_method": "Terminal-Bench 4.0. OpenAI GPT-6.1 Terra launch post: at max reasoning effort GPT-6.1 Terra solves 50.3% of tasks (GPT-5.6 Terra published 21.5%). Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.583,
+      "normalized_score": 0.583,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "analysis_method": "Terminal-Bench-Science 0.1. Self-reported by OpenAI at max reasoning effort (0.583), GPT-6.1 Terra launch interactive chart. Other efforts: low 0.243, medium 0.343, high 0.397, xhigh 0.434. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "openai",
+      "name": "OpenAI",
+      "website": "https://openai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1,
+        "cached_input_per_million": 0.05,
+        "cache_write_per_million": 1.25,
+        "output_per_million": 5,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.6,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-sol",
+          "model_name": "GPT-6 Sol",
+          "score": 0.564,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.512,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.512,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-luna",
+          "model_name": "GPT-6 Luna",
+          "score": 0.509,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.504,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.503,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench",
+      "benchmark_name": "HealthBench",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.654,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.616,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.606,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.602,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.585,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2-thinking-0905",
+          "model_name": "Kimi K2-Thinking-0905",
+          "score": 0.58,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.576,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.57,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.57,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.558,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.551,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-hard",
+      "benchmark_name": "HealthBench Hard",
+      "models": [
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.428,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.362,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.331,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.327,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.32,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.314,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-oss-120b",
+          "model_name": "GPT OSS 120B",
+          "score": 0.3,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.3-chat-latest",
+          "model_name": "GPT-5.3 Chat",
+          "score": 0.259,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-instant",
+          "model_name": "GPT-5.5 Instant",
+          "score": 0.229,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-mini",
+          "model_name": "Seed 2.0 Mini",
+          "score": 0.153,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "benchmark_name": "HealthBench Professional",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.692,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.66,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.656,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.648,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.642,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.627,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.623,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.623,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.605,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.605,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.605,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.657,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.571,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.52,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.518,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.503,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "openai/gpt-6.1-terra"
+}

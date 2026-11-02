@@ -1,0 +1,944 @@
+{
+  "model_id": "k2-horizon-3.7b",
+  "name": "K2 Horizon 3.7B",
+  "model_type": "llm",
+  "organization": {
+    "id": "ifm",
+    "name": "Institute of Foundation Models",
+    "website": "https://ifm.ai/"
+  },
+  "description": "K2 Horizon 3.7B is the small dense member of IFM's (MBZUAI) fully open K2 Horizon family: a 3.7B-core decoder-only reasoning model (36 layers; about 5.1B parameters in the released safetensors including its 250K-token vocabulary embeddings) pretrained on 22.9T tokens, with a native 524,288-token (512K) context window from midtraining onward. Text in, text out, with per-request reasoning effort (high recommended) and JSON/XML tool-call formats. Released 2026-09-03 under Apache 2.0; on 2026-10-01 the main branch was updated to an anti-doom-loop (FTPO) checkpoint, and the model-card scores were refreshed on 2026-10-28 (they differ from the launch-blog figures). BF16 weights plus a GGUF build, intermediate checkpoints, training data, code, and logs. No priced provider is cataloged yet.",
+  "release_date": "2026-09-03",
+  "announcement_date": "2026-09-03",
+  "multimodal": false,
+  "knowledge_cutoff": null,
+  "param_count": 3700000000,
+  "training_tokens": 22900000000000,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "apache_2_0",
+    "name": "Apache 2.0",
+    "allow_commercial": true,
+    "description": "Apache License 2.0 - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "hf_repo": "IFM/K2-Horizon-3.7B",
+    "thinking": "true",
+    "open_weights": "true",
+    "reasoning_efforts": "low,medium,high",
+    "native_context_length": "524288",
+    "default_reasoning_effort": "high"
+  },
+  "sources": {
+    "api_ref": null,
+    "playground": null,
+    "paper": null,
+    "scorecard_blog": "https://ifm.ai/blog/k2/",
+    "repo": "https://github.com/ifm-ai/xllm",
+    "weights": "https://huggingface.co/IFM/K2-Horizon-3.7B"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "bfcl-v4",
+      "name": "BFCL-V4",
+      "description": "Berkeley Function Calling Leaderboard V4 (BFCL-V4) evaluates LLMs on their ability to accurately call functions and APIs, including simple, multiple, parallel, and nested function calls across diverse programming scenarios.",
+      "categories": [
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.646,
+      "normalized_score": 0.646,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.689,
+      "normalized_score": 0.689,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95; GPQA Diamond",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "hmmt-feb-26",
+      "name": "HMMT Feb 26",
+      "description": "HMMT February 2026 is a math competition benchmark based on problems from the Harvard-MIT Mathematics Tournament, testing advanced mathematical problem-solving and reasoning.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.752,
+      "normalized_score": 0.752,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95; HMMT Feb 2026",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.14,
+      "normalized_score": 0.14,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95; without tools",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "scicode",
+      "name": "SciCode",
+      "description": "SciCode is a research coding benchmark curated by scientists that challenges language models to code solutions for scientific problems. It contains 338 subproblems decomposed from 80 challenging main problems across 16 natural science sub-fields including mathematics, physics, chemistry, biology, and materials science. Problems require knowledge recall, reasoning, and code synthesis skills.",
+      "categories": [
+        "math",
+        "physics",
+        "reasoning",
+        "biology",
+        "chemistry",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.258,
+      "normalized_score": 0.258,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "name": "SWE-Bench Verified",
+      "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
+      "categories": [
+        "reasoning",
+        "frontend_development",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.656,
+      "normalized_score": 0.656,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "name": "Tau3 Banking",
+      "description": "τ³-Bench banking domain evaluates agentic models on multi-turn, tool-using customer-support scenarios in a simulated retail banking environment.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.177,
+      "normalized_score": 0.177,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.397,
+      "normalized_score": 0.397,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/IFM/K2-Horizon-3.7B",
+      "analysis_method": "IFM K2-Horizon-3.7B Hugging Face model card, final checkpoint; reasoning_effort=high, temperature=1.0, top_p=0.95",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "bfcl-v4",
+      "benchmark_name": "BFCL-V4",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.75,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.73,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.729,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.729,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.722,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-27b",
+          "model_name": "Qwen3.5-27B",
+          "score": 0.685,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-max-thinking",
+          "model_name": "Qwen3 Max Thinking",
+          "score": 0.677,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-35b-a3b",
+          "model_name": "Qwen3.5-35B-A3B",
+          "score": 0.673,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-9b",
+          "model_name": "Qwen3.5-9B",
+          "score": 0.661,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.646,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.96,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.942,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.935,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.932,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.689,
+          "rank": 158,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "hmmt-feb-26",
+      "benchmark_name": "HMMT Feb 26",
+      "models": [
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.971,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.952,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-max",
+          "model_name": "DeepSeek-V4-Flash-Max",
+          "score": 0.948,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.929,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.927,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.925,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-0423",
+          "model_name": "DeepSeek-V4-Flash-0423",
+          "score": 0.919,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.878,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.87,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.849,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.752,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.65,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.647,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.647,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.645,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.625,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.621,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.6,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.584,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.579,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.574,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.14,
+          "rank": 95,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "scicode",
+      "benchmark_name": "SciCode",
+      "models": [
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.918,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.598,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.59,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-open",
+          "model_name": "Muse Spark Open",
+          "score": 0.585,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.578,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.535,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.522,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.513,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.492,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.487,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.487,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.258,
+          "rank": 35,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "benchmark_name": "SWE-Bench Verified",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.939,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.922,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.886,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.876,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.852,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.816,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.809,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.808,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-max",
+          "model_name": "DeepSeek-V4-Pro-Max",
+          "score": 0.806,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.806,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.656,
+          "rank": 86,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "tau3-banking",
+      "benchmark_name": "Tau3 Banking",
+      "models": [
+        {
+          "model_id": "ling-3.0-flash-fin",
+          "model_name": "Ling 3.0 Flash Fin",
+          "score": 0.41,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.361,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-375b-a23b",
+          "model_name": "K2 Horizon 375B-A23B",
+          "score": 0.34,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.33,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-live-1",
+          "model_name": "GPT-Live-1",
+          "score": 0.32,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mercury-3",
+          "model_name": "Mercury 3",
+          "score": 0.3024,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ling-3.0-flash",
+          "model_name": "Ling 3.0 Flash",
+          "score": 0.28,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-mova-36b-a4b",
+          "model_name": "K2 Horizon MoVA 36B-A4B",
+          "score": 0.268,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-7b",
+          "model_name": "K2 Horizon 7B",
+          "score": 0.258,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-32b",
+          "model_name": "K2 Horizon 32B",
+          "score": 0.241,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.177,
+          "rank": 15,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "swe-2",
+          "model_name": "SWE-2",
+          "score": 0.928,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.9059999999999999,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.899,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.879,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-flash",
+          "model_name": "MiMo-V2.6-Flash",
+          "score": 0.876,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-3.7b",
+          "model_name": "K2 Horizon 3.7B",
+          "score": 0.397,
+          "rank": 48,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gpt-6-astra",
+    "name": "GPT-6 Astra",
+    "organization_name": "OpenAI",
+    "release_date": "2026-09-04",
+    "announcement_date": "2026-09-03",
+    "knowledge_cutoff": "2026-04-30",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "agents-last-exam": 0.593,
+      "arc-agi": 0.985,
+      "arc-agi-3": 0.999,
+      "arc-agi-v2": 0.95,
+      "automationbench": 0.414,
+      "benchcad-with-python-tool": 0.959,
+      "browsecomp": 0.915,
+      "deepswe-1.1": 0.741,
+      "exploitbench": 1,
+      "exploitgym": 0.424,
+      "frontiercode-1.1": 0.533,
+      "frontiermath-tier-4-v2": 0.976,
+      "genebench-pro": 0.378,
+      "gpqa": 0.96,
+      "healthbench-professional": 0.634,
+      "humanity's-last-exam-(with-tools,-text-only)": 0.572,
+      "lifescibench": 0.603,
+      "osworld-2.0": 0.726,
+      "screenspot-pro": 0.927,
+      "sec-bench-pro": 0.854,
+      "terminal-bench-4.0": 0.577,
+      "terminal-bench-science-0.1": 0.646
+    },
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 10,
+      "output_cost": 50,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": false,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  }
+}

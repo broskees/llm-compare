@@ -7,7 +7,7 @@
     "name": "Mistral AI",
     "website": "https://mistral.ai"
   },
-  "description": "Mistral Large 4 (Public Preview; aka ML4 / le Chonk) is Mistral AI's flagship general-purpose multimodal Mixture-of-Experts model. Mistral's docs describe it as 1.05T total parameters with 52B active parameters and a 1.6B vision encoder, while Mistral's Hugging Face upcoming-release page describes it as a 1T model with 49B active parameters per token (52B including embeddings and output layers). It supports a 1M-token context window with text+image input and text output, plus structured outputs, function calling, document QnA, batching, agents/conversations, and built-in tools. Launch API pricing is 50% off for two weeks versus list ($0.68/$0.07/$2.09 sale vs $1.36/$0.14/$4.18 list per million input/cached/output tokens). Weights are planned for the end of October 2026 and are not yet released, so the catalog keeps the model proprietary until a public weights license is published.",
+  "description": "Mistral Large 4 (aka ML4 / Le Chonk) is Mistral AI's flagship open-weight, general-purpose multimodal Mixture-of-Experts model, unifying instruction following, reasoning, coding, and agentic workflows in a single set of weights. Mistral's Hugging Face card describes it as a 1T-parameter model with 49B active parameters per token (52B including embeddings and output layers; docs list 1.05T total with a 1.6B vision encoder), 128 routed experts (4 active) plus 1 shared expert, a 1M-token context window, text+image input and text output, and three reasoning efforts (low, medium, high default). It entered public preview on 2026-10-06; on 2026-10-29 Mistral released the weights of an improved, further-RL-trained version (same API id mistral-large-4) under the Mistral Ecosystem Open-Weight License (modified MIT; Model-as-a-Service businesses need a separate commercial license), priced at $0.70/$0.07/$2.10 per million input/cached input/output tokens.",
   "release_date": "2026-10-06",
   "announcement_date": "2026-10-06",
   "multimodal": true,
@@ -19,24 +19,24 @@
   "reviews_count": 0,
   "reviews_avg_rating": 0,
   "license": {
-    "id": "proprietary",
-    "name": "Proprietary",
+    "id": "modified_mit_license",
+    "name": "Modified MIT License",
     "allow_commercial": false,
-    "description": "Proprietary license - usage restrictions apply"
+    "description": "Modified MIT License license"
   },
   "model_family": null,
   "fine_tuned_from": null,
   "tags": {
     "moe": "true",
-    "thinking": "false"
+    "thinking": "true"
   },
   "sources": {
     "api_ref": "https://docs.mistral.ai/models/mistral-large-4",
     "playground": "https://console.mistral.ai/build/playground",
     "paper": null,
-    "scorecard_blog": "https://mistral.ai/news/mistral-large-4/",
-    "repo": null,
-    "weights": null
+    "scorecard_blog": "https://mistral.ai/news/mistral-large-4-oss/",
+    "repo": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+    "weights": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"
   },
   "benchmarks": [
     {
@@ -89,12 +89,32 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.933,
-      "normalized_score": 0.933,
+      "score": 0.971,
+      "normalized_score": 0.971,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
-      "analysis_method": "Attack resistance; announcement cites Lakera's public benchmark for indirect prompt-injection robustness.",
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4-oss/",
+      "analysis_method": "Open-weight release (2026-10-29) prose: resists 97.1% of attacks vs 93.3% in preview.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "name": "BrowseComp",
+      "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.845,
+      "normalized_score": 0.845,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4-oss/",
+      "analysis_method": "Open-weight release (2026-10-29) prose: 84.5% on BrowseComp.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -128,12 +148,12 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.498,
-      "normalized_score": 0.498,
+      "score": 0.48,
+      "normalized_score": 0.48,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
-      "analysis_method": "Combined Coding Agent Index; announcement prose 49.8%.",
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4-oss/",
+      "analysis_method": "Open-weight release (2026-10-29) prose: 48% on the Coding Agent Index (preview announcement had 49.8%).",
       "verification_date": null,
       "verification_notes": null
     },
@@ -173,7 +193,7 @@
       "verified": false,
       "self_reported": true,
       "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
-      "analysis_method": "Announcement prose 82% vulnerability reproduce+patch; chart CyberGym-E2E (AA) 82.",
+      "analysis_method": "Announcement prose 82% vulnerability reproduce+patch; chart CyberGym-E2E 82.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -192,7 +212,7 @@
       "verified": false,
       "self_reported": true,
       "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
-      "analysis_method": "Announcement prose 61.7% (chart ~62). Artificial Analysis private pre-harness launch footnote on chart.",
+      "analysis_method": "Announcement prose 61.7% (chart ~62). Private pre-harness launch footnote on chart.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -246,12 +266,32 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.674,
-      "normalized_score": 0.674,
+      "score": 0.733,
+      "normalized_score": 0.733,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
-      "analysis_method": "Chart Finch (FinWorkBench) 67.4%.",
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4-oss/",
+      "analysis_method": "Open-weight release (2026-10-29) prose: Finch (FinWorkBench) 73.3% (preview 67.4%).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode-2.0",
+      "name": "FrontierCode 2.0",
+      "description": "FrontierCode 2.0 is Cognition's private benchmark assessing end-to-end code quality of coding-agent changes, including whether a repository maintainer would merge the agent's change.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.197,
+      "normalized_score": 0.197,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4-oss/",
+      "analysis_method": "Open-weight release (2026-10-29) prose: Cognition's private FrontierCode 2.0, 19.7% (leads chart).",
       "verification_date": null,
       "verification_notes": null
     },
@@ -272,7 +312,7 @@
       "verified": false,
       "self_reported": true,
       "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
-      "analysis_method": "Chart \"GDP.pdf - AA\" 18.6%. Artificial Analysis labeling; not OpenAI's different gdp.pdf figures.",
+      "analysis_method": "Chart \"GDP.pdf\" 18.6%; not OpenAI's different gdp.pdf figures.",
       "verification_date": null,
       "verification_notes": null
     },
@@ -387,12 +427,12 @@
       ],
       "modality": "text",
       "max_score": 1,
-      "score": 0.283,
-      "normalized_score": 0.283,
+      "score": 0.41,
+      "normalized_score": 0.41,
       "verified": false,
       "self_reported": true,
-      "self_reported_source": "https://mistral.ai/news/mistral-large-4/",
-      "analysis_method": "Announcement prose 28.3% (chart ~28). Chart footer: AA Coding Agent Index harness.",
+      "self_reported_source": "https://mistral.ai/news/mistral-large-4-oss/",
+      "analysis_method": "Open-weight release (2026-10-29) prose: 41%, up 13 pts vs public preview 28.3%.",
       "verification_date": null,
       "verification_notes": null
     }
@@ -405,10 +445,10 @@
       "deprecated": false,
       "deprecated_at": null,
       "pricing": {
-        "input_per_million": 0.68,
+        "input_per_million": 0.7,
         "cached_input_per_million": 0.07,
         "cache_write_per_million": null,
-        "output_per_million": 2.09,
+        "output_per_million": 2.1,
         "per_image": null,
         "per_second_video_720p": null,
         "per_second_video_1080p": null,
@@ -423,8 +463,8 @@
         "max_output_tokens": null
       },
       "performance": {
-        "throughput": null,
-        "latency": null
+        "throughput": 27.98334036930965,
+        "latency": 4.1002
       },
       "features": {
         "web_search": null,
@@ -477,53 +517,136 @@
           "is_current_model": false
         },
         {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.539,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-4-argon",
           "model_name": "Gemini 4 Argon",
           "score": 0.513,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "muse-spark-1.3",
           "model_name": "Muse Spark 1.3",
           "score": 0.494,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "glm-5.3-flash",
           "model_name": "GLM-5.3-Flash",
           "score": 0.488,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "glm-5.3",
           "model_name": "GLM-5.3",
           "score": 0.482,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "claude-sonnet-5-5",
           "model_name": "Claude Sonnet 5.5",
           "score": 0.447,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6-astra",
           "model_name": "GPT-6 Astra",
           "score": 0.414,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark_name": "BrowseComp",
+      "models": [
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.921,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.915,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.912,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.908,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.904,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.901,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.875,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.869,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.863,
           "rank": 9,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-5-5",
-          "model_name": "Claude Opus 5.5",
-          "score": 0.4,
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.862,
           "rank": 10,
           "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.845,
+          "rank": 14,
+          "is_current_model": true
         }
       ]
     },
@@ -608,14 +731,14 @@
       "benchmark_name": "DeepSWE 1.1",
       "models": [
         {
-          "model_id": "muse-wonder-full",
+          "model_id": "muse-wonder-full-1.0",
           "model_name": "Muse Wonder Full",
           "score": 0.79,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "muse-wonder-full-1.0",
+          "model_id": "muse-wonder-full",
           "model_name": "Muse Wonder Full",
           "score": 0.79,
           "rank": 1,
@@ -671,15 +794,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "deepseek-v4.1-flash",
-          "model_name": "DeepSeek-V4.1-Flash",
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
           "score": 0.742,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "claude-opus-5-5",
-          "model_name": "Claude Opus 5.5",
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
           "score": 0.742,
           "rank": 10,
           "is_current_model": false
@@ -688,7 +811,7 @@
           "model_id": "mistral-large-4",
           "model_name": "Mistral Large 4",
           "score": 0.617,
-          "rank": 32,
+          "rank": 33,
           "is_current_model": true
         }
       ]
@@ -788,16 +911,16 @@
           "is_current_model": false
         },
         {
-          "model_id": "gemini-3.7-flash",
-          "model_name": "Gemini 3.7 Flash",
-          "score": 0.34,
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.346,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "muse-wonder-full-1.0",
-          "model_name": "Muse Wonder Full",
-          "score": 0.332,
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.34,
           "rank": 4,
           "is_current_model": false
         },
@@ -805,20 +928,20 @@
           "model_id": "muse-wonder-full",
           "model_name": "Muse Wonder Full",
           "score": 0.332,
-          "rank": 4,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.332,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6.1-sol",
           "model_name": "GPT-6.1 Sol",
           "score": 0.32,
-          "rank": 6,
-          "is_current_model": false
-        },
-        {
-          "model_id": "muse-wonder",
-          "model_name": "Muse Wonder",
-          "score": 0.308,
           "rank": 7,
           "is_current_model": false
         },
@@ -826,20 +949,20 @@
           "model_id": "muse-wonder-1.0",
           "model_name": "Muse Wonder",
           "score": 0.308,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.308,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-5.6-sol",
           "model_name": "GPT-5.6 Sol",
           "score": 0.307,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-fable-5",
-          "model_name": "Claude Fable 5",
-          "score": 0.298,
           "rank": 10,
           "is_current_model": false
         },
@@ -847,7 +970,7 @@
           "model_id": "mistral-large-4",
           "model_name": "Mistral Large 4",
           "score": 0.186,
-          "rank": 14,
+          "rank": 15,
           "is_current_model": true
         }
       ]
@@ -920,15 +1043,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "inkling-small",
-          "model_name": "Inkling-Small",
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
           "score": 0.487,
           "rank": 10,
           "is_current_model": false
         },
         {
-          "model_id": "kimi-k2.5",
-          "model_name": "Kimi K2.5",
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
           "score": 0.487,
           "rank": 10,
           "is_current_model": false
@@ -954,66 +1077,66 @@
           "is_current_model": false
         },
         {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.657,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-mythos-5-1",
           "model_name": "Claude Mythos 5.1",
           "score": 0.609,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6-astra",
           "model_name": "GPT-6 Astra",
           "score": 0.577,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "gemini-4-argon",
           "model_name": "Gemini 4 Argon",
           "score": 0.574,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "muse-wonder-full-1.0",
           "model_name": "Muse Wonder Full",
           "score": 0.571,
-          "rank": 6,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "claude-fable-5-1",
           "model_name": "Claude Fable 5.1",
           "score": 0.558,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "muse-wonder-1.0",
           "model_name": "Muse Wonder",
           "score": 0.52,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-5",
           "model_name": "Claude Opus 5",
           "score": 0.518,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-fable-5",
-          "model_name": "Claude Fable 5",
-          "score": 0.445,
           "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "mistral-large-4",
           "model_name": "Mistral Large 4",
-          "score": 0.283,
-          "rank": 20,
+          "score": 0.41,
+          "rank": 15,
           "is_current_model": true
         }
       ]
