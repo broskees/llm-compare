@@ -1,0 +1,203 @@
+{
+  "model_id": "glm-5.3-flashx-legal",
+  "name": "GLM-5.3-FlashX-Legal",
+  "model_type": "llm",
+  "organization": {
+    "id": "zai-org",
+    "name": "Zhipu AI",
+    "website": "https://z.ai"
+  },
+  "description": "GLM-5.3-FlashX-Legal (GLM-Legal) is Z.ai's legal-domain variant of GLM-5.3-FlashX, the fast serving tier of GLM-5.3-Flash. It adds legal-domain mid-training and reinforcement-learning post-training across tens of thousands of environments modeled on real legal workflows (legal research, contract review, evidence analysis, document drafting), and is designed to run in agent harnesses with legal-data and Word drafting/revision MCP services. It accepts text, image, and video input with text output, has a 1M-token context window and 128K max output, and runs with always-on thinking (reasoning effort low, high, or max). Z.ai reports a 19.2% all-pass rate on Harvey's Legal Agent Benchmark (LAB), 12.5 points above the base model, independently evaluated by Vals. Announced 2026-10-12; Z.ai lists API pricing at $0.37 input, $0.075 cached input, and $1.25 output per million tokens (API access by application for enterprise customers), and the model is also listed on OpenRouter as z-ai/glm-5.3-flashx-legal.",
+  "release_date": "2026-10-12",
+  "announcement_date": "2026-10-12",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash"
+  },
+  "tags": {
+    "domain": "legal",
+    "thinking": "true",
+    "openrouter": "z-ai/glm-5.3-flashx-legal",
+    "reasoning_efforts": "low,high,max",
+    "always_on_thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+    "playground": null,
+    "paper": null,
+    "scorecard_blog": "https://z.ai/blog/glm-legal",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "legal-agent-benchmark",
+      "name": "Legal Agent Benchmark",
+      "description": "The Legal Agent Benchmark (LAB) is Harvey's open-source benchmark for evaluating AI agents on complex, long-horizon legal work. Tasks are scored under an all-pass standard against expert-curated rubrics, where a task passes only if every required rubric criterion (facts, conclusions, citations, structure, and analytical moves) passes.",
+      "categories": [
+        "legal",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.192,
+      "normalized_score": 0.192,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://z.ai/blog/glm-legal",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Harvey Legal Agent Benchmark (LAB), all-criteria pass rate across 24 practice areas; independently evaluated by Vals (https://www.vals.ai/models/zai_glm-legal).",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "z",
+      "name": "ZAI",
+      "website": "https://zai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.37,
+        "cached_input_per_million": 0.075,
+        "cache_write_per_million": null,
+        "output_per_million": 1.25,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 131072
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "legal-agent-benchmark",
+      "benchmark_name": "Legal Agent Benchmark",
+      "models": [
+        {
+          "model_id": "glm-5.3-flashx-legal",
+          "model_name": "GLM-5.3-FlashX-Legal",
+          "score": 0.192,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.133,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.117,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.117,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.083,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.071,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.058,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.054,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.042,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.021,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}
