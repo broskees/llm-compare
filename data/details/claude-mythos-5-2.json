@@ -1,0 +1,453 @@
+{
+  "model_id": "claude-mythos-5-2",
+  "name": "Claude Mythos 5.2",
+  "model_type": "llm",
+  "organization": {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "website": "https://anthropic.com"
+  },
+  "description": "Claude Mythos 5.2 is Anthropic's verification-only deployment of the same underlying model as Claude Fable 5.2, with more permissive safeguards in biology and cybersecurity, the high-risk dual-use domains where Fable carries additional safeguards. Access is limited to organizations verified through Anthropic's Cyber Verification Program or Life Sciences Verification Program; Claude Enterprise customers can also reach it indirectly through Claude Security. It shares Fable 5.2's specifications: text and image input, text output, tool use, adaptive thinking that is always on (default effort high), a 1M-token context window, 128K max output, and June 2026 knowledge and training-data cutoffs. Pricing matches Fable 5.2 at $8/$40 per million input/output tokens, with cache reads at $0.20, 5-minute cache writes at $10 and 1-hour cache writes at $16; fast mode ($16/$80) is limited to verification-program members and is not offered on Amazon Bedrock. Anthropic calls it its most capable model for cybersecurity engineering, rediscovering 89.6% of 1,829 October 2026 CVEs versus 78.3% for Mythos 5.1. Self-reported scores (safeguards off) include Terminal-Bench 4.0 70.5%, Terminal-Bench-Science 0.1 75.3% and de novo protein binder design 85.1%. Available as `claude-mythos-5-2` on the Claude API, Claude Models on Google Cloud and Microsoft Foundry, and as `anthropic.claude-mythos-5-2` on Amazon Bedrock, where the Cyber Verification Program is currently open only to organizations with a data retention exemption for Fable 5.2 or Fable 5.1.",
+  "release_date": "2026-11-09",
+  "announcement_date": "2026-11-09",
+  "multimodal": true,
+  "knowledge_cutoff": "2026-06-01",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true",
+    "always_on_thinking": "true",
+    "default_reasoning_effort": "high"
+  },
+  "sources": {
+    "api_ref": "https://platform.claude.com/docs/en/models/mythos-5-2/overview",
+    "playground": null,
+    "paper": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+    "scorecard_blog": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "biomedical-image-analysis",
+      "name": "Biomedical image analysis",
+      "description": "Biomedical image analysis: quantitative analyses of biomedical images using domain tools.",
+      "categories": [
+        "multimodal",
+        "science",
+        "biology",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.807,
+      "normalized_score": 0.807,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. System Card §8.18.5. Scaled to best competition results; one attempt per problem; max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "de-novo-protein-binder-design",
+      "name": "De novo protein binder design",
+      "description": "De novo protein binder design: for each of 15 protein targets, design a set of 30 miniprotein binders within a fixed 24-hour wall-clock budget given the target structure.",
+      "categories": [
+        "science",
+        "agents",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.851,
+      "normalized_score": 0.851,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. Announcement + System Card Table 8.1.A / §8.18.4. 15 targets, 30 miniprotein binders each, 24h wall-clock budget, one H200; max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "latchbio-singlecellbench",
+      "name": "LatchBio SingleCellBench",
+      "description": "LatchBio SingleCellBench tests analysis of single-cell RNA sequencing data across problems spanning standard workflows such as labeling cell types, finding differentially expressed genes, and correcting batch effects.",
+      "categories": [
+        "science",
+        "agents",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.656,
+      "normalized_score": 0.656,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. System Card §8.18.1. Bash, file editor and prespecified packages; max effort; averaged over five attempts.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "medicinal-chemistry-adme",
+      "name": "Medicinal Chemistry (ADME)",
+      "description": "Medicinal chemistry ADME evaluation: 504 questions asking which real drug-discovery compounds have the highest or lowest measured absorption, distribution, or metabolism-related property.",
+      "categories": [
+        "science",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.69,
+      "normalized_score": 0.69,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. System Card §8.18.3. 504 ADME questions; max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "morphology-to-molecule-matching",
+      "name": "Morphology-to-molecule matching",
+      "description": "Axiom Bio morphology-to-molecule matching: match multi-channel cell imaging data from a human liver in-vitro assay to shuffled molecule-dose perturbations.",
+      "categories": [
+        "multimodal",
+        "science",
+        "biology",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.352,
+      "normalized_score": 0.352,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. System Card §8.18.2. Axiom Bio liver assay matching; max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "protein-design-sequence-generation",
+      "name": "Protein Design — Sequence Generation",
+      "description": "Protein design Sequence Generation task: generate novel protein sequences conditioned on design constraints.",
+      "categories": [
+        "science",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.646,
+      "normalized_score": 0.646,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. System Card §8.18.4. One attempt per problem; max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "protocols-troubleshooting",
+      "name": "Protocols Troubleshooting",
+      "description": "Molecular biology Protocols Troubleshooting variant: detect and fix issues in laboratory protocols.",
+      "categories": [
+        "science",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.771,
+      "normalized_score": 0.771,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. System Card §8.18.6. Max effort.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.705,
+      "normalized_score": 0.705,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-5-2-mythos-5-2-system-card",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. System Card §8.5. Claude Code --bare at max effort, no internet access; 660 trials, SE ±1.8 pts. Fable 5.2 with safeguards scored 67.6%.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.753,
+      "normalized_score": 0.753,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Claude Mythos 5.2 evaluated without cyber and bio safeguards. Announcement + System Card §8.6. Claude Code --bare at max effort; 10 trials per task, SE ±4.3 pts. Fable 5.2 with safeguards scored 74.6%.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "anthropic",
+      "name": "Anthropic",
+      "website": "https://anthropic.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 8,
+        "cached_input_per_million": 0.2,
+        "cache_write_per_million": 16,
+        "output_per_million": 40,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.705,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.676,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.571,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "benchmark_name": "Terminal-Bench-Science 0.1",
+      "models": [
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.753,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.746,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.648,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.646,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.599,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.587,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.583,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.576,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.5702,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.526,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

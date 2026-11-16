@@ -1,0 +1,405 @@
+{
+  "model_id": "muse-ember-1.0",
+  "name": "Muse Ember",
+  "model_type": "llm",
+  "organization": {
+    "id": "meta",
+    "name": "Meta",
+    "website": "https://meta.com"
+  },
+  "description": "Muse Ember is Meta Superintelligence Labs' smallest and most efficient multimodal reasoning model, built for high-volume agent execution such as tool calls, coding subtasks, routing, extraction, and long-document work. It is available on the Meta Model API and in Muse Code as muse-ember-1.0 in Standard mode only (there is no Contributor-mode variant). It accepts text, image, video, audio, and PDF input and returns text, with a 1,048,576-token context window and up to 524,288 output tokens. Reasoning effort ranges from minimal to max; the default is max. Pay-as-you-go pricing for requests with up to 200K input tokens is $0.10 per million input tokens, $0.004 per million cached input tokens, and $0.50 per million output tokens. Requests with more than 200K input tokens are billed in full at $0.30/$0.012/$1.50. Web search grounding costs $2.50 per 1,000 search queries on top of token charges.",
+  "release_date": "2026-11-09",
+  "announcement_date": "2026-11-09",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true",
+    "openrouter_slug": "meta/muse-ember",
+    "max_output_tokens": "524288",
+    "default_reasoning_effort": "max"
+  },
+  "sources": {
+    "api_ref": "https://dev.meta.ai/docs/muse-ember",
+    "playground": "https://meta.ai",
+    "paper": "https://research.meta.ai/static/muse-ember-evaluation-report",
+    "scorecard_blog": "https://research.meta.ai/blog/muse-ember",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.616,
+      "normalized_score": 0.616,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/blog/muse-ember",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Meta Muse Ember launch table, November 9, 2026; max reasoning effort. Official launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.1-partial",
+      "name": "OSWorld 2.1 (partial)",
+      "description": "Partial-credit computer-use score on OSWorld 2.1, as reported in the Claude Sonnet 5.5 release. Separate from OSWorld 2.0 and strict completion scores.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.695,
+      "normalized_score": 0.695,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/blog/muse-ember",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Meta Muse Ember launch table, November 9, 2026; max reasoning effort. OSWorld 2.1 mean per-task partial-credit reward. Official launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.1-strict",
+      "name": "OSWorld 2.1 (strict)",
+      "description": "Strict pass rate on OSWorld 2.1: fraction of tasks where every graded checkpoint is satisfied. Separate from the OSWorld 2.1 partial-credit score and from OSWorld 2.0.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.338,
+      "normalized_score": 0.338,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/blog/muse-ember",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Meta Muse Ember launch table, November 9, 2026; max reasoning effort. OSWorld 2.1 strict binary completion secondary metric. Official launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "perceptionbench",
+      "name": "PerceptionBench",
+      "description": "PerceptionBench is Moonshot AI's internal benchmark for evaluating atomic visual perception capabilities.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.806,
+      "normalized_score": 0.806,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/blog/muse-ember",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Meta Muse Ember launch table, November 9, 2026; max reasoning effort. PerceptionBench scored with tools. Official launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "personal-superintelligence-index",
+      "name": "Personal Superintelligence Index",
+      "description": "Internal composite of Agents' Last Exam, AutomationBench-AA, FocusBench, JobBench, GDP.pdf, VBT, and DRACO.",
+      "categories": [
+        "knowledge",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.468,
+      "normalized_score": 0.468,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/blog/muse-ember",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Meta Muse Ember launch table, November 9, 2026; max reasoning effort. Internal composite of Agents' Last Exam, AutomationBench, FocusBench, JobBench, OfficeQA Pro, GDP.pdf, GDP.xlsx, and VBT. Reported on a 0-100 scale, stored as a fraction. Official launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.409,
+      "normalized_score": 0.409,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://research.meta.ai/blog/muse-ember",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Meta Muse Ember launch table, November 9, 2026; max reasoning effort. Terminal-Bench 4.0 with the best published harness for this model (mini-swe-agent). Official launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "meta",
+      "name": "Meta Model API",
+      "website": "https://ai.meta.com/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.1,
+        "cached_input_per_million": 0.004,
+        "cache_write_per_million": null,
+        "output_per_million": 0.5,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [
+        {
+          "tier": "standard",
+          "data_use_policy": "private",
+          "comparison_eligible": true,
+          "terms_url": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_per_million": 0.1,
+          "cached_input_per_million": 0.004,
+          "output_per_million": 0.5
+        }
+      ],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 524288
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.616,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.6,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-sol",
+          "model_name": "GPT-6 Sol",
+          "score": 0.564,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.512,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.512,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-luna",
+          "model_name": "GPT-6 Luna",
+          "score": 0.509,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.504,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.705,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.676,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.571,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.409,
+          "rank": 19,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "meta/muse-ember"
+}
