@@ -261,6 +261,27 @@
       "verification_notes": null
     },
     {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "name": "Ramp SWE-Bench v2 (Bash)",
+      "description": "Ramp SWE-Bench v2 is Ramp Labs' private coding benchmark of 500 backend engineering tasks built from pull requests that Ramp's in-house coding agent merged into production after engineer review, across work shipped by more than 200 Ramp engineers. Each model gets a one-shot prompt in the same sandboxed copy of Ramp's codebase and must produce a review-ready patch. A panel of LLM judges compares the candidate patch with the engineer-reviewed merged solution; a task passes when there is no material difference where the merged solution is better. Scores are pass@1 at high reasoning effort with web tools disabled, with every model running in the same bash-only mini-swe-agent harness (Ramp's v2.0 Bash view), which isolates the model from harness differences.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.47,
+      "normalized_score": 0.47,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://labs.ramp.com/swebench",
+      "evaluated_by": "Ramp",
+      "index_scope": "none",
+      "analysis_method": "pass@1 on 500 private Ramp production tasks (235/500 resolved, 95% CI +/-4.4 points), graded by Ramp's LLM judge panel against the merged patch. mini-swe-agent bash-only harness shared by every model, high reasoning effort, web tools disabled (Ramp SWE-Bench v2.0 Bash view, run as gemini-3.8-flash-high).",
+      "verification_date": null,
+      "verification_notes": "Third-party evaluation by Ramp Labs; tasks are private and not reproduced by LLM Stats."
+    },
+    {
       "benchmark_id": "terminal-bench-2.1",
       "name": "Terminal-Bench 2.1",
       "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
@@ -356,8 +377,8 @@
         "max_output_tokens": 65536
       },
       "performance": {
-        "throughput": 16.962784178685254,
-        "latency": 17.04459999999999
+        "throughput": 19.0107923827137,
+        "latency": 17.4061
       },
       "features": {
         "web_search": null,
@@ -472,14 +493,14 @@
       "benchmark_name": "DeepSWE 1.1",
       "models": [
         {
-          "model_id": "muse-wonder-full-1.0",
+          "model_id": "muse-wonder-full",
           "model_name": "Muse Wonder Full",
           "score": 0.79,
           "rank": 1,
           "is_current_model": false
         },
         {
-          "model_id": "muse-wonder-full",
+          "model_id": "muse-wonder-full-1.0",
           "model_name": "Muse Wonder Full",
           "score": 0.79,
           "rank": 1,
@@ -514,30 +535,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.757,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "muse-spark-1.3",
           "model_name": "Muse Spark 1.3",
           "score": 0.754,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6.1-sol",
           "model_name": "GPT-6.1 Sol",
           "score": 0.7522,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "ember-1",
           "model_name": "Ember-1",
           "score": 0.752,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-fable-5-2",
-          "model_name": "Claude Fable 5.2",
-          "score": 0.743,
           "rank": 10,
           "is_current_model": false
         },
@@ -545,7 +566,7 @@
           "model_id": "gemini-3.8-flash",
           "model_name": "Gemini 3.8 Flash",
           "score": 0.737,
-          "rank": 14,
+          "rank": 15,
           "is_current_model": true
         }
       ]
@@ -583,14 +604,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "muse-wonder-full-1.0",
+          "model_id": "muse-wonder-full",
           "model_name": "Muse Wonder Full",
           "score": 0.332,
           "rank": 5,
           "is_current_model": false
         },
         {
-          "model_id": "muse-wonder-full",
+          "model_id": "muse-wonder-full-1.0",
           "model_name": "Muse Wonder Full",
           "score": 0.332,
           "rank": 5,
@@ -714,44 +735,44 @@
           "is_current_model": false
         },
         {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.89,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
           "model_id": "gemini-3.8-flash",
           "model_name": "Gemini 3.8 Flash",
           "score": 0.871,
-          "rank": 2,
+          "rank": 3,
           "is_current_model": true
         },
         {
           "model_id": "gemini-3.7-flash",
           "model_name": "Gemini 3.7 Flash",
           "score": 0.854,
-          "rank": 3,
+          "rank": 4,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.8-max",
           "model_name": "Qwen3.8 Max",
           "score": 0.818,
-          "rank": 4,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.1-pro",
           "model_name": "Seed 2.1 Pro",
           "score": 0.78,
-          "rank": 5,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "seed-2.1-turbo",
           "model_name": "Seed 2.1 Turbo",
           "score": 0.768,
-          "rank": 6,
-          "is_current_model": false
-        },
-        {
-          "model_id": "qwen3.8-flash",
-          "model_name": "Qwen3.8 Flash",
-          "score": 0.766,
           "rank": 7,
           "is_current_model": false
         },
@@ -759,20 +780,20 @@
           "model_id": "qwen3.8-flash-next",
           "model_name": "Qwen3.8-Flash-Next",
           "score": 0.766,
-          "rank": 7,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.766,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "qwen3.7-plus",
           "model_name": "Qwen3.7-Plus",
           "score": 0.762,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "kimi-k2.5",
-          "model_name": "Kimi K2.5",
-          "score": 0.759,
           "rank": 10,
           "is_current_model": false
         }
@@ -862,6 +883,89 @@
       ]
     },
     {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "benchmark_name": "Ramp SWE-Bench v2 (Bash)",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.75,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.74,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.73,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.724,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.712,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.708,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.638,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.606,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.578,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.576,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.47,
+          "rank": 18,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
       "benchmark_id": "terminal-bench-2.1",
       "benchmark_name": "Terminal-Bench 2.1",
       "models": [
@@ -901,15 +1005,15 @@
           "is_current_model": false
         },
         {
-          "model_id": "gpt-5.6-sol",
-          "model_name": "GPT-5.6 Sol",
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
           "score": 0.888,
           "rank": 6,
           "is_current_model": false
         },
         {
-          "model_id": "muse-spark-1.3",
-          "model_name": "Muse Spark 1.3",
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
           "score": 0.888,
           "rank": 6,
           "is_current_model": false
@@ -1015,7 +1119,7 @@
           "model_id": "gemini-3.8-flash",
           "model_name": "Gemini 3.8 Flash",
           "score": 0.191,
-          "rank": 33,
+          "rank": 35,
           "is_current_model": true
         }
       ]

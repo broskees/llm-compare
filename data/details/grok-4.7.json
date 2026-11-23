@@ -410,6 +410,48 @@
       "verification_notes": null
     },
     {
+      "benchmark_id": "ramp-swe-bench-v2",
+      "name": "Ramp SWE-Bench v2",
+      "description": "Ramp SWE-Bench v2 is Ramp Labs' private coding benchmark of 500 backend engineering tasks built from pull requests that Ramp's in-house coding agent merged into production after engineer review, across work shipped by more than 200 Ramp engineers. Each model gets a one-shot prompt in the same sandboxed copy of Ramp's codebase and must produce a review-ready patch. A panel of LLM judges compares the candidate patch with the engineer-reviewed merged solution; a task passes when there is no material difference where the merged solution is better. Scores are pass@1 at high reasoning effort with web tools disabled, with each model running in its lab's native agent harness (Ramp's v2.1 Native view).",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.644,
+      "normalized_score": 0.644,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://labs.ramp.com/swebench",
+      "evaluated_by": "Ramp",
+      "index_scope": "none",
+      "analysis_method": "pass@1 on 500 private Ramp production tasks (322/500 resolved, 95% CI +/-4.2 points), graded by Ramp's LLM judge panel against the merged patch. Grok Build harness, high reasoning effort, web tools disabled (Ramp SWE-Bench v2.1 Native view, run as grok-4.7-high).",
+      "verification_date": null,
+      "verification_notes": "Third-party evaluation by Ramp Labs; tasks are private and not reproduced by LLM Stats."
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "name": "Ramp SWE-Bench v2 (Bash)",
+      "description": "Ramp SWE-Bench v2 is Ramp Labs' private coding benchmark of 500 backend engineering tasks built from pull requests that Ramp's in-house coding agent merged into production after engineer review, across work shipped by more than 200 Ramp engineers. Each model gets a one-shot prompt in the same sandboxed copy of Ramp's codebase and must produce a review-ready patch. A panel of LLM judges compares the candidate patch with the engineer-reviewed merged solution; a task passes when there is no material difference where the merged solution is better. Scores are pass@1 at high reasoning effort with web tools disabled, with every model running in the same bash-only mini-swe-agent harness (Ramp's v2.0 Bash view), which isolates the model from harness differences.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.554,
+      "normalized_score": 0.554,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://labs.ramp.com/swebench",
+      "evaluated_by": "Ramp",
+      "index_scope": "none",
+      "analysis_method": "pass@1 on 500 private Ramp production tasks (277/500 resolved, 95% CI +/-4.4 points), graded by Ramp's LLM judge panel against the merged patch. mini-swe-agent bash-only harness shared by every model, high reasoning effort, web tools disabled (Ramp SWE-Bench v2.0 Bash view, run as grok-4.7-high).",
+      "verification_date": null,
+      "verification_notes": "Third-party evaluation by Ramp Labs; tasks are private and not reproduced by LLM Stats."
+    },
+    {
       "benchmark_id": "swe-marathon",
       "name": "SWE-Marathon",
       "description": "SWE-Marathon is an ultra-long-horizon software engineering benchmark covering tasks such as building compilers, optimizing kernels, and developing production-grade services. It measures whether agents can sustain quality across extremely long engineering trajectories.",
@@ -564,8 +606,8 @@
         "max_output_tokens": null
       },
       "performance": {
-        "throughput": 25.96973136146123,
-        "latency": 3.2735
+        "throughput": null,
+        "latency": null
       },
       "features": {
         "web_search": null,
@@ -722,30 +764,30 @@
           "is_current_model": false
         },
         {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.757,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
           "model_id": "muse-spark-1.3",
           "model_name": "Muse Spark 1.3",
           "score": 0.754,
-          "rank": 7,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6.1-sol",
           "model_name": "GPT-6.1 Sol",
           "score": 0.7522,
-          "rank": 8,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "ember-1",
           "model_name": "Ember-1",
           "score": 0.752,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "claude-fable-5-2",
-          "model_name": "Claude Fable 5.2",
-          "score": 0.743,
           "rank": 10,
           "is_current_model": false
         },
@@ -753,7 +795,7 @@
           "model_id": "grok-4.7",
           "model_name": "Grok 4.7",
           "score": 0.71,
-          "rank": 20,
+          "rank": 21,
           "is_current_model": true
         }
       ]
@@ -777,66 +819,225 @@
           "is_current_model": false
         },
         {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.663,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
           "model_id": "claude-fable-5",
           "model_name": "Claude Fable 5",
           "score": 0.66,
-          "rank": 3,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.659,
+          "rank": 5,
           "is_current_model": false
         },
         {
           "model_id": "claude-opus-5-5",
           "model_name": "Claude Opus 5.5",
           "score": 0.656,
-          "rank": 4,
+          "rank": 6,
           "is_current_model": false
         },
         {
           "model_id": "claude-haiku-5-5",
           "model_name": "Claude Haiku 5.5",
           "score": 0.648,
-          "rank": 5,
+          "rank": 7,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6.1-sol",
           "model_name": "GPT-6.1 Sol",
           "score": 0.642,
-          "rank": 6,
+          "rank": 8,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6-astra",
           "model_name": "GPT-6 Astra",
           "score": 0.634,
-          "rank": 7,
+          "rank": 9,
           "is_current_model": false
         },
         {
           "model_id": "gpt-6.1-terra",
           "model_name": "GPT-6.1 Terra",
           "score": 0.627,
-          "rank": 8,
-          "is_current_model": false
-        },
-        {
-          "model_id": "muse-wonder-full",
-          "model_name": "Muse Wonder Full",
-          "score": 0.623,
-          "rank": 9,
-          "is_current_model": false
-        },
-        {
-          "model_id": "muse-wonder-full-1.0",
-          "model_name": "Muse Wonder Full",
-          "score": 0.623,
-          "rank": 9,
+          "rank": 10,
           "is_current_model": false
         },
         {
           "model_id": "grok-4.7",
           "model_name": "Grok 4.7",
           "score": 0.567,
-          "rank": 17,
+          "rank": 20,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2",
+      "benchmark_name": "Ramp SWE-Bench v2",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.764,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.754,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.734,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.734,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.716,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.704,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.678,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.644,
+          "rank": 8,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.632,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "benchmark_name": "Ramp SWE-Bench v2 (Bash)",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.75,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.74,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.73,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.724,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.712,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.708,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.638,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.606,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.578,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.576,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.554,
+          "rank": 11,
           "is_current_model": true
         }
       ]
@@ -860,14 +1061,14 @@
           "is_current_model": false
         },
         {
-          "model_id": "muse-wonder",
+          "model_id": "muse-wonder-1.0",
           "model_name": "Muse Wonder",
           "score": 0.531,
           "rank": 3,
           "is_current_model": false
         },
         {
-          "model_id": "muse-wonder-1.0",
+          "model_id": "muse-wonder",
           "model_name": "Muse Wonder",
           "score": 0.531,
           "rank": 3,
@@ -995,7 +1196,7 @@
           "model_id": "grok-4.7",
           "model_name": "Grok 4.7",
           "score": 0.38,
-          "rank": 23,
+          "rank": 24,
           "is_current_model": true
         }
       ]

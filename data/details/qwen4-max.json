@@ -1,0 +1,911 @@
+{
+  "model_id": "qwen4-max",
+  "name": "Qwen4-Max",
+  "model_type": "llm",
+  "organization": {
+    "id": "qwen",
+    "name": "Alibaba Cloud / Qwen Team",
+    "website": "https://qwenlm.github.io"
+  },
+  "description": "Qwen4-Max is Alibaba's next-generation flagship multimodal model in the Qwen family, generally available on 2026-11-16 (model id qwen4-max). It is a sparse mixture-of-experts model with 2.4 trillion backbone parameters, 71 billion active parameters per token, and an additional 328 billion N-gram Embedding parameters, with native text, image, and video understanding, a 1,000,000-token context window, and thinking enabled by default (reasoning_effort levels low, high, and xhigh; default high; thinking_budget default 131,072; maximum thinking plus final answer 262,144 tokens; maximum input 983,616 tokens in thinking mode and 991,808 in non-thinking mode). It supports function calling, web search, structured outputs, explicit and implicit cache, and the OpenAI Chat Completions and Responses APIs and the Anthropic Messages API. QwenCloud Singapore list pricing is $1.50 per million input tokens and $4.50 per million output tokens, with cache write $1.875 (5-minute TTL) or $3 (1-hour TTL) and cache read $0.075 per million tokens. Beijing and Global regions list $1.413 input and $4.24 output, with cache write $1.767 (5-minute TTL) or $2.827 (1-hour TTL) and cache read $0.071 per million tokens. This card is the generally available model; the earlier Token Plan-only preview is cataloged separately as qwen4-max-preview. The official Qwen team launch post says smaller models in the Qwen4 family are coming to open source; no open weights for Qwen4-Max were published at catalog time.",
+  "release_date": "2026-11-16",
+  "announcement_date": "2026-11-16",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 2400000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "video": "true",
+    "vision": "true",
+    "thinking": "true",
+    "api_model_id": "qwen4-max",
+    "openrouter_slug": "qwen/qwen4-max",
+    "active_parameters": "71000000000",
+    "max_output_tokens": "262144",
+    "default_reasoning_effort": "high"
+  },
+  "sources": {
+    "api_ref": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max",
+    "playground": "https://chat.qwen.ai/",
+    "paper": null,
+    "scorecard_blog": "https://qwen.ai/blog?id=qwen4-max",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.467,
+      "normalized_score": 0.467,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Agents' Last Exam v1.1 score 46.7 for Qwen4-Max, read from the official Qwen team launch blog summary figure. Official footnote: scores are cited from the Agents' Last Exam.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "apex-agents",
+      "name": "APEX-Agents",
+      "description": "APEX-Agents is a benchmark evaluating AI agents on long horizon professional tasks that require sustained reasoning, planning, and execution across complex multi-step workflows.",
+      "categories": [
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.721,
+      "normalized_score": 0.721,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "APEX-Agents v1.1 score 72.1 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Professional services tasks). Official footnote: scores are cited from the Mercor leaderboard.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "biomysterybench",
+      "name": "BioMysteryBench",
+      "description": "BioMysteryBench evaluates a model's ability to reason through challenging molecular biology problems, reporting performance on a hard subset and on the subset of problems solved by human experts.",
+      "categories": [
+        "reasoning",
+        "science",
+        "biology"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.85,
+      "normalized_score": 0.85,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "BioMysteryBench score 85.0 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Bioinformatics research). The official figure and footnotes do not specify the Human Solvable or Human Difficult subset, so this uses the parent biomysterybench id.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartography",
+      "name": "Chartography",
+      "description": "Chartography evaluates professional chart understanding with 100 expert-written tasks drawn from real charts across science, engineering, finance, manufacturing, supply chain, and healthcare.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.542,
+      "normalized_score": 0.542,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Chartography score 54.2 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Visual chart understanding). Official footnote: scores for Qwen4-Max and Qwen3.8-Max-0902 were obtained with min_pixels set to 4096x32x32. The official figure and footnotes do not state tools vs no-tools, so this uses the parent chartography id.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.757,
+      "normalized_score": 0.757,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "DeepSWE v1.1 score 75.7 for Qwen4-Max, read from the official Qwen team launch blog summary figure.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.6,
+      "normalized_score": 0.6,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "HealthBench Professional score 60.0 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Clinical reasoning).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "name": "Humanity's Last Exam",
+      "description": "Humanity's Last Exam (HLE) is a multi-modal academic benchmark with 2,500 questions across mathematics, humanities, and natural sciences, designed to test LLM capabilities at the frontier of human knowledge with unambiguous, verifiable solutions",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.517,
+      "normalized_score": 0.517,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Humanity's Last Exam score 51.7 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Multidisciplinary reasoning). The official figure and footnotes do not state a tools or text-only setting, so this uses the generic humanity's-last-exam id.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "job-bench",
+      "name": "Job Bench",
+      "description": "Job Bench evaluates AI agents on realistic professional tasks that require multi-step planning, research, and production of work artifacts.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.685,
+      "normalized_score": 0.685,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "JobBench score 68.5 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Professional job tasks). Official footnote: scores were obtained using the updated dataset and evaluation code. Filed under job-bench, the id used for other Qwen models.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "program-bench",
+      "name": "Program Bench",
+      "description": "Program Bench evaluates code-generation agents by asking them to recreate a program's behavior from only a compiled binary and documentation. It spans 200 tasks from small CLI tools to large systems such as FFmpeg and SQLite, with submissions judged against more than 248,000 fuzz-generated behavioral tests.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.315,
+      "normalized_score": 0.315,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ProgramBench score 31.5 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Black-box software replication).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.485,
+      "normalized_score": 0.485,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Terminal-Bench 4.0 score 48.5 for Qwen4-Max, read from the official Qwen team launch blog summary figure (panel labeled Agentic terminal coding).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "webdev-arena",
+      "name": "WebDev Arena",
+      "description": "WebDev Arena is a leaderboard for evaluating AI models on web development tasks, including zero-shot generation, complex prompts, and interactive web UI creation. Models are ranked using Elo ratings based on their performance in coding and web development challenges.",
+      "categories": [
+        "reasoning",
+        "frontend_development",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 2000,
+      "score": 1750,
+      "normalized_score": 0.875,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://qwen.ai/blog?id=qwen4-max",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Code Arena WebDev Elo of 1,750 for Qwen4-Max, as shown on the official Qwen team launch blog summary figure (https://qwen.ai/blog?id=qwen4-max), where the panel is labeled CodeArena (Elo) / Web development. The same 1,750 xHigh Elo, ranked 6th, appears on Alibaba Cloud's official launch Code Arena figure (source label: Arena AI leaderboard).",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "qwen",
+      "name": "QwenCloud",
+      "website": "https://docs.qwencloud.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1.5,
+        "cached_input_per_million": 0.075,
+        "cache_write_per_million": 1.875,
+        "output_per_million": 4.5,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 983616,
+        "max_output_tokens": 262144
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.7833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.758,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.7304,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.716,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.616,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.6,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-sol",
+          "model_name": "GPT-6 Sol",
+          "score": 0.564,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.467,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "apex-agents",
+      "benchmark_name": "APEX-Agents",
+      "models": [
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.721,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.672,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.5-flash-preview",
+          "model_name": "ERNIE 5.5 Flash Preview",
+          "score": 0.642,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.631,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.6,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.6",
+          "model_name": "Grok 4.6",
+          "score": 0.575,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.376,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.371,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.338,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.335,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.79,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.79,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.788,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.788,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.779,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash-1017",
+          "model_name": "DeepSeek-V4.1-Flash-1017",
+          "score": 0.77,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.757,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7522,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.752,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "benchmark_name": "HealthBench Professional",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.692,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.677,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.663,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.66,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.659,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.656,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.648,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.642,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.627,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.6,
+          "rank": 16,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "humanity's-last-exam",
+      "benchmark_name": "Humanity's Last Exam",
+      "models": [
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.732,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.65,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.647,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.647,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.645,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.625,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.621,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-pro-0813",
+          "model_name": "DeepSeek-V4-Pro-0813",
+          "score": 0.6,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.584,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.579,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.517,
+          "rank": 22,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "program-bench",
+      "benchmark_name": "Program Bench",
+      "models": [
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.912,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.856,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.82,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.797,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.778,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.637,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.59,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.59,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.7-code",
+          "model_name": "Kimi K2.7 Code",
+          "score": 0.536,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.503,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.315,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.705,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.676,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.571,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.485,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null
+}

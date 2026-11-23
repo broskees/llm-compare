@@ -1,0 +1,852 @@
+{
+  "model_id": "gemini-4-neon",
+  "name": "Gemini 4 Neon",
+  "model_type": "llm",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "Gemini 4 Neon is Google DeepMind's fast Gemini 4 reasoning model for complex software engineering, knowledge work, and science workflows, generally available on the Gemini API paid tier on 2026-11-18 (model id gemini-4-neon). Google positions it between Gemini 4 Hydrogen and Gemini 4 Carbon. It is not available on the free tier. It uses a 1,048,576-token unified context window with up to 64K default synchronous output tokens and long decode up to 1M tokens, accepts text, image, video, audio, and PDF input with text output, and supports four thinking levels: low, medium, high (default), and xhigh. Gemini API paid pricing is flat across the 1M window at $3.00 per million input tokens, $15.00 per million output tokens (including thinking tokens), and $0.15 per million implicitly cached input tokens; explicit caching is not supported. Vertex AI global endpoints use the same $3.00 / $15.00 / $0.15 rates; non-global endpoints are billed at a 10% premium. The knowledge cutoff is March 2026. Google had not published official benchmark results as of 2026-11-18.",
+  "release_date": "2026-11-18",
+  "announcement_date": "2026-11-18",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "openrouter_slug": "google/gemini-4-neon",
+    "max_output_tokens": "1000000",
+    "limited_availability": "false",
+    "default_reasoning_effort": "high"
+  },
+  "sources": {
+    "api_ref": "https://ai.google.dev/gemini-api/docs/whats-new-gemini-4-neon",
+    "playground": "https://aistudio.google.com/",
+    "paper": null,
+    "scorecard_blog": null,
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.758,
+      "normalized_score": 0.758,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Agents' Last Exam v1.1. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench",
+      "name": "AutomationBench",
+      "description": "AutomationBench is a tool-use benchmark that evaluates AI agents on automating real-world workflows, testing their ability to orchestrate tools and complete multi-step automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.563,
+      "normalized_score": 0.563,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Zapier AutomationBench. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartography-no-tools",
+      "name": "Chartography (no tools)",
+      "description": "Chartography visual chart recognition evaluated without tools, distinct from tool-assisted results.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.735,
+      "normalized_score": 0.735,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Chartography (tool setting not specified in model card). Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode-2.0",
+      "name": "FrontierCode 2.0",
+      "description": "FrontierCode 2.0 is Cognition's private benchmark assessing end-to-end code quality of coding-agent changes, including whether a repository maintainer would merge the agent's change.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.462,
+      "normalized_score": 0.462,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "FrontierCode 2.0 main score at default high thinking setting. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "graphwalks-bfs->128k",
+      "name": "Graphwalks BFS >128k",
+      "description": "A graph reasoning benchmark that evaluates language models' ability to perform breadth-first search (BFS) operations on graphs with context length over 128k tokens, testing long-context reasoning capabilities.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "spatial_reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.952,
+      "normalized_score": 0.952,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "GraphWalks 256k to 1M subset, BFS (F1). Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lvbench",
+      "name": "LVBench",
+      "description": "LVBench is an extreme long video understanding benchmark designed to evaluate multimodal models on videos up to two hours in duration. It contains 6 major categories and 21 subcategories, with videos averaging five times longer than existing datasets. The benchmark addresses applications requiring comprehension of extremely long videos.",
+      "categories": [
+        "long_context",
+        "multimodal",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.89,
+      "normalized_score": 0.89,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "LVBench. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "riemannbench",
+      "name": "RiemannBench",
+      "description": "RiemannBench evaluates models on advanced mathematics and scientific reasoning tasks, as reported on the Surge public leaderboard.",
+      "categories": [
+        "math",
+        "reasoning",
+        "science"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.84,
+      "normalized_score": 0.84,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "RiemannBench. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "sec-bench-pro",
+      "name": "SEC-bench Pro",
+      "description": "SEC-bench Pro is a self-evolving software-security benchmark that measures agent bug hunting on critical, high-complexity systems. It instantiates validated vulnerabilities across the V8 and SpiderMonkey JavaScript engines as reproducible vulnerability-discovery and proof-of-concept-generation tasks with oracle-based validation.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.905,
+      "normalized_score": 0.905,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "SEC-bench Pro. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.705,
+      "normalized_score": 0.705,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Terminal-Bench-Science 0.1. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vals-index",
+      "name": "Vals Index",
+      "description": "Vals Index measures economic impact across finance, coding, legal, and tax work, with every sector weighted by its contribution to U.S. GDP.",
+      "categories": [
+        "knowledge",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.709,
+      "normalized_score": 0.709,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Vals Index v2.2. Gemini 4 Neon model card evaluation table (results as of November 2026); pass@1, xhigh thinking unless noted.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vending-bench-2",
+      "name": "Vending-Bench 2",
+      "description": "Vending-Bench 2 tests longer horizon planning capabilities by evaluating how well AI models can manage a simulated vending machine business over extended periods. The benchmark measures a model's ability to maintain consistent tool usage and decision-making for a full simulated year of operation, driving higher returns without drifting off task.",
+      "categories": [
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 16843,
+      "normalized_score": null,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Final bank balance (USD) on Andon Labs Vending-Bench 2, as reported in Google's Gemini 4 Neon launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "google",
+      "name": "Google",
+      "website": "https://ai.google.dev",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 3,
+        "cached_input_per_million": 0.15,
+        "cache_write_per_million": null,
+        "output_per_million": 15,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 1048576
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "vertex",
+      "name": "Vertex AI",
+      "website": "https://cloud.google.com/vertex-ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 3,
+        "cached_input_per_million": 0.15,
+        "cache_write_per_million": null,
+        "output_per_million": 15,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 1048576
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.7833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.758,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.7304,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.716,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.616,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.6,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-sol",
+          "model_name": "GPT-6 Sol",
+          "score": 0.564,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "automationbench",
+      "benchmark_name": "AutomationBench",
+      "models": [
+        {
+          "model_id": "ernie-5.5-flash-preview",
+          "model_name": "ERNIE 5.5 Flash Preview",
+          "score": 0.619,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash-1017",
+          "model_name": "DeepSeek-V4.1-Flash-1017",
+          "score": 0.605,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mistral-large-4",
+          "model_name": "Mistral Large 4",
+          "score": 0.599,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.563,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.5479999999999999,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.539,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.514,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.513,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.494,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.488,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "graphwalks-bfs->128k",
+      "benchmark_name": "Graphwalks BFS >128k",
+      "models": [
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.962,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.952,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.907,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.842,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.813,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.8,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.769,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.681,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.615,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.454,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "lvbench",
+      "benchmark_name": "LVBench",
+      "models": [
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.917,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.89,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.871,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.854,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.818,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.78,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.768,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.766,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.766,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.762,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "sec-bench-pro",
+      "benchmark_name": "SEC-bench Pro",
+      "models": [
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.905,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.8834,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.882,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.8675,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.854,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.712,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.663,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.628,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.577,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.489,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "benchmark_name": "Terminal-Bench-Science 0.1",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.771,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.753,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.746,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.705,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.68,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.648,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.646,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.599,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.587,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.583,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "google/gemini-4-neon"
+}

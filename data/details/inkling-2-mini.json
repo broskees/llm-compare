@@ -1,0 +1,2174 @@
+{
+  "model_id": "inkling-2-mini",
+  "name": "Inkling 2 Mini",
+  "model_type": "llm",
+  "organization": {
+    "id": "thinking-machines",
+    "name": "Thinking Machines Lab",
+    "website": "https://thinkingmachines.ai"
+  },
+  "description": "Inkling 2 Mini is Thinking Machines Lab's small open-weight multimodal model, released 2026-11-20 under Apache 2.0. It is a looped Mixture-of-Experts transformer (26.4B total / 3.4B active parameters; the middle 12 of 24 layers run three times, for about 5.4B effective active parameters per token) that accepts text and image inputs and generates text, with adjustable thinking effort and a context window up to 1M tokens. The roughly 20GB mixed NVFP4/MXFP8 checkpoint is designed for local inference (DGX Spark, Apple silicon with 32GB+). Vendor-reported Artificial Analysis Intelligence Index v5.0 score 20.1. Available on Tinker for sampling and fine-tuning at $0.15 / $0.015 cached / $0.50 per 1M input/cached/output tokens (Tinker serverless inference beta does not list it yet).",
+  "release_date": "2026-11-20",
+  "announcement_date": "2026-11-20",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 26400000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "apache_2_0",
+    "name": "Apache 2.0",
+    "allow_commercial": true,
+    "description": "Apache License 2.0 - allows commercial use"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "thinking": "true"
+  },
+  "sources": {
+    "api_ref": "https://tinker-docs.thinkingmachines.ai/tinker/models/",
+    "playground": "https://tinker.thinkingmachines.ai/playground",
+    "paper": null,
+    "scorecard_blog": "https://thinkingmachines.ai/news/inkling-2-mini/",
+    "repo": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+    "weights": "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "aa-briefcase-1.1",
+      "name": "AA-Briefcase v1.1",
+      "description": "AA-Briefcase v1.1 evaluates multi-hour professional office work and reports Elo scores. Kept separate from unversioned AA-Briefcase results.",
+      "categories": [
+        "productivity",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1263,
+      "normalized_score": null,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "AA-Briefcase v1.1 Elo (max_score 3000). Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "aa-omniscience-index",
+      "name": "AA-Omniscience Index",
+      "description": "AA-Omniscience Index is Artificial Analysis's knowledge-reliability metric. It rewards correct answers, penalizes hallucinations, and does not penalize abstention. Scores range from -100 to 100, where 0 means as many correct as incorrect answers.",
+      "categories": [
+        "knowledge",
+        "reasoning",
+        "science"
+      ],
+      "modality": "text",
+      "max_score": 200,
+      "score": -8.6,
+      "normalized_score": null,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "AA-Omniscience v1.1 score -8.6 (non-hallucination rate 63.4%). Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "apex",
+      "name": "Apex",
+      "description": "Apex is a challenging frontier reasoning benchmark testing advanced multi-step problem solving across difficult STEM and logical tasks.",
+      "categories": [
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.344,
+      "normalized_score": 0.344,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Apex 2025. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arc-agi",
+      "name": "ARC-AGI",
+      "description": "The Abstraction and Reasoning Corpus for Artificial General Intelligence (ARC-AGI) is a benchmark designed to test general intelligence and abstract reasoning capabilities through visual grid-based transformation tasks. Each task consists of 2-5 demonstration pairs showing input grids transformed into output grids according to underlying rules, with test-takers required to infer these rules and apply them to novel test inputs. The benchmark uses colored grids (up to 30x30) with 10 discrete colors/symbols, designed to measure human-like general fluid intelligence and skill-acquisition efficiency with minimal prior knowledge.",
+      "categories": [
+        "reasoning",
+        "spatial_reasoning",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 1,
+      "score": 0.845,
+      "normalized_score": 0.845,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ARC-AGI v1. Vendor model card (v1/v2 84.5/49.3).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "arc-agi-v2",
+      "name": "ARC-AGI v2",
+      "description": "ARC-AGI-2 is an upgraded benchmark for measuring abstract reasoning and problem-solving abilities in AI systems through visual grid transformation tasks. It evaluates fluid intelligence via input-output grid pairs (1x1 to 30x30) using colored cells (0-9), requiring models to identify underlying transformation rules from demonstration examples and apply them to test cases. Designed to be easy for humans but challenging for AI, focusing on core cognitive abilities like spatial reasoning, pattern recognition, and compositional generalization.",
+      "categories": [
+        "reasoning",
+        "spatial_reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.493,
+      "normalized_score": 0.493,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ARC-AGI v2. Vendor model card (v1/v2 84.5/49.3).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "artificial-analysis",
+      "name": "Artificial Analysis",
+      "description": "Artificial Analysis benchmark evaluates AI models across quality, speed, and pricing dimensions, providing a composite assessment of model capabilities for real-world usage.",
+      "categories": [
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.201,
+      "normalized_score": 0.201,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Artificial Analysis Intelligence Index v5.0. Score 20.1 (vendor model card table, Third Party Index section).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "description": "AutomationBench-AA is Artificial Analysis's independently run version of AutomationBench, covering 657 real-world SaaS workflow tasks across 40 simulated applications (e.g. Gmail, Slack, Salesforce, HubSpot). It scores the share of objectives an agent completes without violating business guardrails, using a private held-out task set.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.418,
+      "normalized_score": 0.418,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "AutomationBench-AA v1.0.6. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "name": "BrowseComp",
+      "description": "BrowseComp is a benchmark comprising 1,266 questions that challenge AI agents to persistently navigate the internet in search of hard-to-find, entangled information. The benchmark measures agents' ability to exercise persistence in information gathering, demonstrate creativity in web navigation, and find concise, verifiable answers. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.79,
+      "normalized_score": 0.79,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "BrowseComp with compaction. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "critpt",
+      "name": "CritPT",
+      "description": "CritPT is a challenging reasoning benchmark reported by Qwen for evaluating frontier mathematical and critical problem-solving capability.",
+      "categories": [
+        "math",
+        "reasoning"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.314,
+      "normalized_score": 0.314,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "CritPt v2 Full. Vendor model card (Full/Hard 31.4/17.0).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "name": "DeepSearchQA",
+      "description": "DeepSearchQA is a benchmark for evaluating deep search and question-answering capabilities, testing models' ability to perform multi-hop reasoning and information retrieval across complex knowledge domains.",
+      "categories": [
+        "reasoning",
+        "search",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.853,
+      "normalized_score": 0.853,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "DeepSearchQA with compaction. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.482,
+      "normalized_score": 0.482,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "DeepSWE v1.1 (mini-swe-agent v2.4.6). Vendor model card table and launch post.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode-2.0",
+      "name": "FrontierCode 2.0",
+      "description": "FrontierCode 2.0 is Cognition's private benchmark assessing end-to-end code quality of coding-agent changes, including whether a repository maintainer would merge the agent's change.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.151,
+      "normalized_score": 0.151,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "FrontierCode v2.0 (stirrup v0.2.1 harness). Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-aa-2.1",
+      "name": "GDPval-AA 2.1",
+      "description": "Version 2.1 of the Artificial Analysis GDPval evaluation of professional knowledge work, reported as an Elo rating.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 3000,
+      "score": 1319,
+      "normalized_score": null,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "GDPval-AA v2.1 Elo (max_score 3000). Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "jobbench",
+      "name": "JobBench",
+      "description": "JobBench evaluates agents on work-related tasks, as reported in the MiMo-V2.6 release.",
+      "categories": [
+        "knowledge",
+        "productivity",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.496,
+      "normalized_score": 0.496,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "JobBench. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "longbench-v2",
+      "name": "LongBench v2",
+      "description": "LongBench v2 is a benchmark designed to assess the ability of LLMs to handle long-context problems requiring deep understanding and reasoning across real-world multitasks. It consists of 503 challenging multiple-choice questions with contexts ranging from 8k to 2M words across six major task categories: single-document QA, multi-document QA, long in-context learning, long-dialogue history understanding, code repository understanding, and long structured data understanding.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "structured_output",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.669,
+      "normalized_score": 0.669,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "LongBench v2. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mcp-atlas",
+      "name": "MCP Atlas",
+      "description": "MCP Atlas is a benchmark for evaluating AI models on scaled tool use capabilities, measuring how well models can coordinate and utilize multiple tools across complex multi-step tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.827,
+      "normalized_score": 0.827,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "MCP Atlas Public set. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "name": "MMMU-Pro",
+      "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.749,
+      "normalized_score": 0.749,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "MMMU Pro (Standard 10). Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "name": "MRCR v2 (8-needle)",
+      "description": "MRCR v2 (8-needle) is a variant of the Multi-Round Coreference Resolution benchmark that includes 8 needle items to retrieve from long contexts. This tests models' ability to simultaneously track and reason about multiple pieces of information across extended conversations.",
+      "categories": [
+        "long_context",
+        "reasoning",
+        "general"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.464,
+      "normalized_score": 0.464,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "MRCR v2 8-needle, 256K-512K bucket. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "muirbench",
+      "name": "MuirBench",
+      "description": "A comprehensive benchmark for robust multi-image understanding capabilities of multimodal LLMs. Consists of 12 diverse multi-image tasks involving 10 categories of multi-image relations (e.g., multiview, temporal relations, narrative, complementary). Comprises 11,264 images and 2,600 multiple-choice questions created in a pairwise manner, where each standard instance is paired with an unanswerable variant for reliable assessment.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.775,
+      "normalized_score": 0.775,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "MuirBench. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "omnidocbench",
+      "name": "OmniDocBench",
+      "description": "OmniDocBench evaluates multimodal models on document understanding tasks such as OCR, layout parsing, and structured document comprehension.",
+      "categories": [
+        "multimodal",
+        "document_understanding",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.928,
+      "normalized_score": 0.928,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "OmniDocBench v1.6. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "perceptionbench",
+      "name": "PerceptionBench",
+      "description": "PerceptionBench is Moonshot AI's internal benchmark for evaluating atomic visual perception capabilities.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.575,
+      "normalized_score": 0.575,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "PerceptionBench. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "screenspot-pro",
+      "name": "ScreenSpot Pro",
+      "description": "ScreenSpot-Pro is a novel GUI grounding benchmark designed to rigorously evaluate the grounding capabilities of multimodal large language models (MLLMs) in professional high-resolution computing environments. The benchmark comprises 1,581 instructions across 23 applications spanning 5 industries and 3 operating systems, featuring authentic high-resolution images from professional domains with expert annotations. Unlike previous benchmarks that focus on cropped screenshots in consumer applications, ScreenSpot-Pro addresses the complexity and diversity of real-world professional software scenarios, revealing significant performance gaps in current MLLM GUI perception capabilities.",
+      "categories": [
+        "multimodal",
+        "spatial_reasoning",
+        "grounding",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.765,
+      "normalized_score": 0.765,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ScreenSpot Pro original (without Python). Vendor model card (original/with Python 76.5/87.7).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-multilingual",
+      "name": "SWE-bench Multilingual",
+      "description": "A multilingual benchmark for issue resolving in software engineering that covers Java, TypeScript, JavaScript, Go, Rust, C, and C++. Contains 1,632 high-quality instances carefully annotated from 2,456 candidates by 68 expert annotators, designed to evaluate Large Language Models across diverse software ecosystems beyond Python.",
+      "categories": [
+        "reasoning",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.737,
+      "normalized_score": 0.737,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "SWE-Bench Multilingual, bash-only harness. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "name": "SWE-Bench Verified",
+      "description": "A verified subset of 500 software engineering problems from real GitHub issues, validated by human annotators for evaluating language models' ability to resolve real-world coding issues by generating patches for Python codebases.",
+      "categories": [
+        "reasoning",
+        "frontend_development",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.792,
+      "normalized_score": 0.792,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "SWE-Bench Verified, bash-only harness. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "name": "Terminal-Bench 2.1",
+      "description": "Terminal-Bench 2.1 is an updated release of the Terminal-Bench benchmark that tests AI agents' ability to operate a computer via the terminal. It evaluates how well models handle real-world, end-to-end tasks autonomously, including compiling code, training models, setting up servers, system administration, data science workflows, and security tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.716,
+      "normalized_score": 0.716,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Terminal Bench v2.1 with Inkling 2 Mini in pi v0.83.0 harness. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.056,
+      "normalized_score": 0.056,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Terminal Bench v4.0 (mini-swe-agent v2.4.6). Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vals-index",
+      "name": "Vals Index",
+      "description": "Vals Index measures economic impact across finance, coding, legal, and tax work, with every sector weighted by its contribution to U.S. GDP.",
+      "categories": [
+        "knowledge",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.465,
+      "normalized_score": 0.465,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Vals Index v2.2. Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vibe-code-bench",
+      "name": "Vibe Code Bench",
+      "description": "Vibe Code Bench is a Vals AI agentic coding benchmark evaluating models on end-to-end coding workflows.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.779,
+      "normalized_score": 0.779,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Vibe Code Bench v1.1 (openhands, Vals). Vendor model card table.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "zerobench",
+      "name": "ZEROBench",
+      "description": "ZEROBench is a challenging vision benchmark designed to test models on zero-shot visual understanding tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 100,
+      "score": 0.17,
+      "normalized_score": 0.17,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ZeroBench main, original (without Python). Vendor model card (original/with Python 17.0/34.0).",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "thinking-machines",
+      "name": "Thinking Machines Lab",
+      "website": "https://tinker-docs.thinkingmachines.ai/tinker/models/",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.15,
+        "cached_input_per_million": 0.015,
+        "cache_write_per_million": null,
+        "output_per_million": 0.5,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": "nvfp4",
+      "limits": {
+        "max_input_tokens": 1000000,
+        "max_output_tokens": null
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "arc-agi",
+      "benchmark_name": "ARC-AGI",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.985,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.95,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.937,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.905,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "o3-2025-04-16",
+          "model_name": "o3",
+          "score": 0.88,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.862,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.845,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.84,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.679,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.669,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "arc-agi-v2",
+      "benchmark_name": "ARC-AGI v2",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.85,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.771,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.4",
+          "model_name": "GPT-5.4",
+          "score": 0.733,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.721,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.688,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-4-6",
+          "model_name": "Claude Sonnet 4.6",
+          "score": 0.583,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-pro-2025-12-11",
+          "model_name": "GPT-5.2 Pro",
+          "score": 0.542,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.529,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.493,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "artificial-analysis",
+      "benchmark_name": "Artificial Analysis",
+      "models": [
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.59,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3-flash",
+          "model_name": "GLM-5.3-Flash",
+          "score": 0.57,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.56,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.56,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.56,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.55,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.5",
+          "model_name": "Grok 4.5",
+          "score": 0.54,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.52,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.52,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.51,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.201,
+          "rank": 15,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "browsecomp",
+      "benchmark_name": "BrowseComp",
+      "models": [
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.921,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-2.5",
+          "model_name": "LongCat-2.5",
+          "score": 0.919,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.915,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.912,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5",
+          "model_name": "Claude Opus 5",
+          "score": 0.908,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.904,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-small",
+          "model_name": "Inkling 2 Small",
+          "score": 0.902,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5-pro",
+          "model_name": "GPT-5.5 Pro",
+          "score": 0.901,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.875,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.5-flash-preview",
+          "model_name": "ERNIE 5.5 Flash Preview",
+          "score": 0.874,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.79,
+          "rank": 28,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "critpt",
+      "benchmark_name": "CritPT",
+      "models": [
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.314,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.169,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.167,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.163,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-max",
+          "model_name": "Qwen3.7 Max",
+          "score": 0.114,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-375b-a23b",
+          "model_name": "K2 Horizon 375B-A23B",
+          "score": 0.086,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-small",
+          "model_name": "Inkling-Small",
+          "score": 0.083,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.06,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.031,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "k2-horizon-32b",
+          "model_name": "K2 Horizon 32B",
+          "score": 0.029,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepsearchqa",
+      "benchmark_name": "DeepSearchQA",
+      "models": [
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.931,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.913,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy3",
+          "model_name": "Hy3",
+          "score": 0.91,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.894,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2-pro",
+          "model_name": "MiMo-V2-Pro",
+          "score": 0.867,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.853,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k2.6",
+          "model_name": "Kimi K2.6",
+          "score": 0.83,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.805,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.771,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.79,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.79,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.788,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.788,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.779,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash-1017",
+          "model_name": "DeepSeek-V4.1-Flash-1017",
+          "score": 0.77,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.757,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7522,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.752,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.482,
+          "rank": 51,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "longbench-v2",
+      "benchmark_name": "LongBench v2",
+      "models": [
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.675,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.669,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.663,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-397b-a17b",
+          "model_name": "Qwen3.5-397B-A17B",
+          "score": 0.632,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.6-plus",
+          "model_name": "Qwen3.6 Plus",
+          "score": 0.62,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "nemotron-3-ultra-550b-a55b",
+          "model_name": "Nemotron 3 Ultra (550B A55B)",
+          "score": 0.619,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m1-80k",
+          "model_name": "MiniMax M1 80K",
+          "score": 0.615,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "minimax-m1-40k",
+          "model_name": "MiniMax M1 40K",
+          "score": 0.61,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mai-thinking-1",
+          "model_name": "MAI-Thinking-1",
+          "score": 0.61,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.5",
+          "model_name": "Kimi K2.5",
+          "score": 0.61,
+          "rank": 8,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mcp-atlas",
+      "benchmark_name": "MCP Atlas",
+      "models": [
+        {
+          "model_id": "muse-spark-open",
+          "model_name": "Muse Spark Open",
+          "score": 0.892,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.1",
+          "model_name": "Muse Spark 1.1",
+          "score": 0.881,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-small",
+          "model_name": "Inkling 2 Small",
+          "score": 0.85,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.5-flash-preview",
+          "model_name": "ERNIE 5.5 Flash Preview",
+          "score": 0.846,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.842,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.838,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.837,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-2.5",
+          "model_name": "LongCat-2.5",
+          "score": 0.831,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.827,
+          "rank": 10,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "benchmark_name": "MMMU-Pro",
+      "models": [
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.8595,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.841,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.832,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.83,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.827,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.823,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.822,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-small",
+          "model_name": "Inkling 2 Small",
+          "score": 0.816,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.816,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.749,
+          "rank": 39,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mrcr-v2-(8-needle)",
+      "benchmark_name": "MRCR v2 (8-needle)",
+      "models": [
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.985,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "model_name": "Gemini 3.7 Flash",
+          "score": 0.97,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.929,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.915,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.896,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.76,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.74,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemma-4-31b-it",
+          "model_name": "Gemma 4 31B",
+          "score": 0.664,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-flash-lite-preview",
+          "model_name": "Gemini 3.1 Flash-Lite",
+          "score": 0.601,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.6-flash",
+          "model_name": "Gemini 3.6 Flash",
+          "score": 0.54,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.464,
+          "rank": 12,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "muirbench",
+      "benchmark_name": "MuirBench",
+      "models": [
+        {
+          "model_id": "qwen3-vl-32b-thinking",
+          "model_name": "Qwen3 VL 32B Thinking",
+          "score": 0.803,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-thinking",
+          "model_name": "Qwen3 VL 235B A22B Thinking",
+          "score": 0.801,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 0.787,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.0-mini",
+          "model_name": "Seed 2.0 Mini",
+          "score": 0.78,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-30b-a3b-thinking",
+          "model_name": "Qwen3 VL 30B A3B Thinking",
+          "score": 0.776,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.775,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "qwen3-vl-8b-thinking",
+          "model_name": "Qwen3 VL 8B Thinking",
+          "score": 0.768,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-4b-thinking",
+          "model_name": "Qwen3 VL 4B Thinking",
+          "score": 0.75,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-235b-a22b-instruct",
+          "model_name": "Qwen3 VL 235B A22B Instruct",
+          "score": 0.728,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3-vl-32b-instruct",
+          "model_name": "Qwen3 VL 32B Instruct",
+          "score": 0.728,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "screenspot-pro",
+      "benchmark_name": "ScreenSpot Pro",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.927,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.879,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.2-2025-12-11",
+          "model_name": "GPT-5.2",
+          "score": 0.863,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.845,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.841,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.7-plus",
+          "model_name": "Qwen3.7-Plus",
+          "score": 0.79,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.765,
+          "rank": 7,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-glimmer-30b",
+          "model_name": "Muse Glimmer-30B",
+          "score": 0.754,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3-pro-preview",
+          "model_name": "Gemini 3 Pro",
+          "score": 0.727,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.5-122b-a10b",
+          "model_name": "Qwen3.5-122B-A10B",
+          "score": 0.704,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-multilingual",
+      "benchmark_name": "SWE-bench Multilingual",
+      "models": [
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.966,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.939,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.903,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.873,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.844,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.837,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.829,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash-next",
+          "model_name": "Qwen3.8-Flash-Next",
+          "score": 0.81,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-flash",
+          "model_name": "Qwen3.8 Flash",
+          "score": 0.81,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "laguna-s-2.1",
+          "model_name": "Laguna S 2.1",
+          "score": 0.785,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.737,
+          "rank": 21,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "swe-bench-verified",
+      "benchmark_name": "SWE-Bench Verified",
+      "models": [
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.95,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.939,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.922,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.886,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.876,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5",
+          "model_name": "Claude Sonnet 5",
+          "score": 0.852,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-small",
+          "model_name": "Inkling 2 Small",
+          "score": 0.822,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "beam-1.0-501b-a23b",
+          "model_name": "Beam 1.0",
+          "score": 0.816,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-5-20251101",
+          "model_name": "Claude Opus 4.5",
+          "score": 0.809,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-6",
+          "model_name": "Claude Opus 4.6",
+          "score": 0.808,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.792,
+          "rank": 20,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-2.1",
+      "benchmark_name": "Terminal-Bench 2.1",
+      "models": [
+        {
+          "model_id": "swe-2",
+          "model_name": "SWE-2",
+          "score": 0.928,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.9059999999999999,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.899,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "model_name": "Gemini 3.8 Flash",
+          "score": 0.894,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "swe-2-flash",
+          "model_name": "SWE-2 Flash",
+          "score": 0.892,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.888,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.888,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "longcat-2.5",
+          "model_name": "LongCat-2.5",
+          "score": 0.884,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.883,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.882,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.716,
+          "rank": 32,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.705,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.676,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.571,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.056,
+          "rank": 39,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "zerobench",
+      "benchmark_name": "ZEROBench",
+      "models": [
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 11,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash-1017",
+          "model_name": "DeepSeek-V4.1-Flash-1017",
+          "score": 0.51,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-open",
+          "model_name": "Muse Spark Open",
+          "score": 0.5,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.49,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.458,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.41,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.39,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.35,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.33,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.18,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-mini",
+          "model_name": "Inkling 2 Mini",
+          "score": 0.17,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "thinkingmachines/inkling-2-mini"
+}

@@ -1,0 +1,1183 @@
+{
+  "model_id": "gpt-6.2-sol",
+  "name": "GPT-6.2 Sol",
+  "model_type": "llm",
+  "organization": {
+    "id": "openai",
+    "name": "OpenAI",
+    "website": "https://openai.com"
+  },
+  "description": "GPT-6.2 Sol is OpenAI's efficient, versatile GPT-6.2 model for everyday work, from coding and writing to powering agents at scale. The API model id is gpt-6.2-sol. It accepts text and image input with text output, supports low, medium, high, xhigh, and max reasoning effort (but not none), and provides a 1,050,000-token context window (922,000 max input) with up to 128,000 output tokens. Responses API tools include web and file search, image generation, code interpreter, hosted shell, apply patch, skills, computer use, MCP, and tool search; it also supports streaming, function calling, structured outputs, and multi-agent delegation (beta). Standard per-million-token pricing is $2 input, $0.10 cached input, $2.50 cache writes (30-minute retention), and $10 output, unchanged from GPT-6.1 Sol. Prompts above 272K input tokens cost 2x input/cache and 1.5x output across the full request. Batch costs 50% of Standard; Fast costs 2x; Ultrafast costs 3 times the Standard rate through February 28, 2027, and 6 times the Standard rate starting March 1, 2027 (Pacific time). Launch benchmarks are OpenAI-reported; effort variants are recorded with each score.",
+  "release_date": "2026-11-17",
+  "announcement_date": "2026-11-17",
+  "multimodal": true,
+  "knowledge_cutoff": "2026-06-01",
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "thinking": "true",
+    "reasoning_efforts": "low,medium,high,xhigh,max",
+    "always_on_thinking": "true",
+    "long_context_pricing_threshold": "272000"
+  },
+  "sources": {
+    "api_ref": "https://developers.openai.com/api/docs/models/gpt-6.2-sol",
+    "playground": "https://platform.openai.com/playground?model=gpt-6.2-sol",
+    "paper": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+    "scorecard_blog": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7304,
+      "normalized_score": 0.7304,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Agents' Last Exam v1.1. OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.7304). Other efforts: low 0.6665, medium 0.7026, high 0.7204, xhigh 0.7248. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench-1.0.6",
+      "name": "AutomationBench v1.0.6",
+      "description": "AutomationBench v1.0.6 evaluates agent performance on multi-step workflow automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.412,
+      "normalized_score": 0.412,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "AutomationBench 1.0.6. OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: high effort (0.412). Other efforts: low 0.312, medium 0.402, xhigh 0.406, max 0.411. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "exploitbench",
+      "name": "ExploitBench",
+      "description": "ExploitBench is a cybersecurity benchmark that evaluates a model's ability to discover and exploit software vulnerabilities, reported as the fraction of challenges where the model captures the target (Cap%).",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 1,
+      "normalized_score": 1,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ExploitBench V8, mean capability credit (five attempts per vulnerability) 100%. GPT-6.2 Astra and Sol system card, Table 4 (Critical cybersecurity capability evaluations).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "frontiercode-2.0",
+      "name": "FrontierCode 2.0",
+      "description": "FrontierCode 2.0 is Cognition's private benchmark assessing end-to-end code quality of coding-agent changes, including whether a repository maintainer would merge the agent's change.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.438,
+      "normalized_score": 0.438,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Cognition FrontierCode 2.0. OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.438). Other efforts: low 0.331, medium 0.383, high 0.397, xhigh 0.398. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gdpval-v2",
+      "name": "GDPval v2",
+      "description": "GDPval v2 is OpenAI's internal next iteration of GDPval, built from multistep assignments drawn from real consulting, finance, and design projects using the files and messages the team had when the work was assigned.",
+      "categories": [
+        "reasoning",
+        "finance",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.469,
+      "normalized_score": 0.469,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "GDPval v2 (OpenAI internal). OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.469). Other efforts: low 0.231, medium 0.348, high 0.427, xhigh 0.45. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "gpqa",
+      "name": "GPQA",
+      "description": "A challenging dataset of 448 multiple-choice questions written by domain experts in biology, physics, and chemistry. Questions are Google-proof and extremely difficult, with PhD experts reaching 65% accuracy.",
+      "categories": [
+        "physics",
+        "reasoning",
+        "general",
+        "biology",
+        "chemistry"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.96,
+      "normalized_score": 0.96,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "GPQA Diamond (198 questions, no tools), accuracy 96%. GPT-6.2 Astra and Sol system card, Table 2 (High biological capability evaluations).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "description": "HealthBench Professional evaluates model capability and safety for clinician use cases using real clinician-style chats and physician-authored grading rubrics.",
+      "categories": [
+        "healthcare"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.659,
+      "normalized_score": 0.659,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "HealthBench Professional, length-adjusted score (unadjusted 0.655, mean visible response length 1,869 characters). GPT-6.2 Astra and Sol system card, Table 17.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "internal-research-debugging-evaluation",
+      "name": "Internal Research Debugging Evaluation",
+      "description": "The Internal Research Debugging Evaluation measures whether models can debug 41 real bugs from internal OpenAI research experiments (plus alignment-auditing tasks), where the original solutions took experienced researchers hours to days. Passing corresponds to providing assistance that would unblock the user, including partial root-cause explanations or fixes.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7466,
+      "normalized_score": 0.7466,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Internal Research Debugging Evaluation, mean rubric score 74.66%. GPT-6.2 Astra and Sol system card, Table 5 (Research engineering and model-training results).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "kernelgen-1p",
+      "name": "KernelGen 1P",
+      "description": "KernelGen 1P is an OpenAI AI-self-improvement evaluation that measures whether models can write and optimize compute kernels, part of the suite tracking progress toward accelerating internal research.",
+      "categories": [
+        "agents",
+        "code",
+        "systems"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.7471,
+      "normalized_score": 0.7471,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "KernelGen 1P, mean rubric score 74.71%. GPT-6.2 Astra and Sol system card, Table 5 (Research engineering and model-training results).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "lifeval",
+      "name": "LifeVal",
+      "description": "LifeVal is OpenAI's evaluation of how well models handle challenging everyday tasks tailored to a person's needs, such as shortlisting schools after a move, finding a home that fits a budget and commute, or planning meals for a new diagnosis.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.838,
+      "normalized_score": 0.838,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "LifeVal. OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.838). Other efforts: low 0.253, medium 0.703, high 0.808, xhigh 0.826. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "nanogpt",
+      "name": "NanoGPT",
+      "description": "NanoGPT is an OpenAI AI-self-improvement evaluation that measures whether models can optimize training recipes for small GPT-style models, part of the suite tracking progress toward accelerating internal research.",
+      "categories": [
+        "agents",
+        "code",
+        "systems"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.1459,
+      "normalized_score": 0.1459,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "NanoGPT, mean share of baseline training time saved 14.59%. GPT-6.2 Astra and Sol system card, Table 5. The system card notes NanoGPT uses slightly different evaluation versions for the two Astra models.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "patchbench",
+      "name": "PatchBench",
+      "description": "PatchBench evaluates whether a model can produce patches that fix security vulnerabilities while preserving intended program behavior, as reported in OpenAI's GPT-6.2 launch.",
+      "categories": [
+        "safety",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.756,
+      "normalized_score": 0.756,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "PatchBench. OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.756). Other efforts: low 0.656, medium 0.705, high 0.741, xhigh 0.742. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "posttrainbench-lite",
+      "name": "PostTrainBench Lite",
+      "description": "PostTrainBench Lite measures whether an agent can design and execute a full post-training strategy (data, prompts, RL recipe, and eval loop) for a pretrained base model under a constrained time budget, scored as normalized mean reward over the improvement window.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "systems"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.4489,
+      "normalized_score": 0.4489,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "PostTrainBench Lite, mean share of performance gap closed 44.89%. GPT-6.2 Astra and Sol system card, Table 5 (Research engineering and model-training results).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2",
+      "name": "Ramp SWE-Bench v2",
+      "description": "Ramp SWE-Bench v2 is Ramp Labs' private coding benchmark of 500 backend engineering tasks built from pull requests that Ramp's in-house coding agent merged into production after engineer review, across work shipped by more than 200 Ramp engineers. Each model gets a one-shot prompt in the same sandboxed copy of Ramp's codebase and must produce a review-ready patch. A panel of LLM judges compares the candidate patch with the engineer-reviewed merged solution; a task passes when there is no material difference where the merged solution is better. Scores are pass@1 at high reasoning effort with web tools disabled, with each model running in its lab's native agent harness (Ramp's v2.1 Native view).",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.734,
+      "normalized_score": 0.734,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://labs.ramp.com/swebench",
+      "evaluated_by": "Ramp",
+      "index_scope": "none",
+      "analysis_method": "pass@1 on 500 private Ramp production tasks (367/500 resolved, 95% CI +/-3.9 points), graded by Ramp's LLM judge panel against the merged patch. Codex harness, high reasoning effort, web tools disabled (Ramp SWE-Bench v2.1 Native view, run as gpt-6.2-sol-high).",
+      "verification_date": null,
+      "verification_notes": "Third-party evaluation by Ramp Labs; tasks are private and not reproduced by LLM Stats."
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "name": "Ramp SWE-Bench v2 (Bash)",
+      "description": "Ramp SWE-Bench v2 is Ramp Labs' private coding benchmark of 500 backend engineering tasks built from pull requests that Ramp's in-house coding agent merged into production after engineer review, across work shipped by more than 200 Ramp engineers. Each model gets a one-shot prompt in the same sandboxed copy of Ramp's codebase and must produce a review-ready patch. A panel of LLM judges compares the candidate patch with the engineer-reviewed merged solution; a task passes when there is no material difference where the merged solution is better. Scores are pass@1 at high reasoning effort with web tools disabled, with every model running in the same bash-only mini-swe-agent harness (Ramp's v2.0 Bash view), which isolates the model from harness differences.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.724,
+      "normalized_score": 0.724,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://labs.ramp.com/swebench",
+      "evaluated_by": "Ramp",
+      "index_scope": "none",
+      "analysis_method": "pass@1 on 500 private Ramp production tasks (362/500 resolved, 95% CI +/-3.9 points), graded by Ramp's LLM judge panel against the merged patch. mini-swe-agent bash-only harness shared by every model, high reasoning effort, web tools disabled (Ramp SWE-Bench v2.0 Bash view, run as gpt-6.2-sol-high).",
+      "verification_date": null,
+      "verification_notes": "Third-party evaluation by Ramp Labs; tasks are private and not reproduced by LLM Stats."
+    },
+    {
+      "benchmark_id": "sec-bench-pro",
+      "name": "SEC-bench Pro",
+      "description": "SEC-bench Pro is a self-evolving software-security benchmark that measures agent bug hunting on critical, high-complexity systems. It instantiates validated vulnerabilities across the V8 and SpiderMonkey JavaScript engines as reproducible vulnerability-discovery and proof-of-concept-generation tasks with oracle-based validation.",
+      "categories": [
+        "safety",
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.8834,
+      "normalized_score": 0.8834,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "SEC-Bench Pro, vulnerability reproduction (pass@1) 88.34%. GPT-6.2 Astra and Sol system card, Table 4 (Critical cybersecurity capability evaluations).",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "secureswe",
+      "name": "SecureSWE",
+      "description": "SecureSWE is an OpenAI internal benchmark that tests writing functional and secure code for security-sensitive components such as serving files or handling database queries.",
+      "categories": [
+        "safety",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.556,
+      "normalized_score": 0.556,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "SecureSWE (OpenAI internal). OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.556). Other efforts: low 0.431, medium 0.471, high 0.519, xhigh 0.54. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.68,
+      "normalized_score": 0.68,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Terminal-Bench-Science 0.1. OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: max effort (0.68). Other efforts: low 0.434, medium 0.631, high 0.677, xhigh 0.643. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vals-science-index",
+      "name": "Vals Science Index",
+      "description": "The Vals Science Index asks models to interpret real biological data and run experiments to infer how a simulated system works.",
+      "categories": [
+        "knowledge",
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.585,
+      "normalized_score": 0.585,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Vals Science Index v1. OpenAI GPT-6.2 Sol launch interactive chart. Highest published score across the reported effort sweep: xhigh effort (0.585). Other efforts: low 0.463, medium 0.565, high 0.576, max 0.578. Evaluations used OpenAI research environments or API and may differ from production ChatGPT.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "openai",
+      "name": "OpenAI",
+      "website": "https://openai.com",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 2,
+        "cached_input_per_million": 0.1,
+        "cache_write_per_million": 2.5,
+        "output_per_million": 10,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.7833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.758,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.7304,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.716,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.616,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.6,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-sol",
+          "model_name": "GPT-6 Sol",
+          "score": 0.564,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "exploitbench",
+      "benchmark_name": "ExploitBench",
+      "models": [
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 1,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.78,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.747,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.735,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.3",
+          "model_name": "GLM-5.3",
+          "score": 0.544,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.529,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.479,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "swe-2-flash",
+          "model_name": "SWE-2 Flash",
+          "score": 0.348,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "gpqa",
+      "benchmark_name": "GPQA",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.97,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.96,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.96,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-preview",
+          "model_name": "Claude Mythos Preview",
+          "score": 0.946,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.946,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.943,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.942,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-7",
+          "model_name": "Claude Opus 4.7",
+          "score": 0.942,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.936,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-4-8",
+          "model_name": "Claude Opus 4.8",
+          "score": 0.936,
+          "rank": 9,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "healthbench-professional",
+      "benchmark_name": "HealthBench Professional",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.692,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.677,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.663,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5",
+          "model_name": "Claude Fable 5",
+          "score": 0.66,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.659,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.656,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.648,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.642,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.627,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2",
+      "benchmark_name": "Ramp SWE-Bench v2",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.764,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.754,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.734,
+          "rank": 3,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.734,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.716,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.704,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.678,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.644,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.632,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "benchmark_name": "Ramp SWE-Bench v2 (Bash)",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.75,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.74,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.73,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.724,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.712,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.708,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.638,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.606,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.578,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.576,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "sec-bench-pro",
+      "benchmark_name": "SEC-bench Pro",
+      "models": [
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.905,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.8834,
+          "rank": 2,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.882,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.8675,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.854,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.712,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "mimo-v2.6-pro",
+          "model_name": "MiMo-V2.6-Pro",
+          "score": 0.663,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.628,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-terra",
+          "model_name": "GPT-5.6 Terra",
+          "score": 0.577,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-luna",
+          "model_name": "GPT-5.6 Luna",
+          "score": 0.489,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "benchmark_name": "Terminal-Bench-Science 0.1",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.771,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.753,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.746,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.705,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.68,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.648,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.646,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.599,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.587,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.583,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": {
+    "model_id": "gpt-6.2-astra",
+    "name": "GPT-6.2 Astra",
+    "organization_name": "OpenAI",
+    "release_date": "2026-11-17",
+    "announcement_date": "2026-11-17",
+    "knowledge_cutoff": "2026-05-18",
+    "param_count": null,
+    "multimodal": true,
+    "license": {
+      "name": "Proprietary",
+      "allow_commercial": false
+    },
+    "benchmarks": {
+      "agents-last-exam": 0.7833,
+      "automationbench-1.0.6": 0.524,
+      "exploitbench": 1,
+      "frontiercode-2.0": 0.442,
+      "gdpval-v2": 0.504,
+      "gpqa": 0.97,
+      "healthbench-professional": 0.663,
+      "internal-research-debugging-evaluation": 0.8185,
+      "kernelgen-1p": 0.7692,
+      "lifeval": 0.861,
+      "nanogpt": 0.4287,
+      "patchbench": 0.797,
+      "posttrainbench-lite": 0.7479,
+      "ramp-swe-bench-v2": 0.764,
+      "ramp-swe-bench-v2-bash": 0.75,
+      "sec-bench-pro": 0.8675,
+      "secureswe": 0.657,
+      "terminal-bench-science-0.1": 0.771,
+      "vals-science-index": 0.684
+    },
+    "provider": {
+      "name": "OpenAI",
+      "input_cost": 8,
+      "output_cost": 40,
+      "max_input_tokens": 1050000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  },
+  "openrouter_id": "openai/gpt-6.2-sol"
+}

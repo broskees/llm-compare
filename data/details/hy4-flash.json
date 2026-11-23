@@ -1,0 +1,870 @@
+{
+  "model_id": "hy4-flash",
+  "name": "Hy4 flash",
+  "model_type": "llm",
+  "organization": {
+    "id": "tencent",
+    "name": "Tencent",
+    "website": "https://www.tencent.com"
+  },
+  "description": "Hy4 flash is Tencent Hy's most cost-effective Hy model, announced on 2026-11-16 (API id hy4-flash). It has 224 billion total parameters, including 64 billion Engram parameters, with 12 billion active parameters per token. Like Hy4, it is natively multimodal and has a 1,048,576-token context window (Tencent Cloud TokenHub documents 960K max input and 64K max output). Official TokenHub USD list pricing, from Tencent Cloud documentation https://www.tencentcloud.com/document/product/1300/78937, is $0.070 per million input tokens, $0.281 per million output tokens, and $0.003 per million cached input tokens. That same pricing notice offers 50% off Hy4 flash list API pricing until 12:00 Beijing time on 2026-11-30 (11:00 PM ET on 2026-11-29). The official research page also says WorkBuddy access is free until 30 November. Tencent says Hy4 flash will launch on OpenRouter soon and that it plans to open-source the model; no release date was given for the weights, and neither the OpenRouter listing nor the weights were published at catalog time. Tencent's evaluation emphasizes its internal WorkIndex benchmark and a WorkBuddy blind test, and the launch page also reports self-reported scores on public agent and multimodal benchmarks in an official appendix, evaluated at the highest available reasoning setting.",
+  "release_date": "2026-11-16",
+  "announcement_date": "2026-11-16",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": 224000000000,
+  "training_tokens": null,
+  "available_in_zeroeval": false,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "unknown",
+    "name": "Unknown",
+    "allow_commercial": false,
+    "description": "Unknown license"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "moe": "true",
+    "vision": "true",
+    "thinking": "true",
+    "api_model_id": "hy4-flash",
+    "active_parameters": "12000000000",
+    "max_output_tokens": "64000",
+    "default_reasoning_effort": "high"
+  },
+  "sources": {
+    "api_ref": "https://www.tencentcloud.com/document/product/1300/80695",
+    "playground": null,
+    "paper": null,
+    "scorecard_blog": "https://hy.tencent.ai/research/hy4-flash",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "apex-agents",
+      "name": "APEX-Agents",
+      "description": "APEX-Agents is a benchmark evaluating AI agents on long horizon professional tasks that require sustained reasoning, planning, and execution across complex multi-step workflows.",
+      "categories": [
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.631,
+      "normalized_score": 0.631,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "APEX-Agents v1.1 pass@1 score 63.1 for Hy4 flash, from the official research-page appendix. Official notes: official reference agent harness (Loop), maximum of 250 steps per trial. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "automationbench-1.0.6",
+      "name": "AutomationBench v1.0.6",
+      "description": "AutomationBench v1.0.6 evaluates agent performance on multi-step workflow automation tasks.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.522,
+      "normalized_score": 0.522,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "AutomationBench v1.0.6 score 52.2 for Hy4 flash, from the official research-page appendix. Official notes: 600 public tasks released by Zapier, evaluated according to the official method. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "name": "DeepSWE 1.1",
+      "description": "DeepSWE 1.1 evaluates software engineering agents using the mini-swe-agent harness.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.646,
+      "normalized_score": 0.646,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "DeepSWE v1.1 score 64.6 for Hy4 flash, from the official research-page appendix. Official notes: mini-SWE-agent; each task runs in a sandbox with 8 CPU cores and 16 GB of memory. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "humanity's-last-exam-(with-tools)",
+      "name": "Humanity's Last Exam (with tools)",
+      "description": "Full multimodal Humanity's Last Exam evaluated with tool use enabled, distinct from its text-only subset.",
+      "categories": [
+        "math",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.552,
+      "normalized_score": 0.552,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "HLE-Full with tools score 55.2 for Hy4 flash, from the official research-page appendix (row labeled HLE-Full (with tools)). Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "name": "MMMU-Pro",
+      "description": "A more robust multi-discipline multimodal understanding benchmark that enhances MMMU through a three-step process: filtering text-only answerable questions, augmenting candidate options, and introducing vision-only input settings. Achieves significantly lower model performance (16.8-26.9%) compared to original MMMU, providing more rigorous evaluation that closely mimics real-world scenarios.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "general",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.758,
+      "normalized_score": 0.758,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "MMMU-Pro score 75.8 for Hy4 flash, from the official research-page appendix. The appendix gives no further MMMU-Pro footnote. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.1-partial",
+      "name": "OSWorld 2.1 (partial)",
+      "description": "Partial-credit computer-use score on OSWorld 2.1, as reported in the Claude Sonnet 5.5 release. Separate from OSWorld 2.0 and strict completion scores.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.681,
+      "normalized_score": 0.681,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "OSWorld 2.1 full set, partial score 68.1 for Hy4 flash, from the official research-page appendix (row labeled OSWorld 2.1 (Full, partial score)). Filed under osworld-2.1-partial, the catalog id for OSWorld 2.1 partial-credit scores. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "program-bench",
+      "name": "Program Bench",
+      "description": "Program Bench evaluates code-generation agents by asking them to recreate a program's behavior from only a compiled binary and documentation. It spans 200 tasks from small CLI tools to large systems such as FFmpeg and SQLite, with submissions judged against more than 248,000 fuzz-generated behavioral tests.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.16,
+      "normalized_score": 0.16,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ProgramBench Almost Solved score 16.0 for Hy4 flash, from the official research-page appendix. Official notes: Almost Solved score using mini-SWE-agent. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "description": "Terminal-Bench 4.0 evaluates AI agents on real-world work in terminal and command-line containerized environments across 66 tasks, with emphasis on science-adjacent and frontier engineering problems. Relative to earlier Terminal-Bench releases, 4.0 increases timeouts and adaptively raises RAM/CPU on selected tasks to reduce harness and resource confounds.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.192,
+      "normalized_score": 0.192,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Terminal-Bench 4.0 score 19.2 for Hy4 flash, from the official research-page appendix. Official notes: Claude Code harness, up to 500 turns and a 13-hour timeout per trial; resources capped at 16 CPUs and 32 GB RAM, with the three GPU-dependent tasks additionally receiving a single H100 GPU. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "zerobench",
+      "name": "ZEROBench",
+      "description": "ZEROBench is a challenging vision benchmark designed to test models on zero-shot visual understanding tasks.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "image",
+      "max_score": 100,
+      "score": 0.458,
+      "normalized_score": 0.458,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://hy.tencent.ai/research/hy4-flash",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "ZeroBench-main score 45.8 for Hy4 flash, from the official research-page appendix (row labeled ZeroBench-main (with tools, pass@5)). Official notes: network-isolated Jupyter environment with image outputs as the tool interface, maximum of 80 tool-calling rounds per run; each problem is evaluated over 10 independent runs to estimate pass@5. Highest available reasoning setting.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "tencent",
+      "name": "Tencent Cloud",
+      "website": "https://www.tencentcloud.com/products/tokenhub",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 0.07,
+        "cached_input_per_million": 0.003,
+        "cache_write_per_million": null,
+        "output_per_million": 0.281,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 960000,
+        "max_output_tokens": 64000
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": false,
+          "video": false
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "apex-agents",
+      "benchmark_name": "APEX-Agents",
+      "models": [
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.721,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.672,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ernie-5.5-flash-preview",
+          "model_name": "ERNIE 5.5 Flash Preview",
+          "score": 0.642,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.631,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.6,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.6",
+          "model_name": "Grok 4.6",
+          "score": 0.575,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.376,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-preview",
+          "model_name": "Hy4 preview",
+          "score": 0.371,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.338,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.1-pro-preview",
+          "model_name": "Gemini 3.1 Pro",
+          "score": 0.335,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "deepswe-1.1",
+      "benchmark_name": "DeepSWE 1.1",
+      "models": [
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.79,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.79,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.788,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.788,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.779,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash-1017",
+          "model_name": "DeepSeek-V4.1-Flash-1017",
+          "score": 0.77,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen4-max",
+          "model_name": "Qwen4-Max",
+          "score": 0.757,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-1.3",
+          "model_name": "Muse Spark 1.3",
+          "score": 0.754,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.7522,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "ember-1",
+          "model_name": "Ember-1",
+          "score": 0.752,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.646,
+          "rank": 35,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "mmmu-pro",
+      "benchmark_name": "MMMU-Pro",
+      "models": [
+        {
+          "model_id": "gpt-6.1-sol",
+          "model_name": "GPT-6.1 Sol",
+          "score": 0.8595,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.841,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-3.5-flash",
+          "model_name": "Gemini 3.5 Flash",
+          "score": 0.836,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.5",
+          "model_name": "GPT-5.5",
+          "score": 0.832,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.83,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.827,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.823,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-turbo",
+          "model_name": "Seed 2.1 Turbo",
+          "score": 0.822,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "inkling-2-small",
+          "model_name": "Inkling 2 Small",
+          "score": 0.816,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.816,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.758,
+          "rank": 33,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "osworld-2.1-partial",
+      "benchmark_name": "OSWorld 2.1 (partial)",
+      "models": [
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.893,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.815,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.801,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.784,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.784,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.776,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.726,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.726,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.724,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.695,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.681,
+          "rank": 11,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "program-bench",
+      "benchmark_name": "Program Bench",
+      "models": [
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.912,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.856,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.82,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.797,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.778,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "glm-5.2",
+          "model_name": "GLM-5.2",
+          "score": 0.637,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.59,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.59,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k2.7-code",
+          "model_name": "Kimi K2.7 Code",
+          "score": 0.536,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.503,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.16,
+          "rank": 22,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-4.0",
+      "benchmark_name": "Terminal-Bench 4.0",
+      "models": [
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.706,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.705,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.676,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.664,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.657,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-1",
+          "model_name": "Claude Mythos 5.1",
+          "score": 0.609,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.577,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-argon",
+          "model_name": "Gemini 4 Argon",
+          "score": 0.574,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.571,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.558,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.192,
+          "rank": 34,
+          "is_current_model": true
+        }
+      ]
+    },
+    {
+      "benchmark_id": "zerobench",
+      "benchmark_name": "ZEROBench",
+      "models": [
+        {
+          "model_id": "seed-1.8",
+          "model_name": "Seed 1.8",
+          "score": 11,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash-1017",
+          "model_name": "DeepSeek-V4.1-Flash-1017",
+          "score": 0.51,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark-open",
+          "model_name": "Muse Spark Open",
+          "score": 0.5,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4.1-flash",
+          "model_name": "DeepSeek-V4.1-Flash",
+          "score": 0.49,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "hy4-flash",
+          "model_name": "Hy4 flash",
+          "score": 0.458,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "kimi-k3",
+          "model_name": "Kimi K3",
+          "score": 0.41,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "kimi-k3.1-pro",
+          "model_name": "Kimi K3.1 Pro",
+          "score": 0.39,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "deepseek-v4-flash-vision-exp",
+          "model_name": "DeepSeek-V4-Flash-Vision-Exp",
+          "score": 0.35,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-spark",
+          "model_name": "Muse Spark",
+          "score": 0.33,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "seed-2.1-pro",
+          "model_name": "Seed 2.1 Pro",
+          "score": 0.18,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "tencent/hy4-flash"
+}

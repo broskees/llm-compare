@@ -1,0 +1,694 @@
+{
+  "model_id": "gemini-4-hydrogen",
+  "name": "Gemini 4 Hydrogen",
+  "model_type": "llm",
+  "organization": {
+    "id": "google",
+    "name": "Google",
+    "website": "https://google.com"
+  },
+  "description": "Gemini 4 Hydrogen is Google DeepMind's Gemini 4 model for everyday coding and agentic workflows, announced and generally available on 2026-11-12 (model id gemini-4-hydrogen). It is adapted from Gemini 4 Carbon and is available on the Gemini API free and paid tiers, Google AI Studio, Vertex AI, the Gemini app, Google Search, and Google Antigravity. It uses a 1,048,576-token unified context window with up to 64K default synchronous output tokens and long decode up to 1M tokens, and adds a fourth thinking level, xhigh, alongside low, medium, and high (default high). Gemini API paid pricing is flat across the 1M window at $1.50 per million input tokens, $7.50 per million output tokens (including thinking tokens), and $0.075 per million implicitly cached input tokens; explicit caching is not supported. Vertex AI global endpoints use the same $1.50 / $7.50 / $0.075 rates; non-global endpoints are billed at a 10% premium. The knowledge cutoff is March 2026.",
+  "release_date": "2026-11-12",
+  "announcement_date": "2026-11-12",
+  "multimodal": true,
+  "knowledge_cutoff": null,
+  "param_count": null,
+  "training_tokens": null,
+  "available_in_zeroeval": true,
+  "zeroeval_pricing_tier": null,
+  "reviews_count": 0,
+  "reviews_avg_rating": 0,
+  "license": {
+    "id": "proprietary",
+    "name": "Proprietary",
+    "allow_commercial": false,
+    "description": "Proprietary license - usage restrictions apply"
+  },
+  "model_family": null,
+  "fine_tuned_from": null,
+  "tags": {
+    "openrouter_slug": "google/gemini-4-hydrogen",
+    "max_output_tokens": "1000000",
+    "limited_availability": "false",
+    "default_reasoning_effort": "high"
+  },
+  "sources": {
+    "api_ref": "https://aistudio.google.com/docs/whats-new-gemini-4-hydrogen",
+    "playground": "https://aistudio.google.com/",
+    "paper": "https://deepmind.google/models/evals-methodology/gemini-4-hydrogen",
+    "scorecard_blog": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+    "repo": null,
+    "weights": null
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "description": "Agents' Last Exam is a challenging benchmark for AI agents on hard, long-horizon tasks that test sustained reasoning, planning, and tool use, reported with and without tool access.",
+      "categories": [
+        "reasoning",
+        "agents",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.716,
+      "normalized_score": 0.716,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-hydrogen",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Agents' Last Exam v1.1 score (122-task v1.1 set, Oct 17, 2026 task version, without the Oct 26, 2026 update). Official methodology: self-computed with the Antigravity-CLI (agy) version 1.4.8 harness through official integration and a 5-hour window, with safety filters enabled; responses flagged by safety filters are returned as empty strings, though the episode can continue. Averaged rubric Score.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "chartography-no-tools",
+      "name": "Chartography (no tools)",
+      "description": "Chartography visual chart recognition evaluated without tools, distinct from tool-assisted results.",
+      "categories": [
+        "multimodal",
+        "reasoning",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.666,
+      "normalized_score": 0.666,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-hydrogen",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Self-computed without tools, following the official Surge public leaderboard, as stated in the official Gemini 4 Hydrogen evaluation methodology.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "osworld-2.1-partial",
+      "name": "OSWorld 2.1 (partial)",
+      "description": "Partial-credit computer-use score on OSWorld 2.1, as reported in the Claude Sonnet 5.5 release. Separate from OSWorld 2.0 and strict completion scores.",
+      "categories": [
+        "multimodal",
+        "general",
+        "agents",
+        "vision"
+      ],
+      "modality": "multimodal",
+      "max_score": 1,
+      "score": 0.776,
+      "normalized_score": 0.776,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-hydrogen",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "OSWorld 2.1 offline (no-internet) subset (82 tasks), partial score; self-computed, maxed over 3 runs with a single attempt per run; official GitHub OSWorld docker and evaluator, default 1080p, max step length 500; updated Gemini CUA harness with parallel batch tool calling, all screenshots in history, and a compaction procedure following the same setup as reported in the Opus 5.5 system card. Official methodology: safety-filter flagged responses are returned as empty strings (episode can continue); PyAutoGUI actuation with screenshot-only observation space and UI-specific function declarations.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2",
+      "name": "Ramp SWE-Bench v2",
+      "description": "Ramp SWE-Bench v2 is Ramp Labs' private coding benchmark of 500 backend engineering tasks built from pull requests that Ramp's in-house coding agent merged into production after engineer review, across work shipped by more than 200 Ramp engineers. Each model gets a one-shot prompt in the same sandboxed copy of Ramp's codebase and must produce a review-ready patch. A panel of LLM judges compares the candidate patch with the engineer-reviewed merged solution; a task passes when there is no material difference where the merged solution is better. Scores are pass@1 at high reasoning effort with web tools disabled, with each model running in its lab's native agent harness (Ramp's v2.1 Native view).",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.716,
+      "normalized_score": 0.716,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://labs.ramp.com/swebench",
+      "evaluated_by": "Ramp",
+      "index_scope": "none",
+      "analysis_method": "pass@1 on 500 private Ramp production tasks (358/500 resolved, 95% CI +/-4.0 points), graded by Ramp's LLM judge panel against the merged patch. OpenCode harness, high reasoning effort, web tools disabled (Ramp SWE-Bench v2.1 Native view, run as gemini-4-hydrogen-high).",
+      "verification_date": null,
+      "verification_notes": "Third-party evaluation by Ramp Labs; tasks are private and not reproduced by LLM Stats."
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "name": "Ramp SWE-Bench v2 (Bash)",
+      "description": "Ramp SWE-Bench v2 is Ramp Labs' private coding benchmark of 500 backend engineering tasks built from pull requests that Ramp's in-house coding agent merged into production after engineer review, across work shipped by more than 200 Ramp engineers. Each model gets a one-shot prompt in the same sandboxed copy of Ramp's codebase and must produce a review-ready patch. A panel of LLM judges compares the candidate patch with the engineer-reviewed merged solution; a task passes when there is no material difference where the merged solution is better. Scores are pass@1 at high reasoning effort with web tools disabled, with every model running in the same bash-only mini-swe-agent harness (Ramp's v2.0 Bash view), which isolates the model from harness differences.",
+      "categories": [
+        "agents",
+        "code"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.708,
+      "normalized_score": 0.708,
+      "verified": false,
+      "self_reported": false,
+      "self_reported_source": "https://labs.ramp.com/swebench",
+      "evaluated_by": "Ramp",
+      "index_scope": "none",
+      "analysis_method": "pass@1 on 500 private Ramp production tasks (354/500 resolved, 95% CI +/-4.0 points), graded by Ramp's LLM judge panel against the merged patch. mini-swe-agent bash-only harness shared by every model, high reasoning effort, web tools disabled (Ramp SWE-Bench v2.0 Bash view, run as gemini-4-hydrogen-high).",
+      "verification_date": null,
+      "verification_notes": "Third-party evaluation by Ramp Labs; tasks are private and not reproduced by LLM Stats."
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench-Science 0.1",
+      "description": "Terminal-Bench-Science 0.1 is a Stanford-led community benchmark of 70 tasks drawn from scientific research workflows across the life, physical, earth, mathematical, and engineering sciences. Tasks are authored and reviewed by scientists and researchers; scores are typically reported as accuracy with relatively large standard error due to strongly bimodal per-task outcomes.",
+      "categories": [
+        "reasoning",
+        "general",
+        "agents",
+        "code",
+        "tool_calling"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 0.514,
+      "normalized_score": 0.514,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-hydrogen",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Terminal-Bench Science 0.1; self-computed using a mini-swe-agent vision harness, averaged over 5 attempts per task (Average Reward), as stated in the official Gemini 4 Hydrogen evaluation methodology.",
+      "verification_date": null,
+      "verification_notes": null
+    },
+    {
+      "benchmark_id": "vending-bench-2",
+      "name": "Vending-Bench 2",
+      "description": "Vending-Bench 2 tests longer horizon planning capabilities by evaluating how well AI models can manage a simulated vending machine business over extended periods. The benchmark measures a model's ability to maintain consistent tool usage and decision-making for a full simulated year of operation, driving higher returns without drifting off task.",
+      "categories": [
+        "reasoning",
+        "agents"
+      ],
+      "modality": "text",
+      "max_score": 1,
+      "score": 14549,
+      "normalized_score": null,
+      "verified": false,
+      "self_reported": true,
+      "self_reported_source": "https://deepmind.google/models/evals-methodology/gemini-4-hydrogen",
+      "evaluated_by": null,
+      "index_scope": "all",
+      "analysis_method": "Final bank balance (USD), reported from the Andon Labs official public leaderboard, as stated in the official Gemini 4 Hydrogen evaluation methodology.",
+      "verification_date": null,
+      "verification_notes": null
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "google",
+      "name": "Google",
+      "website": "https://ai.google.dev",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1.5,
+        "cached_input_per_million": 0.075,
+        "cache_write_per_million": null,
+        "output_per_million": 7.5,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 1048576
+      },
+      "performance": {
+        "throughput": 44.26878287861176,
+        "latency": 7.843999999999999
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    },
+    {
+      "provider_id": "vertex",
+      "name": "Vertex AI",
+      "website": "https://cloud.google.com/vertex-ai",
+      "deprecated": false,
+      "deprecated_at": null,
+      "pricing": {
+        "input_per_million": 1.5,
+        "cached_input_per_million": 0.075,
+        "cache_write_per_million": null,
+        "output_per_million": 7.5,
+        "per_image": null,
+        "per_second_video_720p": null,
+        "per_second_video_1080p": null,
+        "per_second_video_high": null,
+        "per_minute_audio": null,
+        "per_million_chars": null
+      },
+      "pricing_options": [],
+      "quantization": null,
+      "limits": {
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 1048576
+      },
+      "performance": {
+        "throughput": null,
+        "latency": null
+      },
+      "features": {
+        "web_search": null,
+        "function_calling": null,
+        "structured_output": null,
+        "code_execution": null,
+        "batch_inference": null,
+        "finetuning": null
+      },
+      "modalities": {
+        "input": {
+          "text": true,
+          "image": true,
+          "audio": true,
+          "video": true
+        },
+        "output": {
+          "text": true,
+          "image": false,
+          "audio": false,
+          "video": false
+        }
+      }
+    }
+  ],
+  "benchmark_rankings": [
+    {
+      "benchmark_id": "agents-last-exam",
+      "benchmark_name": "Agents' Last Exam",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.7833,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.758,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.7304,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.716,
+          "rank": 4,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.616,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.6,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.593,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-sol",
+          "model_name": "GPT-6 Sol",
+          "score": 0.564,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-5.6-sol",
+          "model_name": "GPT-5.6 Sol",
+          "score": 0.527,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "qwen3.8-max",
+          "model_name": "Qwen3.8 Max",
+          "score": 0.524,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "osworld-2.1-partial",
+      "benchmark_name": "OSWorld 2.1 (partial)",
+      "models": [
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.893,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.815,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.801,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full-1.0",
+          "model_name": "Muse Wonder Full",
+          "score": 0.784,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-full",
+          "model_name": "Muse Wonder Full",
+          "score": 0.784,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.776,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "muse-wonder",
+          "model_name": "Muse Wonder",
+          "score": 0.726,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.726,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-haiku-5-5",
+          "model_name": "Claude Haiku 5.5",
+          "score": 0.724,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-ember-1.0",
+          "model_name": "Muse Ember",
+          "score": 0.695,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2",
+      "benchmark_name": "Ramp SWE-Bench v2",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.764,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.754,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.734,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.734,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.716,
+          "rank": 5,
+          "is_current_model": true
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.704,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.678,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "grok-4.7",
+          "model_name": "Grok 4.7",
+          "score": 0.644,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.634,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.632,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "ramp-swe-bench-v2-bash",
+      "benchmark_name": "Ramp SWE-Bench v2 (Bash)",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.75,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.74,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.73,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.724,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.712,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.708,
+          "rank": 6,
+          "is_current_model": true
+        },
+        {
+          "model_id": "claude-fable-5-1",
+          "model_name": "Claude Fable 5.1",
+          "score": 0.638,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.606,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "muse-wonder-1.0",
+          "model_name": "Muse Wonder",
+          "score": 0.578,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.576,
+          "rank": 10,
+          "is_current_model": false
+        }
+      ]
+    },
+    {
+      "benchmark_id": "terminal-bench-science-0.1",
+      "benchmark_name": "Terminal-Bench-Science 0.1",
+      "models": [
+        {
+          "model_id": "gpt-6.2-astra",
+          "model_name": "GPT-6.2 Astra",
+          "score": 0.771,
+          "rank": 1,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-mythos-5-2",
+          "model_name": "Claude Mythos 5.2",
+          "score": 0.753,
+          "rank": 2,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-fable-5-2",
+          "model_name": "Claude Fable 5.2",
+          "score": 0.746,
+          "rank": 3,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-neon",
+          "model_name": "Gemini 4 Neon",
+          "score": 0.705,
+          "rank": 4,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.2-sol",
+          "model_name": "GPT-6.2 Sol",
+          "score": 0.68,
+          "rank": 5,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-carbon",
+          "model_name": "Gemini 4 Carbon",
+          "score": 0.648,
+          "rank": 6,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6-astra",
+          "model_name": "GPT-6 Astra",
+          "score": 0.646,
+          "rank": 7,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
+          "score": 0.599,
+          "rank": 8,
+          "is_current_model": false
+        },
+        {
+          "model_id": "claude-opus-5-5",
+          "model_name": "Claude Opus 5.5",
+          "score": 0.587,
+          "rank": 9,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gpt-6.1-terra",
+          "model_name": "GPT-6.1 Terra",
+          "score": 0.583,
+          "rank": 10,
+          "is_current_model": false
+        },
+        {
+          "model_id": "gemini-4-hydrogen",
+          "model_name": "Gemini 4 Hydrogen",
+          "score": 0.514,
+          "rank": 14,
+          "is_current_model": true
+        }
+      ]
+    }
+  ],
+  "comparison_model": null,
+  "openrouter_id": "google/gemini-4-hydrogen"
+}
